@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight | Serhat Demirkol</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="container main-container">
+        <main class="main-content">
+            <section class="content-area">
+                <h2>My Insights</h2>
+                <div class="insight-list">
+                    <div class="insight-list">
+                    <a href="insights/getting-trapped-while-controlling-hazards.html" class="insight-card-link" data-article-path="insights/getting-trapped-while-controlling-hazards.html">
+                        <div class="insight-card">
+                            <h3 class="insight-title">Getting Trapped While Controlling Hazards</h3>
+                            <p class="insight-date"></p> <!-- Date will be filled by script -->
+                            <p class="insight-summary"></p> <!-- Summary will be filled by script -->
+                        </div>
+                    </a>
+                    <a href="insights/how-machine-learning-can-improve-workplace-incident-classification.html" class="insight-card-link" data-article-path="insights/how-machine-learning-can-improve-workplace-incident-classification.html">
+                        <div class="insight-card">
+                            <h3 class="insight-title">How Machine Learning Can Improve Workplace Incident Classification</h3>
+                            <p class="insight-date"></p>
+                            <p class="insight-summary"></p>
+                        </div>
+                    </a>
+                    <a href="insights/leveraging-diagnostic-analytics-to-enhance-workplace-safety.html" class="insight-card-link" data-article-path="insights/leveraging-diagnostic-analytics-to-enhance-workplace-safety.html">
+                        <div class="insight-card">
+                            <h3 class="insight-title">Leveraging Diagnostic Analytics to Enhance Workplace Safety</h3>
+                            <p class="insight-date"></p>
+                            <p class="insight-summary"></p>
+                        </div>
+                    </a>
+                    <a href="insights/a-concise-guide-to-esaw-methodology-for-recording-workplace-accidents.html" class="insight-card-link" data-article-path="insights/a-concise-guide-to-esaw-methodology-for-recording-workplace-accidents.html">
+                        <div class="insight-card">
+                            <h3 class="insight-title">A Concise Guide to ESAW Methodology for Recording Workplace Accidents</h3>
+                            <p class="insight-date"></p>
+                            <p class="insight-summary"></p>
+                        </div>
+                    </a>
+                    <a href="insights/analysis-and-planning-for-ehs-software-implementation.html" class="insight-card-link" data-article-path="insights/analysis-and-planning-for-ehs-software-implementation.html">
+                        <div class="insight-card">
+                            <h3 class="insight-title">Analysis and Planning for EHS Software Implementation</h3>
+                            <p class="insight-date"></p>
+                            <p class="insight-summary"></p>
+                        </div>
+                    </a>
+                    <a href="insights/understanding-the-imperative-for-ehs-software-implementation.html" class="insight-card-link" data-article-path="insights/understanding-the-imperative-for-ehs-software-implementation.html">
+                        <div class="insight-card">
+                            <h3 class="insight-title">Understanding the Imperative EHS Software Implementation</h3>
+                            <p class="insight-date"></p>
+                            <p class="insight-summary"></p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const insightLinks = document.querySelectorAll('.insight-card-link[data-article-path]');
+
+            insightLinks.forEach(link => {
+                const articlePath = link.getAttribute('data-article-path');
+                const summaryElement = link.querySelector('.insight-summary');
+
+                if (articlePath && summaryElement) {
+                    fetch(articlePath)
+                        .then(response => response.text())
+                        .then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            const metaDescription = doc.querySelector('meta[name="description"]');
+                            if (metaDescription) {
+                                summaryElement.textContent = metaDescription.getAttribute('content');
+                            } else {
+                                console.log('Meta description not found for ' + articlePath);
+                            }
+
+                            const dateElement = link.querySelector('.insight-date');
+                            const articleDate = doc.querySelector('.insight-date'); 
+                            if (dateElement && articleDate) {
+                                dateElement.textContent = articleDate.textContent;
+                            }
+                        })
+                        .catch(error => console.error('Error fetching article summary for ' + articlePath + ':', error));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

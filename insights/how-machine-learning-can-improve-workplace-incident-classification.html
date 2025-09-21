@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Machine Learning Can Improve Workplace Incident Classification | Serhat Demirkol</title>
+    <meta name="description"
+        content="In my previous articles, I discussed the ESAW methodology - a standardized system for classifying workplace safety incidents - and explored the role of diagnostic analytics in enhancing workplace safety. Accurate incident classification is the cornerstone of effective analysis and prevention strategies. Machine learning offers great potential to streamline and improve this critical task.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="container main-container">
+        <main class="main-content">
+            <section class="content-area">
+                <h2 class="content-title">How Machine Learning Can Improve Workplace Incident Classification</h2>
+                <p class="insight-date">May 29, 2025</p>
+                <p>In my previous articles, I discussed the ESAW methodology - a standardized system for classifying
+                    workplace safety incidents - and explored the role of diagnostic analytics in enhancing workplace
+                    safety. Accurate incident classification is the cornerstone of effective analysis and prevention
+                    strategies. Machine learning offers great potential to streamline and improve this critical task.
+                </p>
+
+                <h3>How Machine Learning Can Help</h3>
+                <p>Arthur Samuel, a pioneer in artificial intelligence, defined machine learning as "the field of study
+                    that gives computers the ability to learn without being explicitly programmed." In the context of
+                    workplace safety, this means that machine learning algorithms can be used for a variety of
+                    purposes. In this article, we will focus on how machine learning can be applied to the
+                    classification of workplace incidents.</p>
+
+                <p>This method of classification offers several advantages:</p>
+                <ul>
+                    <li>Improved Accuracy: Machine learning algorithms can often identify subtle patterns and
+                        relationships in data that humans might miss, leading to more accurate classifications.</li>
+                    <li>Increased Efficiency: Automating the classification process saves valuable time and resources,
+                        allowing EHS professionals to focus on other critical tasks.</li>
+                    <li>Objective Analysis: Machine learning models provide objective and consistent classifications,
+                        reducing the potential for human bias or error.</li>
+                </ul>
+
+                <p>Of course, all these advantages depend on how well the machine learning model is trained. This includes
+                    factors such as the quality and quantity of the training data, the selection of appropriate
+                    features, and the choice of the machine learning algorithm. When done correctly, however, machine
+                    learning can be a powerful tool for improving the accuracy and efficiency of incident
+                    classification.</p>
+
+                <h3>Developing a Machine Learning Model for Incident Classification</h3>
+                <p>Developing a machine learning model for incident classification involves a multi-stage process:</p>
+
+                <ul>
+                    <li>Data Collection and Preparation: The first step is to gather a large dataset of incident
+                        reports, ensuring it is comprehensive, accurate, and representative of the types of incidents
+                        you want to classify. This data then needs to be cleaned and preprocessed, which involves
+                        handling missing values, correcting inconsistencies.</li>
+                    <li>Feature Engineering: Next, relevant features need to be extracted from the incident
+                        descriptions. These features could include keywords, phrases, or numerical values that capture
+                        the essential characteristics of the incident.</li>
+                    <li>Model Selection: Choosing the appropriate machine learning model depends on the specific
+                        characteristics of the data and the classification task. Different models have different
+                        strengths and weaknesses, and selecting the optimal one often requires experimentation and
+                        evaluation.</li>
+                    <li>Model Training: The selected model is then trained using the prepared dataset. This involves
+                        feeding the model the incident data and their corresponding classifications, allowing it to
+                        learn the patterns and relationships between the features and the categories.</li>
+                    <li>Model Evaluation and Refinement: Once the model is trained, it needs to be evaluated on a
+                        separate dataset to assess its accuracy and generalizability. The model may need to be refined
+                        or retrained based on its performance.</li>
+                </ul>
+
+                <h3>Introducing the Incident Classification Tool</h3>
+                <p>To demonstrate the practical application of this process, I've developed an incident classification
+                    tool that utilizes machine learning to automate and improve incident classification, which can be
+                    accessed at <a href="https://incident-classification-tool.streamlit.app" target="_blank">https://incident-classification-tool.streamlit.app</a>
+                </p>
+
+                <p>This tool was trained using a publicly available dataset of OSHA accident and injury data from Kaggle
+                    (<a href="https://www.kaggle.com/datasets/ruqaiyaship/osha-accident-and-injury-data-1517/data"
+                        target="_blank">https://www.kaggle.com/datasets/ruqaiyaship/osha-accident-and-injury-data-1517/data</a>).
+                    This dataset contains detailed information about workplace incidents, including the nature of the
+                    injury, the part of the body affected, the event type, and the environmental factors involved.</p>
+
+                <h3>How the Tool Works</h3>
+                <p>The tool simplifies incident classification into a few key steps:</p>
+
+                <ul>
+                    <li>Data Input: Users input a textual description of the incident.</li>
+                    <li>Preprocessing: The tool prepares the text for analysis, removing irrelevant information and
+                        extracting key features.</li>
+                    <li>Classification: A trained machine learning model analyzes the processed text and predicts the
+                        appropriate incident category.</li>
+                </ul>
+
+                <h3>Example Scenario</h3>
+                <p>To illustrate how this works in practice, imagine an incident report describes an employee's hand being
+                    caught in a hydraulic press. The tool would analyze this description, considering factors like the
+                    environmental factor (pinch point), the nature of the injury (laceration), the body part affected
+                    (hand), and the event type (caught in or between). Based on this analysis, it would classify the
+                    incident according to the chosen classification system.</p>
+
+                <p>Screenshot of "Incident Classification" tool interface</p>
+
+                <h3>The Importance of Data Quality</h3>
+                <p>It's important to emphasize that the effectiveness of machine learning relies heavily on the quality of
+                    the data it's trained on. Using a dataset that is comprehensive, accurate, consistent, and free of
+                    bias is essential for reliable incident analysis and prevention efforts. While the model
+                    demonstrates promising results for many variables, it's important to note that accuracy can vary.
+                    For some specific variables, the accuracy may be lower, around 40%, indicating that the model may
+                    misclassify some incidents in those categories.</p>
+
+                <p>This is partly a result of the public dataset used to train the model, which may have limitations in
+                    terms of its size, completeness, and the level of detail in the incident descriptions. This
+                    highlights the inherent challenges in accurately classifying complex incident data and the need for
+                    continuous improvement and refinement of the model. When using the tool, it's crucial to be aware
+                    of these limitations and interpret the results with caution, especially for those variables with
+                    lower accuracy.</p>
+
+                <h3>Benefits for Safety Professionals</h3>
+                <p>By automating and streamlining the classification process, machine learning can significantly impact
+                    the way safety professionals manage and analyze incident data, leading to more efficient workflows
+                    and data-driven decision-making. This method offers several key benefits for EHS professionals:</p>
+
+                <ul>
+                    <li>Reduced workload: Automating incident classification frees up time for other critical tasks.</li>
+                    <li>Improved accuracy: Machine learning can lead to more accurate and consistent incident
+                        classification.</li>
+                    <li>Data-driven insights: Accurate classification enables more effective data analysis, leading to
+                        proactive safety measures.</li>
+                </ul>
+
+                <h3>Conclusion</h3>
+                <p>By prioritizing data standardization and harnessing the power of machine learning, we can create safer
+                    and healthier workplaces for everyone. This example provides a glimpse into the potential of this
+                    technology to transform workplace safety.</p>
+                <div id="social-share-container"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const articleTitle = document.querySelector('.content-title').textContent;
+            const articleUrl = window.location.href;
+            const articleSummary = document.querySelector('meta[name="description"]').getAttribute('content');
+            const socialShareContainer = document.getElementById('social-share-container');
+            if (socialShareContainer) {
+                socialShareContainer.innerHTML = generateSocialShareButtons(articleTitle, articleUrl, articleSummary);
+            }
+        });
+    </script>
+</body>
+
+</html>
