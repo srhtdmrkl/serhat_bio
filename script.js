@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    loadHTML('/header.html', 'header-placeholder');
-    loadHTML('/footer.html', 'footer-placeholder');
+    loadHTML('header.html', 'header-placeholder');
+    loadHTML('footer.html', 'footer-placeholder');
 
     const toggleButtons = document.querySelectorAll('.toggle-buttons .btn');
     const contentPanels = document.querySelectorAll('.content-panel');
