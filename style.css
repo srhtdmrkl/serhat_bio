@@ -393,41 +393,6 @@ a {
     flex-grow: 1;
 }
 
-
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-
-    .main-header .container, .navigation, .main-footer .container {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-    
-    .logo {
-       flex-direction: column;
-    }
-
-    .main-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .intro-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-card {
-        width: 100%;
-        max-width: 350px;
-        top: 0;
-    }
-}
-
 /* --- Skills Section --- */
 .skills-grid {
     display: grid;
@@ -464,11 +429,63 @@ a {
 }
 
 .skill-category li::before {
-    content: '\25A0';
+    content: '25A0';
     color: var(--primary-blue);
     font-size: 0.7rem;
     margin-right: 0.75rem;
     display: inline-block;
+}
+
+.skills-quadrant {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.quadrant {
+    background-color: var(--white-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.quadrant h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quadrant ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    margin-bottom: -0.5rem;
+}
+
+.quadrant li {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.quadrant li::before {
+    content: '■';
+    color: var(--primary-blue);
+    font-size: 0.5rem;
+    margin-right: 0.75rem;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+.quadrant li:last-child {
+    margin-bottom: 0;
 }
 
 /* Table Styling */
@@ -500,7 +517,7 @@ table tbody tr:nth-child(even) {
     background-color: var(--background-color);
 }
 
-table tbody tr:hover {
+.table tbody tr:hover {
     background-color: #eef;
 }
 
@@ -538,4 +555,66 @@ table tbody tr:hover {
 
 .social-share-buttons a {
     border-bottom: none;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .insight-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .insight-card-image {
+        width: 100%;
+        height: 200px; /* Adjust height for better aspect ratio on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .main-header .container, .navigation, .main-footer .container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .logo {
+       flex-direction: column;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .intro-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 350px;
+        top: 0;
+    }
+
+    .toggle-buttons {
+        justify-content: center;
+    }
+
+    .content-title {
+        font-size: 1.5rem;
+    }
+
+    .book-list {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-quadrant {
+        grid-template-columns: 1fr;
+    }
 }
