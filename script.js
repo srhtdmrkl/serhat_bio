@@ -1,3 +1,12 @@
+// Google Analytics event tracking helper
+function trackEvent(eventName, eventParams) {
+  if (typeof gtag === 'function') {
+    gtag('event', eventName, eventParams);
+  } else {
+    console.log(`GA Event (gtag not found): ${eventName}`, eventParams);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     async function loadHTML(url, elementId) {
         try {
@@ -65,13 +74,14 @@ function generateSocialShareButtons(articleTitle, articleUrl, articleSummary) {
     const encodedTitle = encodeURIComponent(articleTitle);
     const encodedUrl = encodeURIComponent(articleUrl);
     const encodedSummary = encodeURIComponent(articleSummary); 
+    const escapedTitle = articleTitle.replace(/'/g, "\'");
 
     return `
         <div class="social-share-buttons" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
-            <a href="mailto:?subject=Check out this article&body=I thought you'd be interested in this article: ${encodedTitle} - ${encodedUrl}" target="_blank" aria-label="Share by Email" style="color: #333; font-size: 1.5rem;"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedSummary}&source=${encodeURIComponent(window.location.origin)}" target="_blank" aria-label="Share on LinkedIn" style="color: #0077B5; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}" target="_blank" aria-label="Share on X" style="color: #000000; font-size: 1.5rem;"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" aria-label="Share on Facebook" style="color: #1877F2; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:?subject=Check out this article&body=I thought you'd be interested in this article: ${encodedTitle} - ${encodedUrl}" target="_blank" aria-label="Share by Email" style="color: #333; font-size: 1.5rem;" onclick="trackEvent('share_article', {share_method: 'email', article_title: '${escapedTitle}'})"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedSummary}&source=${encodeURIComponent(window.location.origin)}" target="_blank" aria-label="Share on LinkedIn" style="color: #0077B5; font-size: 1.5rem;" onclick="trackEvent('share_article', {share_method: 'linkedin', article_title: '${escapedTitle}'})"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}" target="_blank" aria-label="Share on X" style="color: #000000; font-size: 1.5rem;" onclick="trackEvent('share_article', {share_method: 'twitter', article_title: '${escapedTitle}'})"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" aria-label="Share on Facebook" style="color: #1877F2; font-size: 1.5rem;" onclick="trackEvent('share_article', {share_method: 'facebook', article_title: '${escapedTitle}'})"><i class="fab fa-facebook"></i></a>
         </div>
     `;
 }

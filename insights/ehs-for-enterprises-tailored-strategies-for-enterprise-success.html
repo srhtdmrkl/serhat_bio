@@ -58,7 +58,8 @@
                 <p>We've journeyed through: Part 1: <a href="ehs-software-more-than-just-a-technological-fix.html">EHS
                         Software: More Than Just a Technological Fix</a>, Part 2: <a
                         href="human-element-culture-and-leadership-in-ehs-software-success.html">Human Element: Culture
-                        & Leadership in EHS Software Success</a>, Part 3: <a href="strategic-implementation-a-phased-approach-to-ehs-software-deployment.html">Strategic
+                        & Leadership in EHS Software Success</a>, Part 3: <a
+                        href="strategic-implementation-a-phased-approach-to-ehs-software-deployment.html">Strategic
                         Implementation: A Phased Approach to EHS Software Deployment</a>, and Part 4: <a
                         href="measuring-success-real-world-roi-of-ehs-software.html">Measuring Success: Real-World ROI
                         of EHS Software</a>. While the core principles we've discussed apply broadly, medium and large
@@ -221,6 +222,7 @@
             if (socialShareContainer) {
                 socialShareContainer.innerHTML = generateSocialShareButtons(articleTitle, articleUrl, articleSummary);
             }
+            trackEvent('view_insight', { article_title: articleTitle });
         });
     </script>
 </body>

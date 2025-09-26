@@ -198,5 +198,6 @@
             if (socialShareContainer) {
                 socialShareContainer.innerHTML = generateSocialShareButtons(articleTitle, articleUrl, articleSummary);
             }
+            trackEvent('view_insight', { article_title: articleTitle });
         });
     </script>
