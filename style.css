@@ -361,7 +361,7 @@ a {
 
 .insight-card-image {
     width: 200px;
-    height: 120px;
+    height: 200px;
     object-fit: cover;
     flex-shrink: 0;
     border-radius: 4px;
@@ -564,7 +564,7 @@ table tbody tr:nth-child(even) {
         align-items: flex-start;
     }
 
-    .insight-card-image {
+    .insight-card-image-landscape, .insight-card-image-square {
         width: 100%;
         height: 200px; /* Adjust height for better aspect ratio on mobile */
     }
