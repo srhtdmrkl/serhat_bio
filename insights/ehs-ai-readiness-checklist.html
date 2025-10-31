@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The EHS AI Readiness Checklist | Serhat Demirkol</title>
+    <meta name="description"
+        content="Answer the following questions to receive your personalized AI Readiness score and a tailored action plan to build a successful, data-driven EHS program.">
+    <link rel="canonical" href="https://serhat.io/insights/ehs-ai-readiness-checklist.html" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6L4GK800"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4W6L4GK800');
+    </script>
+    <style>
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .result h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="container main-container">
+        <main class="main-content">
+            <section class="content-area">
+                <h1 class="content-title">The EHS AI Readiness Checklist</h1>
+                <p>Answer the following questions to receive your personalized AI Readiness score and a tailored action
+                    plan to build a successful, data-driven EHS program.</p>
+
+                <form id="readiness-checklist">
+                    <h2>Section A: Mindset & Strategy</h2>
+                    <p>This section assesses whether your organization views AI as a strategic capability or a simple
+                        feature.</p>
+
+                    <div class="question">
+                        <p><strong>1. When discussing requirements for a new EHS system, how is "AI" typically
+                                described?</strong></p>
+                        <p><label><input type="radio" name="q1" value="1"> (1 Point) As a single line-item in a list of
+                                features, like "Add AI for intelligent suggestions," with the expectation that the
+                                vendor will figure it out.</label><br>
+                            <label><input type="radio" name="q1" value="2"> (2 Points) As a high-level goal, such as "We
+                                want to use AI to predict risks," but without a detailed scope for the data or R&D
+                                effort required.</label><br>
+                            <label><input type="radio" name="q1" value="3"> (3 Points) As a distinct strategic
+                                initiative, with dedicated discussions about specific use cases, data requirements,
+                                necessary expertise, and long-term goals.</label><br>
+                        </p>
+                    </div>
+
+                    <div class="question">
+                        <p><strong>2. What is the primary business expectation for an AI solution within your EHS
+                                program?</strong></p>
+                        <p><label><input type="radio" name="q2" value="1"> (1 Point) We expect it to work "out of the box"
+                            to automatically find root causes or predict incidents with minimal human oversight, much
+                            like a magic wand.</label><br>
+                        <label><input type="radio" name="q2" value="2"> (2 Points) We expect it to improve efficiency by
+                            automating existing tasks, such as classifying incident reports or identifying trends from
+                            dashboard data.</label><br>
+                        <label><input type="radio" name="q2" value="3"> (3 Points) We expect it to be a long-term
+                            capability that evolves. We plan to start with a specific, well-defined problem and
+                            understand it will require ongoing investment and refinement to deliver strategic
+                            value.</label><br></p>
+                    </div>
+
+                    <div class="question">
+                        <p><strong>3. How is the budget for AI in EHS being allocated?</strong></p>
+                        <p><label><input type="radio" name="q3" value="1"> (1 Point) The cost is assumed to be a small,
+                            inclusive part of the overall EHS software license fee.</label><br>
+                        <label><input type="radio" name="q3" value="2"> (2 Points) We've allocated a budget for an "AI
+                            module" from a software vendor, but have not yet budgeted for the internal resources needed
+                            for data preparation, validation, and training.</label><br>
+                        <label><input type="radio" name="q3" value="3"> (3 Points) We recognize it as an R&D-level
+                            investment and have a dedicated budget that accounts for both the technology and the
+                            involvement of our internal subject matter experts.</label><br></p>
+                    </div>
+
+                    <h2>Section B: Data Maturity</h2>
+                    <p>This section evaluates the quality, consistency, and governance of your EHS data.</p>
+
+                    <div class="question">
+                        <p><strong>4. How would you describe your organization's historical EHS incident data?</strong>
+                        </p>
+                        <p><label><input type="radio" name="q4" value="1"> (1 Point) It is decentralized in various
+                            spreadsheets, Word documents, or legacy systems with inconsistent formats and terminology.
+                            It's essentially "crude oil."</label><br>
+                        <label><input type="radio" name="q4" value="2"> (2 Points) We use a central system, but data
+                            entry practices are inconsistent across different sites or business units. The same term
+                            (e.g., "Lost Time Incident") can have different meanings.</label><br>
+                        <label><input type="radio" name="q4" value="3"> (3 Points) We have a formal data governance
+                            policy. Data is captured in a structured, centralized system with clear, enforced
+                            definitions and is subject to regular quality audits.</label><br></p>
+                    </div>
+
+                    <div class="question">
+                        <p><strong>5. How are subjective EHS assessments (e.g., risk severity, likelihood) handled
+                                across your organization?</strong></p>
+                        <p><label><input type="radio" name="q5" value="1"> (1 Point) They are based purely on the
+                            discretion of individual managers, resulting in significant variation from one report to the
+                            next.</label><br>
+                        <label><input type="radio" name="q5" value="2"> (2 Points) We provide general guidelines and
+                            training on how to use our risk matrix, but we lack a systematic process to ensure it's
+                            applied consistently.</label><br>
+                        <label><input type="radio" name="q5" value="3"> (3 Points) We use a standardized, calibrated
+                            methodology (e.g., a detailed risk matrix with explicit criteria for each level) that is
+                            enforced and audited to ensure consistency.</label><br></p>
+                    </div>
+
+                    <div class="question">
+                        <p><strong>6. If you were asked to provide a "clean" and "labeled" dataset for an AI
+                                proof-of-concept today, what would that process look like?</strong></p>
+                        <p><label><input type="radio" name="q6" value="1"> (1 Point) It would require a massive, manual
+                            effort to find, consolidate, and attempt to standardize data from scratch. We wouldn't be
+                            confident in the output.</label><br>
+                        <label><input type="radio" name="q6" value="2"> (2 Points) We could export data from our central
+                            system, but it would need significant manual cleaning, re-formatting, and interpretation by
+                            an expert before it would be usable.</label><br>
+                        <label><input type="radio" name="q6" value="3"> (3 Points) We have established data pipelines
+                            and clear governance. We could generate a structured, reliable dataset for a specific use
+                            case (e.g., all near-misses from the last 3 years) with relative ease.</label><br></p>
+                    </div>
+
+                    <div class="question">
+                        <p><strong>7. How integrated is your EHS data with other critical business systems (e.g., HR,
+                                Maintenance, Operations)?</strong></p>
+                        <p><label><input type="radio" name="q7" value="1"> (1 Point) Completely siloed. Our EHS data lives
+                            in its own system (or spreadsheets) and has no connection to other departmental
+                            data.</label><br>
+                        <label><input type="radio" name="q7" value="2"> (2 Points) Manual integration. We manually
+                            export and combine data from different systems when needed for analysis.</label><br>
+                        <label><input type="radio" name="q7" value="3"> (3 Points) Strategic integration. Our EHS system
+                            talks to HR, Operations, and Maintenance systems (via APIs or a data warehouse), giving us a
+                            holistic view of risk.</label><br></p>
+                    </div>
+
+                    <h2>Section C: Process & Partnership</h2>
+                    <p>This section probes your organization's approach to procurement, development, and long-term
+                        system evolution.</p>
+
+                    <div class="question">
+                        <p><strong>8. How does your organization typically approach the procurement of a major software
+                                system like an EHS platform?</strong></p>
+                        <p><label><input type="radio" name="q8" value="1"> (1 Point) We issue a detailed Request for
+                            Proposal (RFP) with a fixed scope, timeline, and budget, expecting a fully "finished"
+                            product on a specific delivery date.</label><br>
+                        <label><input type="radio" name="q8" value="2"> (2 Points) We use a traditional project-based
+                            approach but build in some room for change requests or a potential "Phase 2" for future
+                            enhancements.</label><br>
+                        <label><input type="radio" name="q8" value="3"> (3 Points) We look for a long-term strategic
+                            partner. Our procurement process is designed to support an agile, iterative collaboration
+                            where new capabilities are developed and improved over time.</label><br></p>
+                    </div>
+
+                    <div class="question">
+                        <p><strong>9. In your view, when would an AI implementation be considered "complete" or
+                                "successful"?</strong></p>
+                        <p><label><input type="radio" name="q9" value="1"> (1 Point) When the feature described in the
+                            contract is delivered and switched on.</label><br>
+                        <label><input type="radio" name="q9" value="2"> (2 Points) After it passes User Acceptance
+                            Testing (UAT) and has been running without major bugs for a few months.</label><br>
+                        <label><input type="radio" name="q9" value="3"> (3 Points) We don't see it as ever being
+                            "complete." Success is measured by ongoing performance metrics and user feedback. We
+                            understand the model will need continuous monitoring and retraining to stay
+                            relevant.</label><br></p>
+                    </div>
+
+                    <div class="question">
+                        <p><strong>10. What is your long-term plan for the AI model's maintenance and performance after
+                                the initial launch?</strong></p>
+                        <p><label><input type="radio" name="q10" value="1"> (1 Point) We assume the vendor is responsible
+                            for making sure it keeps working as part of a standard support agreement. We don't have a
+                            specific internal plan.</label><br>
+                        <label><input type="radio" name="q10" value="2"> (2 Points) We have a maintenance contract for
+                            technical support and bug fixes, but have not yet planned for the processes of model
+                            retraining or monitoring for accuracy degradation.</label><br>
+                        <label><input type="radio" name="q10" value="3"> (3 Points) Our strategic plan includes
+                            dedicated processes for user feedback loops, regular model performance reporting, and
+                            scheduled retraining cycles to adapt to new operational realities or
+                            regulations.</label><br></p>
+                    </div>
+
+                    <h2>Section D: Organizational & Cultural Readiness</h2>
+                    <p>This section assesses the "human factor" and safety culture, which is critical to supporting—or
+                        sabotaging—the technology.</p>
+
+                    <div class="question">
+                        <p><strong>11. What is the EHS reporting culture in your organization?</strong></p>
+                        <p><label><input type="radio" name="q11" value="1"> (1 Point) Punitive. Incidents (especially
+                            near-misses) are often under-reported or hidden to avoid "getting in trouble." We don't have
+                            honest data to feed an AI.</label><br>
+                        <label><input type="radio" name="q11" value="2"> (2 Points) Neutral/Reactive. Reporting is
+                            encouraged, but employees are skeptical that management might use the data against them.
+                            Data quality is questionable.</label><br>
+                        <label><input type="radio" name="q11" value="3"> (3 Points) Proactive and non-punitive.
+                            Leadership actively promotes near-miss reporting as a "learning opportunity." We have a
+                            rich, honest stream of data for an AI to learn from.</label><br></p>
+                    </div>
+
+                    <div class="question">
+                        <p><strong>12. What is the level of commitment for your EHS expert team to validate and train an
+                                AI model (Human-in-the-Loop)?</strong></p>
+                        <p><label><input type="radio" name="q12" value="1"> (1 Point) It's seen as "extra work." Our
+                            experts are already overloaded; we expect the AI to save them time, not take their
+                            time.</label><br>
+                        <label><input type="radio" name="q12" value="2"> (2 Points) We can commit time at the beginning
+                            (for a PoC), but we don't expect this to be a long-term, ongoing time
+                            investment.</label><br>
+                        <label><input type="radio" name="q12" value="3"> (3 Points) We understand that "growing" the AI
+                            model depends on continuous feedback from our experts. This validation and training process
+                            has been formalized as part of their core responsibilities.</label><br></p>
+                    </div>
+
+                    <button type="button" onclick="calculateScore()">Get Your Score</button>
+                </form>
+
+                <div id="result" class="result" style="display: none;">
+                    <h2>Your AI Readiness Score: <span id="score"></span></h2>
+                    <p><strong>Your organization is at the: <span id="stage"></span></strong></p>
+                    <h3>Action Plan:</h3>
+                    <p id="action-plan"></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../script.js"></script>
+    <script>
+        function calculateScore() {
+            const form = document.getElementById('readiness-checklist');
+            let totalScore = 0;
+            let questionsAnswered = 0;
+            for (let i = 1; i <= 12; i++) {
+                const question = form.elements['q' + i];
+                if (question.value) {
+                    totalScore += parseInt(question.value);
+                    questionsAnswered++;
+                }
+            }
+
+            if (questionsAnswered < 12) {
+                alert('Please answer all questions before getting your score.');
+                return;
+            }
+
+            const scoreSpan = document.getElementById('score');
+            const stageSpan = document.getElementById('stage');
+            const actionPlanP = document.getElementById('action-plan');
+            const resultDiv = document.getElementById('result');
+
+            scoreSpan.textContent = totalScore;
+
+            let stage = '';
+            let actionPlan = '';
+
+            if (totalScore >= 12 && totalScore <= 19) {
+                stage = 'Foundational Stage';
+                actionPlan = 'Your organization is in the early stages of AI readiness. The immediate focus should be on building a solid foundation. Start by centralizing your EHS data, establishing a clear data governance policy, and managing expectations by educating stakeholders on AI\'s capabilities and limitations. Begin identifying simple, high-impact use cases to build momentum.';
+            } else if (totalScore >= 20 && totalScore <= 28) {
+                stage = 'Developing Stage';
+                actionPlan = 'Your organization has made good progress but needs to formalize its approach. Focus on improving data consistency and developing standardized processes for risk assessment. Start a pilot project with a specific, well-defined problem to demonstrate value and build internal expertise. Allocate a dedicated budget for both the technology and the internal human resources required for a successful AI implementation.';
+            } else if (totalScore >= 29 && totalScore <= 36) {
+                stage = 'Strategic Stage';
+                actionPlan = 'Your organization is well-positioned to leverage AI as a strategic advantage. Your focus should be on scaling your efforts and fostering a culture of continuous improvement. Establish a long-term partnership with your EHS software vendor to co-develop new AI capabilities. Implement robust processes for monitoring model performance and retraining to ensure long-term success. Share your successes internally to champion the value of a data-driven EHS program.';
+            }
+
+            stageSpan.textContent = stage;
+            actionPlanP.textContent = actionPlan;
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
