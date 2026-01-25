@@ -146,7 +146,7 @@ a {
     object-fit: cover;
     margin-bottom: 1rem;
     border: 4px solid var(--white-color);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .profile-card h2 {
@@ -189,7 +189,7 @@ a {
 /* Content Area (Right) */
 .content-area {
     padding-top: 1rem;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 .toggle-buttons {
@@ -309,7 +309,7 @@ a {
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .book-title {
@@ -493,7 +493,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background-color: var(--white-color);
 }
 
@@ -564,9 +564,11 @@ table tbody tr:nth-child(even) {
         align-items: flex-start;
     }
 
-    .insight-card-image-landscape, .insight-card-image-square {
+    .insight-card-image-landscape,
+    .insight-card-image-square {
         width: 100%;
-        height: 200px; /* Adjust height for better aspect ratio on mobile */
+        height: 200px;
+        /* Adjust height for better aspect ratio on mobile */
     }
 }
 
@@ -575,14 +577,16 @@ table tbody tr:nth-child(even) {
         padding: 1rem;
     }
 
-    .main-header .container, .navigation, .main-footer .container {
+    .main-header .container,
+    .navigation,
+    .main-footer .container {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
     }
-    
+
     .logo {
-       flex-direction: column;
+        flex-direction: column;
     }
 
     .main-content {

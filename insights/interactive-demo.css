@@ -1,0 +1,219 @@
+/* Interactive Demo Styles */
+.demo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.phone-mockup {
+    width: 300px;
+    height: 600px;
+    border: 12px solid #333;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar */
+.phone-status-bar {
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center;
+}
+
+/* App Screens */
+.app-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #f5f5f5;
+}
+
+.screen-header {
+    background-color: #0056b3;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.screen-content {
+    padding: 15px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.screen-footer {
+    padding: 10px;
+    background: #eee;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Elements */
+.btn-mock {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-mock:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-primary {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+}
+
+.input-mock {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.label-mock {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #666;
+}
+
+/* Nav Icons */
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+/* Transitions */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Simple App Specifics */
+.simple-app-header {
+    background-color: #2e7d32;
+}
+
+.simple-btn-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 60px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.simple-btn-large:active {
+    transform: scale(0.95);
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #2e7d32;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 100px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Overlay text */
+.demo-label {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.complex-label {
+    color: #d32f2f;
+}
+
+.simple-label {
+    color: #2e7d32;
+}
+
+/* Error States */
+.input-error {
+    border-color: #c62828 !important;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
