@@ -622,3 +622,48 @@ table tbody tr:nth-child(even) {
         grid-template-columns: 1fr;
     }
 }
+/* --- Article Navigation Enhancements --- */
+
+/* Table of Contents */
+.toc-container {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.toc-container h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+}
+
+.toc-container ul {
+    list-style: none !important; /* Override content-area ul default */
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.toc-container li {
+    margin-bottom: 0.5rem;
+    padding-left: 0 !important; /* Override content-area li default */
+}
+
+.toc-container li::before {
+    content: none !important; /* Remove the custom bullet points from general style */
+}
+
+.toc-container a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 500;
+    border-bottom: none;
+    transition: opacity 0.2s;
+}
+
+.toc-container a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
