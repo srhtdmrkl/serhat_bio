@@ -74,7 +74,7 @@ function generateSocialShareButtons(articleTitle, articleUrl, articleSummary) {
     const encodedTitle = encodeURIComponent(articleTitle);
     const encodedUrl = encodeURIComponent(articleUrl);
     const encodedSummary = encodeURIComponent(articleSummary); 
-    const escapedTitle = articleTitle.replace(/'/g, "\'");
+    const escapedTitle = articleTitle.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
     return `
         <div class="social-share-buttons" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">

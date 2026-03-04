@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structuring Unstructured EHS Data with Targeted Extraction | Serhat Demirkol</title>
+    <meta name="description"
+        content="Learn how targeted extraction frameworks can automate the structuring of unstructured EHS text — from incident narratives to audit notes — into audit-ready, schema-constrained data, eliminating thousands of hours of manual data entry.">
+    <link rel="canonical" href="https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html" />
+    <meta name="keywords"
+        content="EHS Data, AI in Safety, Targeted Extraction, Unstructured Data, SafetyTech, Cognitive Friction, ROI, Safety Analytics">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .technical-callout {
+            background-color: #e3f2fd;
+            border: 1px solid #bbdefb;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+
+        .technical-callout h4 {
+            margin-top: 0;
+            color: #1565c0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .prototype-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 35px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .prototype-header {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .burden-solution {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .burden-solution {
+                flex-direction: row;
+                gap: 30px;
+            }
+
+            .burden-solution>div {
+                flex: 1;
+            }
+        }
+
+        .burden-box {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .solution-box {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.85em;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6L4GK800"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4W6L4GK800');
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Structuring Unstructured EHS Data with Targeted Extraction Frameworks",
+      "image": "https://serhat.bio/images/structuring-unstructured-ehs-data-with-langextract.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Serhat Demirkol"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Serhat Demirkol",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://serhat.bio/images/profile-picture.jpg"
+        }
+      },
+      "datePublished": "2026-02-20",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html"
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="container main-container">
+        <main class="main-content">
+            <section class="content-area">
+                <h1 class="content-title" style="margin-top: 0;">Structuring Unstructured EHS Data: Transforming
+                    Workflows with
+                    Targeted Extraction</h1>
+                <p class="insight-date">Feb 20, 2026</p>
+                <img src="../images/structuring-unstructured-ehs-data-with-langextract.webp"
+                    alt="An intricate digital extraction concept showing chaotic safety documents transforming into organized, structured glowing data blocks"
+                    class="insight-image" width="800" height="450">
+
+                <p>Industrial organizations generate an immense volume of Environment, Health, and Safety (EHS) text but
+                    struggle
+                    to convert it into actionable intelligence. Even as global investment in EHS software is projected
+                    by Verdantix to surpass <a
+                        href="https://www.verdantix.com/report/environment-health-safety/market-size-and-forecast-ehs-software-2023-2029-global">$4.5
+                        billion by 2029</a> — driven largely by the pursuit of
+                    <a href="leveraging-diagnostic-analytics-to-enhance-workplace-safety.html">predictive analytics
+                        platforms</a> — these systems remain blind to the vast majority of operational realities. These
+                    truths are locked in
+                    unstructured narratives, dense regulations, and colloquial field notes that no analytics
+                    platform can read.
+                </p>
+                <p>Currently, the burden of structuring this data falls on highly trained EHS professionals who act
+                    as expensive data-entry clerks, creating significant operational waste and systemic friction.
+                    This insight investigates a direct solution: deploying targeted Large
+                    Language Model (LLM)
+                    extraction frameworks (specifically <strong>LangExtract</strong>, an open-source Python library for
+                    schema-constrained LLM extraction). By automating the parsing layer
+                    with
+                    strict, audit-ready schemas, organizations can eliminate thousands of hours of administrative
+                    waste, ensure data integrity by significantly reducing hallucination risk, and unlock the value of
+                    their existing safety software ecosystems.</p>
+
+                <div class="toc-container">
+                    <h3>Contents</h3>
+                    <ul>
+                        <li><a href="#anatomy-unstructured-data">1. The Anatomy of Unstructured EHS Data</a></li>
+                        <li><a href="#technical-architecture">2. Technical Architecture: Why Generic LLMs Fail in
+                                EHS</a></li>
+                        <li><a href="#applied-prototypes">3. Applied Prototypes: Eliminating Cognitive Friction</a>
+                            <ul>
+                                <li><a href="#prototype-1">Case 1: Incident Structuring</a></li>
+                                <li><a href="#prototype-2">Case 2: Regulatory Parsing</a></li>
+                                <li><a href="#prototype-3">Case 3: Targeted SDS Digitization</a></li>
+                                <li><a href="#prototype-4">Case 4: Relational JSA Extraction</a></li>
+                                <li><a href="#prototype-5">Case 5: The Audit Triage Engine</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#strategic-implementation">4. Strategic Implementation</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="anatomy-unstructured-data">1. The Anatomy of Unstructured EHS Data</h2>
+
+                <p>Every day, an enterprise generates massive volumes of unstructured safety information. A supervisor
+                    dictates a voice
+                    note about a frayed cable; an auditor produces a 20-page PDF report; a manufacturer issues a
+                    heterogeneous Safety Data Sheet (SDS). This is unstructured data. Because it lacks a relational
+                    structure (rows, columns, predefined JSON keys), it cannot be queried, categorized, or analyzed by
+                    standard EHS dashboards.</p>
+
+                <p>This creates a significant organizational bottleneck. To bridge the gap between "what happened in the
+                    field" and "what the dashboard shows," companies rely on human transcription. We ask EHS leaders
+                    and frontline supervisors to read paragraphs, interpret context, and manually select attributes from
+                    20-field drop-down forms. This manual structuring introduces severe <strong><a
+                            href="digital-error-traps-in-safety-apps.html">Cognitive Friction</a></strong>, leading to
+                    "satisficing" (choosing the easiest drop-down option to finish the task) and the degradation of data
+                    integrity.</p>
+
+                <p>The cost of this friction is twofold: the immediate labor cost of high-value employees performing
+                    manual data entry, and the secondary, catastrophic cost of predictive models failing because they
+                    are trained on <a
+                        href="the-ehs-data-refinery-a-blueprint-for-turning-raw-reports-into-predictive-assets.html">data
+                        that looks compliant on paper but masks the true physical risk</a>.</p>
+
+                <h2 id="technical-architecture">2. Technical Architecture: Why Generic LLMs Fail in EHS</h2>
+
+                <p>The obvious solution to this manual bottleneck is AI automation, but deploying the wrong AI creates
+                    an entirely new set of enterprise risks. The intuitive response to unstructured text is to deploy a
+                    generic generative AI tool (like an open ChatGPT instance). For enterprise EHS, this is a dangerous
+                    error. Standard LLM prompts are <a href="https://github.com/vectara/hallucination-leaderboard"
+                        target="_blank" rel="noopener noreferrer">prone to hallucination</a> (inventing facts when
+                    uncertain), which
+                    introduces unacceptable legal and operational liability into safety records.</p>
+
+                <p>This is the value of a targeted extraction framework (<strong>LangExtract</strong>). LangExtract
+                    does not "chat"; it parses. It operates as a schema-constrained bridge between unstructured input
+                    and structured database requirements.</p>
+
+                <div class="technical-callout">
+                    <h4><i class="fa-solid fa-microchip"></i> Schema Enforcement</h4>
+                    <p>Instead of an open-ended prompt ("Summarize this incident"), LangExtract is provided with
+                        structured extraction templates and few-shot examples that define the exact output shape. The
+                        LLM is
+                        guided to classify data into predefined buckets and return a
+                        valid JSON payload. Because LangExtract utilizes constrained extraction — where the
+                        model must fill predefined fields rather than generate free text — it maps only existing
+                        text to the definitions in the schema. If
+                        the data is absent in the text, it returns null, rather than hallucinating an answer.
+                        Independent benchmarking shows that open-ended LLM prompts <a
+                            href="https://github.com/vectara/hallucination-leaderboard" target="_blank"
+                            rel="noopener noreferrer">hallucinate at rates of
+                            3–15% depending on the model</a>; schema-constrained extraction
+                        eliminates this vector by restricting the model to predefined fields rather than free
+                        generation, making the output instantly <strong>audit-ready</strong> and programmatically
+                        integrable via API.</p>
+                </div>
+
+                <div class="technical-callout" style="background-color: #fce4ec; border-color: #f8bbd0;">
+                    <h4 style="color: #c2185b;"><i class="fa-solid fa-shield-halved"></i> Data Privacy</h4>
+                    <p>A common executive objection is data sovereignty: <em>"We cannot send sensitive injury narratives
+                            to an LLM."</em> This is accurate for consumer AI, but enterprise extraction frameworks
+                        route API calls through secured enterprise endpoints (like Azure OpenAI or Google Cloud Vertex
+                        AI) where customer data is explicitly <strong>not</strong> used for model training. For
+                        high-security environments, LangExtract can even be pointed at self-hosted, local models,
+                        keeping data entirely on-premises for full compliance control.</p>
+                </div>
+
+                <h2 id="applied-prototypes">3. Applied Prototypes: Eliminating Cognitive Friction</h2>
+
+                <p>To validate the ROI of this architectural shift, I developed five applied prototypes using Python and
+                    the LangExtract framework. These cases demonstrate the transition from manual administrative burden
+                    to automated, schema-constrained data structuring.</p>
+
+                <div class="technical-callout"
+                    style="background-color: #f3e5f5; border-color: #ce93d8; margin-top: 10px; margin-bottom: 35px;">
+                    <h4 style="color: #6a1b9a;"><i class="fa-brands fa-github"></i> Try the Prototypes Locally</h4>
+                    <p style="margin-bottom: 0;">I have open-sourced the 5 extraction scripts and sample "Unstructured
+                        Data"
+                        text files discussed below. EHS and IT leaders can clone the companion repository to test the
+                        architecture in their own terminals.</p>
+                    <a href="https://github.com/srhtdmrkl/ehs-langextract-prototypes" target="_blank"
+                        rel="noopener noreferrer"
+                        style="display: inline-block; margin-top: 15px; font-weight: 600; color: #6a1b9a; text-decoration: none; border-bottom: 1px solid #6a1b9a;">View
+                        the ehs-langextract-prototypes repo &rarr;</a>
+                </div>
+
+                <div id="prototype-1" class="prototype-card">
+                    <div class="prototype-header">
+                        <h3 style="margin-top: 0; color: #333;">Case 1: Incident Structuring
+                        </h3>
+                    </div>
+                    <div class="burden-solution">
+                        <div class="burden-box">
+                            <strong>The Operational Burden (Before):</strong>
+                            <p>Initial incident reports are often hurried narratives (e.g., "Bob was walking past line 4
+                                and a pallet fell, crushing his toe. He wasn't wearing his steel boots."). An EHS
+                                specialist must read this text, interpret the physics of the event, and manually select
+                                the valid Event Type, Body Part, Injury Type, and Immediate Cause from system
+                                taxonomies.</p>
+                        </div>
+                        <div class="solution-box">
+                            <strong>Automated Extraction (After):</strong>
+                            <p>The parser receives the raw narrative and instantly outputs a structured payload aligned
+                                with <a
+                                    href="how-machine-learning-can-improve-workplace-incident-classification.html">standard
+                                    injury classification frameworks</a> (e.g., OSHA/ANSI Z16.2). This eliminates
+                                days of administrative backlog and provides near-real-time structured data
+                                for trend analysis and regulatory reporting.</p>
+                        </div>
+                    </div>
+                    <pre><code>// The Output Payload
+{
+  "event_type": "Struck by falling object",
+  "body_part": "Foot/Toe",
+  "injury_type": "Crushed",
+  "immediate_cause": "Missing PPE (Steel-toed boots)"
+}</code></pre>
+                </div>
+
+                <div id="prototype-2" class="prototype-card">
+                    <div class="prototype-header">
+                        <h3 style="margin-top: 0; color: #333;">Case 2: Regulatory Parsing
+                        </h3>
+                    </div>
+                    <div class="burden-solution">
+                        <div class="burden-box">
+                            <strong>The Operational Burden:</strong>
+                            <p>Translating a multi-section regulatory standard (like OSHA 1910.212, General
+                                Requirements for Machine Guarding) into a functional audit checklist requires hours of
+                                careful legal interpretation by subject matter experts.</p>
+                        </div>
+                        <div class="solution-box">
+                            <strong>Automated Extraction:</strong>
+                            <p>After converting the PDF to raw text, I fed the engine the OSHA standard and instructed
+                                it to extract every mandatory clause. It generated 17 distinct, auditable objects,
+                                identifying the reference, machine type, and plain-English requirement.</p>
+                        </div>
+                    </div>
+                    <pre><code>// The Output Payload
+{
+  "reference_clause": "1910.212(a)(1)",
+  "machine_type": "General Machinery",
+  "hazards_addressed": ["Nip points", "Rotating parts", "Flying chips"],
+  "regulatory_requirement": "One or more methods of machine guarding shall be provided to protect the operator."
+}</code></pre>
+                </div>
+
+                <div id="prototype-3" class="prototype-card">
+                    <div class="prototype-header">
+                        <h3 style="margin-top: 0; color: #333;">Case 3: Targeted SDS Digitization</h3>
+                    </div>
+                    <div class="burden-solution">
+                        <div class="burden-box">
+                            <strong>The Operational Burden (Before):</strong>
+                            <p>Safety Data Sheets are technically standardized into 16 sections,
+                                but formatting is chaotic. Extracting regulatory thresholds for a 500-chemical
+                                inventory is a highly inefficient administrative task — and you don't need the
+                                AI to read the whole SDS, only the fields required to configure your environmental
+                                reporting and GHS labeling.</p>
+                        </div>
+                        <div class="solution-box">
+                            <strong>Automated Extraction (After):</strong>
+                            <p>Tested against wildly varying formats (tables vs. dense paragraphs),
+                                the parser successfully "hunted" and normalized five specific fields,
+                                extracting structured arrays from unstructured text blocks regardless
+                                of formatting differences.</p>
+                        </div>
+                    </div>
+                    <pre><code>// The Output Payload
+{
+  "chemical_name": "Industrial Degreaser Pro",
+  "cas_number": "1310-73-2",
+  "signal_word": "DANGER",
+  "ghs_hazard_statements": ["Causes severe skin burns and eye damage", "May be fatal if swallowed and enters airways", "Flammable liquid and vapor"],
+  "incompatible_materials": ["Strong oxidizing agents", "Acids", "Aluminum", "Zinc"]
+}</code></pre>
+                </div>
+
+                <div id="prototype-4" class="prototype-card">
+                    <div class="prototype-header">
+                        <h3 style="margin-top: 0; color: #333;">Case 4: Relational JSA Extraction</h3>
+                    </div>
+                    <div class="burden-solution">
+                        <div class="burden-box">
+                            <strong>The Operational Burden (Before):</strong>
+                            <p>Legacy Standard Operating Procedures (SOPs) are narrative Word
+                                documents. Modern digital execution benefits from structured, step-by-step hazard
+                                profiles mapped directly to worker actions. Translating paragraphs into these
+                                sequences requires <strong>Relational Extraction</strong>, which parses hierarchical
+                                data structures.</p>
+                        </div>
+                        <div class="solution-box">
+                            <strong>Automated Extraction (After):</strong>
+                            <p>The framework ingested a paragraph about confined space entry and
+                                output a sequenced array of <code>JobStep</code> objects, mapping specific hazards
+                                and controls to distinct steps, ready for mobile app deployment.</p>
+                        </div>
+                    </div>
+                    <pre><code>// Standardized Array Output
+[
+  {
+    "step_number": 1,
+    "action": "Test atmosphere prior to entry.",
+    "hazards": ["Oxygen deficiency", "Toxic gases"],
+    "controls": ["Forced-air continuous ventilation", "Multi-gas monitor validation"]
+  },
+  {
+    "step_number": 2,
+    "action": "Wear fall-arrest harness.",
+    "hazards": ["Fall hazard during ingress"],
+    "controls": ["Tripod and winch system", "Self-retracting lifeline"]
+  }
+]</code></pre>
+                </div>
+
+                <div id="prototype-5" class="prototype-card">
+                    <div class="prototype-header">
+                        <h3 style="margin-top: 0; color: #333;">Case 5: The Audit Triage</h3>
+                    </div>
+                    <p><strong>The Strategy:</strong> Inspectors take fast, colloquial notes ("Found a frayed cord by
+                        desk 4... needs thrown out"). These unstructured sentences must be translated into categorized
+                        maintenance or IT
+                        tickets assigned to specific departments.</p>
+                    <p><strong>The Result:</strong> The extraction engine acts as a natural-language router, instantly
+                        converting a
+                        messy sentence into a structured ticket. For the frayed cord note, the unguided LLM accurately
+                        categorized the finding as an "Electrical Safety" issue. More impressively, bridging the gap
+                        between colloquial notes
+                        and EHS reality, it assessed the fire risk as "High" severity, determined the
+                        assignee was "IT" (due to the computing equipment context), and drafted a clear action item:</p>
+                    <ul>
+                        <li><strong>Action:</strong> Unplug daisy-chained power strips under Desk 4 and warn occupant.
+                        </li>
+                    </ul>
+                    <p>Crucially, the parser understands nuance. When fed a complex instruction like "No action needed
+                        on the empty boxes, just send a reminder to the warehouse team," the LLM recognized that a
+                        physical maintenance ticket was unnecessary. Instead, it correctly generated a behavioral
+                        coaching task assigned to the Operations department.</p>
+                    <div class="technical-callout" style="background-color: #fff3e0; border-color: #ffe0b2;">
+                        <h4 style="color: #e65100;"><i class="fa-solid fa-scale-balanced"></i> Calibrating Overcaution
+                            via Historical Precedent</h4>
+                        <p>This reveals a critical architectural constraint: generic LLMs natively lack enterprise risk
+                            context. While accurately identifying a daisy-chained heater as a fire risk, unguided LLMs
+                            will persistently default to "High" severity even for mundane housekeeping observations,
+                            rapidly generating alert fatigue. The operational viability of an extraction engine
+                            therefore
+                            depends entirely on establishing <strong>historical precedent</strong>. By embedding just
+                            two to
+                            three examples of an organization's specific Risk Assessment Matrix (RAM) into the schema,
+                            the LLM's subjective guessing is eliminated. Anchored to these examples,
+                            the extraction engine correctly suppresses an empty paper towel dispenser to a "Low"
+                            severity
+                            classification while maintaining appropriate urgency for immediate life-safety hazards.</p>
+                    </div>
+                </div>
+
+                <h2 id="strategic-implementation">4. Strategic Implementation</h2>
+
+                <p>While manual data entry remains the industry standard, forcing frontline workers to act as
+                    administrative clerks is an operational liability. What these five prototypes demonstrate is that we
+                    no
+                    longer need to rely on the workforce to manually structure data via rigid forms.
+                    Doing so actively creates the friction that degrades reporting culture.</p>
+
+                <p>The <a
+                        href="strategic-implementation-a-phased-approach-to-ehs-software-deployment.html">implementation
+                        of targeted extraction frameworks</a> like LangExtract alters the core
+                    architecture of EHS software:</p>
+
+                <ol>
+                    <li><strong>The Worker Provides Reality:</strong> Field teams capture reality using the
+                        lowest-friction modality available, such as a voice memo or a colloquial text message.
+                    </li>
+                    <li><strong>The Machine Provides Structure:</strong> The <a
+                            href="closing-the-ai-readiness-gap-interoperability-as-the-foundation.html">AI extraction
+                            layer</a> acts as intelligent
+                        middleware, parsing that chaos and normalizing it into the strict, audit-ready JSON schemas that
+                        your existing enterprise databases demand.</li>
+                    <li><strong>The EHS Leader Provides Engineering:</strong> EHS professionals are removed from the
+                        transcription loop so they can focus on analyzing systemic trends and designing real-world risk
+                        controls.</li>
+                </ol>
+
+                <p>By automating the parsing layer, organizations eliminate thousands of hours of manual
+                    data entry at a fraction of the cost — a single extraction call on a lightweight model
+                    like Gemini Flash costs roughly $0.01 per document, compared to the 10–15 minutes of
+                    specialist time that manual structuring demands. But the deeper value is not
+                    financial. It is structural: when the machine handles parsing, every downstream
+                    system — from trend dashboards to predictive models — finally operates on data
+                    the organization can trust.</p>
+
+                <p>It is worth noting that these prototypes demonstrate the <strong>extraction layer</strong> in
+                    isolation. A <a href="the-ehs-ai-launchpad.html">production deployment</a> requires additional
+                    upstream infrastructure (document
+                    ingestion from PDFs and scanned forms), downstream integration (writing to EHS platforms
+                    via API with proper audit trails), and a human-in-the-loop validation step for
+                    safety-critical classifications. The extraction layer is one piece of the pipeline, but it is the
+                    piece where the highest-value bottleneck — skilled human interpretation — can be most
+                    effectively automated.</p>
+
+                <p style="margin-top: 25px;"><strong>Explore the prototypes:</strong> The five extraction scripts
+                    and sample text data files are available in the
+                    <a href="https://github.com/srhtdmrkl/ehs-langextract-prototypes" target="_blank"
+                        rel="noopener noreferrer">companion repository</a>.
+                </p>
+
+
+                <!-- Related Reading -->
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 40px 0;">
+                    <strong>Related Strategic Briefings:</strong>
+                    <ul style="margin: 10px 0 0 0; line-height: 1.6;">
+                        <li><a
+                                href="the-ehs-data-refinery-a-blueprint-for-turning-raw-reports-into-predictive-assets.html">The
+                                EHS Data Refinery: Turning Raw Reports into Assets</a></li>
+                        <li><a href="digital-error-traps-in-safety-apps.html">The Digital Error Trap: Why UX Debt is a
+                                Safety Hazard</a></li>
+                        <li><a href="the-ai-readiness-gap-in-ehs.html">The AI Readiness Gap in EHS: From Hype to
+                                High-Value Asset</a></li>
+                    </ul>
+                </div>
+
+                <div id="social-share-container"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const articleTitle = document.querySelector('.content-title').textContent;
+            const articleUrl = window.location.href;
+            const articleSummary = document.querySelector('meta[name="description"]').getAttribute('content');
+            const socialShareContainer = document.getElementById('social-share-container');
+            if (socialShareContainer) {
+                socialShareContainer.innerHTML = generateSocialShareButtons(articleTitle, articleUrl, articleSummary);
+            }
+            trackEvent('view_insight', { article_title: articleTitle });
+        });
+    </script>
+</body>
+
+</html>
