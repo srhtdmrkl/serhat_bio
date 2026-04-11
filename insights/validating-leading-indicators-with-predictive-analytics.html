@@ -27,6 +27,27 @@
         content="EHS leading indicators are routinely tracked on faith, not validation. This briefing demonstrates how to audit management system latency—applying lag-correlation analysis to an industrial specimen dataset to expose reactive loops, system response delays, and the 'effectiveness gap' in safety training.">
     <meta name="twitter:image" content="https://serhat.bio/images/validating-leading-indicators.webp">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* body{display:flex} makes .main-container a flex item whose automatic
+           minimum size equals the widest child's min-content width (~700px for the
+           5-column table). overflow:hidden sets that automatic minimum to 0,
+           the same mechanism that makes pre{overflow-x:auto} fix the structuring
+           article. min-width:0 is the explicit belt-and-suspenders override. */
+        .main-container {
+            min-width: 0;
+            overflow-x: hidden;
+        }
+
+        /* Mirror structuring article's pre rule: overflow-x:auto + max-width:100%
+           directly on the element that contains the wide content. */
+        .table-scroll {
+            display: block;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -79,7 +100,7 @@
                 <p class="insight-date">Apr 11, 2026</p>
                 <img src="../images/validating-leading-indicators.webp"
                     alt="Abstract visualization of time-series safety data flowing through a validation framework, with some streams marked as validated leading indicators and others fading as noise"
-                    class="insight-image" width="800" height="450">
+                    class="insight-image">
 
                 <p>EHS leading indicators are routinely adopted by convention, not validation. Toolbox talk completion,
                     near-miss counts, and inspection frequencies are standard metrics primarily because they are
@@ -254,6 +275,7 @@
                 <p>The following table crystallizes how our operational requirements map directly to Campbell's
                     definitional criteria to ensure the validation math remains grounded in safety theory:</p>
 
+                <div class="table-scroll">
                 <table class="verdict-table" style="margin-top: 15px; margin-bottom: 20px;">
                     <thead>
                         <tr>
@@ -283,6 +305,7 @@
                         </tr>
                     </tbody>
                 </table>
+                </div>
 
                 <p>Resources like the <a href="https://www.thecampbellinstitute.org/research/" target="_blank"
                         rel="noopener noreferrer">Practical Guide to Leading Indicators</a> from the Campbell Institute
@@ -532,6 +555,7 @@
                 <p>The table below shows how |r| magnitude maps to classification and what each range means in
                     practice:</p>
 
+                <div class="table-scroll">
                 <table>
                     <tr>
                         <th>|r| range</th>
@@ -566,6 +590,7 @@
                             manipulation, or the metric being a direct mathematical derivative of the outcome.</td>
                     </tr>
                 </table>
+                </div>
 
                 <p>At low-incident sites, |r| = 0.30–0.50 is typically the realistic ceiling. Datasets with long runs of
                     zero-incident months cause Pearson correlation to become unreliable — a handful of non-zero months
@@ -677,6 +702,7 @@
 
                 <p>The table below summarises all findings, sorted by classification result.</p>
 
+                <div class="table-scroll">
                 <table>
                     <tr>
                         <th>Metric Name</th>
@@ -728,6 +754,7 @@
                         <td><strong>Weak</strong></td>
                     </tr>
                 </table>
+                </div>
 
                 <h2 id="understanding-concurrent-metrics">8. Understanding Concurrent Metrics</h2>
 

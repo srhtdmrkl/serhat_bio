@@ -62,6 +62,13 @@
             border-left: 4px solid #4CAF50;
         }
 
+        /* Prevent flex-item min-width:auto from expanding the container beyond
+           the viewport — same fix applied to validating article. */
+        .main-container {
+            min-width: 0;
+            overflow-x: hidden;
+        }
+
         pre {
             background-color: #282c34;
             color: #abb2bf;
@@ -69,6 +76,8 @@
             border-radius: 6px;
             overflow-x: auto;
             font-size: 0.85em;
+            max-width: 100%;
+            box-sizing: border-box;
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -120,7 +129,7 @@
                 <p class="insight-date">Feb 20, 2026</p>
                 <img src="../images/structuring-unstructured-ehs-data-with-langextract.webp"
                     alt="An intricate digital extraction concept showing chaotic safety documents transforming into organized, structured glowing data blocks"
-                    class="insight-image" width="800" height="450">
+                    class="insight-image">
 
                 <p>Industrial organizations generate an immense volume of Environment, Health, and Safety (EHS) text but
                     struggle

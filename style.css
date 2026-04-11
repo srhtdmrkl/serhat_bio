@@ -557,6 +557,14 @@ table tbody tr:nth-child(even) {
     border-bottom: none;
 }
 
+/* Scrollable table wrappers — constrains wide tables on all screen sizes */
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     .insight-card {
@@ -620,6 +628,53 @@ table tbody tr:nth-child(even) {
 
     .skills-quadrant {
         grid-template-columns: 1fr;
+    }
+
+    /* Article content: images scale to container */
+    .insight-image {
+        max-width: 100%;
+    }
+
+    /* Tighten table cell padding on narrow screens */
+    .content-area th,
+    .content-area td,
+    .verdict-table th,
+    .verdict-table td {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.88em;
+    }
+
+    /* Prevent horizontal page scroll caused by any overflowing element */
+    html {
+        overflow-x: hidden;
+    }
+
+    /* Fix flex-item min-width: auto expanding beyond viewport on mobile.
+       Without this, a wide table forces .main-container to 600-700px,
+       making the entire page layout wider than the viewport. */
+    .main-container {
+        min-width: 0;
+    }
+
+    /* Article callout boxes: reduce horizontal padding */
+    .technical-callout,
+    .test-card,
+    .insight-box {
+        padding: 15px;
+    }
+
+    /* Ensure content-title renders as block so border spans full width */
+    .content-title {
+        display: block;
+    }
+
+    /* Prevent pre blocks from forcing the page wider than the viewport */
+    .content-area pre {
+        max-width: 100%;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        box-sizing: border-box;
     }
 }
 /* --- Article Navigation Enhancements --- */
