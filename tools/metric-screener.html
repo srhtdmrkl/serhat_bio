@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EHS Leading Indicator Screener — Validate Your Safety Metrics | Serhat Demirkol</title>
+    <meta name="description"
+        content="Upload monthly EHS metric data and find out which metrics genuinely predict safety outcomes using lag correlation analysis. Free, client-side, no signup required.">
+    <meta name="keywords"
+        content="EHS leading indicator validation, safety metric correlation, lag correlation analysis, predictive safety metrics, occupational health analytics, EHS data tool">
+    <link rel="canonical" href="https://serhat.bio/tools/metric-screener.html" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="EHS Leading Indicator Screener — Validate Your Safety Metrics">
+    <meta property="og:description"
+        content="Upload monthly EHS metric data and find out which metrics genuinely predict safety outcomes using lag correlation analysis. Free, client-side, no signup required.">
+    <meta property="og:url" content="https://serhat.bio/tools/metric-screener.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Serhat Demirkol">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="EHS Leading Indicator Screener — Validate Your Safety Metrics">
+    <meta name="twitter:description"
+        content="Upload monthly EHS metric data and find out which metrics genuinely predict safety outcomes using lag correlation analysis. Free, client-side, no signup required.">
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "EHS Leading Indicator Screener",
+      "url": "https://serhat.bio/tools/metric-screener.html",
+      "description": "Upload monthly EHS metric data to validate which metrics genuinely predict safety outcomes using lag correlation analysis.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Serhat Demirkol", "url": "https://serhat.bio" }
+    }
+    </script>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6L4GK800"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4W6L4GK800');
+    </script>
+    <style>
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, #1F4E79 0%, #2980b9 100%);
+            color: #fff;
+            padding: 56px 32px 48px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.88;
+            max-width: 580px;
+            margin: 0 auto 24px;
+            line-height: 1.65;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 5px 14px;
+            font-size: 0.78em;
+            font-weight: 500;
+        }
+
+        /* ── Upload card ── */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+            padding: 32px;
+            margin-bottom: 28px;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1F4E79;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .card-sub {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 22px;
+            line-height: 1.55;
+        }
+
+        /* ── Drop zone ── */
+        .drop-zone {
+            border: 2px dashed #bcd4ea;
+            border-radius: 10px;
+            padding: 44px 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            position: relative;
+        }
+
+        .drop-zone:hover,
+        .drop-zone.drag-over {
+            border-color: #1F4E79;
+            background: #eaf3fb;
+        }
+
+        .drop-zone i {
+            font-size: 2.2rem;
+            color: #2980b9;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .drop-zone p {
+            color: #555;
+            font-size: 0.92em;
+            margin-bottom: 6px;
+        }
+
+        .drop-zone small {
+            color: #999;
+            font-size: 0.8em;
+        }
+
+        .drop-zone input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+
+        .filename-display {
+            margin-top: 14px;
+            font-size: 0.85em;
+            color: #2e7d32;
+            font-weight: 500;
+            display: none;
+        }
+
+        .filename-display i {
+            margin-right: 5px;
+        }
+
+        /* ── Config row ── */
+        .config-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 22px;
+            align-items: flex-end;
+        }
+
+        .config-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .config-group label {
+            display: block;
+            font-size: 0.82em;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .config-group select,
+        .config-group input[type="number"] {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid #d0d7de;
+            border-radius: 7px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.88em;
+            color: #333;
+            background: #fafbfc;
+            appearance: none;
+        }
+
+        .config-group select:focus,
+        .config-group input:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.12);
+        }
+
+        select[multiple] {
+            height: 110px;
+        }
+
+        .run-btn {
+            background: #1F4E79;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 11px 28px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.92em;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
+        }
+
+        .run-btn:hover {
+            background: #16395a;
+        }
+
+        .run-btn:active {
+            transform: scale(0.98);
+        }
+
+        .run-btn:disabled {
+            background: #9ab3c8;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ── Mobile select hint ── */
+        .select-hint-mobile {
+            display: none;
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .select-hint {
+                display: none;
+            }
+
+            .select-hint-mobile {
+                display: inline;
+                font-size: 0.76em;
+                color: #888;
+                font-weight: 400;
+            }
+        }
+
+        /* ── Method hint ── */
+        .method-hint {
+            font-size: 0.77em;
+            color: #5a7a96;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        .method-hint i {
+            margin-right: 4px;
+            color: #2980b9;
+        }
+
+        /* ── Results caveats ── */
+        .caveats {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .caveat-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-size: 0.79em;
+            color: #666;
+            line-height: 1.55;
+            background: #fafafa;
+            border: 1px solid #e8e8e8;
+            border-radius: 7px;
+            padding: 9px 13px;
+        }
+
+        .caveat-item i {
+            color: #999;
+            margin-top: 2px;
+            flex-shrink: 0;
+            font-size: 0.95em;
+        }
+
+        .caveat-item strong {
+            color: #555;
+        }
+
+        /* ── Status bar ── */
+        .status-bar {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            background: #eaf3fb;
+            border: 1px solid #bcd4ea;
+            border-radius: 8px;
+            padding: 12px 18px;
+            font-size: 0.88em;
+            color: #1F4E79;
+            margin-top: 20px;
+        }
+
+        .status-bar.warning {
+            background: #fffbeb;
+            border-color: #fde68a;
+            color: #92400e;
+        }
+
+        .status-bar.error {
+            background: #fff0f0;
+            border-color: #f5c6c6;
+            color: #c0392b;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #bcd4ea;
+            border-top-color: #1F4E79;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ── Results section ── */
+        #results-section {
+            display: none;
+        }
+
+        .results-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .results-header h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1F4E79;
+        }
+
+        /* ── Summary pills ── */
+        .summary-pills {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .pill {
+            border-radius: 10px;
+            padding: 14px 22px;
+            flex: 1;
+            min-width: 130px;
+            text-align: center;
+        }
+
+        .pill-num {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .pill-label {
+            font-size: 0.78em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+        }
+
+        .pill-leading {
+            background: #e2efda;
+            color: #2e7d32;
+        }
+
+        .pill-forewarning {
+            background: #fde8cc;
+            color: #b45309;
+        }
+
+        .pill-concurrent {
+            background: #fff2cc;
+            color: #7d6000;
+        }
+
+        .pill-weak {
+            background: #f2f2f2;
+            color: #555;
+        }
+
+        /* ── Filter tabs ── */
+        .filter-tabs {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .tab-btn {
+            padding: 7px 16px;
+            border-radius: 20px;
+            border: 1.5px solid #d0d7de;
+            background: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.82em;
+            font-weight: 500;
+            cursor: pointer;
+            color: #555;
+            transition: all 0.15s;
+        }
+
+        .tab-btn:hover {
+            border-color: #2980b9;
+            color: #1F4E79;
+        }
+
+        .tab-btn.active {
+            background: #1F4E79;
+            border-color: #1F4E79;
+            color: #fff;
+        }
+
+        /* ── Table ── */
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 10px;
+            border: 1px solid #e4e8ee;
+        }
+
+        table.results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.86em;
+        }
+
+        .results-table th {
+            background: #1F4E79;
+            color: #fff;
+            padding: 11px 14px;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .results-table th:hover {
+            background: #16395a;
+        }
+
+        .results-table th .sort-icon {
+            margin-left: 5px;
+            opacity: 0.55;
+            font-size: 0.75em;
+        }
+
+        .results-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f0f2f5;
+            white-space: nowrap;
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: #fafbff !important;
+        }
+
+        /* row colours */
+        .row-leading td {
+            background: #f2faf0;
+        }
+
+        .row-forewarning td {
+            background: #fff7ee;
+        }
+
+        .row-concurrent td {
+            background: #fffdf0;
+        }
+
+        .row-weak td {
+            background: #fafafa;
+        }
+
+        /* signal badges */
+        .sig-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .sig-leading {
+            background: #e2efda;
+            color: #2e7d32;
+        }
+
+        .sig-forewarning {
+            background: #fde8cc;
+            color: #b45309;
+        }
+
+        .sig-concurrent {
+            background: #fff2cc;
+            color: #7d6000;
+        }
+
+        .sig-weak {
+            background: #ebebeb;
+            color: #666;
+        }
+
+        /* correlation bar */
+        .corr-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .corr-bar-wrap {
+            flex: 1;
+            height: 6px;
+            background: #e8eaed;
+            border-radius: 3px;
+            min-width: 50px;
+        }
+
+        .corr-bar {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.4s ease;
+        }
+
+        .corr-pos {
+            background: #e67e22;
+        }
+
+        .corr-neg {
+            background: #2e7d32;
+        }
+
+        /* lag pills */
+        .lag-chips {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .lag-chip {
+            font-size: 0.75em;
+            padding: 2px 7px;
+            border-radius: 10px;
+            background: #e8eaed;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .lag-chip.best {
+            background: #1F4E79;
+            color: #fff;
+        }
+
+        /* ── Legend ── */
+        .legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+            font-size: 0.8em;
+            color: #555;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        /* ── Next steps card ── */
+        .next-steps {
+            background: #f0f7ff;
+            border: 1px solid #bcd4ea;
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-top: 20px;
+        }
+
+        .next-steps h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1F4E79;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .next-steps ul {
+            margin: 0 0 14px;
+            padding-left: 18px;
+            line-height: 1.75;
+            font-size: 0.84em;
+            color: #333;
+        }
+
+        .next-steps ul li {
+            margin-bottom: 4px;
+        }
+
+        .next-steps .insight-link {
+            font-size: 0.82em;
+            color: #555;
+        }
+
+        .next-steps .insight-link a {
+            color: #1F4E79;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .next-steps .insight-link a:hover {
+            color: #2980b9;
+        }
+
+        /* ── Export btn ── */
+        .export-btn {
+            background: #fff;
+            color: #1F4E79;
+            border: 1.5px solid #1F4E79;
+            border-radius: 8px;
+            padding: 9px 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            transition: all 0.15s;
+        }
+
+        .export-btn:hover {
+            background: #1F4E79;
+            color: #fff;
+        }
+
+        /* ── How it works ── */
+        .how-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+            padding: 28px 32px;
+            margin-bottom: 28px;
+        }
+
+        details.how-card summary {
+            list-style: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1F4E79;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            user-select: none;
+        }
+
+        details.how-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.how-card summary .toggle-icon {
+            margin-left: auto;
+            font-size: 0.75em;
+            color: #2980b9;
+            transition: transform 0.2s;
+        }
+
+        details.how-card[open] summary .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        details.how-card .how-steps {
+            margin-top: 18px;
+        }
+
+        .how-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1F4E79;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .how-step {
+            border-left: 3px solid #2980b9;
+            padding-left: 14px;
+        }
+
+        .how-step .step-num {
+            font-size: 0.72em;
+            font-weight: 700;
+            color: #2980b9;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .how-step p {
+            font-size: 0.84em;
+            color: #444;
+            line-height: 1.55;
+        }
+
+        /* ── Format note ── */
+        .format-note {
+            background: #f0f7ff;
+            border: 1px solid #bcd4ea;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-size: 0.82em;
+            color: #1F4E79;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        .format-note strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        code {
+            background: #e8f0f8;
+            border-radius: 4px;
+            padding: 1px 6px;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+
+        /* ── Outcome selector hint ── */
+        .select-hint {
+            font-size: 0.76em;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .config-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="hero">
+        <h1><i class="fa-solid fa-magnifying-glass-chart" style="margin-right:10px;"></i>Safety Metrics Screener
+        </h1>
+        <p>Upload your monthly EHS metric data to see which metrics genuinely predict safety outcomes — and which are
+            noise. No server. No signup. Your data never leaves your browser.</p>
+        <div class="badge-row">
+            <span class="badge"><i class="fa-solid fa-file-csv" style="margin-right:5px;"></i>CSV input</span>
+            <span class="badge"><i class="fa-solid fa-clock-rotate-left" style="margin-right:5px;"></i>Configurable lag
+                window</span>
+            <span class="badge"><i class="fa-solid fa-ranking-star" style="margin-right:5px;"></i>Leading / Forewarning
+                / Concurrent /
+                Weak</span>
+        </div>
+        <p style="margin-top:18px; font-size:0.82em; opacity:0.75;">New to leading indicator validation? <a
+                href="../insights/validating-leading-indicators-with-predictive-analytics.html"
+                style="color:#fff; text-decoration:underline; font-weight:500;">Read the companion article &rarr;</a>
+        </p>
+    </div>
+
+    <div class="container main-container">
+        <main class="main-content">
+            <section class="content-area">
+
+                <!-- How it works -->
+                <details class="how-card">
+                    <summary>
+                        <i class="fa-solid fa-gears"></i> How it works
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </summary>
+                    <div class="how-steps">
+                        <div class="how-step">
+                            <div class="step-num">Step 1 &mdash; Lag correlation</div>
+                            <p>For each metric, correlation (Pearson or Spearman) is computed between the metric at
+                                month
+                                <em>t</em> and the outcome at month <em>t + lag</em>, for lags 0 through your chosen
+                                maximum.
+                            </p>
+                        </div>
+                        <div class="how-step">
+                            <div class="step-num">Step 2 &mdash; Classification</div>
+                            <p>A metric is <strong>Leading</strong> if its peak correlation is at lag &ge;1, at least
+                                0.08 stronger than lag 0, and negative (higher activity predicts fewer incidents).
+                                <strong>Forewarning</strong> if the same temporal conditions apply but the correlation
+                                is positive — the metric rises before incidents rise, signalling risk accumulation
+                                rather than prevention.
+                                <strong>Concurrent</strong> if it correlates but peaks at lag 0 or the gain is below
+                                0.08.
+                                <strong>Weak</strong> if |r| &lt; 0.30 at every lag.
+                            </p>
+                            <p style="margin-top:6px; font-size:0.92em; color:#666;">The 0.30 floor follows standard
+                                weak-correlation conventions. The gain threshold (default 0.08) prevents a trivially
+                                stronger lag-1 from overriding a dominant lag-0 signal. For datasets under 24 months,
+                                consider raising it to 0.10–0.12 to reduce false positives.</p>
+                        </div>
+                        <div class="how-step">
+                            <div class="step-num">Step 3 &mdash; Ranking</div>
+                            <p>Results are sorted: Leading first, then Forewarning, then Concurrent, then Weak. Within
+                                each group, sorted
+                                by absolute correlation strength descending.</p>
+                        </div>
+                        <div class="how-step">
+                            <div class="step-num">Step 4 &mdash; Review</div>
+                            <p>Check Concurrent metrics against domain knowledge — that is: does this metric exist to
+                                <em>prevent</em> incidents, or did it appear <em>because</em> incidents happened?
+                                Metrics
+                                that react after incidents (e.g. investigation closure rates) will appear Concurrent but
+                                are actually lagging.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Upload card -->
+                <div class="card">
+                    <div class="card-title"><i class="fa-solid fa-upload"></i> Upload your dataset</div>
+                    <div class="card-sub">One row per month, one column per metric. Name your first column
+                        <strong>Month</strong> — values can be any consistent date format (e.g. "Jan 2024", "2024-01").
+                        Minimum 12 months recommended.
+                    </div>
+
+                    <div class="drop-zone" id="dropZone">
+                        <input type="file" id="fileInput" accept=".csv" aria-label="Upload CSV file">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <p><strong>Drag &amp; drop your CSV here</strong> or click to browse</p>
+                        <small>Accepts .csv files &middot; UTF-8 encoding</small>
+                    </div>
+                    <div style="margin-top:8px; font-size:0.82em; color:#999; text-align:center;">
+                        No file yet? <a id="sampleDataLink" href="#"
+                            style="color:#2980b9; text-decoration:underline;">Load sample EHS dataset</a>
+                        <span
+                            title="Sample data uses synthetic metrics with engineered correlations. Real-world results will be lower and more varied."
+                            style="cursor:help; color:#bbb; margin-left:4px;"><i
+                                class="fa-solid fa-circle-question"></i></span>
+                    </div>
+                    <div class="filename-display" id="filenameDisplay">
+                        <i class="fa-solid fa-circle-check"></i><span id="filenameText"></span>
+                        <span id="fileStats" style="color:#888; font-weight:400; margin-left:8px;"></span>
+                    </div>
+
+                    <div class="format-note">
+                        <strong><i class="fa-solid fa-circle-info" style="margin-right:5px;"></i>How to prepare your
+                            CSV</strong>
+                        <table style="width:100%; border-collapse:collapse; margin:10px 0 8px; font-size:0.97em;">
+                            <thead>
+                                <tr style="background:#daeaf7;">
+                                    <th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">Month</th>
+                                    <th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">Safety Walk
+                                        Frequency</th>
+                                    <th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">PPE
+                                        Compliance Rate (%)</th>
+                                    <th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">Recordable
+                                        Incidents</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background:#fff;">
+                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">Jan 2024</td>
+                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">10</td>
+                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">94.2</td>
+                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">3</td>
+                                </tr>
+                                <tr style="background:#f7fbff;">
+                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">Feb 2024</td>
+                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">8</td>
+                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">91.5</td>
+                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul style="margin:6px 0 0; padding-left:18px; line-height:1.8;">
+                            <li><strong>Column 1 — Month:</strong> one row per month, in any consistent format (e.g.
+                                "Jan 2024", "2024-01"). At least 12 months recommended.</li>
+                            <li><strong>Metric columns:</strong> any numeric safety activity metrics you track — counts,
+                                rates, percentages, scores. All in a single file. <em>Tip: exclude reactive metrics that
+                                    exist because of incidents (e.g. investigation closure rates, first aid counts) —
+                                    these will classify as Concurrent by definition.</em></li>
+                            <li><strong>Outcome column(s):</strong> the injury or incident metric you want to predict —
+                                e.g. <code>Recordable Incidents</code>, <code>LTIR</code>. Include it as a regular
+                                column; you'll select it below.</li>
+                        </ul>
+                        <div style="margin-top:8px;">Not sure about the format? <a href="#" id="sampleDataLink2"
+                                style="color:#1F4E79; font-weight:600;">Load the sample dataset</a> to see a real
+                            example.</div>
+                    </div>
+
+                    <div class="config-row">
+                        <div class="config-group">
+                            <label>Outcome metric(s) <span class="select-hint">Hold Ctrl/Cmd to select
+                                    multiple</span><span class="select-hint-mobile">Tap each outcome to toggle
+                                    selection</span></label>
+                            <select id="outcomeSelect" multiple>
+                                <option disabled>— upload a CSV first —</option>
+                            </select>
+                            <p class="method-hint"><i class="fa-solid fa-lightbulb"></i>Run against your primary
+                                incident metric first. Lag distances may differ across outcomes.</p>
+                        </div>
+                        <div class="config-group" style="max-width:130px;">
+                            <label>Max lag (months)</label>
+                            <input type="number" id="maxLag" value="3" min="1" max="6">
+                            <p class="method-hint" id="lagHint">Lags 1–3 are standard. Treat lag 4–6 as exploratory.</p>
+                        </div>
+                        <div class="config-group" style="max-width:150px;">
+                            <label>Min lag gain <i class="fa-solid fa-circle-question"
+                                    style="font-size:0.9em; opacity:0.6; cursor:help;"
+                                    title="Minimum advantage the best future lag must have over lag 0 to classify as Leading. Default 0.08. For datasets under 24 months, consider 0.10–0.12."></i></label>
+                            <input type="number" id="gainThreshInput" value="0.08" min="0.05" max="0.20" step="0.01">
+                            <p class="method-hint" id="gainHint"><i class="fa-solid fa-lightbulb"></i> For &lt;24 months
+                                of data, consider 0.10–0.12.</p>
+                        </div>
+                        <div class="config-group">
+                            <label>Analysis method <i class="fa-solid fa-circle-question"
+                                    style="font-size:0.9em; opacity:0.6; cursor:help;"
+                                    title="Pearson: Linear relationship (better for continuous data)&#13;Spearman: Rank-based (more robust for outliers and sparse incident counts)"></i></label>
+                            <select id="corrMethod">
+                                <option value="spearman">Spearman (Ranked)</option>
+                                <option value="pearson">Pearson (Linear)</option>
+                            </select>
+                            <p class="method-hint"><i class="fa-solid fa-lightbulb"></i>Use <strong>Spearman</strong> if
+                                your incident column averages &lt;1 per month or contains significant outliers.</p>
+                        </div>
+                        <div>
+                            <button class="run-btn" id="runBtn" disabled>
+                                <i class="fa-solid fa-play"></i> Run screener
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="status-bar" id="statusBar">
+                        <div class="spinner" id="spinner"></div>
+                        <span id="statusMsg">Processing&hellip;</span>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div id="results-section">
+                    <div class="results-header">
+                        <h2><i class="fa-solid fa-table-list" style="margin-right:8px;"></i>Screening Results</h2>
+                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                            <button class="export-btn" id="exportCsvBtn">
+                                <i class="fa-solid fa-download"></i> Export CSV
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="summary-pills" id="summaryPills"></div>
+
+                    <div class="filter-tabs" id="filterTabs">
+                        <button class="tab-btn active" data-filter="all">All</button>
+                        <button class="tab-btn" data-filter="Leading">Leading</button>
+                        <button class="tab-btn" data-filter="Forewarning">Forewarning</button>
+                        <button class="tab-btn" data-filter="Concurrent">Concurrent</button>
+                        <button class="tab-btn" data-filter="Weak">Weak</button>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table class="results-table" id="resultsTable">
+                            <thead id="resultsHead"></thead>
+                            <tbody id="resultsBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background:#e2efda;border:1px solid #a8d5a2;"></div>
+                            <strong>Leading</strong> &mdash; peaks at lag &ge;1. Moves <em>before</em> outcomes.
+                            Actionable predictor.
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background:#fde8cc;border:1px solid #f6c89a;"></div>
+                            <strong>Forewarning</strong> &mdash; peaks at lag &ge;1, positive r. Rises <em>before</em>
+                            incidents rise. Early warning of risk accumulation — not a control measure.
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background:#fff2cc;border:1px solid #ffe082;"></div>
+                            <strong>Concurrent</strong> &mdash; peaks at lag 0. Moves <em>with</em> outcomes. Review
+                            with domain knowledge.
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background:#ebebeb;border:1px solid #ccc;"></div>
+                            <strong>Weak</strong> &mdash; |r| &lt; 0.30 at all lags. No predictive signal detected.
+                            <span
+                                title="Weak doesn't always mean the metric is irrelevant. It may mean your data collection is masking the signal — inconsistent recording, under-reporting, or too short a dataset."
+                                style="cursor:help; color:#aaa; margin-left:2px;"><i class="fa-solid fa-circle-question"
+                                    style="font-size:0.9em;"></i></span> <a
+                                href="../insights/validating-leading-indicators-with-predictive-analytics.html#fix-or-retire"
+                                style="color:#2980b9; font-size:0.9em; white-space:nowrap;">Learn more &rarr;</a>
+                        </div>
+                    </div>
+                    <div style="font-size:0.77em; color:#777; margin-top:8px;">
+                        <i class="fa-solid fa-circle-info" style="margin-right:4px; color:#aaa;"></i><strong
+                            style="color:#555;">Negative r</strong> = more Metric activity, fewer incidents &mdash; the
+                        desired direction for most safety metrics. Positive r warrants domain review.
+                    </div>
+
+                    <div class="caveats">
+                        <div class="caveat-item">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span><strong>Concurrent may include true lagging indicators.</strong> A metric that
+                                logically
+                                precedes incidents but peaks at lag 0 may reflect reporting delays, not simultaneity.
+                                Check the series against domain knowledge before treating it as a coincident
+                                metric.</span>
+                        </div>
+                        <div class="caveat-item">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span><strong>Short datasets increase false positives.</strong> Requires &ge;12 paired
+                                observations per lag. With &lt;36 months of data, random noise can push |r| above 0.30
+                                by chance &mdash; treat borderline results (0.30&ndash;0.45) as provisional until
+                                confirmed on additional data.</span>
+                        </div>
+                        <div class="caveat-item">
+                            <i class="fa-solid fa-building"></i>
+                            <span><strong>Multi-site organisations: run per site, not on aggregated data.</strong>
+                                Pooling data across sites with different risk profiles, headcounts, or incident rates
+                                will suppress or distort lag signals. Each site dataset should be screened
+                                independently.</span>
+                        </div>
+                    </div>
+
+                    <div class="next-steps">
+                        <h4><i class="fa-solid fa-arrow-right-long"></i> What to do with your results</h4>
+                        <ul>
+                            <li><strong>Leading Metrics:</strong> These are your actionable predictors. Prioritise them
+                                on
+                                your safety dashboard and set intervention thresholds. Consider building a composite
+                                Safety Performance Index (SPI) by weighting each one by its correlation strength.</li>
+                            <li><strong>Forewarning Metrics:</strong> These metrics rise before incidents rise — they
+                                signal risk accumulation, not prevention. Do not treat them as controls. Use them as
+                                early warnings: a sustained rise gives you the lag window to reduce exposure before the
+                                system fails.</li>
+                            <li><strong>Concurrent Metrics:</strong> Do not discard them yet. Apply domain knowledge: if
+                                a
+                                metric logically <em>precedes</em> incidents (e.g. inspection completion rates), the
+                                lag-0
+                                peak may reflect data collection timing rather than true simultaneity. Re-examine the
+                                series or extend your dataset.</li>
+                            <li><strong>Weak Metrics:</strong> No statistical signal at any lag. Either the metric is
+                                genuinely uninformative for your context, it is measured too inconsistently to carry a
+                                signal, or your dataset is too short to detect one. Retire it from your predictive set —
+                                not necessarily from your programme.</li>
+                        </ul>
+                        <p class="insight-link"><i class="fa-solid fa-book-open" style="margin-right:5px;"></i>For the
+                            full methodology — validation framework, SPI construction, and strategic implications — read
+                            the companion article: <a
+                                href="../insights/validating-leading-indicators-with-predictive-analytics.html">Validating
+                                Leading Indicators with Predictive Analytics</a>.</p>
+                    </div>
+
+                    <!-- Combined Metric Analyzer -->
+                    <div id="mv-analyzer" class="card"
+                        style="display:none; margin-top:32px; border: 2px solid #1F4E79;">
+                        <div class="card-title"><i class="fa-solid fa-layer-group"></i> Combined Metric Analyzer
+                        </div>
+                        <div class="card-sub">Select a target outcome and combine any mix of metrics including activity,
+                            exposure, and risk markers. The model shows which combination has the strongest statistical
+                            link to your past incident data — and which single metric is carrying most of that weight.
+                        </div>
+
+                        <div
+                            style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:20px; background:#f8fafc; padding:15px; border-radius:8px; border:1px solid #e2e8f0;">
+                            <div style="flex:1; min-width:200px;">
+                                <label
+                                    style="font-size:0.82em; font-weight:700; color:#1F4E79; display:block; margin-bottom:8px; text-transform:uppercase;">1.
+                                    Select Model Target Outcome:</label>
+                                <select id="mv-outcome-selector"
+                                    style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1; font-family:inherit; font-size:0.9em;"></select>
+                            </div>
+                            <div style="flex:2; min-width:300px;">
+                                <label
+                                    style="font-size:0.82em; font-weight:700; color:#1F4E79; display:block; margin-bottom:8px; text-transform:uppercase;">2.
+                                    Stack Metrics to Combine:</label>
+                                <div id="mv-predictor-list" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+                                <div style="margin-top:8px; font-size:0.72em; color:#94a3b8;">Only metrics classified as
+                                    <strong>Leading</strong> or <strong>Forewarning</strong> by the screener above are
+                                    eligible to combine. Weak and Concurrent signals are excluded.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="mv-results"
+                            style="display:none; padding:20px; background:#f4f7fa; border-radius:8px; border-left:4px solid #1F4E79;">
+                            <div style="display:flex; align-items:center; gap:30px; flex-wrap:wrap;">
+                                <div style="text-align:center; min-width:140px;">
+                                    <div id="mv-r2-val"
+                                        style="font-size:1.8rem; font-weight:800; color:#1F4E79; line-height:1;">0.00
+                                    </div>
+                                    <div id="mv-risk-badge"
+                                        style="display:inline-block; margin-top:8px; padding:4px 12px; border-radius:12px; font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; background:#e2e8f0; color:#475569;">
+                                        Calculating...</div>
+                                    <div
+                                        style="font-size:0.7em; font-weight:600; text-transform:uppercase; color:#666; margin-top:8px; letter-spacing:0.5px;">
+                                        Site Risk Level</div>
+                                </div>
+                                <div style="flex:1; min-width:250px;">
+                                    <h5 style="margin:0 0 8px; font-size:0.9rem; color:#1F4E79;">What this tells you
+                                    </h5>
+                                    <p id="mv-insight" style="margin:0; font-size:0.85em; color:#444; line-height:1.6;">
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Risk Drivers Chart -->
+                            <div id="mv-drivers"
+                                style="margin-top:20px; padding-top:20px; border-top:1px solid #e2e8f0;">
+                                <h6
+                                    style="margin:0 0 10px; font-size:0.75em; color:#1F4E79; text-transform:uppercase; letter-spacing:0.5px;">
+                                    Relative weight of each metric in this model</h6>
+                                <div id="mv-drivers-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+                            </div>
+
+                            <div
+                                style="margin-top:20px; padding-top:15px; border-top:1px solid #e2e8f0; display:flex; gap:10px; font-size:0.65em; color:#94a3b8; text-transform:uppercase; font-weight:700;">
+                                <div><span style="color:#22c55e;">●</span> Low (< 0.2)</div>
+                                        <div><span style="color:#eab308;">●</span> Moderate (0.2 - 0.5)</div>
+                                        <div><span style="color:#ef4444;">●</span> High (0.5 - 0.75)</div>
+                                        <div><span style="color:#7f1d1d;">●</span> Critical (> 0.75)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../script.js"></script>
+    <script>
+        // ─────────────────────────────────────────────────
+        // CSV parser (handles quoted fields and auto-detects delimiter)
+        // ─────────────────────────────────────────────────
+        function parseCSV(text) {
+            const lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(l => l.trim());
+            if (lines.length < 1) return { headers: [], rows: [] };
+
+            const firstLine = lines[0];
+            const semiCount = (firstLine.match(/;/g) || []).length;
+            const commaCount = (firstLine.match(/,/g) || []).length;
+            const delimiter = semiCount > commaCount ? ';' : ',';
+
+            const headers = splitCSVLine(lines[0], delimiter).map(h => h ? h.trim() : 'Col');
+            const rows = [];
+            for (let i = 1; i < lines.length; i++) {
+                const vals = splitCSVLine(lines[i], delimiter);
+                if (vals.length < 2) continue;
+                const row = {};
+                headers.forEach((h, j) => {
+                    const headerName = h || `Col_${j}`;
+                    row[headerName] = vals[j] !== undefined ? vals[j].trim() : '';
+                });
+                rows.push(row);
+            }
+            return { headers, rows };
+        }
+
+        function splitCSVLine(line, delimiter = ',') {
+            const result = [];
+            let cur = '', inQuote = false;
+            for (let i = 0; i < line.length; i++) {
+                const ch = line[i];
+                if (ch === '"') {
+                    if (inQuote && line[i + 1] === '"') {
+                        cur += '"'; i++; continue;
+                    }
+                    inQuote = !inQuote; continue;
+                }
+                if (ch === delimiter && !inQuote) { result.push(cur); cur = ''; continue; }
+                cur += ch;
+            }
+            result.push(cur);
+            return result;
+        }
+
+        // ─────────────────────────────────────────────────
+        // Core math
+        // ─────────────────────────────────────────────────
+        function pearson(a, b) {
+            const n = a.length;
+            if (n < 2) return NaN;
+            let sumA = 0, sumB = 0, sumAB = 0, sumA2 = 0, sumB2 = 0;
+            for (let i = 0; i < n; i++) { sumA += a[i]; sumB += b[i]; sumAB += a[i] * b[i]; sumA2 += a[i] * a[i]; sumB2 += b[i] * b[i]; }
+            const num = sumAB - (sumA * sumB) / n;
+            const den = Math.sqrt((sumA2 - sumA * sumA / n) * (sumB2 - sumB * sumB / n));
+            return den === 0 ? NaN : num / den;
+        }
+
+        function spearman(a, b) {
+            const getRanks = arr => {
+                const n = arr.length;
+                const sorted = arr.map((val, i) => ({ val, i })).sort((a, b) => a.val - b.val);
+                const ranks = new Array(n);
+                for (let i = 0; i < n; i++) {
+                    let j = i;
+                    while (j < n - 1 && sorted[j + 1].val === sorted[i].val) j++;
+                    const rank = (i + j) / 2 + 1;
+                    for (let k = i; k <= j; k++) ranks[sorted[k].i] = rank;
+                    i = j;
+                }
+                return ranks;
+            };
+            return pearson(getRanks(a), getRanks(b));
+        }
+
+        function lagCorrelations(metricVals, outcomeVals, maxLag, method = 'pearson') {
+            const results = {};
+            const corrFn = method === 'spearman' ? spearman : pearson;
+            for (let lag = 0; lag <= maxLag; lag++) {
+                let a, b;
+                if (lag === 0) { a = metricVals.slice(); b = outcomeVals.slice(); }
+                else { a = metricVals.slice(0, metricVals.length - lag); b = outcomeVals.slice(lag); }
+                const paired = a.map((v, i) => [v, b[i]]).filter(([x, y]) => !isNaN(x) && !isNaN(y));
+                results[lag] = paired.length < 12 ? NaN : corrFn(paired.map(p => p[0]), paired.map(p => p[1]));
+            }
+            return results;
+        }
+
+        function classify(lagCorrs, leadThreshold = 0.30, leadGain = 0.08) {
+            const lags = Object.keys(lagCorrs).map(Number);
+            const absByLag = {};
+            lags.forEach(lag => { if (!isNaN(lagCorrs[lag])) absByLag[lag] = Math.abs(lagCorrs[lag]); });
+
+            const maxAbs = Object.values(absByLag).length ? Math.max(...Object.values(absByLag)) : 0;
+            if (maxAbs < leadThreshold) {
+                const bestLag = lags.reduce((best, l) => (absByLag[l] || 0) > (absByLag[best] || 0) ? l : best, 0);
+                return { signal: 'Weak', bestLag, bestCorr: lagCorrs[bestLag] };
+            }
+
+            const bestLag = lags.reduce((best, l) => (absByLag[l] || 0) > (absByLag[best] || 0) ? l : best, 0);
+            const lag0Abs = absByLag[0] || 0;
+            const isLeading = bestLag >= 1 && (absByLag[bestLag] - lag0Abs) >= leadGain;
+            if (isLeading) {
+                // Positive future-lag: predictive but not preventive — fails Campbell's preventive criterion
+                const signal = lagCorrs[bestLag] > 0 ? 'Forewarning' : 'Leading';
+                return { signal, bestLag, bestCorr: lagCorrs[bestLag] };
+            }
+            return { signal: 'Concurrent', bestLag, bestCorr: lagCorrs[bestLag] };
+        }
+
+        function runScreener(rows, headers, outcomeCols, maxLag, method, leadGain = 0.08) {
+            const metricCols = headers.filter(h => h !== 'Month' && !outcomeCols.includes(h));
+            const series = {};
+            [...metricCols, ...outcomeCols].forEach(col => {
+                series[col] = rows.map(r => { const v = parseFloat(r[col]); return isNaN(v) ? NaN : v; });
+            });
+            const results = [];
+            metricCols.forEach(metric => {
+                outcomeCols.forEach(outcome => {
+                    const lagCorrs = lagCorrelations(series[metric], series[outcome], maxLag, method);
+                    const { signal, bestLag, bestCorr } = classify(lagCorrs, 0.30, leadGain);
+                    results.push({ metric, outcome, signal, bestLag, bestCorr: isNaN(bestCorr) ? null : +bestCorr.toFixed(3), lagCorrs });
+                });
+            });
+            const order = { 'Leading': 0, 'Forewarning': 1, 'Concurrent': 2, 'Weak': 3 };
+            return results.sort((a, b) => order[a.signal] - order[b.signal] || Math.abs(b.bestCorr || 0) - Math.abs(a.bestCorr || 0));
+        }
+
+        // ─────────────────────────────────────────────────
+        // UI state & Controller
+        // ─────────────────────────────────────────────────
+        let parsedData = null, screenResults = null, currentFilter = 'all';
+        let sortCol = null, sortAsc = true, currentMaxLag = 3;
+
+        const ui = {
+            fileInput: document.getElementById('fileInput'),
+            dropZone: document.getElementById('dropZone'),
+            filenameDisp: document.getElementById('filenameDisplay'),
+            filenameText: document.getElementById('filenameText'),
+            fileStats: document.getElementById('fileStats'),
+            outcomeSelect: document.getElementById('outcomeSelect'),
+            maxLagInput: document.getElementById('maxLag'),
+            runBtn: document.getElementById('runBtn'),
+            statusBar: document.getElementById('statusBar'),
+            statusMsg: document.getElementById('statusMsg'),
+            spinner: document.getElementById('spinner'),
+            resultsSection: document.getElementById('results-section')
+        };
+
+        ui.maxLagInput.addEventListener('input', () => {
+            const lagHint = document.getElementById('lagHint');
+            const val = parseInt(ui.maxLagInput.value);
+            if (val > 3) {
+                lagHint.style.color = '#92400e';
+                lagHint.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Lag ' + val + ' is exploratory.';
+            } else {
+                lagHint.style.color = '';
+                lagHint.innerHTML = 'Lags 1–3 are standard. Treat lag 4–6 as exploratory.';
+            }
+        });
+
+        ui.dropZone.addEventListener('dragover', e => { e.preventDefault(); ui.dropZone.classList.add('drag-over'); });
+        ui.dropZone.addEventListener('dragleave', () => ui.dropZone.classList.remove('drag-over'));
+        ui.dropZone.addEventListener('drop', e => {
+            e.preventDefault(); ui.dropZone.classList.remove('drag-over');
+            const file = e.dataTransfer.files[0]; if (file) handleFile(file);
+        });
+        ui.fileInput.addEventListener('change', () => { if (ui.fileInput.files[0]) handleFile(ui.fileInput.files[0]); });
+
+        const SPECIMEN_CSV = `Month;Hazard Closure Rate (%);Near Miss Rate (per 100 emp);Observation Rate (per 100 emp);Total Working Hours;Training Rate (hrs/emp);Overtime Rate (hrs/emp);Incident Rate (per 200k hrs);LTI Rate (per 200k hrs)
+2023-01;81.4;35.91;33.42;98702;2.05;11.26;8.11;0.00
+2023-02;84.7;27.45;23.85;101431;1.93;7.10;1.97;0.00
+2023-03;71.0;30.09;24.84;125886;2.04;9.12;4.77;1.59
+2023-04;66.8;21.88;23.96;79348;2.04;8.69;7.56;0.00
+2023-05;64.6;40.83;28.35;120147;1.98;8.58;3.33;0.00
+2023-06;88.6;101.56;42.63;99572;1.99;9.35;12.05;0.00
+2023-07;88.7;82.63;27.84;93572;1.99;10.33;8.55;0.00
+2023-08;79.0;95.34;34.93;119070;1.99;4.83;11.76;3.36
+2023-09;86.8;96.99;44.50;111890;2.04;15.76;7.15;0.00
+2023-10;79.5;93.91;34.10;119523;1.96;9.07;21.75;5.02
+2023-11;69.8;65.84;17.85;129428;2.00;9.24;3.09;0.00
+2023-12;87.4;77.70;36.64;92685;2.03;9.35;12.95;6.47
+2024-01;69.5;76.84;22.20;101370;2.02;10.93;9.86;0.00
+2024-02;66.6;88.12;35.65;121326;1.95;9.37;9.89;1.65
+2024-03;79.6;95.58;24.20;112855;2.05;11.41;10.63;1.77
+2024-04;68.2;92.46;35.09;116605;1.95;4.48;17.15;6.86
+2024-05;69.0;116.58;38.00;107443;2.03;12.41;3.72;1.86
+2024-06;74.3;116.51;47.74;111538;1.94;14.49;14.34;7.17
+2024-07;69.1;116.55;35.61;106504;2.01;10.72;24.41;7.51
+2024-08;77.5;122.14;36.13;109478;2.01;8.73;10.96;1.83
+2024-09;79.5;128.52;40.64;121251;2.05;12.81;18.14;3.30
+2024-10;66.3;123.09;35.53;136459;2.00;11.79;7.33;2.93
+2024-11;74.2;123.38;42.93;130137;2.00;11.28;15.37;3.07
+2024-12;74.9;120.12;36.05;89833;2.03;14.94;17.81;6.68
+2025-01;73.1;113.86;34.53;105385;1.99;11.08;11.39;5.69
+2025-02;63.0;120.48;43.51;123528;2.03;4.25;14.57;4.86
+2025-03;82.6;115.88;30.92;136280;2.01;12.68;2.94;0.00
+2025-04;86.0;110.64;41.04;106629;2.00;3.32;22.51;3.75
+2025-05;69.8;111.21;35.63;127402;2.03;11.19;6.28;0.00
+2025-06;64.4;103.70;27.86;121245;2.00;11.52;6.60;0.00
+2025-07;83.0;104.64;30.28;106342;2.05;11.00;18.81;3.76
+2025-08;70.8;106.41;35.74;112326;2.00;12.88;19.59;5.34
+2025-09;70.0;106.11;27.22;133787;1.99;7.52;11.96;2.99
+2025-10;73.8;89.74;23.88;118873;1.98;13.42;15.14;1.68
+2025-11;74.5;90.87;27.40;90010;2.00;6.31;17.78;6.67
+2025-12;71.8;96.29;28.01;111768;1.98;8.80;14.32;5.37`;
+
+        async function loadSampleData() {
+            let text;
+            let sourceName = 'sample_metrics.csv';
+            try {
+                const response = await fetch('sample_metrics.csv');
+                if (!response.ok) throw new Error('Fetch failed');
+                text = await response.text();
+            } catch (err) {
+                // Fail-safe: Use embedded specimen if fetch is blocked or fails
+                console.warn('Fetch failed, falling back to embedded specimen:', err.message);
+                text = SPECIMEN_CSV;
+                sourceName = 'industrial_specimen.csv';
+            }
+
+            try {
+                parsedData = parseCSV(text);
+                showFileInfo(sourceName, parsedData.rows.length, parsedData.headers.length - 1);
+                populateOutcomeSelect(parsedData.headers);
+
+                // Auto-select standard outcomes for the Reactive Audit
+                const outcomesToSelect = ['Incident Rate (per 200k hrs)', 'LTI Rate (per 200k hrs)'];
+                Array.from(ui.outcomeSelect.options).forEach(opt => {
+                    if (outcomesToSelect.includes(opt.value)) opt.selected = true;
+                });
+
+                setStatus('Industrial specimen audit loaded (36 months, 6 rate-normalised metrics). This dataset exposes a 90-day management system latency between risk observations and training response.', false, false);
+                ui.runBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } catch (err) {
+                setStatus('Error parsing specimen data: ' + err.message, true, false);
+            }
+        }
+
+        document.getElementById('sampleDataLink').onclick = e => { e.preventDefault(); loadSampleData(); };
+        document.getElementById('sampleDataLink2').onclick = e => { e.preventDefault(); loadSampleData(); };
+
+        function handleFile(file) {
+            const reader = new FileReader();
+            reader.onload = e => {
+                try {
+                    parsedData = parseCSV(e.target.result);
+                    showFileInfo(file.name, parsedData.rows.length, parsedData.headers.length - 1);
+                    populateOutcomeSelect(parsedData.headers);
+                    setStatus('', false, false);
+                } catch (err) { setStatus('Error: ' + err.message, true, false); }
+            };
+            reader.readAsText(file);
+        }
+
+        function showFileInfo(name, nRows, nCols) {
+            ui.filenameText.textContent = name;
+            ui.fileStats.textContent = `${nRows} mo \u00b7 ${nCols} metrics`;
+            ui.filenameDisp.style.display = 'block';
+        }
+
+        function populateOutcomeSelect(headers) {
+            ui.outcomeSelect.innerHTML = '';
+            const kw = ['incident', 'ltir', 'trir', 'injury', 'fatality', 'recordable', 'lti', 'severity', 'lost time'];
+            headers.filter(h => h !== 'Month').forEach(h => {
+                const opt = document.createElement('option');
+                opt.value = opt.textContent = h;
+                if (kw.some(k => h.toLowerCase().includes(k))) opt.selected = true;
+                ui.outcomeSelect.appendChild(opt);
+            });
+            ui.runBtn.disabled = false;
+        }
+
+        function setStatus(msg, isError, isLoading, isWarning) {
+            if (!msg) { ui.statusBar.style.display = 'none'; return; }
+            ui.statusBar.style.display = 'flex';
+            ui.statusBar.className = 'status-bar' + (isError ? ' error' : isWarning ? ' warning' : '');
+            ui.spinner.style.display = isLoading ? 'block' : 'none';
+            ui.statusMsg.textContent = msg;
+        }
+
+        ui.runBtn.onclick = () => {
+            const outcomes = Array.from(ui.outcomeSelect.selectedOptions).map(o => o.value);
+            const method = document.getElementById('corrMethod').value;
+            if (!parsedData || outcomes.length === 0) return setStatus('Select outcomes first.', true, false);
+            currentMaxLag = parseInt(ui.maxLagInput.value) || 3;
+            setStatus('Screener running...', false, true);
+            ui.runBtn.disabled = true;
+            setTimeout(() => {
+                try {
+                    const gainThresh = parseFloat(document.getElementById('gainThreshInput').value) || 0.08;
+                    screenResults = runScreener(parsedData.rows, parsedData.headers, outcomes, currentMaxLag, method, gainThresh);
+                    renderResults(screenResults, currentMaxLag);
+                    setStatus('', false, false);
+                } catch (err) { setStatus('Error during analysis: ' + err.message, true, false); }
+                ui.runBtn.disabled = false;
+            }, 30);
+        };
+
+        function renderResults(results, maxLag) {
+            const counts = { 'Leading': 0, 'Forewarning': 0, 'Concurrent': 0, 'Weak': 0 };
+            results.forEach(r => { if (counts[r.signal] !== undefined) counts[r.signal]++; });
+            document.getElementById('summaryPills').innerHTML = `
+                <div class="pill pill-leading"><div class="pill-num">${counts['Leading']}</div><div class="pill-label">Leading</div></div>
+                <div class="pill pill-forewarning"><div class="pill-num">${counts['Forewarning']}</div><div class="pill-label">Forewarning</div></div>
+                <div class="pill pill-concurrent"><div class="pill-num">${counts['Concurrent']}</div><div class="pill-label">Concurrent</div></div>
+                <div class="pill pill-weak"><div class="pill-num">${counts['Weak']}</div><div class="pill-label">Weak</div></div>
+            `;
+            const lagHeaders = Array.from({ length: maxLag + 1 }, (_, i) => `r (Lag ${i})`);
+            const allCols = ['Metric', 'Outcome', 'Signal', 'Best r', ...lagHeaders];
+            document.getElementById('resultsHead').innerHTML = '<tr>' + allCols.map((c, i) => `<th onclick="sortBy(${i})">${c} \u21c5</th>`).join('') + '</tr>';
+            currentFilter = 'all';
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+            renderBody(results, maxLag);
+            ui.resultsSection.style.display = 'block';
+            ui.resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function signalCssClass(signal) {
+            const map = { 'Leading': 'leading', 'Forewarning': 'forewarning', 'Concurrent': 'concurrent', 'Weak': 'weak' };
+            return map[signal] || 'weak';
+        }
+
+        function renderBody(results, maxLag) {
+            const filtered = currentFilter === 'all' ? results : results.filter(r => r.signal === currentFilter);
+            const body = document.getElementById('resultsBody');
+            if (filtered.length === 0) { body.innerHTML = `<tr><td colspan="${6 + maxLag}">No results.</td></tr>`; return; }
+            body.innerHTML = filtered.map(r => {
+                const s = signalCssClass(r.signal);
+                const lagCells = Array.from({ length: maxLag + 1 }, (_, i) => {
+                    const v = r.lagCorrs[i];
+                    const isBest = i === r.bestLag;
+                    const chipClass = `lag-chip ${isBest ? 'best' : ''}`;
+                    return `<td style="text-align:center;"><span class="${chipClass}">${isNaN(v) ? '\u2014' : v.toFixed(2)}</span></td>`;
+                }).join('');
+                return `<tr class="row-${s}">
+                    <td>${String(r.metric).replace(/&/g, '&amp;').replace(/</g, '&lt;')}</td>
+                    <td>${String(r.outcome).replace(/&/g, '&amp;').replace(/</g, '&lt;')}</td>
+                    <td><span class="sig-badge sig-${s}">${r.signal}</span></td>
+                    <td><div class="corr-cell"><span style="min-width:44px; font-weight:600;">${r.bestCorr !== null ? r.bestCorr.toFixed(2) : '\u2014'}</span><div class="corr-bar-wrap"><div class="corr-bar ${r.bestCorr >= 0 ? 'corr-pos' : 'corr-neg'}" style="width:${Math.round(Math.abs(r.bestCorr || 0) * 100)}%"></div></div></div></td>
+                    ${lagCells}
+                </tr>`;
+            }).join('');
+        }
+
+        document.getElementById('filterTabs').onclick = e => {
+            const btn = e.target.closest('.tab-btn'); if (!btn || !screenResults) return;
+            currentFilter = btn.dataset.filter;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+            renderBody(screenResults, currentMaxLag);
+        };
+
+        function sortBy(colIdx) {
+            if (!screenResults) return;
+            if (sortCol === colIdx) sortAsc = !sortAsc; else { sortCol = colIdx; sortAsc = true; }
+            const keys = ['metric', 'outcome', 'signal', 'bestCorr'];
+            screenResults.sort((a, b) => {
+                let va = colIdx < 4 ? a[keys[colIdx]] : a.lagCorrs[colIdx - 4];
+                let vb = colIdx < 4 ? b[keys[colIdx]] : b.lagCorrs[colIdx - 4];
+                if (va === null || isNaN(va)) va = sortAsc ? Infinity : -Infinity;
+                if (vb === null || isNaN(vb)) vb = sortAsc ? Infinity : -Infinity;
+                return sortAsc ? (va > vb ? 1 : -1) : (va < vb ? 1 : -1);
+            });
+            renderBody(screenResults, currentMaxLag);
+        }
+
+        document.getElementById('exportCsvBtn').onclick = () => {
+            if (!screenResults) return;
+            const lagHeaders = Array.from({ length: currentMaxLag + 1 }, (_, i) => `r (Lag ${i})`);
+            const headers = ['Metric', 'Outcome', 'Signal', 'Best r', 'Best Lag', ...lagHeaders];
+            const rows = screenResults.map(r => {
+                const lagVals = Array.from({ length: currentMaxLag + 1 }, (_, i) => {
+                    const v = r.lagCorrs[i];
+                    return (v === undefined || v === null || isNaN(v)) ? '' : v.toFixed(2);
+                });
+                return [
+                    `"${r.metric}"`,
+                    `"${r.outcome}"`,
+                    r.signal,
+                    r.bestCorr !== null ? r.bestCorr.toFixed(2) : '',
+                    r.bestLag,
+                    ...lagVals
+                ].join(',');
+            });
+            const csv = [headers.join(','), ...rows].join('\n');
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+            a.download = 'metric_results.csv'; a.click();
+        };
+
+        // ─────────────────────────────────────────────────
+        // Combined Metric Engine (OLS)
+        // ─────────────────────────────────────────────────
+        function solveOLS(y, X) {
+            const XT = transpose(X);
+            const XTX = multiply(XT, X);
+            const XTy = multiplyVec(XT, y);
+            const invXTX = invertMatrix(XTX);
+            if (!invXTX) return null;
+            return multiplyVec(invXTX, XTy); // Weights (betas)
+        }
+
+        function transpose(matrix) {
+            return matrix[0].map((_, i) => matrix.map(row => row[i]));
+        }
+
+        function multiply(A, B) {
+            const result = new Array(A.length).fill(0).map(() => new Array(B[0].length).fill(0));
+            return result.map((row, i) => row.map((_, j) => A[i].reduce((sum, _, k) => sum + A[i][k] * B[k][j], 0)));
+        }
+
+        function multiplyVec(A, b) {
+            return A.map(row => row.reduce((sum, val, i) => sum + val * b[i], 0));
+        }
+
+        function invertMatrix(M) {
+            const n = M.length;
+            const I = Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => i === j ? 1 : 0));
+            const C = M.map(row => [...row]);
+            for (let i = 0; i < n; i++) {
+                let pivot = C[i][i];
+                if (Math.abs(pivot) < 1e-10) {
+                    let swapIdx = -1;
+                    for (let j = i + 1; j < n; j++) if (Math.abs(C[j][i]) > 1e-10) { swapIdx = j; break; }
+                    if (swapIdx === -1) return null; // Singular
+                    [C[i], C[swapIdx]] = [C[swapIdx], C[i]];
+                    [I[i], I[swapIdx]] = [I[swapIdx], I[i]];
+                    pivot = C[i][i];
+                }
+                for (let j = 0; j < n; j++) { C[i][j] /= pivot; I[i][j] /= pivot; }
+                for (let j = 0; j < n; j++) {
+                    if (i === j) continue;
+                    const factor = C[j][i];
+                    for (let k = 0; k < n; k++) { C[j][k] -= factor * C[i][k]; I[j][k] -= factor * I[i][k]; }
+                }
+            }
+            return I;
+        }
+
+        function runMultivariateInsight(results) {
+            const bestPredictors = results.filter(r => r.signal === 'Leading' || r.signal === 'Forewarning');
+
+            if (bestPredictors.length === 0) {
+                document.getElementById('mv-analyzer').style.display = 'none';
+                return;
+            }
+
+            const outcomeSelector = document.getElementById('mv-outcome-selector');
+            const uniqueOutcomes = [...new Set(bestPredictors.map(r => r.outcome))];
+            outcomeSelector.innerHTML = uniqueOutcomes.map(o => `<option value="${o}">${o}</option>`).join('');
+
+            document.getElementById('mv-analyzer').style.display = 'block';
+            runCombinedAnalysis(bestPredictors);
+
+            outcomeSelector.onchange = () => runCombinedAnalysis(bestPredictors);
+        }
+
+        function runCombinedAnalysis(bestPredictors) {
+            const targetOutcome = document.getElementById('mv-outcome-selector').value;
+            const candidates = bestPredictors.filter(r => r.outcome === targetOutcome);
+
+            const uniqueMetrics = [...new Set(candidates.map(r => r.metric))];
+            const predictorList = document.getElementById('mv-predictor-list');
+            predictorList.innerHTML = '';
+
+            if (uniqueMetrics.length === 0) {
+                predictorList.innerHTML = '<div style="font-size:0.85em; color:#666; padding:10px;">No metrics with Leading or Forewarning signals found for this outcome.</div>';
+                return;
+            }
+
+            uniqueMetrics.forEach((metricName, idx) => {
+                const label = document.createElement('label');
+                label.className = 'mv-checkbox-label';
+                label.style.cssText = 'background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:20px; font-size:0.8em; cursor:pointer; display:flex; align-items:center; gap:6px; user-select:none;';
+                label.innerHTML = `<input type="checkbox" data-metric="${metricName}" class="mv-checkbox"> <span>${metricName}</span>`;
+                predictorList.appendChild(label);
+            });
+
+            const updateAnalysis = () => {
+                const selectedMetrics = [];
+                document.querySelectorAll('.mv-checkbox:checked').forEach(cb => {
+                    const metricName = cb.dataset.metric;
+                    const result = allResults.find(r => r.metric === metricName && r.outcome === targetOutcome);
+                    if (result) selectedMetrics.push(result);
+                });
+
+                if (selectedMetrics.length < 1) {
+                    document.getElementById('mv-results').style.display = 'none';
+                    document.getElementById('mv-insight').textContent = `Target: ${targetOutcome}. Models can only be built using validated predictors for the chosen target. Try another outcome or different metrics.`;
+                    return;
+                }
+
+                const series = {};
+                selectedMetrics.forEach(k => {
+                    series[k.metric] = parsedData.rows.map(r => parseFloat(r[k.metric]));
+                });
+                const yArr = parsedData.rows.map(r => parseFloat(r[targetOutcome]));
+
+                const startIdx = Math.max(...selectedMetrics.map(k => k.bestLag));
+                const rows = [];
+                for (let t = startIdx; t < yArr.length; t++) {
+                    const xRow = [1];
+                    selectedMetrics.forEach(k => {
+                        const val = series[k.metric][t - k.bestLag];
+                        xRow.push(val);
+                    });
+                    if (!xRow.some(isNaN) && !isNaN(yArr[t])) {
+                        rows.push({ x: xRow, y: yArr[t] });
+                    }
+                }
+
+                if (rows.length < selectedMetrics.length + 5) {
+                    document.getElementById('mv-results').style.display = 'none';
+                    return;
+                }
+
+                const betas = solveOLS(rows.map(r => r.y), rows.map(r => r.x));
+                if (!betas) {
+                    document.getElementById('mv-results').style.display = 'none';
+                    return;
+                }
+
+                const yMean = rows.reduce((s, r) => s + r.y, 0) / rows.length;
+                const ssTot = rows.reduce((s, r) => s + Math.pow(r.y - yMean, 2), 0);
+                const ssRes = rows.reduce((s, r) => {
+                    const yHat = betas.reduce((sum, b, i) => sum + b * r.x[i], 0);
+                    return s + Math.pow(r.y - yHat, 2);
+                }, 0);
+                const r2 = 1 - (ssRes / ssTot);
+
+                const absBetas = betas.slice(1).map(Math.abs);
+                const sumAbs = absBetas.reduce((s, v) => s + v, 0);
+                const weights = absBetas.map(v => sumAbs > 0 ? v / sumAbs : 1 / absBetas.length);
+                const primaryIdx = weights.indexOf(Math.max(...weights));
+                const primaryDriver = selectedMetrics[primaryIdx].metric;
+
+                document.getElementById('mv-r2-val').textContent = r2.toFixed(2);
+                const badge = document.getElementById('mv-risk-badge');
+                if (r2 < 0.2) { badge.textContent = 'Low'; badge.style.background = '#dcfce7'; badge.style.color = '#166534'; }
+                else if (r2 < 0.5) { badge.textContent = 'Moderate'; badge.style.background = '#fef9c3'; badge.style.color = '#854d0e'; }
+                else if (r2 < 0.75) { badge.textContent = 'High'; badge.style.background = '#fee2e2'; badge.style.color = '#b91c1c'; }
+                else { badge.textContent = 'Critical'; badge.style.background = '#7f1d1d'; badge.style.color = '#fff'; }
+
+                // Compare combined R² against primary driver alone (on same dataset)
+                let comparisonHTML = '';
+                if (selectedMetrics.length > 1) {
+                    const primaryXRows = rows.map(r => [1, r.x[primaryIdx + 1]]);
+                    const primaryBetas = solveOLS(rows.map(r => r.y), primaryXRows);
+                    if (primaryBetas) {
+                        const primarySSRes = rows.reduce((s, r) => {
+                            const yHat = primaryBetas[0] + primaryBetas[1] * r.x[primaryIdx + 1];
+                            return s + Math.pow(r.y - yHat, 2);
+                        }, 0);
+                        const primaryR2 = 1 - (primarySSRes / ssTot);
+                        const gain = r2 - primaryR2;
+                        if (gain <= 0.01) {
+                            comparisonHTML = `<div style="margin-top:10px; padding:8px 12px; background:#fef3c7; border-left:3px solid #d97706; border-radius:4px; font-size:0.82em; color:#92400e;">
+                                <strong>No meaningful gain from combining.</strong> The combined score (${r2.toFixed(2)}) does not exceed <em>${primaryDriver}</em> alone (${primaryR2.toFixed(2)}). The additional metrics may be redundant or their longer lag is reducing usable data. Use <strong>${primaryDriver}</strong> alone.
+                            </div>`;
+                        } else {
+                            comparisonHTML = `<div style="margin-top:10px; padding:8px 12px; background:#f0fdf4; border-left:3px solid #16a34a; border-radius:4px; font-size:0.82em; color:#166534;">
+                                <strong>Combination adds value.</strong> Combined score (${r2.toFixed(2)}) is ${(gain * 100).toFixed(0)} points higher than <em>${primaryDriver}</em> alone (${primaryR2.toFixed(2)}). These metrics are complementary.
+                            </div>`;
+                        }
+                    }
+                }
+
+                document.getElementById('mv-insight').innerHTML = `<strong>${primaryDriver}</strong> is the primary driver for <strong>${targetOutcome}</strong> in this combination, carrying <strong>${Math.round(weights[primaryIdx] * 100)}%</strong> of the model weight. Investigate this metric first for diagnostic value.` + comparisonHTML;
+
+                const drivers = selectedMetrics.map((k, idx) => ({ name: k.metric, weight: weights[idx] }))
+                    .sort((a, b) => b.weight - a.weight);
+
+                document.getElementById('mv-drivers-list').innerHTML = drivers.map(d => {
+                    const isPrimary = d.name === primaryDriver;
+                    const pct = Math.max(1, Math.round(d.weight * 100));
+                    const barColor = isPrimary ? '#1F4E79' : '#94a3b8';
+                    return `<div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.8em; margin-bottom:4px; font-weight:600;">
+                            <span>${d.name}${isPrimary ? ' <span style="font-size:0.75em; font-weight:700; color:#ef4444; text-transform:uppercase; letter-spacing:0.5px;">Primary</span>' : ''}</span>
+                            <span>${pct}%</span>
+                        </div>
+                        <div style="height:6px; background:#e2e8f0; border-radius:3px;">
+                            <div style="height:100%; background:${barColor}; border-radius:3px; width:${pct}%"></div>
+                        </div>
+                    </div>`;
+                }).join('');
+
+                document.getElementById('mv-results').style.display = 'block';
+            };
+
+            document.querySelectorAll('.mv-checkbox').forEach(cb => cb.addEventListener('change', updateAnalysis));
+            document.getElementById('mv-outcome-selector').addEventListener('change', () => runCombinedAnalysis(bestPredictors));
+        }
+
+        // Global state for analysis linkage
+        let allResults = [];
+        const originalRunBtnHandler = ui.runBtn.onclick;
+        ui.runBtn.onclick = () => {
+            originalRunBtnHandler();
+            setTimeout(() => {
+                if (screenResults) {
+                    allResults = screenResults;
+                    const analyzer = document.getElementById('mv-analyzer');
+                    const outcomeSelector = document.getElementById('mv-outcome-selector');
+
+                    // Strictly filter results according to methodology
+                    const validatedResults = screenResults.filter(r => r.signal === 'Leading' || r.signal === 'Forewarning');
+                    const uniqueOutcomes = [...new Set(validatedResults.map(r => r.outcome))];
+
+                    if (uniqueOutcomes.length > 0) {
+                        analyzer.style.display = 'block';
+                        outcomeSelector.innerHTML = uniqueOutcomes.map(o => `<option value="${o}">${o}</option>`).join('');
+                        runCombinedAnalysis(validatedResults);
+                    } else {
+                        analyzer.style.display = 'none';
+                        document.getElementById('mv-predictor-list').innerHTML = '';
+                    }
+                }
+            }, 100);
+        };
+    </script>
+</body>
+
+</html>
