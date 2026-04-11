@@ -279,8 +279,7 @@
                     <!-- Complex App (The Trap) -->
                     <div>
                         <div class="demo-label complex-label">The Compliance Trap</div>
-                        <p style="text-align: center; font-size: 12px; color: #888; margin-bottom: 8px;">👆 Click
-                            through the steps</p>
+                        <p class="demo-instruction">👆 Click through the steps</p>
                         <div class="phone-mockup">
                             <div class="phone-status-bar">
                                 <span>9:41</span>
@@ -291,11 +290,11 @@
                                 <div id="complex-step-1">
                                     <div class="screen-header">CompliSafe Enterprise</div>
                                     <div class="screen-content">
-                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                                            <div class="btn-mock" style="height: 60px; background: #e0e0e0;"></div>
-                                            <div class="btn-mock" style="height: 60px; background: #e0e0e0;"></div>
-                                            <div class="btn-mock" style="height: 60px; background: #e0e0e0;"></div>
-                                            <div class="btn-mock" style="height: 60px; background: #e0e0e0;"></div>
+                                        <div class="mockup-grid">
+                                            <div class="btn-mock btn-grid-mock"></div>
+                                            <div class="btn-mock btn-grid-mock"></div>
+                                            <div class="btn-mock btn-grid-mock"></div>
+                                            <div class="btn-mock btn-grid-mock"></div>
                                         </div>
                                         <button class="btn-mock" onclick="complexNext(1)">> Modules</button>
                                         <div class="btn-mock">Settings</div>
@@ -339,8 +338,7 @@
                                 <div id="complex-step-4" style="display: none;">
                                     <div class="screen-header">New Record</div>
                                     <div class="screen-content">
-                                        <div id="complex-error"
-                                            style="display: none; background: #ffebee; color: #c62828; padding: 8px; border-radius: 4px; margin-bottom: 10px; font-size: 12px;">
+                                        <div id="complex-error" class="error-box" style="display: none;">
                                             <i class="fa-solid fa-triangle-exclamation"></i> Please complete all
                                             required fields
                                         </div>
@@ -379,27 +377,21 @@
                                 <div id="complex-step-5" style="display: none;">
                                     <div class="screen-header">Add Evidence</div>
                                     <div class="screen-content">
-                                        <p style="font-size: 12px; color: #666; margin-bottom: 15px;">Photo required for
-                                            incident documentation</p>
-
                                         <div id="complex-photo-error"
                                             style="display: none; background: #ffebee; color: #c62828; padding: 8px; border-radius: 4px; margin-bottom: 10px; font-size: 12px;">
                                             <i class="fa-solid fa-triangle-exclamation"></i> Please attach a photo
                                         </div>
 
                                         <div id="complex-photo-placeholder" onclick="complexTakePhoto()"
-                                            style="border: 2px dashed #ccc; border-radius: 8px; height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; color: #666; margin-bottom: 15px; background: white;">
+                                            class="photo-placeholder">
                                             <i class="fa-solid fa-camera"
                                                 style="font-size: 24px; margin-bottom: 8px;"></i>
                                             <span style="font-size: 13px;">Tap to add photo</span>
                                         </div>
 
-                                        <div id="complex-photo-preview"
-                                            style="display: none; height: 120px; background: #333; border-radius: 8px; margin-bottom: 15px; position: relative; overflow: hidden;">
-                                            <img src="https://placehold.co/300x120/png?text=Photo+Attached"
-                                                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                                            <div
-                                                style="position: absolute; bottom: 5px; right: 5px; background: rgba(0,0,0,0.5); color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px;">
+                                        <div id="complex-photo-preview" style="display: none;" class="photo-preview">
+                                            <img src="https://placehold.co/300x120/png?text=Photo+Attached">
+                                            <div class="attached-badge">
                                                 <i class="fa-solid fa-check"></i> Attached
                                             </div>
                                         </div>
@@ -417,14 +409,11 @@
                                 </div>
 
                                 <!-- Step 6: Success -->
-                                <div id="complex-step-6"
-                                    style="display: none; height: 100%; justify-content: center; align-items: center; text-align: center;">
-                                    <div style="font-size: 40px; color: #0056b3; margin-bottom: 20px;"><i
-                                            class="fa-solid fa-circle-check"></i></div>
+                                <div id="complex-step-6" class="success-screen" style="display: none;">
+                                    <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
                                     <h3>Submitted</h3>
                                     <p>ID: #INC-2026-8842</p>
-                                    <button class="btn-mock" style="width: 80%; margin: 20px auto;"
-                                        onclick="resetComplex()">Start Over</button>
+                                    <button class="btn-mock primary-action" onclick="resetComplex()">Start Over</button>
                                 </div>
                             </div>
                         </div>
@@ -433,8 +422,7 @@
                     <!-- Simple App (User Reality) -->
                     <div>
                         <div class="demo-label simple-label">The User-First Design</div>
-                        <p style="text-align: center; font-size: 12px; color: #888; margin-bottom: 8px;">👆 Click
-                            through the steps</p>
+                        <p class="demo-instruction">👆 Click through the steps</p>
                         <div class="phone-mockup">
                             <div class="phone-status-bar">
                                 <span>9:42</span>
@@ -460,8 +448,8 @@
                                     <div class="screen-content">
                                         <!-- Auto-detected Info (Editable) -->
                                         <div id="simple-location-display" onclick="simpleEditLocation()"
-                                            style="background: #e8f5e9; padding: 10px; border-radius: 4px; margin-bottom: 20px; font-size: 13px; color: #2e7d32; display: flex; align-items: center; cursor: pointer;">
-                                            <i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>
+                                            class="location-box">
+                                            <i class="fa-solid fa-location-dot"></i>
                                             <div style="flex: 1;">
                                                 <strong>Location detected:</strong><br>
                                                 <span id="simple-location-text">Warehouse A, Zone 4</span>
@@ -494,19 +482,16 @@
 
                                         <!-- Photo Action -->
                                         <div id="simple-photo-placeholder" onclick="simpleTakePhoto()"
-                                            style="border: 2px dashed #ccc; border-radius: 8px; height: 150px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; color: #666; margin-bottom: 20px; background: white;">
+                                            class="photo-placeholder">
                                             <i class="fa-solid fa-camera"
                                                 style="font-size: 30px; margin-bottom: 10px;"></i>
                                             <span>Tap to take photo</span>
                                         </div>
 
                                         <!-- Photo Preview (Hidden initially) -->
-                                        <div id="simple-photo-preview"
-                                            style="display: none; height: 150px; background: #333; border-radius: 8px; margin-bottom: 20px; position: relative; overflow: hidden;">
-                                            <img src="https://placehold.co/300x150/png?text=Photo+Snapped"
-                                                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                                            <div
-                                                style="position: absolute; bottom: 5px; right: 5px; background: rgba(0,0,0,0.5); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">
+                                        <div id="simple-photo-preview" style="display: none;" class="photo-preview">
+                                            <img src="https://placehold.co/300x150/png?text=Photo+Snapped">
+                                            <div class="attached-badge">
                                                 <i class="fa-solid fa-check"></i> Attached
                                             </div>
                                         </div>
@@ -514,21 +499,19 @@
                                         <!-- Description Input -->
                                         <div style="margin-bottom: 20px;">
                                             <label class="label-mock">Description (Optional)</label>
-                                            <div style="display: flex; gap: 10px;">
-                                                <textarea id="simple-desc" class="input-mock" rows="2"
+                                            <div class="simple-voice-container">
+                                                <textarea id="simple-desc" class="textarea-mock" rows="2"
                                                     placeholder="Typing or voice input..."
                                                     style="margin-bottom: 0;"></textarea>
-                                                <button
-                                                    style="width: 44px; height: 62px; background: #eee; border: none; border-radius: 4px; color: #666; cursor: pointer;"
+                                                <div class="voice-input-btn"
                                                     onclick="document.getElementById('simple-desc').value='Spilled oil near loading dock.'">
                                                     <i class="fa-solid fa-microphone"></i>
-                                                </button>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <!-- Submit Button (Disabled initially) -->
-                                        <button id="simple-submit-btn" class="btn-mock"
-                                            style="background-color: #ccc; color: white; text-align: center; border: none; cursor: not-allowed;"
+                                        <!-- Submit Button -->
+                                        <button id="simple-submit-btn" class="btn-mock btn-primary simple-btn-primary"
                                             onclick="simpleSubmit()" disabled>
                                             Submit Report
                                         </button>
@@ -704,28 +687,26 @@
                     is capturing more signal than one with 15%. More signal means better pattern recognition.
                     Better patterns mean earlier intervention. The math isn't precise, but the direction is clear.</p>
 
-                <div class="insight-alert"
-                    style="background-color: #e8f5e9; padding: 15px; border-left: 5px solid #4caf50; margin: 20px 0;">
-                    <strong>💰 The CFO Pitch</strong><br>
-                    Usability isn't a soft benefit. It's the difference between capturing data and not. License cost
-                    is noise; adoption rate is signal. Track active user rates and hazard reporting volume before
-                    and after implementation. The ROI will show itself.
+                <div class="technical-callout">
+                    <h4><i class="fa-solid fa-coins"></i> &nbsp;The CFO Pitch</h4>
+                    <p>Usability isn't a soft benefit. It's the difference between capturing data and not. License cost
+                        is noise; adoption rate is signal. Track active user rates and hazard reporting volume before
+                        and after implementation. The ROI will show itself.</p>
                 </div>
 
                 <p>But realizing this ROI depends entirely on how the software is deployed.</p>
 
-                <div class="insight-alert"
-                    style="background-color: #fff8e1; padding: 15px; border-left: 5px solid #ffc107; margin: 20px 0;">
-                    <strong>⚠️ Selection Is Only Half the Battle</strong><br>
-                    Choosing usable software is necessary but not sufficient. Even the simplest system can be configured
-                    into complexity with 50 mandatory fields, confusing workflows, and permissions that lock users out.
-                    Implementation discipline, limiting mandatory fields to true essentials, testing workflows with real
-                    users before launch, and resisting scope creep from well-meaning stakeholders, is what protects the
-                    usability you paid for. For guidance on avoiding these traps, see <a
-                        href="analysis-and-planning-for-ehs-software-implementation.html">Analysis and Planning for EHS
-                        Software Implementation</a> and <a
-                        href="strategic-implementation-a-phased-approach-to-ehs-software-deployment.html">Strategic
-                        Implementation: A Phased Approach</a>.
+                <div class="insight-box">
+                    <p><strong>Selection Is Only Half the Battle:</strong> Choosing usable software is necessary but not
+                        sufficient. Even the simplest system can be configured into complexity with 50 mandatory fields,
+                        confusing workflows, and permissions that lock users out. Implementation discipline, limiting
+                        mandatory fields to true essentials, testing workflows with real users before launch, and
+                        resisting scope creep from well-meaning stakeholders, is what protects the usability you paid
+                        for. For guidance on avoiding these traps, see <a
+                            href="analysis-and-planning-for-ehs-software-implementation.html">Analysis and Planning for
+                            EHS Software Implementation</a> and <a
+                            href="strategic-implementation-a-phased-approach-to-ehs-software-deployment.html">Strategic
+                            Implementation: A Phased Approach</a>.</p>
                 </div>
 
                 <h2 id="bottom-line">The Bottom Line</h2>
@@ -736,10 +717,9 @@
 
                 <p>The real question isn't what the software can do—it's what your people will actually do with it.</p>
 
-                <div
-                    style="background-color: #fff3e0; padding: 20px; border-radius: 8px; margin: 30px 0; border-left: 5px solid #ff9800;">
-                    <strong>📋 5 Questions to Ask Every Vendor</strong>
-                    <ol style="margin: 15px 0 0 0; padding-left: 20px;">
+                <div class="test-card">
+                    <h4>📋 5 Questions to Ask Every Vendor</h4>
+                    <ol style="margin-top: 15px;">
                         <li><strong>How many taps to report a hazard?</strong> If more than three, ask why.</li>
                         <li><strong>Can you build this dashboard widget live, right now?</strong> Watch for the "export
                             to Excel" escape hatch.</li>
@@ -748,7 +728,7 @@
                         <li><strong>Can I pilot this with frontline workers before signing?</strong> Zero-training, real
                             conditions.</li>
                         <li><strong>What's the average time-to-insight for a safety trend question?</strong> If it's
-                            measured in hours, not seconds, keep looking.</li>
+                            more than a few minutes, measured in hours, not seconds, keep looking.</li>
                     </ol>
                 </div>
 
@@ -902,10 +882,7 @@
             document.getElementById('simple-photo-preview').style.display = 'block';
 
             // Enable submit
-            const btn = document.getElementById('simple-submit-btn');
-            btn.style.backgroundColor = '#2e7d32';
-            btn.style.cursor = 'pointer';
-            btn.disabled = false;
+            document.getElementById('simple-submit-btn').disabled = false;
         }
 
         function simpleSubmit() {
@@ -928,7 +905,6 @@
             document.getElementById('simple-photo-placeholder').style.display = 'flex';
             document.getElementById('simple-desc').value = '';
             const btn = document.getElementById('simple-submit-btn');
-            btn.style.backgroundColor = '#ccc';
             btn.disabled = true;
 
             // Reset location state

@@ -43,202 +43,7 @@
       "datePublished": "2025-12-05"
     }
     </script>
-    <style>
-        .example-box {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-        }
-
-        .example-box h4 {
-            margin-top: 0;
-            color: var(--primary-blue);
-        }
-
-        /* Calculator Styles */
-        .glass-box-calculator {
-            border-left: 5px solid var(--primary-blue);
-        }
-
-        .calculator-inputs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .input-group label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .input-group input[type="range"] {
-            width: 100%;
-            margin-bottom: 0.2rem;
-            accent-color: var(--primary-blue);
-        }
-
-        .input-group small {
-            color: var(--light-text);
-            font-size: 0.8rem;
-        }
-
-        .calculator-result {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .score-display {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 1rem;
-        }
-
-        .score-label {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .score-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        .feature-importance h5 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            color: var(--dark-text);
-        }
-
-        .bar-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
-        }
-
-        .bar-label {
-            width: 80px;
-            flex-shrink: 0;
-        }
-
-        .bar {
-            height: 12px;
-            background-color: var(--primary-blue);
-            border-radius: 6px;
-            margin: 0 10px;
-            transition: width 0.3s ease;
-            opacity: 0.8;
-        }
-
-        .bar-value {
-            width: 40px;
-            text-align: right;
-            font-weight: 600;
-            color: var(--light-text);
-        }
-
-        /* Preset Scenario Buttons */
-        .scenario-presets {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 12px;
-            border: 1px solid #dee2e6;
-        }
-
-        .preset-btn {
-            background: white;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            padding: 12px 16px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: left;
-            font-family: inherit;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .preset-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .preset-btn:hover::before {
-            left: 100%;
-        }
-
-        .preset-btn:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
-        }
-
-        .preset-btn:active {
-            transform: translateY(0);
-        }
-
-        .preset-btn-icon {
-            font-size: 1.5rem;
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        .preset-btn-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #2c3e50;
-            margin-bottom: 4px;
-        }
-
-        .preset-btn-desc {
-            font-size: 0.75rem;
-            color: #6c757d;
-            line-height: 1.3;
-        }
-
-        .presets-label {
-            grid-column: 1 / -1;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--dark-text);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .presets-label::before {
-            content: '⚡';
-            font-size: 1.2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="interactive-demo.css">
 </head>
 
 <body>
@@ -469,7 +274,7 @@
                 <p>That is actionable intelligence. It builds trust because the logic is visible, auditable, and
                     undeniably linked to operational reality.</p>
 
-                <div class="glass-box-calculator example-box">
+                <div class="technical-callout">
                     <h4>Interactive Glass Box Calculator</h4>
 
                     <!-- Preset Scenarios -->
@@ -517,8 +322,7 @@
                         </div>
                     </div>
 
-                    <div class="calculator-section"
-                        style="margin-top: 2rem; border-top: 1px dashed #ddd; padding-top: 1rem;">
+                    <div class="calculator-section calculator-divider">
                         <p><strong>Step 2: Input Data (0-10 Scale)</strong></p>
                         <p class="small-text">Enter the current status of your operations.</p>
                         <div class="calculator-inputs">
@@ -543,259 +347,6 @@
                     <h3>The Difference in Action</h3>
                     <p>See how the same risk score looks in two different systems:</p>
 
-                    <style>
-                        .dashboard-comparison {
-                            display: flex;
-                            gap: 24px;
-                            margin: 3rem 0;
-                            flex-wrap: wrap;
-                            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                        }
-
-                        .dashboard-card {
-                            flex: 1;
-                            min-width: 320px;
-                            background: #ffffff;
-                            border-radius: 12px;
-                            overflow: hidden;
-                            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
-                            transition: transform 0.2s ease, box-shadow 0.2s ease;
-                            display: flex;
-                            flex-direction: column;
-                        }
-
-                        .dashboard-card:hover {
-                            transform: translateY(-2px);
-                            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
-                        }
-
-                        /* Header Styles */
-                        .card-header {
-                            padding: 16px 20px;
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            font-weight: 600;
-                            font-size: 0.95rem;
-                            letter-spacing: 0.02em;
-                        }
-
-                        .black-box-card .card-header {
-                            background: #1a1f24;
-                            color: #e9ecef;
-                            border-bottom: 1px solid #343a40;
-                        }
-
-                        .glass-box-card .card-header {
-                            background: #ffffff;
-                            color: #2c3e50;
-                            border-bottom: 1px solid #f1f3f5;
-                            border-top: 4px solid #3b82f6;
-                            /* Premium Blue */
-                        }
-
-                        .status-dot {
-                            height: 10px;
-                            width: 10px;
-                            border-radius: 50%;
-                            display: inline-block;
-                            box-shadow: 0 0 8px currentColor;
-                        }
-
-                        .status-dot.red {
-                            color: #ff4d4f;
-                            background: #ff4d4f;
-                        }
-
-                        .status-dot.green {
-                            color: #10b981;
-                            background: #10b981;
-                        }
-
-                        .card-body {
-                            padding: 24px;
-                            flex-grow: 1;
-                            display: flex;
-                            flex-direction: column;
-                            gap: 20px;
-                        }
-
-                        /* Alert Box */
-                        .alert-box {
-                            padding: 16px;
-                            border-radius: 8px;
-                            display: flex;
-                            align-items: flex-start;
-                            gap: 12px;
-                            border: 1px solid transparent;
-                            transition: all 0.3s ease;
-                        }
-
-                        .alert-box.high-risk {
-                            background: #fff1f0;
-                            border-color: #ffa39e;
-                            color: #cf1322;
-                        }
-
-                        .alert-box.medium-risk {
-                            background: #fff7e6;
-                            border-color: #ffd591;
-                            color: #d46b08;
-                        }
-
-                        .alert-box.low-risk {
-                            background: #f6ffed;
-                            border-color: #b7eb8f;
-                            color: #389e0d;
-                        }
-
-                        .alert-icon {
-                            font-size: 1.5rem;
-                            line-height: 1;
-                        }
-
-                        .alert-content {
-                            flex: 1;
-                        }
-
-                        .alert-content strong {
-                            display: block;
-                            margin-bottom: 4px;
-                            font-size: 0.9rem;
-                            text-transform: uppercase;
-                            letter-spacing: 0.05em;
-                        }
-
-                        .risk-metric {
-                            font-size: 1.5rem;
-                            font-weight: 800;
-                            letter-spacing: -0.02em;
-                            margin-top: 4px;
-                        }
-
-                        .risk-metric span {
-                            font-variant-numeric: tabular-nums;
-                        }
-
-                        /* Action Section */
-                        .action-required {
-                            background: #f8f9fa;
-                            border: 1px solid #e9ecef;
-                            padding: 16px;
-                            border-radius: 8px;
-                        }
-
-                        .action-label {
-                            display: block;
-                            font-size: 0.75rem;
-                            text-transform: uppercase;
-                            color: #6c757d;
-                            font-weight: 700;
-                            margin-bottom: 8px;
-                            letter-spacing: 0.05em;
-                        }
-
-                        .action-text {
-                            font-size: 1rem;
-                            font-weight: 600;
-                            line-height: 1.4;
-                            margin: 0;
-                        }
-
-                        .action-text-high {
-                            color: #cf1322;
-                        }
-
-                        .action-text-medium {
-                            color: #d46b08;
-                        }
-
-                        .action-text-low {
-                            color: #389e0d;
-                        }
-
-                        .glass-box-card .action-text {
-                            color: #1e293b;
-                        }
-
-                        /* Driver Bars (Glass Box) */
-                        .drivers-list {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 12px;
-                        }
-
-                        .driver-item {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 4px;
-                        }
-
-                        .driver-label {
-                            display: flex;
-                            justify-content: space-between;
-                            font-size: 0.85rem;
-                            font-weight: 500;
-                            color: #495057;
-                        }
-
-                        .driver-bar-bg {
-                            height: 6px;
-                            background: #e9ecef;
-                            border-radius: 3px;
-                            overflow: hidden;
-                        }
-
-                        .driver-bar-fill {
-                            height: 100%;
-                            background: #3b82f6;
-                            border-radius: 3px;
-                            transition: width 0.3s ease;
-                        }
-
-                        /* Color code drivers */
-                        .driver-ot .driver-bar-fill {
-                            background: #f59e0b;
-                        }
-
-                        /* Amber */
-                        .driver-pm .driver-bar-fill {
-                            background: #ef4444;
-                        }
-
-                        /* Red */
-                        .driver-train .driver-bar-fill {
-                            background: #10b981;
-                        }
-
-                        /* Emerald */
-
-                        /* Analysis / Reaction */
-                        .analysis-section {
-                            background: #000;
-                            color: #0f0;
-                            font-family: 'Courier New', monospace;
-                            padding: 12px;
-                            border-radius: 4px;
-                            font-size: 0.8rem;
-                            opacity: 0.8;
-                        }
-
-                        .blurred-text {
-                            color: transparent;
-                            text-shadow: 0 0 8px rgba(50, 205, 50, 0.7);
-                        }
-
-                        .user-reaction {
-                            font-size: 0.9rem;
-                            color: #64748b;
-                            font-style: italic;
-                            border-top: 1px solid #f1f3f5;
-                            padding-top: 16px;
-                            margin-top: auto;
-                            /* Push to bottom */
-                        }
-                    </style>
 
                     <div class="dashboard-comparison">
                         <!-- Black Box Card -->
@@ -805,7 +356,7 @@
                                 <span class="status-dot red"></span>
                             </div>
                             <div class="card-body">
-                                <div class="alert-box">
+                                <div class="alert-box risk-low" id="bb-status-box">
                                     <span class="alert-icon">⚠️</span>
                                     <div class="alert-content">
                                         <strong>System Alert</strong>
@@ -827,12 +378,11 @@
                                 <span class="status-dot green"></span>
                             </div>
                             <div class="card-body">
-                                <div class="alert-box low-risk" id="gb-status-box"
-                                    style="background: #f0f9ff; border-color: #bae6fd; color: #0369a1;">
+                                <div class="alert-box risk-diagnostic-low" id="gb-status-box">
                                     <span class="alert-icon">📊</span>
                                     <div class="alert-content">
-                                        <strong style="color: #0284c7;">Risk Diagnostic</strong>
-                                        <div class="risk-metric" style="color: #0c4a6e;">Score: <span
+                                        <strong>Risk Diagnostic</strong>
+                                        <div class="risk-metric">Score: <span
                                                 id="gb-score">0.0</span></div>
                                     </div>
                                 </div>
@@ -1267,54 +817,36 @@
 
                 // Update Glass Box Status Visual
                 const gbStatusBox = document.getElementById('gb-status-box');
-                const gbStatusStrong = gbStatusBox.querySelector('strong');
-                const gbRiskMetric = gbStatusBox.querySelector('.risk-metric');
+                gbStatusBox.classList.remove('risk-diagnostic-low', 'risk-critical', 'risk-high', 'risk-medium', 'risk-low');
 
-                gbStatusBox.className = 'alert-box';
                 if (totalScore >= 75) {
-                    gbStatusBox.style.background = '#fff1f0';
-                    gbStatusBox.style.borderColor = '#ffa39e';
-                    gbStatusBox.style.color = '#cf1322';
-                    gbStatusStrong.style.color = '#cf1322';
-                    gbRiskMetric.style.color = '#820014';
+                    gbStatusBox.classList.add('risk-critical');
                 } else if (totalScore >= 50) {
-                    gbStatusBox.style.background = '#fff7e6';
-                    gbStatusBox.style.borderColor = '#ffd591';
-                    gbStatusBox.style.color = '#d46b08';
-                    gbStatusStrong.style.color = '#d46b08';
-                    gbRiskMetric.style.color = '#ad4e00';
+                    gbStatusBox.classList.add('risk-high');
                 } else if (totalScore >= 25) {
-                    gbStatusBox.style.background = '#fffbe6';
-                    gbStatusBox.style.borderColor = '#ffe58f';
-                    gbStatusBox.style.color = '#d48806';
-                    gbStatusStrong.style.color = '#d48806';
-                    gbRiskMetric.style.color = '#ad6800';
+                    gbStatusBox.classList.add('risk-medium');
                 } else {
-                    gbStatusBox.style.background = '#f6ffed';
-                    gbStatusBox.style.borderColor = '#b7eb8f';
-                    gbStatusBox.style.color = '#389e0d';
-                    gbStatusStrong.style.color = '#389e0d';
-                    gbRiskMetric.style.color = '#135200';
+                    gbStatusBox.classList.add('risk-low');
                 }
 
                 // Update Black Box (simple thresholds)
-                bbAlertBox.className = 'alert-box';
-                bbActionText.className = 'action-text';
+                bbAlertBox.classList.remove('risk-critical', 'risk-high', 'risk-medium', 'risk-low');
+                bbActionText.classList.remove('action-text-high', 'action-text-medium', 'action-text-low');
 
                 if (totalScore >= 67) {
-                    bbAlertBox.classList.add('high-risk');
+                    bbAlertBox.classList.add('risk-critical');
                     bbAlertIcon.textContent = '⚠️';
                     bbAlertTitle.textContent = 'HIGH RISK ALERT';
                     bbActionText.textContent = 'STOP WORK IMMEDIATELY';
                     bbActionText.classList.add('action-text-high');
                 } else if (totalScore >= 34) {
-                    bbAlertBox.classList.add('medium-risk');
+                    bbAlertBox.classList.add('risk-high');
                     bbAlertIcon.textContent = '✋';
                     bbAlertTitle.textContent = 'MEDIUM RISK ALERT';
                     bbActionText.textContent = 'Monitor Closely';
                     bbActionText.classList.add('action-text-medium');
                 } else {
-                    bbAlertBox.classList.add('low-risk');
+                    bbAlertBox.classList.add('risk-low');
                     bbAlertIcon.textContent = '✅';
                     bbAlertTitle.textContent = 'LOW RISK';
                     bbActionText.textContent = 'Continue Normal Operations';

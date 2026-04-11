@@ -15,71 +15,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        .prototype-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 35px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-        }
-
-        .prototype-header {
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-
-        .burden-solution {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        @media (min-width: 768px) {
-            .burden-solution {
-                flex-direction: row;
-                gap: 30px;
-            }
-
-            .burden-solution>div {
-                flex: 1;
-            }
-        }
-
-        .burden-box {
-            background-color: #fff8e1;
-            padding: 15px;
-            border-radius: 4px;
-            border-left: 4px solid #ffc107;
-        }
-
-        .solution-box {
-            background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 4px;
-            border-left: 4px solid #4CAF50;
-        }
-
-        /* Prevent flex-item min-width:auto from expanding the container beyond
-           the viewport — same fix applied to validating article. */
-        .main-container {
-            min-width: 0;
-            overflow-x: hidden;
-        }
-
-        pre {
-            background-color: #282c34;
-            color: #abb2bf;
-            padding: 15px;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-size: 0.85em;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6L4GK800"></script>
     <script>
@@ -123,7 +58,7 @@
     <div class="container main-container">
         <main class="main-content">
             <section class="content-area">
-                <h1 class="content-title" style="margin-top: 0;">Structuring Unstructured EHS Data: Transforming
+                <h1 class="content-title">Structuring Unstructured EHS Data: Transforming
                     Workflows with
                     Targeted Extraction</h1>
                 <p class="insight-date">Feb 20, 2026</p>
@@ -229,8 +164,8 @@
                         integrable via API.</p>
                 </div>
 
-                <div class="technical-callout" style="background-color: #fce4ec; border-color: #f8bbd0;">
-                    <h4 style="color: #c2185b;"><i class="fa-solid fa-shield-halved"></i> Data Privacy</h4>
+                <div class="technical-callout variant-privacy">
+                    <h4><i class="fa-solid fa-shield-halved"></i> Data Privacy</h4>
                     <p>A common executive objection is data sovereignty: <em>"We cannot send sensitive injury narratives
                             to an LLM."</em> This is accurate for consumer AI, but enterprise extraction frameworks
                         route API calls through secured enterprise endpoints (like Azure OpenAI or Google Cloud Vertex
@@ -245,27 +180,23 @@
                     the LangExtract framework. These cases demonstrate the transition from manual administrative burden
                     to automated, schema-constrained data structuring.</p>
 
-                <div class="technical-callout"
-                    style="background-color: #f3e5f5; border-color: #ce93d8; margin-top: 10px; margin-bottom: 35px;">
-                    <h4 style="color: #6a1b9a;"><i class="fa-brands fa-github"></i> Try the Prototypes Locally</h4>
-                    <p style="margin-bottom: 0;">I have open-sourced the 5 extraction scripts and sample "Unstructured
+                <div class="technical-callout variant-github">
+                    <h4><i class="fa-brands fa-github"></i> Try the Prototypes Locally</h4>
+                    <p>I have open-sourced the 5 extraction scripts and sample "Unstructured
                         Data"
                         text files discussed below. EHS and IT leaders can clone the companion repository to test the
                         architecture in their own terminals.</p>
                     <a href="https://github.com/srhtdmrkl/ehs-langextract-prototypes" target="_blank"
-                        rel="noopener noreferrer"
-                        style="display: inline-block; margin-top: 15px; font-weight: 600; color: #6a1b9a; text-decoration: none; border-bottom: 1px solid #6a1b9a;">View
-                        the ehs-langextract-prototypes repo &rarr;</a>
+                        rel="noopener noreferrer">View the ehs-langextract-prototypes repo &rarr;</a>
                 </div>
 
                 <div id="prototype-1" class="prototype-card">
                     <div class="prototype-header">
-                        <h3 style="margin-top: 0; color: #333;">Case 1: Incident Structuring
-                        </h3>
+                        <h3>Case 1: Incident Structuring</h3>
                     </div>
                     <div class="burden-solution">
                         <div class="burden-box">
-                            <strong>The Operational Burden (Before):</strong>
+                            <strong>The Operational Burden:</strong>
                             <p>Initial incident reports are often hurried narratives (e.g., "Bob was walking past line 4
                                 and a pallet fell, crushing his toe. He wasn't wearing his steel boots."). An EHS
                                 specialist must read this text, interpret the physics of the event, and manually select
@@ -273,7 +204,7 @@
                                 taxonomies.</p>
                         </div>
                         <div class="solution-box">
-                            <strong>Automated Extraction (After):</strong>
+                            <strong>Automated Extraction:</strong>
                             <p>The parser receives the raw narrative and instantly outputs a structured payload aligned
                                 with <a
                                     href="how-machine-learning-can-improve-workplace-incident-classification.html">standard
@@ -282,19 +213,19 @@
                                 for trend analysis and regulatory reporting.</p>
                         </div>
                     </div>
-                    <pre><code>// The Output Payload
-{
+                    <div class="extraction-payload">
+                        <pre><code>{
   "event_type": "Struck by falling object",
   "body_part": "Foot/Toe",
   "injury_type": "Crushed",
   "immediate_cause": "Missing PPE (Steel-toed boots)"
 }</code></pre>
+                    </div>
                 </div>
 
                 <div id="prototype-2" class="prototype-card">
                     <div class="prototype-header">
-                        <h3 style="margin-top: 0; color: #333;">Case 2: Regulatory Parsing
-                        </h3>
+                        <h3>Case 2: Regulatory Parsing</h3>
                     </div>
                     <div class="burden-solution">
                         <div class="burden-box">
@@ -310,22 +241,23 @@
                                 identifying the reference, machine type, and plain-English requirement.</p>
                         </div>
                     </div>
-                    <pre><code>// The Output Payload
-{
+                    <div class="extraction-payload">
+                        <pre><code>{
   "reference_clause": "1910.212(a)(1)",
   "machine_type": "General Machinery",
   "hazards_addressed": ["Nip points", "Rotating parts", "Flying chips"],
   "regulatory_requirement": "One or more methods of machine guarding shall be provided to protect the operator."
 }</code></pre>
+                    </div>
                 </div>
 
                 <div id="prototype-3" class="prototype-card">
                     <div class="prototype-header">
-                        <h3 style="margin-top: 0; color: #333;">Case 3: Targeted SDS Digitization</h3>
+                        <h3>Case 3: Targeted SDS Digitization</h3>
                     </div>
                     <div class="burden-solution">
                         <div class="burden-box">
-                            <strong>The Operational Burden (Before):</strong>
+                            <strong>The Operational Burden:</strong>
                             <p>Safety Data Sheets are technically standardized into 16 sections,
                                 but formatting is chaotic. Extracting regulatory thresholds for a 500-chemical
                                 inventory is a highly inefficient administrative task — and you don't need the
@@ -333,50 +265,50 @@
                                 reporting and GHS labeling.</p>
                         </div>
                         <div class="solution-box">
-                            <strong>Automated Extraction (After):</strong>
+                            <strong>Automated Extraction:</strong>
                             <p>Tested against wildly varying formats (tables vs. dense paragraphs),
                                 the parser successfully "hunted" and normalized five specific fields,
                                 extracting structured arrays from unstructured text blocks regardless
                                 of formatting differences.</p>
                         </div>
                     </div>
-                    <pre><code>// The Output Payload
-{
+                    <div class="extraction-payload">
+                        <pre><code>{
   "chemical_name": "Industrial Degreaser Pro",
   "cas_number": "1310-73-2",
   "signal_word": "DANGER",
-  "ghs_hazard_statements": ["Causes severe skin burns and eye damage", "May be fatal if swallowed and enters airways", "Flammable liquid and vapor"],
-  "incompatible_materials": ["Strong oxidizing agents", "Acids", "Aluminum", "Zinc"]
+  "ghs_hazard_statements": ["Severe burns", "Fatal if swallowed", "Flammable"],
+  "incompatible_materials": ["Oxidizers", "Acids", "Aluminum", "Zinc"]
 }</code></pre>
+                    </div>
                 </div>
 
                 <div id="prototype-4" class="prototype-card">
                     <div class="prototype-header">
-                        <h3 style="margin-top: 0; color: #333;">Case 4: Relational JSA Extraction</h3>
+                        <h3>Case 4: Relational JSA Extraction</h3>
                     </div>
                     <div class="burden-solution">
                         <div class="burden-box">
-                            <strong>The Operational Burden (Before):</strong>
+                            <strong>The Operational Burden:</strong>
                             <p>Legacy Standard Operating Procedures (SOPs) are narrative Word
                                 documents. Modern digital execution benefits from structured, step-by-step hazard
                                 profiles mapped directly to worker actions. Translating paragraphs into these
-                                sequences requires <strong>Relational Extraction</strong>, which parses hierarchical
-                                data structures.</p>
+                                sequences requires Relational Extraction.</p>
                         </div>
                         <div class="solution-box">
-                            <strong>Automated Extraction (After):</strong>
+                            <strong>Automated Extraction:</strong>
                             <p>The framework ingested a paragraph about confined space entry and
                                 output a sequenced array of <code>JobStep</code> objects, mapping specific hazards
                                 and controls to distinct steps, ready for mobile app deployment.</p>
                         </div>
                     </div>
-                    <pre><code>// Standardized Array Output
-[
+                    <div class="extraction-payload">
+                        <pre><code>[
   {
     "step_number": 1,
     "action": "Test atmosphere prior to entry.",
     "hazards": ["Oxygen deficiency", "Toxic gases"],
-    "controls": ["Forced-air continuous ventilation", "Multi-gas monitor validation"]
+    "controls": ["Forced-air ventilation", "Multi-gas monitor validation"]
   },
   {
     "step_number": 2,
@@ -385,6 +317,7 @@
     "controls": ["Tripod and winch system", "Self-retracting lifeline"]
   }
 ]</code></pre>
+                    </div>
                 </div>
 
                 <div id="prototype-5" class="prototype-card">
@@ -410,8 +343,8 @@
                         on the empty boxes, just send a reminder to the warehouse team," the LLM recognized that a
                         physical maintenance ticket was unnecessary. Instead, it correctly generated a behavioral
                         coaching task assigned to the Operations department.</p>
-                    <div class="technical-callout" style="background-color: #fff3e0; border-color: #ffe0b2;">
-                        <h4 style="color: #e65100;"><i class="fa-solid fa-scale-balanced"></i> Calibrating Overcaution
+                    <div class="technical-callout variant-warning">
+                        <h4><i class="fa-solid fa-scale-balanced"></i> Calibrating Overcaution
                             via Historical Precedent</h4>
                         <p>This reveals a critical architectural constraint: generic LLMs natively lack enterprise risk
                             context. While accurately identifying a daisy-chained heater as a fire risk, unguided LLMs
@@ -472,7 +405,7 @@
                     piece where the highest-value bottleneck — skilled human interpretation — can be most
                     effectively automated.</p>
 
-                <p style="margin-top: 25px;"><strong>Explore the prototypes:</strong> The five extraction scripts
+                <p><strong>Explore the prototypes:</strong> The five extraction scripts
                     and sample text data files are available in the
                     <a href="https://github.com/srhtdmrkl/ehs-langextract-prototypes" target="_blank"
                         rel="noopener noreferrer">companion repository</a>.
@@ -480,9 +413,9 @@
 
 
                 <!-- Related Reading -->
-                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 40px 0;">
+                <div class="insight-briefing">
                     <strong>Related Strategic Briefings:</strong>
-                    <ul style="margin: 10px 0 0 0; line-height: 1.6;">
+                    <ul>
                         <li><a
                                 href="the-ehs-data-refinery-a-blueprint-for-turning-raw-reports-into-predictive-assets.html">The
                                 EHS Data Refinery: Turning Raw Reports into Assets</a></li>

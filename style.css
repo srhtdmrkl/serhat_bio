@@ -522,17 +522,33 @@ table tbody tr:nth-child(even) {
 }
 
 /* List Item Styling for content-area */
+.content-area ul,
+.content-area ol {
+    margin-bottom: 1.5rem;
+}
+
 .content-area ul {
     list-style: none;
     padding-left: 0;
-    margin-bottom: 1.5rem;
+}
+
+.content-area ol {
+    padding-left: 1.5rem;
+}
+
+.content-area ul li,
+.content-area ol li {
+    margin-bottom: 0.5rem;
+    color: var(--light-text);
 }
 
 .content-area ul li {
     position: relative;
     padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--light-text);
+}
+
+.content-area ol li {
+    padding-left: 0.5rem;
 }
 
 .content-area ul li::before {
@@ -563,13 +579,23 @@ table tbody tr:nth-child(even) {
     -webkit-overflow-scrolling: touch;
     width: 100%;
     box-sizing: border-box;
+    display: block;
+    margin: 20px 0;
+}
+
+.verdict-table th, 
+.verdict-table td {
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     .insight-card {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
 
     .insight-card-image-landscape,
@@ -652,7 +678,8 @@ table tbody tr:nth-child(even) {
     /* Fix flex-item min-width: auto expanding beyond viewport on mobile.
        Without this, a wide table forces .main-container to 600-700px,
        making the entire page layout wider than the viewport. */
-    .main-container {
+    .main-container,
+    .content-area {
         min-width: 0;
     }
 
@@ -805,4 +832,189 @@ table tbody tr:nth-child(even) {
 
 .insight-box strong {
     color: #e65100;
+}
+
+/* --- Insight Briefing --- */
+.insight-briefing {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
+.insight-briefing strong {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--dark-text);
+}
+
+.insight-briefing ul {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.insight-briefing ul li {
+    margin-bottom: 10px;
+}
+
+.insight-briefing ul li a {
+    border-bottom: 1px dashed #666;
+    color: #444;
+    transition: all 0.2s ease;
+}
+
+.insight-briefing ul li a:hover {
+    color: var(--primary-blue);
+    border-bottom-color: var(--primary-blue);
+}
+
+/* --- Technical Content Patterns --- */
+.test-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.test-card h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--dark-text);
+}
+
+.audit-check {
+    color: #1565c0;
+    margin-right: 8px;
+}
+
+.table-scroll {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.verdict-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.verdict-table th, .verdict-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.verdict-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* --- Prototype Patterns (from LangExtract) --- */
+.prototype-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 35px;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.prototype-header {
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.prototype-header h3 {
+    margin: 0;
+}
+
+.burden-solution {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .burden-solution {
+        flex-direction: row;
+        gap: 30px;
+    }
+    .burden-solution > div {
+        flex: 1;
+    }
+}
+
+.burden-box {
+    background-color: #fff8e1;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #ffc107;
+}
+
+.solution-box {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #4CAF50;
+}
+
+.extraction-payload {
+    background-color: #1a1b26;
+    color: #a9b1d6;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+.extraction-payload code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* --- Callout Variants --- */
+.variant-privacy { background-color: #fff1f2 !important; border-color: #fecdd3 !important; }
+.variant-privacy h4 { color: #e11d48 !important; }
+
+.variant-github { background-color: #f5f3ff !important; border-color: #ddd6fe !important; }
+.variant-github h4 { color: #7c3aed !important; }
+.variant-github a { color: #7c3aed !important; border-bottom-color: #7c3aed !important; font-weight: 600; }
+
+.variant-warning { background-color: #fffaf2 !important; border-color: #fee4cc !important; }
+.variant-warning h4 { color: #e65100 !important; }
+
+/* --- Technical Example Block --- */
+.technical-example {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 25px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.technical-example h4 {
+    margin-top: 0 !important;
+    color: #1F4E79 !important;
+}
+
+.technical-example p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .technical-example {
+        padding: 15px;
+    }
 }

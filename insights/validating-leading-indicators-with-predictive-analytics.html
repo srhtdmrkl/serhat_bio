@@ -27,27 +27,6 @@
         content="EHS leading indicators are routinely tracked on faith, not validation. This briefing demonstrates how to audit management system latency—applying lag-correlation analysis to an industrial specimen dataset to expose reactive loops, system response delays, and the 'effectiveness gap' in safety training.">
     <meta name="twitter:image" content="https://serhat.bio/images/validating-leading-indicators.webp">
     <link rel="stylesheet" href="../style.css">
-    <style>
-        /* body{display:flex} makes .main-container a flex item whose automatic
-           minimum size equals the widest child's min-content width (~700px for the
-           5-column table). overflow:hidden sets that automatic minimum to 0,
-           the same mechanism that makes pre{overflow-x:auto} fix the structuring
-           article. min-width:0 is the explicit belt-and-suspenders override. */
-        .main-container {
-            min-width: 0;
-            overflow-x: hidden;
-        }
-
-        /* Mirror structuring article's pre rule: overflow-x:auto + max-width:100%
-           directly on the element that contains the wide content. */
-        .table-scroll {
-            display: block;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -95,7 +74,7 @@
     <div class="container main-container">
         <main class="main-content">
             <section class="content-area">
-                <h1 class="content-title" style="margin-top: 0;">Validating Leading Indicators: Auditing EHS Data for
+                <h1 class="content-title">Validating Leading Indicators: Auditing EHS Data for
                     Predictive Signal</h1>
                 <p class="insight-date">Apr 11, 2026</p>
                 <img src="../images/validating-leading-indicators.webp"
@@ -224,7 +203,7 @@
                 </p>
 
                 <div class="test-card">
-                    <h4><i class="fa-solid fa-circle-check" style="color: #1565c0;"></i>&ensp;Temporally prior</h4>
+                    <h4><i class="fa-solid fa-circle-check audit-check"></i>Temporally prior</h4>
                     <p>The metric must occur before the outcome it predicts. A metric that moves concurrently with
                         incidents is not a leading indicator. If there is no temporal priority, there is nothing to
                         predict.</p>
@@ -236,7 +215,7 @@
                 </div>
 
                 <div class="test-card">
-                    <h4><i class="fa-solid fa-circle-check" style="color: #1565c0;"></i>&ensp;Actionable</h4>
+                    <h4><i class="fa-solid fa-circle-check audit-check"></i>Actionable</h4>
                     <p>A change in the metric must trigger an intervention that can prevent the outcome. This is the
                         proactive criterion: the metric must enable a preventive action, not just signal that conditions
                         are worsening. If inspection completion drops to 60%, deploying supervisors closes the gap.
@@ -253,7 +232,7 @@
                 </div>
 
                 <div class="test-card">
-                    <h4><i class="fa-solid fa-circle-check" style="color: #1565c0;"></i>&ensp;Sensitive</h4>
+                    <h4><i class="fa-solid fa-circle-check audit-check"></i>Sensitive</h4>
                     <p>A leading indicator must vary enough over time to produce a detectable signal. If a compliance
                         rate remains at a constant 99% while incident rates fluctuate, the measurement has failed to
                         capture the variability of the field. Mathematically, data without variation provides no
@@ -263,7 +242,7 @@
                 </div>
 
                 <div class="test-card">
-                    <h4><i class="fa-solid fa-circle-check" style="color: #1565c0;"></i>&ensp;Consistently measured</h4>
+                    <h4><i class="fa-solid fa-circle-check audit-check"></i>Consistently measured</h4>
                     <p>Definitional changes, system migrations, collection gaps, and target-chasing all corrupt the time
                         series. A training rate calculated against total headcount one month, then against permanent
                         staff the next, is not the same metric. The denominator changed. The time series is broken. No
@@ -276,35 +255,35 @@
                     definitional criteria to ensure the validation math remains grounded in safety theory:</p>
 
                 <div class="table-scroll">
-                <table class="verdict-table" style="margin-top: 15px; margin-bottom: 20px;">
-                    <thead>
-                        <tr>
-                            <th>Campbell Criteria</th>
-                            <th>Article Property</th>
-                            <th>Operational Management Test</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Proactive</strong></td>
-                            <td><strong>Actionable</strong></td>
-                            <td><strong>Management Test:</strong> Does a drop in this metric trigger a mandatory,
-                                pre-authorized intervention?</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Preventive</strong></td>
-                            <td><strong>Direction</strong></td>
-                            <td><strong>Performance Test:</strong> Does an increase in this activity demonstrate a
-                                reduction in incident rates?</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Predictive</strong></td>
-                            <td><strong>Temporally Prior</strong></td>
-                            <td><strong>Forewarning Test:</strong> Does the signal occur early enough to allow for a
-                                response before accidents happen?</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <table class="verdict-table">
+                        <thead>
+                            <tr>
+                                <th>Campbell Criteria</th>
+                                <th>Article Property</th>
+                                <th>Operational Management Test</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Proactive</strong></td>
+                                <td><strong>Actionable</strong></td>
+                                <td><strong>Management Test:</strong> Does a drop in this metric trigger a mandatory,
+                                    pre-authorized intervention?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Preventive</strong></td>
+                                <td><strong>Direction</strong></td>
+                                <td><strong>Performance Test:</strong> Does an increase in this activity demonstrate a
+                                    reduction in incident rates?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Predictive</strong></td>
+                                <td><strong>Temporally Prior</strong></td>
+                                <td><strong>Forewarning Test:</strong> Does the signal occur early enough to allow for a
+                                    response before accidents happen?</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <p>Resources like the <a href="https://www.thecampbellinstitute.org/research/" target="_blank"
@@ -360,8 +339,8 @@
                 <h3>Stage 3 - Operational Confirmation</h3>
                 <p>Statistical classification is a starting point, not a conclusion. Every result — Leading,
                     Forewarning, Concurrent, or Weak — must be asked two diagnostic questions:</p>
-                <ul style="margin-top:10px;">
-                    <li style="margin-bottom:8px;"><strong>Does it make sense?</strong>
+                <ul>
+                    <li><strong>Does it make sense?</strong>
                         Ask why the numbers behave this way. If inspections lead to fewer injuries next month, the
                         causal link is clear: finding hazards stops accidents. But if a metric tests as "Concurrent",
                         ask
@@ -439,39 +418,30 @@
                     installation required,
                     no data sent to a server. </p>
 
-                <div class="technical-callout" style="margin-top: 25px;">
-                    <p>The browser-based Screener will be embedded here in the final publication. If
-                        you are reading this in a non-interactive format, the methodology can be implemented using
-                        standard
-                        statistical software following the steps below.</p>
-                </div>
 
-                <p style="margin-top: 20px;">Upload a CSV file, select your outcome columns, and the tool returns a
-                    ranked results table. The outcome is typically an incident rate.</p>
-
-                <div class="technical-callout" style="margin-top: 25px;">
-                    <h3 style="margin-bottom: 15px;">Before you upload: minimum data requirements</h3>
-                    <ul style="margin-top: 10px;">
-                        <li style="margin-bottom: 8px;"><strong>Format:</strong> One row per month, one column per
+                <div class="technical-callout variant-warning">
+                    <h3>Before you upload: minimum data requirements</h3>
+                    <ul>
+                        <li><strong>Format:</strong> One row per month, one column per
                             metric.
                             The first column must be a date in <code>YYYY-MM</code> format (e.g., <code>2024-01</code>).
                             Rows
                             must be in chronological order with no gaps.</li>
-                        <li style="margin-bottom: 8px;"><strong>Minimum length:</strong> 12 consecutive months. Fewer
+                        <li><strong>Minimum length:</strong> 12 consecutive months. Fewer
                             than 12 paired observations per metric are automatically excluded to ensure the correlation
                             calculation is possible.
                         </li>
-                        <li style="margin-bottom: 8px;"><strong>Outcome columns:</strong> Include your lagging
+                        <li><strong>Outcome columns:</strong> Include your lagging
                             indicators
                             (Recordable Incidents, LTIR) in the same file. You select the outcome columns in the
                             interface;
                             the tool tests all other metrics against them.</li>
-                        <li style="margin-bottom: 8px;"><strong>Consistency:</strong> Never mix data from different
+                        <li><strong>Consistency:</strong> Never mix data from different
                             classification sets. If incident reporting rules changed—for instance, a new definition for
                             a
                             "Recordable Incident"—the results will be corrupted. Trim the file to the consistent period.
                         </li>
-                        <li style="margin-bottom: 8px;"><strong>Missing values:</strong> Treat months with no collection
+                        <li><strong>Missing values:</strong> Treat months with no collection
                             as
                             blank, not zero. A 0% inspection rate means inspections happened but failed. A month with no
                             record means data does not exist. Fill isolated gaps with the column's rolling average. If a
@@ -479,14 +449,14 @@
                             first diagnostic finding: an organization cannot claim a proactive safety culture if it
                             cannot
                             maintain contiguous data.</li>
-                        <li style="margin-bottom: 8px;"><strong>Anomalous periods:</strong> Exclude months with known
+                        <li><strong>Anomalous periods:</strong> Exclude months with known
                             operational breaks (site shutdowns, strikes, or mass demobilisation). These reflect
                             exceptional conditions, not the routine operations the screener evaluates. If you retain
                             them, treat the results as provisional.</li>
                     </ul>
                 </div>
 
-                <p style="margin-top: 20px;">To convert daily logs into the required monthly CSV, use
+                <p>To convert daily logs into the required monthly CSV, use
                     <strong>SUM</strong> for
                     event counts (e.g., total inspections) and <strong>AVG</strong> for rate-based metrics (e.g.,
                     monthly
@@ -495,7 +465,7 @@
                     lengths.
                 </p>
 
-                <p style="margin-top: 20px; font-size: 0.9em; color: #555;">
+                <p class="insight-briefing-note">
                     All activity metrics are rate-normalised (per 100 employees or per 200,000 hours) — not raw counts —
                     in
                     line with the <strong>Exposure Rate-Normalisation</strong> constraint in Section 4.
@@ -556,40 +526,44 @@
                     practice:</p>
 
                 <div class="table-scroll">
-                <table>
-                    <tr>
-                        <th>|r| range</th>
-                        <th>Classification</th>
-                        <th>Interpretation</th>
-                    </tr>
-                    <tr>
-                        <td>0.00 – 0.30</td>
-                        <td>No signal</td>
-                        <td>No predictive utility. The metric is either disconnected from risk drivers or the data
-                            collection is too inconsistent to produce a signal.</td>
-                    </tr>
-                    <tr>
-                        <td>0.30 – 0.50</td>
-                        <td>Moderate signal</td>
-                        <td>Typical range for real EHS data. If negative (−r): validated leading indicator. If
-                            positive (+r): <strong>Forewarning</strong> — the metric has temporal structure but fails
-                            the preventive criterion. It tracks deterioration, not prevention.</td>
-                    </tr>
-                    <tr>
-                        <td>0.50 – 0.70</td>
-                        <td>Strong signal</td>
-                        <td>High predictive confidence. If negative (−r): sufficient to justify management intervention
-                            based on metric trends alone. If positive (+r): strong <strong>Forewarning</strong>
-                            signal — do not treat as a control measure. Investigate the mechanism before acting.</td>
-                    </tr>
-                    <tr>
-                        <td>&gt; 0.70</td>
-                        <td>Suspect — verify data</td>
-                        <td>Statistically improbable for activity metrics tested against incident outcomes. Direction
-                            still applies, but the magnitude warrants scrutiny: likely target chasing, data
-                            manipulation, or the metric being a direct mathematical derivative of the outcome.</td>
-                    </tr>
-                </table>
+                    <table class="verdict-table">
+                        <tr>
+                            <th>|r| range</th>
+                            <th>Classification</th>
+                            <th>Interpretation</th>
+                        </tr>
+                        <tr>
+                            <td>0.00 – 0.30</td>
+                            <td>No signal</td>
+                            <td>No predictive utility. The metric is either disconnected from risk drivers or the data
+                                collection is too inconsistent to produce a signal.</td>
+                        </tr>
+                        <tr>
+                            <td>0.30 – 0.50</td>
+                            <td>Moderate signal</td>
+                            <td>Typical range for real EHS data. If negative (−r): validated leading indicator. If
+                                positive (+r): <strong>Forewarning</strong> — the metric has temporal structure but
+                                fails
+                                the preventive criterion. It tracks deterioration, not prevention.</td>
+                        </tr>
+                        <tr>
+                            <td>0.50 – 0.70</td>
+                            <td>Strong signal</td>
+                            <td>High predictive confidence. If negative (−r): sufficient to justify management
+                                intervention
+                                based on metric trends alone. If positive (+r): strong <strong>Forewarning</strong>
+                                signal — do not treat as a control measure. Investigate the mechanism before acting.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&gt; 0.70</td>
+                            <td>Suspect — verify data</td>
+                            <td>Statistically improbable for activity metrics tested against incident outcomes.
+                                Direction
+                                still applies, but the magnitude warrants scrutiny: likely target chasing, data
+                                manipulation, or the metric being a direct mathematical derivative of the outcome.</td>
+                        </tr>
+                    </table>
                 </div>
 
                 <p>At low-incident sites, |r| = 0.30–0.50 is typically the realistic ceiling. Datasets with long runs of
@@ -609,13 +583,13 @@
 
                 <p>The dataset includes six candidate metrics tested against <strong>Incident Rate
                         (per 200,000 hours)</strong> as the outcome:</p>
-                <ul style="margin-top: 10px;">
-                    <li><strong>Hazard Closure Rate (%)</strong></li>
-                    <li><strong>Near Miss Rate (per 100 employees)</strong></li>
-                    <li><strong>Observation Rate (per 100 employees)</strong></li>
-                    <li><strong>Training Rate (hours per employee)</strong></li>
-                    <li><strong>Total Working Hours</strong></li>
-                    <li><strong>Overtime Rate (hours per employee)</strong></li>
+                <ul>
+                    <li>Hazard Closure Rate (%)</li>
+                    <li>Near Miss Rate (per 100 employees)</li>
+                    <li>Observation Rate (per 100 employees)</li>
+                    <li>Training Rate (hours per employee)</li>
+                    <li>Total Working Hours</li>
+                    <li>Overtime Rate (hours per employee)</li>
                 </ul>
 
                 <p>This is not a sanitized example built to demonstrate a clean result. The dataset contains one
@@ -702,59 +676,63 @@
 
                 <p>The table below summarises all findings, sorted by classification result.</p>
 
+
+
                 <div class="table-scroll">
-                <table>
-                    <tr>
-                        <th>Metric Name</th>
-                        <th>Best Lag (months)</th>
-                        <th>Best r (vs. Incidents)</th>
-                        <th>Effect Size (r²)</th>
-                        <th>Classification</th>
-                    </tr>
-                    <tr>
-                        <td>Hazard Closure Rate (%)</td>
-                        <td>2</td>
-                        <td>−0.56</td>
-                        <td>0.31</td>
-                        <td><strong>Leading</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Overtime Rate (hrs/emp)</td>
-                        <td>1</td>
-                        <td>+0.55</td>
-                        <td>0.30</td>
-                        <td><strong>Forewarning</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Near Miss Rate (per 100 emp)</td>
-                        <td>0</td>
-                        <td>+0.37</td>
-                        <td>0.14</td>
-                        <td><strong>Concurrent</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Observation Rate (per 100 emp)</td>
-                        <td>0</td>
-                        <td>+0.37</td>
-                        <td>0.14</td>
-                        <td><strong>Concurrent</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Training Rate (hrs/emp)</td>
-                        <td>2</td>
-                        <td>−0.10</td>
-                        <td>0.01</td>
-                        <td><strong>Weak</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Total Working Hours</td>
-                        <td>2</td>
-                        <td>+0.27</td>
-                        <td>0.07</td>
-                        <td><strong>Weak</strong></td>
-                    </tr>
-                </table>
+                    <table class="verdict-table">
+                        <tr>
+                            <th>Metric Name</th>
+                            <th>Lag (mo)</th>
+                            <th>Correlation (r)</th>
+                            <th>Effect (r²)</th>
+                            <th>Classification</th>
+                        </tr>
+                        <tr>
+                            <td>Hazard Closure Rate (%)</td>
+                            <td>2</td>
+                            <td>−0.56</td>
+                            <td>0.31</td>
+                            <td><span class="pass">Leading</span></td>
+                        </tr>
+                        <tr>
+                            <td>Overtime Rate (hrs/emp)</td>
+                            <td>1</td>
+                            <td>+0.55</td>
+                            <td>0.30</td>
+                            <td><span class="warn">Forewarning</span></td>
+                        </tr>
+                        <tr>
+                            <td>Near Miss Rate (per 100 emp)</td>
+                            <td>0</td>
+                            <td>+0.37</td>
+                            <td>0.14</td>
+                            <td>Concurrent</td>
+                        </tr>
+                        <tr>
+                            <td>Observation Rate (per 100 emp)</td>
+                            <td>0</td>
+                            <td>+0.37</td>
+                            <td>0.14</td>
+                            <td>Concurrent</td>
+                        </tr>
+                        <tr>
+                            <td>Training Rate (hrs/emp)</td>
+                            <td>2</td>
+                            <td>−0.10</td>
+                            <td>0.01</td>
+                            <td>Weak</td>
+                        </tr>
+                        <tr>
+                            <td>Total Working Hours</td>
+                            <td>2</td>
+                            <td>+0.27</td>
+                            <td>0.07</td>
+                            <td>Weak</td>
+                        </tr>
+                    </table>
                 </div>
+
+
 
                 <h2 id="understanding-concurrent-metrics">8. Understanding Concurrent Metrics</h2>
 
@@ -871,9 +849,10 @@
                     simpler model. Always focus your investigation on the <strong>Primary</strong> driver, as it
                     accounts for most of the model's explanatory power for that specific risk pattern.</p>
 
-                <div
-                    style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-top: 20px;">
-                    <h4 style="margin-top: 0; color: #1F4E79;">Worked Example: Specimen Dataset</h4>
+
+
+                <div class="technical-example">
+                    <h4>Worked Example: Specimen Dataset</h4>
 
                     <p>Using the specimen data against <strong>Incident Rate</strong>:</p>
 
@@ -892,7 +871,7 @@
                         </li>
                     </ul>
 
-                    <p style="margin-bottom: 0;"><strong>Finding:</strong> Overtime Rate carries 77% of the total
+                    <p><strong>Finding:</strong> Overtime Rate carries 77% of the total
                         weight. The site leader should investigate the overtime trend and implement fatigue controls
                         before the next incident spike.
                     </p>
@@ -1008,27 +987,18 @@
                     covered in the next article in this series: <em>Building the Safety Performance
                         Index</em>.</p>
 
+
                 <!-- Related Reading -->
-                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 40px 0;">
-                    <h3 style="margin: 0 0 10px 0;">Related Reading</h3>
-                    <ul style="margin: 10px 0 0 0; line-height: 1.6;">
+                <div class="insight-briefing">
+                    <strong>Related Strategic Briefings:</strong>
+                    <ul>
                         <li><a href="leveraging-diagnostic-analytics-to-enhance-workplace-safety.html">Applying
-                                Diagnostic Analytics to Enhance Workplace
-                                Safety</a>
-                        </li>
+                                Diagnostic Analytics to Enhance Workplace Safety</a></li>
                         <li><a
                                 href="the-ehs-data-refinery-a-blueprint-for-turning-raw-reports-into-predictive-assets.html">The
-                                EHS Data Refinery: Turning Raw Reports into
-                                Predictive
-                                Assets</a></li>
-                        <li><a href="digital-error-traps-in-safety-apps.html">The
-                                Digital Error Trap:
-                                Why UX
-                                Debt is a
-                                Safety Hazard</a></li>
-                        <li><a href="closing-the-ai-readiness-gap-interoperability-as-the-foundation.html">Closing
-                                the AI Readiness Gap: Interoperability as the
-                                Foundation</a></li>
+                                EHS Data Refinery: Turning Raw Reports into Assets</a></li>
+                        <li><a href="the-ai-readiness-gap-in-ehs.html">The AI Readiness Gap in EHS: From Hype to
+                                High-Value Asset</a></li>
                     </ul>
                 </div>
 
