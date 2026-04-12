@@ -297,7 +297,7 @@ a {
 
 /* --- Book Archive --- */
 .book-archive {
-    max-width: 680px;
+    max-width: 740px;
 }
 
 .book-row {
@@ -309,9 +309,28 @@ a {
 
 .book-thumb {
     width: 90px;
-    flex-shrink: 0;
     height: auto;
+    flex-shrink: 0;
+    object-fit: unset;
     box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+.article-thumb {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+.book-date {
+    font-size: 0.72rem;
+    color: var(--light-text);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    display: block;
 }
 
 .book-info {
@@ -359,6 +378,11 @@ a {
     }
     .book-thumb {
         width: 70px;
+        height: auto;
+    }
+    .article-thumb {
+        width: 70px;
+        height: 70px;
     }
 }
 
@@ -480,7 +504,7 @@ a {
 /* --- Secondary page headers (Writing, Books) --- */
 .insights-page-header,
 .books-page-header {
-    max-width: 680px;
+    max-width: 740px;
     padding-top: 3rem;
     margin-bottom: 0;
 }
@@ -869,7 +893,7 @@ table tbody tr:nth-child(even) {
 }
 /* --- Landing Page --- */
 .page-wrapper {
-    max-width: 680px;
+    max-width: 740px;
     margin: 0 auto;
     padding: 5rem 2rem 6rem;
 }
@@ -1270,3 +1294,51 @@ table tbody tr:nth-child(even) {
         padding: 15px;
     }
 }
+
+/* --- Article pages --- */
+.article-wrapper {
+    padding-top: 3.5rem;
+}
+
+.article-wrapper .content-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+}
+
+.article-wrapper .insight-date {
+    font-size: 0.78rem;
+    color: var(--light-text);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.article-wrapper p {
+    font-size: 0.97rem;
+    line-height: 1.85;
+    color: var(--body-text, #3a3a3a);
+    margin-bottom: 1.2rem;
+}
+
+.article-wrapper h2 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--dark-text);
+}
+
+.article-wrapper h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+}
+
