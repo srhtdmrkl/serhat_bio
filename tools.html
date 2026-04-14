@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Applications, extensions, and models built by Serhat Demirkol bridging EHS operations and data science.">
+    <title>Tools | Serhat Demirkol</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6L4GK800"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4W6L4GK800');
+    </script>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="page-wrapper">
+        <div class="books-page-header">
+            <h1 class="lede-name">Tools</h1>
+            <p class="lede-sub">Applied models, technical frameworks, and field-deployable tools.</p>
+        </div>
+
+        <hr class="section-rule" style="margin: 2rem 0 2.5rem;">
+
+        <section class="book-archive">
+
+            <div class="book-row">
+                <div class="book-info" style="width: 100%;">
+                    <h2 class="book-title-clean">Metric Screener</h2>
+                    <p class="book-desc">A client-side validation engine that tests EHS performance metrics for predictive validity. By running lag correlation analysis on monthly metric uploads, it algorithmically separates true leading indicators (those providing operational signal before an event) from compliance metrics that merely count what already went wrong.</p>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <a href="/tools/metric-screener.html" class="book-link"
+                            onclick="trackEvent('click_tool_link', {tool_title: 'Metric Screener Run'})">Run Screener &rarr;</a>
+                        <a href="/insights/validating-leading-indicators-with-predictive-analytics.html" class="book-link"
+                            onclick="trackEvent('click_tool_link', {tool_title: 'Metric Screener Methodology'})">Read Methodology &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="book-rule">
+
+            <div class="book-row">
+                <div class="book-info" style="width: 100%;">
+                    <h2 class="book-title-clean">EHS LangExtract Prototypes (Python)</h2>
+                    <p class="book-desc">A suite of targeted extraction frameworks designed to eliminate administrative friction in safety workflows. By using schema-constrained LLM parsing, these prototypes automate the conversion of chaotic EHS text—incident narratives, SDS data, and regulatory clauses—into audit-ready JSON payloads. It provides the technical blueprint for moving from manual data entry to automated data refineries.</p>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <a href="https://github.com/srhtdmrkl/ehs-langextract-prototypes" class="book-link" target="_blank"
+                            onclick="trackEvent('click_tool_link', {tool_title: 'LangExtract Prototypes GitHub'})">GitHub Repository &rarr;</a>
+                        <a href="/insights/structuring-unstructured-ehs-data-with-langextract.html" class="book-link"
+                            onclick="trackEvent('click_tool_link', {tool_title: 'LangExtract Prototypes Article'})">Read Full Framework &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="book-rule">
+
+            <div class="book-row">
+                <div class="book-info" style="width: 100%;">
+                    <h2 class="book-title-clean">SWA Behavioral Dynamics Simulator</h2>
+                    <p class="book-desc">An interactive behavioral economics engine modeling Stop Work Authority decision-making. Rejecting the assumption of the 'rational worker,' the model applies Prospect Theory and Hyperbolic Discounting to mathematically calculate why field crews avoid utilizing SWA. It maps safety culture as a quantifiable algorithm rather than a lagging observation.</p>
+                    <a href="https://srhtdmrkl.github.io/swa-simulation-dashboard/" class="book-link" target="_blank"
+                        onclick="trackEvent('click_tool_link', {tool_title: 'SWA Simulation'})">Run Simulator &rarr;</a>
+                </div>
+            </div>
+
+            <hr class="book-rule">
+
+            <div class="book-row">
+                <div class="book-info" style="width: 100%;">
+                    <h2 class="book-title-clean">Safety Identity Analysis (NLP Model)</h2>
+                    <p class="book-desc">A Natural Language Processing (NLP) pipeline decoding the professional identity of the safety industry. Ingesting unstructured practitioner responses, the model uses SBERT sentence embeddings, K-Means clustering, and UMAP to map semantic archetypes. It algorithmically quantifies the gap between compliance metrics (ISO 45001) and operational resilience (Safety-II) using verb classification models.</p>
+                    <a href="https://safety-identity.streamlit.app" class="book-link" target="_blank"
+                        onclick="trackEvent('click_tool_link', {tool_title: 'Safety Identity Analysis'})">View Analysis &rarr;</a>
+                </div>
+            </div>
+
+            <hr class="book-rule">
+
+            <div class="book-row">
+                <div class="book-info" style="width: 100%;">
+                    <h2 class="book-title-clean">Regulens for OSHA (Chrome Extension)</h2>
+                    <p class="book-desc">A production Chrome extension that modifies the osha.gov DOM to eliminate information friction. It automatically detects and embeds official OSHA Letters of Interpretation directly adjacent to the target standard, and maps regulatory cross-references (e.g., 29 CFR 1910.134) in real-time. It tightens the feedback loop between monolithic compliance text and operational queries.</p>
+                    <a href="#" class="book-link"
+                        onclick="trackEvent('click_tool_link', {tool_title: 'Regulens'})">Chrome Store &rarr;</a>
+                </div>
+            </div>
+
+            <hr class="book-rule">
+
+            <div class="book-row">
+                <div class="book-info" style="width: 100%;">
+                    <h2 class="book-title-clean">OSHA Incident Classification Model (Streamlit)</h2>
+                    <p class="book-desc">A machine learning pipeline evaluating Logistic Regression, XGBoost, and BERT models to automatically classify unstructured workplace injury narratives. Trained on a decade of OSHA Severe Injury Reports (2015–2025), the application parses extreme events (amputations, hospitalizations) against the OIICS v2.01 standard (Nature, Part, Source, Event). It demonstrates how to pull quantitative signal from free-text field data.</p>
+                    <a href="#" class="book-link"
+                        onclick="trackEvent('click_tool_link', {tool_title: 'Incident Classification'})">View Application &rarr;</a>
+                </div>
+            </div>
+
+            <hr class="book-rule">
+
+            <div class="book-row">
+                <div class="book-info" style="width: 100%;">
+                    <h2 class="book-title-clean">Dropped Object Assessment (iOS App)</h2>
+                    <p class="book-desc">A native iOS engine for field engineers calculating dropped object risk (DROPS). The model computes potential impact energy (Joules) via mass and drop height, mapping the physical output to structural risk classifications. It bypasses spreadsheet-based field notes by generating standardized assessment data and compliance-ready PDF reports directly on-site.</p>
+                    <a href="https://apps.apple.com/ru/app/dropped-object-assessment/id6745404907?l=en-GB" class="book-link" target="_blank"
+                        onclick="trackEvent('click_tool_link', {tool_title: 'Dropped Object Assessment App'})">App Store &rarr;</a>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

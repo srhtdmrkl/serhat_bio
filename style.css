@@ -43,6 +43,14 @@ a {
 }
 
 /* --- Header --- */
+.logo-link {
+    text-decoration: none;
+    border-bottom: none !important;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
 .main-header {
     background-color: var(--white-color);
     border-bottom: 1px solid var(--border-color);
@@ -261,6 +269,40 @@ a {
     border-bottom: 2px solid var(--primary-blue);
     padding-bottom: 0.5rem;
     display: inline-block;
+}
+
+/* --- Stances List --- */
+.stances-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .stances-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stances-list p {
+    background: #fdfdfd;
+    border-left: 3px solid var(--primary-blue);
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--light-text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 0 4px 4px 0;
+}
+
+.stances-list p strong {
+    color: var(--dark-text);
+    display: inline;
+}
+
+.stances-list p:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow-color);
 }
 
 /* --- Footer --- */
@@ -952,19 +994,7 @@ table tbody tr:nth-child(even) {
     margin-bottom: 1.75rem;
 }
 
-.stances-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.stances-list p {
-    font-size: 0.97rem;
-    color: var(--dark-text);
-    line-height: 1.75;
-    padding-left: 1.1rem;
-    border-left: 2px solid var(--rule-color);
-}
+/* Legacy stances-list rules removed to allow new grid layout */
 
 @media (max-width: 768px) {
     .page-wrapper {

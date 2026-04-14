@@ -1,5 +1,6 @@
-    <header class="main-header">
-        <div class="container">
+<header class="main-header">
+    <div class="container">
+        <a href="/index.html" class="logo-link" onclick="trackEvent('navigation_click', {link_text: 'Logo Nav'})">
             <div class="logo">
                 <span class="logo-square"></span>
                 <div class="logo-text">
@@ -7,16 +8,22 @@
                     <p>EHS Systems Architect</p>
                 </div>
             </div>
-            <div class="navigation">
-                <!-- <div class="lang-switcher">
+        </a>
+        <div class="navigation">
+            <!-- <div class="lang-switcher">
                     <span>EN</span>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div> -->
-                <nav>
-                    <a href="/index.html" class="nav-link" onclick="trackEvent('navigation_click', {link_text: 'ABOUT ME'})">ABOUT ME</a>
-                    <a href="/books.html" class="nav-link" onclick="trackEvent('navigation_click', {link_text: 'Books'})">Books</a>
-                    <a href="/insights.html" class="nav-link" onclick="trackEvent('navigation_click', {link_text: 'Writing'})">Writing</a>
-                </nav>
-            </div>
+            <nav>
+                <a href="/tools.html" class="nav-link"
+                    onclick="trackEvent('navigation_click', {link_text: 'Tools'})">Tools</a>
+                <a href="/books.html" class="nav-link"
+                    onclick="trackEvent('navigation_click', {link_text: 'Books'})">Books</a>
+                <a href="/insights.html" class="nav-link"
+                    onclick="trackEvent('navigation_click', {link_text: 'Writing'})">Writing</a>
+                <a href="/index.html#inquiries" class="nav-link"
+                    onclick="trackEvent('navigation_click', {link_text: 'Inquiries'})">Inquiries</a>
+            </nav>
         </div>
-    </header>
+    </div>
+</header>
