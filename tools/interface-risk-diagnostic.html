@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Risk Diagnostic — Is Your Safety Platform Corrupting Your Data? | Serhat Demirkol</title>
+    <meta name="description"
+        content="A 21-signal diagnostic checklist for EHS managers. Identify which interface failure mechanisms are operating in your safety platform before they corrupt your data.">
+    <link rel="canonical" href="https://serhat.bio/tools/interface-risk-diagnostic.html" />
+    <meta property="og:title" content="Interface Risk Diagnostic — Is Your Safety Platform Corrupting Your Data?">
+    <meta property="og:description"
+        content="A 21-signal diagnostic checklist for EHS managers. Identify which interface failure mechanisms are operating in your safety platform.">
+    <meta property="og:url" content="https://serhat.bio/tools/interface-risk-diagnostic.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Serhat Demirkol">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Interface Risk Diagnostic",
+      "url": "https://serhat.bio/tools/interface-risk-diagnostic.html",
+      "description": "A 21-signal diagnostic checklist for EHS managers to identify interface failure mechanisms in their safety platform.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Serhat Demirkol", "url": "https://serhat.bio" }
+    }
+    </script>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6L4GK800"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4W6L4GK800');
+    </script>
+    <style>
+        :root {
+            --navy: #1a2e4a;
+            --blue: #1F4E79;
+            --blue-mid: #2980b9;
+            --red: #dc2626;
+            --red-light: #fef2f2;
+            --amber: #b45309;
+            --amber-light: #fffbeb;
+            --green: #166534;
+            --green-light: #f0fdf4;
+            --slate: #64748b;
+            --border: #e2e8f0;
+            --bg: #f8fafc;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: #1e293b;
+            margin: 0;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, #0f1f35 0%, #1F4E79 60%, #2563eb 100%);
+            color: #fff;
+            padding: 56px 32px 48px;
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.5rem, 4vw, 2.1rem);
+            font-weight: 700;
+            margin: 0 0 12px;
+            line-height: 1.25;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            max-width: 560px;
+            margin: 0 auto 24px;
+            line-height: 1.65;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 20px;
+            padding: 5px 14px;
+            font-size: 0.78rem;
+            font-weight: 500;
+        }
+
+        /* ── Layout ── */
+        .tool-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        /* ── Intro card ── */
+        .intro-card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            margin-bottom: 28px;
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .intro-card strong { color: #1e293b; }
+
+        /* ── Score bar ── */
+        .score-bar {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 24px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+
+        .score-total {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 64px;
+        }
+
+        .score-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--blue);
+            line-height: 1;
+        }
+
+        .score-denom {
+            font-size: 0.72rem;
+            color: var(--slate);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .score-meta { flex: 1; min-width: 200px; }
+
+        .score-label {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .score-bar-track {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .score-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.4s ease, background 0.4s ease;
+            background: var(--blue-mid);
+            width: 0%;
+        }
+
+        .score-verdict {
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .verdict-low    { background: var(--green-light); color: var(--green); }
+        .verdict-medium { background: var(--amber-light); color: var(--amber); }
+        .verdict-high   { background: #fff7ed; color: #c2410c; }
+        .verdict-critical { background: var(--red-light); color: var(--red); }
+
+        .print-btn {
+            background: none;
+            border: 1.5px solid var(--border);
+            border-radius: 7px;
+            padding: 8px 16px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--slate);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s;
+        }
+
+        .print-btn:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        /* ── Mechanism card ── */
+        .mechanism-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .mechanism-card.has-signals {
+            border-color: #fca5a5;
+            box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.08);
+        }
+
+        .mechanism-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 22px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .mechanism-header:hover { background: #fafbfc; }
+
+        .mech-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 1.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--slate);
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .mechanism-card.has-signals .mech-number {
+            background: var(--red-light);
+            border-color: #fca5a5;
+            color: var(--red);
+        }
+
+        .mech-title-block { flex: 1; }
+
+        .mech-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 2px;
+        }
+
+        .mech-subtitle {
+            font-size: 0.78rem;
+            color: var(--slate);
+        }
+
+        .mech-status {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            background: var(--bg);
+            color: var(--slate);
+            border: 1px solid var(--border);
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .mechanism-card.has-1 .mech-status {
+            background: var(--amber-light);
+            color: var(--amber);
+            border-color: #fcd34d;
+        }
+
+        .mechanism-card.has-2 .mech-status,
+        .mechanism-card.has-3 .mech-status {
+            background: var(--red-light);
+            color: var(--red);
+            border-color: #fca5a5;
+        }
+
+        .mech-chevron {
+            color: var(--slate);
+            font-size: 0.8rem;
+            transition: transform 0.2s;
+        }
+
+        .mechanism-card.open .mech-chevron { transform: rotate(180deg); }
+
+        .mechanism-body {
+            display: none;
+            border-top: 1px solid var(--border);
+            padding: 20px 22px;
+        }
+
+        .mechanism-card.open .mechanism-body { display: block; }
+
+        .mech-description {
+            font-size: 0.83rem;
+            color: #475569;
+            line-height: 1.65;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .signals-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--slate);
+            margin-bottom: 10px;
+        }
+
+        .signal-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 7px;
+            margin-bottom: 6px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .signal-item:hover { background: var(--bg); border-color: var(--border); }
+
+        .signal-item.checked {
+            background: var(--red-light);
+            border-color: #fca5a5;
+        }
+
+        .signal-item input[type="checkbox"] {
+            margin-top: 2px;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            accent-color: var(--red);
+            cursor: pointer;
+        }
+
+        .signal-text {
+            font-size: 0.84rem;
+            color: #334155;
+            line-height: 1.55;
+            flex: 1;
+        }
+
+        .signal-item.checked .signal-text { color: #1e293b; font-weight: 500; }
+
+        /* ── Results summary ── */
+        .results-section {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin-top: 28px;
+        }
+
+        .results-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .result-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.84rem;
+        }
+
+        .result-row:last-child { border-bottom: none; }
+
+        .result-mech { flex: 1; font-weight: 500; }
+
+        .result-count {
+            width: 80px;
+            display: flex;
+            gap: 4px;
+        }
+
+        .signal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            background: #fff;
+            transition: all 0.2s;
+        }
+
+        .signal-dot.filled { background: var(--red); border-color: var(--red); }
+
+        .result-status {
+            font-size: 0.73rem;
+            font-weight: 600;
+            padding: 2px 9px;
+            border-radius: 10px;
+            min-width: 74px;
+            text-align: center;
+        }
+
+        .status-clear    { background: var(--green-light); color: var(--green); }
+        .status-watch    { background: var(--amber-light); color: var(--amber); }
+        .status-active   { background: var(--red-light); color: var(--red); }
+
+        /* ── Next steps ── */
+        .next-steps {
+            margin-top: 20px;
+            padding: 18px 20px;
+            background: #f0f7ff;
+            border: 1px solid #bcd4ea;
+            border-radius: 8px;
+            font-size: 0.83rem;
+            color: #334155;
+            line-height: 1.65;
+        }
+
+        .next-steps strong { color: var(--blue); display: block; margin-bottom: 6px; }
+
+        .article-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .article-link:hover { text-decoration: underline; }
+
+        /* ── Print ── */
+        @media print {
+            .score-bar { position: static; box-shadow: none; }
+            .print-btn { display: none; }
+            .hero { background: #1F4E79 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .mechanism-body { display: block !important; }
+            .mech-chevron { display: none; }
+            .mechanism-card { break-inside: avoid; }
+            body { background: #fff; }
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 40px 16px 36px; }
+            .tool-wrapper { padding: 20px 14px 48px; }
+            .mechanism-header { padding: 14px 16px; }
+            .mechanism-body { padding: 16px; }
+            .score-bar { padding: 14px 16px; gap: 12px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="hero">
+        <div class="hero-eyebrow">Diagnostic Tool</div>
+        <h1>Interface Risk Diagnostic</h1>
+        <p>21 observable signals across 7 failure mechanisms. Work through the checklist against your current EHS platform. No data upload required.</p>
+        <div class="hero-badges">
+            <span class="hero-badge"><i class="fa-solid fa-check-double"></i> 21 signals</span>
+            <span class="hero-badge"><i class="fa-solid fa-layer-group"></i> 7 mechanisms</span>
+            <span class="hero-badge"><i class="fa-solid fa-lock"></i> No data shared</span>
+            <span class="hero-badge"><i class="fa-solid fa-print"></i> Print-ready</span>
+        </div>
+    </div>
+
+    <div class="tool-wrapper">
+
+        <div class="intro-card">
+            <strong>How to use this.</strong> For each signal, ask: does this describe what I can observe in my platform right now? Check it if yes. You do not need system access or a report from IT — these are observable from normal day-to-day use. A mechanism with two or more signals checked is active in your platform and should be treated as an unregistered hazard. The evidence and field examples behind each mechanism are in: <a href="../insights/digital-error-traps-in-safety-apps.html" style="color: var(--blue); font-weight: 600;">The Digital Error Trap</a>.
+        </div>
+
+        <!-- Score bar -->
+        <div class="score-bar" id="scoreBar">
+            <div class="score-total">
+                <div class="score-number" id="scoreNumber">0</div>
+                <div class="score-denom">/ 21 signals</div>
+            </div>
+            <div class="score-meta">
+                <div class="score-label" id="scoreLabel">No signals detected</div>
+                <div class="score-bar-track">
+                    <div class="score-bar-fill" id="scoreBarFill"></div>
+                </div>
+            </div>
+            <div class="score-verdict verdict-low" id="scoreVerdict">Clear</div>
+            <button class="print-btn" onclick="window.print()">
+                <i class="fa-solid fa-print"></i> Print
+            </button>
+        </div>
+
+        <!-- Mechanism 1 -->
+        <div class="mechanism-card open" id="mech-1">
+            <div class="mechanism-header" onclick="toggleMech('mech-1')">
+                <div class="mech-number">1</div>
+                <div class="mech-title-block">
+                    <div class="mech-name">Habit Override</div>
+                    <div class="mech-subtitle">Muscle memory replaces risk assessment</div>
+                </div>
+                <div class="mech-status" id="status-mech-1">0 / 3</div>
+                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+            </div>
+            <div class="mechanism-body">
+                <div class="mech-description">
+                    The interface assigns the same gesture or interaction to tasks with fundamentally different risk levels. A worker swipes left on a critical safety alert because that gesture is identical to dismissing a routine notification. The interface trained the response — it is not a failure of attention.
+                </div>
+                <div class="signals-label">Observable signals</div>
+                <label class="signal-item" id="s1-1">
+                    <input type="checkbox" data-mech="1" data-signal="1" onchange="updateScore()">
+                    <span class="signal-text">Critical alerts and routine notifications are dismissed with the same gesture — swipe, tap, or click. Nothing in the interface distinguishes them.</span>
+                </label>
+                <label class="signal-item" id="s1-2">
+                    <input type="checkbox" data-mech="1" data-signal="2" onchange="updateScore()">
+                    <span class="signal-text">The platform gives no visual difference between a high-priority safety action and a low-priority administrative task at the moment of interaction.</span>
+                </label>
+                <label class="signal-item" id="s1-3">
+                    <input type="checkbox" data-mech="1" data-signal="3" onchange="updateScore()">
+                    <span class="signal-text">A worker has dismissed or skipped a critical alert unintentionally in the last 90 days — and only realised after the fact.</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Mechanism 2 -->
+        <div class="mechanism-card" id="mech-2">
+            <div class="mechanism-header" onclick="toggleMech('mech-2')">
+                <div class="mech-number">2</div>
+                <div class="mech-title-block">
+                    <div class="mech-name">Feedback Holes</div>
+                    <div class="mech-subtitle">No confirmation = duplicate or lost records</div>
+                </div>
+                <div class="mech-status" id="status-mech-2">0 / 3</div>
+                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+            </div>
+            <div class="mechanism-body">
+                <div class="mech-description">
+                    When the system does not confirm that an action was received, workers repeat the action. On platforms that do not detect duplicate submissions, one near-miss becomes five incident records. On platforms that do nothing, the submission is lost. Both outcomes corrupt your data.
+                </div>
+                <div class="signals-label">Observable signals</div>
+                <label class="signal-item" id="s2-1">
+                    <input type="checkbox" data-mech="2" data-signal="1" onchange="updateScore()">
+                    <span class="signal-text">The platform does not display a clear confirmation screen after a report is submitted — workers cannot tell whether the record went through without reopening the system.</span>
+                </label>
+                <label class="signal-item" id="s2-2">
+                    <input type="checkbox" data-mech="2" data-signal="2" onchange="updateScore()">
+                    <span class="signal-text">Your incident log contains duplicate records that workers did not knowingly create — the same event with identical timestamps filed multiple times.</span>
+                </label>
+                <label class="signal-item" id="s2-3">
+                    <input type="checkbox" data-mech="2" data-signal="3" onchange="updateScore()">
+                    <span class="signal-text">Workers regularly ask supervisors or safety managers "did my report come through?" after submitting.</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Mechanism 3 -->
+        <div class="mechanism-card" id="mech-3">
+            <div class="mechanism-header" onclick="toggleMech('mech-3')">
+                <div class="mech-number">3</div>
+                <div class="mech-title-block">
+                    <div class="mech-name">Signal Fragmentation</div>
+                    <div class="mech-subtitle">Category structure splits the same hazard</div>
+                </div>
+                <div class="mech-status" id="status-mech-3">0 / 3</div>
+                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+            </div>
+            <div class="mechanism-body">
+                <div class="mech-description">
+                    Unclear or overlapping category structure causes workers to file the same hazard under different labels. The system sees ten unrelated problems; the site has one systemic failure. Your data cannot show you the pattern that is about to produce an incident.
+                </div>
+                <div class="signals-label">Observable signals</div>
+                <label class="signal-item" id="s3-1">
+                    <input type="checkbox" data-mech="3" data-signal="1" onchange="updateScore()">
+                    <span class="signal-text">Two or more categories exist that could legitimately describe the same type of incident — for example, "Slip Hazard," "Housekeeping," and "Spill" are all valid choices for a floor oil leak.</span>
+                </label>
+                <label class="signal-item" id="s3-2">
+                    <input type="checkbox" data-mech="3" data-signal="2" onchange="updateScore()">
+                    <span class="signal-text">Running the same trend analysis using different category filters gives different results for the same underlying hazard type.</span>
+                </label>
+                <label class="signal-item" id="s3-3">
+                    <input type="checkbox" data-mech="3" data-signal="3" onchange="updateScore()">
+                    <span class="signal-text">Frontline supervisors describe recurring hazard patterns in toolbox talks or shift handovers that do not appear in the official incident data.</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Mechanism 4 -->
+        <div class="mechanism-card" id="mech-4">
+            <div class="mechanism-header" onclick="toggleMech('mech-4')">
+                <div class="mech-number">4</div>
+                <div class="mech-title-block">
+                    <div class="mech-name">Smart Guess Error</div>
+                    <div class="mech-subtitle">The interface made the wrong choice first</div>
+                </div>
+                <div class="mech-status" id="status-mech-4">0 / 3</div>
+                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+            </div>
+            <div class="mechanism-body">
+                <div class="mech-description">
+                    Modern platforms pre-fill hazard categories to speed up entry. When the pre-fill is wrong and correcting it costs more effort than accepting it, the worker accepts the wrong answer. The error entered the record before the worker touched the keyboard. Your data reflects what the system guessed, not what was observed.
+                </div>
+                <div class="signals-label">Observable signals</div>
+                <label class="signal-item" id="s4-1">
+                    <input type="checkbox" data-mech="4" data-signal="1" onchange="updateScore()">
+                    <span class="signal-text">The platform pre-fills or suggests hazard categories, incident types, or locations before the worker has entered any descriptive information.</span>
+                </label>
+                <label class="signal-item" id="s4-2">
+                    <input type="checkbox" data-mech="4" data-signal="2" onchange="updateScore()">
+                    <span class="signal-text">Correcting a suggested category requires more steps than accepting it — for example, accepting is one tap; correcting requires opening a dropdown, scrolling, and selecting.</span>
+                </label>
+                <label class="signal-item" id="s4-3">
+                    <input type="checkbox" data-mech="4" data-signal="3" onchange="updateScore()">
+                    <span class="signal-text">Your incident data shows uniform categorization across a workforce for incident types that field supervisors describe differently when asked directly.</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Mechanism 5 -->
+        <div class="mechanism-card" id="mech-5">
+            <div class="mechanism-header" onclick="toggleMech('mech-5')">
+                <div class="mech-number">5</div>
+                <div class="mech-title-block">
+                    <div class="mech-name">Alert Saturation</div>
+                    <div class="mech-subtitle">Volume eliminates the ability to distinguish critical from routine</div>
+                </div>
+                <div class="mech-status" id="status-mech-5">0 / 3</div>
+                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+            </div>
+            <div class="mechanism-body">
+                <div class="mech-description">
+                    When every notification looks the same and arrives through the same channel, workers stop reading any of them. Over hundreds of shifts, the habit becomes automatic. A critical alert — a permit about to expire, an isolation not yet cleared — arrives. It looks identical to the forty routine notifications before it. It is dismissed in the same second.
+                </div>
+                <div class="signals-label">Observable signals</div>
+                <label class="signal-item" id="s5-1">
+                    <input type="checkbox" data-mech="5" data-signal="1" onchange="updateScore()">
+                    <span class="signal-text">Critical safety alerts (isolation conflicts, permit violations, atmospheric threshold breaches) arrive in the same notification feed, with the same visual format, as routine administrative reminders (training overdue, shift handover, permit expiry).</span>
+                </label>
+                <label class="signal-item" id="s5-2">
+                    <input type="checkbox" data-mech="5" data-signal="2" onchange="updateScore()">
+                    <span class="signal-text">A typical worker receives more than 10 platform notifications per shift through the same channel.</span>
+                </label>
+                <label class="signal-item" id="s5-3">
+                    <input type="checkbox" data-mech="5" data-signal="3" onchange="updateScore()">
+                    <span class="signal-text">Workers have reported turning off platform notifications, or supervisors have observed workers dismissing notifications without reading them.</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Mechanism 6 -->
+        <div class="mechanism-card" id="mech-6">
+            <div class="mechanism-header" onclick="toggleMech('mech-6')">
+                <div class="mech-number">6</div>
+                <div class="mech-title-block">
+                    <div class="mech-name">Physical Decoupling</div>
+                    <div class="mech-subtitle">The record and the physical act separate</div>
+                </div>
+                <div class="mech-status" id="status-mech-6">0 / 3</div>
+                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+            </div>
+            <div class="mechanism-body">
+                <div class="mech-description">
+                    The platform allows a worker to record the completion of a physical safety action — a Lockout/Tagout verification, an atmospheric check, a hot work clearance — without performing it. The record is not inaccurate: it is fabricated. The machine may be live. The permit says it's isolated.
+                </div>
+                <div class="signals-label">Observable signals</div>
+                <label class="signal-item" id="s6-1">
+                    <input type="checkbox" data-mech="6" data-signal="1" onchange="updateScore()">
+                    <span class="signal-text">A worker can sign off a physical safety check — Lockout/Tagout verification, atmospheric test, hot work clearance, confined space entry check — from any location. The platform has no GPS or proximity requirement at the time of sign-off.</span>
+                </label>
+                <label class="signal-item" id="s6-2">
+                    <input type="checkbox" data-mech="6" data-signal="2" onchange="updateScore()">
+                    <span class="signal-text">A completed permit record does not require any physical verification at the isolation point — a digital signature from a desk or site office satisfies the system requirement.</span>
+                </label>
+                <label class="signal-item" id="s6-3">
+                    <input type="checkbox" data-mech="6" data-signal="3" onchange="updateScore()">
+                    <span class="signal-text">Audits or spot checks have found completed digital records for physical safety actions that were not performed or were performed incorrectly.</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Mechanism 7 -->
+        <div class="mechanism-card" id="mech-7">
+            <div class="mechanism-header" onclick="toggleMech('mech-7')">
+                <div class="mech-number">7</div>
+                <div class="mech-title-block">
+                    <div class="mech-name">Form Abandonment</div>
+                    <div class="mech-subtitle">The form is not completed — no record exists</div>
+                </div>
+                <div class="mech-status" id="status-mech-7">0 / 3</div>
+                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+            </div>
+            <div class="mechanism-body">
+                <div class="mech-description">
+                    When a reporting form is too long, too slow, or too cumbersome at the point of observation, workers walk away. No record is filed. Form Abandonment produces a zero — not a wrong record, not a duplicate. An absence. Declining near-miss volumes on a platform with known usability problems are not a sign of improving safety.
+                </div>
+                <div class="signals-label">Observable signals</div>
+                <label class="signal-item" id="s7-1">
+                    <input type="checkbox" data-mech="7" data-signal="1" onchange="updateScore()">
+                    <span class="signal-text">You do not know what percentage of started reports are submitted vs. abandoned. The platform does not track or report this figure.</span>
+                </label>
+                <label class="signal-item" id="s7-2">
+                    <input type="checkbox" data-mech="7" data-signal="2" onchange="updateScore()">
+                    <span class="signal-text">A standard near-miss report takes more than 3 minutes to complete on a mobile device in normal field conditions — gloves on, outdoor light, standard site connectivity.</span>
+                </label>
+                <label class="signal-item" id="s7-3">
+                    <input type="checkbox" data-mech="7" data-signal="3" onchange="updateScore()">
+                    <span class="signal-text">When workers are asked why they don't report more near-misses, the form or the app is mentioned — not culture, fear of blame, or lack of time.</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Results summary -->
+        <div class="results-section">
+            <div class="results-title"><i class="fa-solid fa-chart-bar"></i> Mechanism Summary</div>
+            <div id="resultRows">
+                <!-- Populated by JS -->
+            </div>
+            <div class="next-steps" id="nextSteps">
+                <strong>What to do next</strong>
+                Work through the checklist. Come back to this section when you have completed at least one mechanism.
+            </div>
+            <a class="article-link" href="../insights/digital-error-traps-in-safety-apps.html">
+                <i class="fa-solid fa-arrow-left"></i> The Digital Error Trap — full article and evidence base
+            </a>
+        </div>
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../script.js"></script>
+    <script>
+        const MECHS = [
+            { id: 1, name: 'Habit Override' },
+            { id: 2, name: 'Feedback Holes' },
+            { id: 3, name: 'Signal Fragmentation' },
+            { id: 4, name: 'Smart Guess Error' },
+            { id: 5, name: 'Alert Saturation' },
+            { id: 6, name: 'Physical Decoupling' },
+            { id: 7, name: 'Form Abandonment' },
+        ];
+
+        const NEXT_STEPS = {
+            0:  'No signals detected yet — complete all seven mechanisms before drawing conclusions.',
+            low: 'One or more signals detected, but no mechanism shows as active. Ask a frontline worker — not an IT administrator — to complete the full reporting workflow on their actual device while you watch.',
+            medium: 'At least one mechanism is active. Treat each active mechanism as an unregistered hazard: name it, assess it, and put it on the register. Start with the mechanism showing the most signals.',
+            high: 'Multiple mechanisms are active. Interface Risk is not a future problem — it is affecting the data you are making decisions on now. Escalate to the vendor and add Interface Risk to the register before the next board reporting cycle.',
+            critical: 'The majority of mechanisms are active. Your EHS data is structurally compromised. Immediate action: halt any analytics, forecasting, or AI work that relies on this data until the interface failures are addressed. "The software was too clunky" is not a defence in an investigation.',
+        };
+
+        function buildResultRows() {
+            const container = document.getElementById('resultRows');
+            container.innerHTML = '';
+            MECHS.forEach(m => {
+                const row = document.createElement('div');
+                row.className = 'result-row';
+                row.id = `result-mech-${m.id}`;
+                row.innerHTML = `
+                    <span class="result-mech">${m.name}</span>
+                    <span class="result-count" id="dots-${m.id}">
+                        <span class="signal-dot" id="dot-${m.id}-1"></span>
+                        <span class="signal-dot" id="dot-${m.id}-2"></span>
+                        <span class="signal-dot" id="dot-${m.id}-3"></span>
+                    </span>
+                    <span class="result-status status-clear" id="rstatus-${m.id}">Clear</span>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        function updateScore() {
+            let total = 0;
+            const mechCounts = {};
+
+            MECHS.forEach(m => { mechCounts[m.id] = 0; });
+
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                const mech = parseInt(cb.dataset.mech);
+                const sig  = parseInt(cb.dataset.signal);
+                const item = cb.closest('.signal-item');
+
+                if (cb.checked) {
+                    total++;
+                    mechCounts[mech]++;
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+
+                // Update dot
+                const dot = document.getElementById(`dot-${mech}-${sig}`);
+                if (dot) dot.classList.toggle('filled', cb.checked);
+            });
+
+            // Update per-mechanism card state and status badge
+            MECHS.forEach(m => {
+                const count = mechCounts[m.id];
+                const card = document.getElementById(`mech-${m.id}`);
+                const statusBadge = document.getElementById(`status-mech-${m.id}`);
+                const resultStatus = document.getElementById(`rstatus-${m.id}`);
+
+                card.classList.remove('has-signals', 'has-1', 'has-2', 'has-3');
+                if (count > 0) {
+                    card.classList.add('has-signals', `has-${Math.min(count, 3)}`);
+                }
+
+                statusBadge.textContent = `${count} / 3`;
+
+                if (count === 0) {
+                    resultStatus.className = 'result-status status-clear';
+                    resultStatus.textContent = 'Clear';
+                } else if (count === 1) {
+                    resultStatus.className = 'result-status status-watch';
+                    resultStatus.textContent = 'Watch';
+                } else {
+                    resultStatus.className = 'result-status status-active';
+                    resultStatus.textContent = 'Active';
+                }
+            });
+
+            // Update score bar
+            const pct = Math.round((total / 21) * 100);
+            document.getElementById('scoreNumber').textContent = total;
+            document.getElementById('scoreBarFill').style.width = `${pct}%`;
+
+            // Color bar fill
+            const fill = document.getElementById('scoreBarFill');
+            if (total <= 4)       fill.style.background = '#22c55e';
+            else if (total <= 10) fill.style.background = '#f59e0b';
+            else if (total <= 16) fill.style.background = '#f97316';
+            else                  fill.style.background = '#dc2626';
+
+            // Verdict
+            const verdict = document.getElementById('scoreVerdict');
+            const label   = document.getElementById('scoreLabel');
+            const nextSteps = document.getElementById('nextSteps');
+
+            const activeCount = MECHS.filter(m => mechCounts[m.id] >= 2).length;
+
+            if (total === 0) {
+                verdict.className = 'score-verdict verdict-low';
+                verdict.textContent = 'Clear';
+                label.textContent = 'No signals detected';
+                nextSteps.innerHTML = `<strong>What to do next</strong>${NEXT_STEPS[0]}`;
+            } else if (total <= 4) {
+                verdict.className = 'score-verdict verdict-low';
+                verdict.textContent = 'Low';
+                label.textContent = `${total} signal${total > 1 ? 's' : ''} — no mechanism active`;
+                nextSteps.innerHTML = `<strong>What to do next</strong>${NEXT_STEPS.low}`;
+            } else if (total <= 10) {
+                verdict.className = 'score-verdict verdict-medium';
+                verdict.textContent = 'Medium';
+                label.textContent = `${activeCount} mechanism${activeCount !== 1 ? 's' : ''} active`;
+                nextSteps.innerHTML = `<strong>What to do next</strong>${NEXT_STEPS.medium}`;
+            } else if (total <= 16) {
+                verdict.className = 'score-verdict verdict-high';
+                verdict.textContent = 'High';
+                label.textContent = `${activeCount} mechanism${activeCount !== 1 ? 's' : ''} active`;
+                nextSteps.innerHTML = `<strong>What to do next</strong>${NEXT_STEPS.high}`;
+            } else {
+                verdict.className = 'score-verdict verdict-critical';
+                verdict.textContent = 'Critical';
+                label.textContent = `${activeCount} of 7 mechanisms active`;
+                nextSteps.innerHTML = `<strong>What to do next</strong>${NEXT_STEPS.critical}`;
+            }
+        }
+
+        function toggleMech(id) {
+            const card = document.getElementById(id);
+            card.classList.toggle('open');
+        }
+
+        // Init
+        buildResultRows();
+        updateScore();
+    </script>
+</body>
+
+</html>
