@@ -68,7 +68,69 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.remove('active');
         }
     });
+
+    // Web3Forms AJAX handler
+    const form = document.getElementById('contact-form');
+    const result = document.getElementById('form-result');
+    const submitButton = document.getElementById('submit-button');
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Track attempt
+            trackEvent('form_submit_attempt', { form_id: 'contact-form' });
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            
+            submitButton.innerHTML = "Sending...";
+            submitButton.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = "Message sent successfully. I will get back to you soon.";
+                    result.classList.add("success");
+                    result.classList.remove("error");
+                    result.style.display = "block";
+                    form.reset();
+                    submitButton.style.display = "none";
+                    
+                    // Track success
+                    trackEvent('form_submit_success', { form_id: 'contact-form' });
+                } else {
+                    console.log(response);
+                    result.innerHTML = json.message || "Something went wrong!";
+                    result.classList.add("error");
+                    result.classList.remove("success");
+                    result.style.display = "block";
+                    submitButton.innerHTML = "Send Message";
+                    submitButton.disabled = false;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.innerHTML = "Something went wrong!";
+                result.classList.add("error");
+                result.classList.remove("success");
+                result.style.display = "block";
+                submitButton.innerHTML = "Send Message";
+                submitButton.disabled = false;
+            });
+        });
+    }
 });
+
 
 function generateSocialShareButtons(articleTitle, articleUrl, articleSummary) {
     const encodedTitle = encodeURIComponent(articleTitle);
