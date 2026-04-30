@@ -20,7 +20,23 @@
     <lastmod>2026-04-15</lastmod>
     <priority>0.80</priority>
   </url>
+  <!-- Tools -->
+  <url>
+    <loc>https://serhat.bio/tools/interface-risk-diagnostic.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://serhat.bio/tools/metric-screener.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.70</priority>
+  </url>
   <!-- Insights -->
+  <url>
+    <loc>https://serhat.bio/insights/digital-error-traps-in-safety-apps.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.70</priority>
+  </url>
   <url>
     <loc>https://serhat.bio/insights/validating-leading-indicators-with-predictive-analytics.html</loc>
     <lastmod>2026-04-11</lastmod>
@@ -29,11 +45,6 @@
   <url>
     <loc>https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html</loc>
     <lastmod>2026-02-20</lastmod>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://serhat.bio/insights/digital-error-traps-in-safety-apps.html</loc>
-    <lastmod>2026-01-31</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
