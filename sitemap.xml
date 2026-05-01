@@ -7,7 +7,7 @@
   </url>
   <url>
     <loc>https://serhat.bio/insights.html</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -32,6 +32,11 @@
     <priority>0.70</priority>
   </url>
   <!-- Insights -->
+  <url>
+    <loc>https://serhat.bio/insights/the-2026-ehs-tech-consensus.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.70</priority>
+  </url>
   <url>
     <loc>https://serhat.bio/insights/digital-error-traps-in-safety-apps.html</loc>
     <lastmod>2026-04-30</lastmod>
