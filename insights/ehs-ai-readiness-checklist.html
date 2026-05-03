@@ -65,8 +65,7 @@
     <div class="page-wrapper article-wrapper">
         <section class="content-area">
                 <h1 class="content-title">The EHS AI Readiness Checklist</h1>
-                <p>Answer the following questions to receive your personalized AI Readiness score and a tailored action
-                    plan to build a successful, data-driven EHS program.</p>
+                <p>Answer the following questions to receive your personalized AI Readiness score and a specific roadmap to build a successful, data-driven EHS program.</p>
 
                 <form id="readiness-checklist">
                     <h2>Section A: Mindset & Strategy</h2>
@@ -170,28 +169,17 @@
                                 system, but it would need significant manual cleaning, re-formatting, and interpretation
                                 by
                                 an expert before it would be usable.</label>
-                            <label><input type="radio" name="q6" value="3"> (3 Points) We have established data
-                                pipelines
-                                and clear governance. We could generate a structured, reliable dataset for a specific
-                                use
-                                case (e.g., all near-misses from the last 3 years) with relative ease.</label>
+                            <label><input type="radio" name="q6" value="3"> (3 Points) We have automated data flows and clear rules for how data is entered. We could generate a structured, reliable dataset for a specific use case (e.g., all near-misses from the last 3 years) with relative ease.</label>
                         </p>
                     </div>
 
                     <div class="question">
                         <p><strong>7. How integrated is your EHS data with other critical business systems (e.g., HR,
                                 Maintenance, Operations)?</strong></p>
-                        <p><label><input type="radio" name="q7" value="1"> (1 Point) Completely siloed. Our EHS data
-                                lives
-                                in its own system (or spreadsheets) and has no connection to other departmental
-                                data.</label>
+                        <p><label><input type="radio" name="q7" value="1"> (1 Point) Completely separate. Our EHS data lives in its own system (or paper logs and spreadsheets) and has no connection to other departmental data.</label>
                             <label><input type="radio" name="q7" value="2"> (2 Points) Manual integration. We manually
                                 export and combine data from different systems when needed for analysis.</label>
-                            <label><input type="radio" name="q7" value="3"> (3 Points) Strategic integration. Our EHS
-                                system
-                                talks to HR, Operations, and Maintenance systems (via APIs or a data warehouse), giving
-                                us a
-                                holistic view of risk.</label>
+                            <label><input type="radio" name="q7" value="3"> (3 Points) Integrated data flows. Our EHS system automatically pulls data from HR, Operations, and Maintenance. We see the full picture—like how shift patterns or equipment age impact safety.</label>
                         </p>
                     </div>
 
@@ -221,8 +209,7 @@
                                 "successful"?</strong></p>
                         <p><label><input type="radio" name="q9" value="1"> (1 Point) When the feature described in the
                                 contract is delivered and switched on.</label>
-                            <label><input type="radio" name="q9" value="2"> (2 Points) After it passes User Acceptance
-                                Testing (UAT) and has been running without major bugs for a few months.</label>
+                            <label><input type="radio" name="q9" value="2"> (2 Points) After it passes testing by the field teams who will actually use it, and has been running without major bugs for a few months.</label>
                             <label><input type="radio" name="q9" value="3"> (3 Points) We don't see it as ever being
                                 "complete." Success is measured by ongoing performance metrics and user feedback. We
                                 understand the model will need continuous monitoring and retraining to stay
@@ -346,13 +333,13 @@
 
             if (totalScore >= 12 && totalScore <= 19) {
                 stage = 'Foundational Stage';
-                actionPlan = 'Your organization is in the early stages of AI readiness. The immediate focus should be on building a solid foundation. Start by centralizing your EHS data, establishing a clear data governance policy, and managing expectations by educating stakeholders on AI\'s capabilities and limitations. Begin identifying simple, high-impact use cases to build momentum.';
+                actionPlan = 'Your organization is in the early stages of AI readiness. The immediate focus should be on getting your data into a consistent, central system. Move away from separate spreadsheets and paper logs. Start by defining exactly what terms like "near miss" mean across all sites, and ensure your site leadership understands that AI requires clean data, not just a software purchase.';
             } else if (totalScore >= 20 && totalScore <= 28) {
                 stage = 'Developing Stage';
-                actionPlan = 'Your organization has made good progress but needs to formalize its approach. Focus on improving data consistency and developing standardized processes for risk assessment. Start a pilot project with a specific, well-defined problem to demonstrate value and build internal expertise. Allocate a dedicated budget for both the technology and the internal human resources required for a successful AI implementation.';
+                actionPlan = 'Your organization has made good progress. You now need to ensure your data entry is consistent across every business unit. Start a small pilot project—a "test drive"—on a specific problem like near-miss classification. This will prove the value and show where your data still needs cleaning before you commit to a larger rollout.';
             } else if (totalScore >= 29 && totalScore <= 36) {
                 stage = 'Strategic Stage';
-                actionPlan = 'Your organization is well-positioned to leverage AI as a strategic advantage. Your focus should be on scaling your efforts and fostering a culture of continuous improvement. Establish a long-term partnership with your EHS software vendor to co-develop new AI capabilities. Implement robust processes for monitoring model performance and retraining to ensure long-term success. Share your successes internally to champion the value of a data-driven EHS program.';
+                actionPlan = 'Your organization is well-positioned to use AI as a strategic advantage. Focus on scaling what works and ensuring your experts stay involved to check the AI\'s accuracy. Work closely with your software partner to co-develop new features. Your goal is to keep the model relevant by retraining it as your operations or regulations change.';
             }
 
             stageSpan.textContent = stage;
