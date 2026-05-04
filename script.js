@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             const html = await response.text();
             document.getElementById(elementId).innerHTML = html;
+            
+            // Set copyright year if footer is loaded
+            if (elementId === 'footer-placeholder') {
+                const yearSpan = document.getElementById('copyright-year');
+                if (yearSpan) {
+                    yearSpan.textContent = new Date().getFullYear();
+                }
+            }
         } catch (error) {
             console.error(`Could not load ${url}:`, error);
         }
@@ -48,11 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set copyright year
-    const copyrightYear = document.getElementById('copyright-year');
-    if (copyrightYear) {
-        copyrightYear.textContent = new Date().getFullYear();
-    }
 
     // Highlight active nav link
     const currentPath = window.location.pathname.split('/').pop();
