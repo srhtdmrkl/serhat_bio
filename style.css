@@ -1575,3 +1575,90 @@ table tbody tr:nth-child(even) {
     border: 1px solid #fecaca;
 }
 
+/* --- Decision Grid / Conflict Box --- */
+.decision-box {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: var(--white-color);
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+.decision-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+.decision-badge {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    padding: 0.35rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--secondary-text);
+}
+.decision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+.decision-card {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1.25rem;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.decision-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+.card-icon {
+    font-size: 1.25rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+}
+.decision-card h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: var(--dark-text);
+}
+.path-description {
+    font-size: 0.85rem !important;
+    color: var(--light-text);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+.outcome-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.outcome-negative {
+    background-color: #fef2f2;
+    color: #ef4444;
+    border: 1px solid #fee2e2;
+}
+.outcome-warning {
+    background-color: #fffbeb;
+    color: #d97706;
+    border: 1px solid #fef3c7;
+}
+@media (max-width: 600px) {
+    .decision-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
