@@ -1575,6 +1575,174 @@ table tbody tr:nth-child(even) {
     border: 1px solid #fecaca;
 }
 
+/* --- Friction Budget Calculator --- */
+.calculator-card {
+    background: #1a202c;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 24px 0;
+    color: #e2e8f0;
+}
+.calculator-card h3 {
+    margin-top: 0;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.calculator-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+.calc-intro {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-bottom: 16px;
+}
+.calc-main {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .calc-main { grid-template-columns: 1fr; }
+}
+.calc-input-row {
+    display: flex;
+    margin-bottom: 12px;
+}
+.calc-input-row select {
+    flex-grow: 1;
+    background: #2d3748;
+    border: 1px solid #4a5568;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+.calc-input-row select:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+.calc-btn {
+    margin-left: 8px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+.calc-btn:hover { background: #2b6cb0; }
+.field-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #2d3748;
+    border-radius: 4px;
+    background: #111827;
+}
+.field-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #2d3748;
+    font-size: 0.85rem;
+}
+.field-item:last-child { border-bottom: none; }
+.field-name { color: #e2e8f0; }
+.field-points { color: #a0aec0; margin-right: 8px; }
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: #e53e3e;
+    cursor: pointer;
+    padding: 2px;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+.remove-btn:hover { color: #fc8181; }
+.calc-results {
+    background: #111827;
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #2d3748;
+}
+.score-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.score-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #a0aec0;
+}
+.score-value {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 4px;
+    transition: color 0.3s;
+}
+.score-status {
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 100%;
+    transition: all 0.3s;
+}
+.score-status h4 {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+.score-status p {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+.status-pass {
+    background: rgba(72, 187, 120, 0.1);
+    border: 1px solid #48bb78;
+    color: #48bb78;
+}
+.status-warn {
+    background: rgba(237, 108, 2, 0.1);
+    border: 1px solid #dd6b20;
+    color: #dd6b20;
+}
+.status-fail {
+    background: rgba(229, 62, 62, 0.1);
+    border: 1px solid #e53e3e;
+    color: #e53e3e;
+}
+.diagram-container {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+    background: #1a202c;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
 /* --- Decision Grid / Conflict Box --- */
 .decision-box {
     border: 1px solid var(--border-color);

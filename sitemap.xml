@@ -33,6 +33,18 @@
   </url>
   <!-- Insights -->
   <url>
+    <loc>https://serhat.bio/insights/safety-form-usability-friction-budget.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serhat.bio/insights/ai-root-cause-analysis.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://serhat.bio/insights/why-frontline-workers-fabricate-safety-data.html</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.70</priority>
