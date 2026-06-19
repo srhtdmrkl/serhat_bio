@@ -5,15 +5,8 @@
     <link>https://serhat.bio/</link>
     <description>Insights on EHS systems design, data architecture, and operational risk management.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2026 06:12:16 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2026 07:17:08 +0000</lastBuildDate>
     <atom:link href="https://serhat.bio/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Redirecting...</title>
-      <link>https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</link>
-      <guid isPermaLink="true">https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</guid>
-      <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
-      <description></description>
-    </item>
     <item>
       <title>Getting Trapped While Controlling Hazards</title>
       <link>https://serhat.bio/insights/getting-trapped-while-controlling-hazards.html</link>
@@ -27,6 +20,13 @@
       <guid isPermaLink="true">https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html</guid>
       <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
       <description>Incident narratives, audit notes, near-miss reports — none of it is machine-readable. How targeted extraction frameworks turn unstructured text into data.</description>
+    </item>
+    <item>
+      <title>Redirecting...</title>
+      <link>https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</guid>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
+      <description></description>
     </item>
     <item>
       <title>Safety Form Usability: The Friction Budget Method</title>
