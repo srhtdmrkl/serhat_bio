@@ -5,28 +5,35 @@
     <link>https://serhat.bio/</link>
     <description>Insights on EHS systems design, data architecture, and operational risk management.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2026 05:57:06 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2026 06:12:16 +0000</lastBuildDate>
     <atom:link href="https://serhat.bio/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redirecting...</title>
+      <link>https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</guid>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
+      <description></description>
+    </item>
+    <item>
+      <title>Getting Trapped While Controlling Hazards</title>
+      <link>https://serhat.bio/insights/getting-trapped-while-controlling-hazards.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/getting-trapped-while-controlling-hazards.html</guid>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Hazard controls introduce their own failure modes. Error traps — systemic conditions that make mistakes more likely.</description>
+    </item>
+    <item>
+      <title>Structuring Unstructured EHS Data with Targeted Extraction</title>
+      <link>https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html</guid>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Incident narratives, audit notes, near-miss reports — none of it is machine-readable. How targeted extraction frameworks turn unstructured text into data.</description>
+    </item>
     <item>
       <title>Safety Form Usability: The Friction Budget Method</title>
       <link>https://serhat.bio/insights/safety-form-usability-friction-budget.html</link>
       <guid isPermaLink="true">https://serhat.bio/insights/safety-form-usability-friction-budget.html</guid>
       <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
       <description>Why safety forms fail in the field and how to use a quantitative Friction Budget to design high-integrity safety applications that frontline workers won</description>
-    </item>
-    <item>
-      <title>Structuring Unstructured EHS Data with Targeted Extraction</title>
-      <link>https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html</link>
-      <guid isPermaLink="true">https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html</guid>
-      <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Incident narratives, audit notes, near-miss reports — none of it is machine-readable. How targeted extraction frameworks turn unstructured text into data.</description>
-    </item>
-    <item>
-      <title>Getting Trapped While Controlling Hazards</title>
-      <link>https://serhat.bio/insights/getting-trapped-while-controlling-hazards.html</link>
-      <guid isPermaLink="true">https://serhat.bio/insights/getting-trapped-while-controlling-hazards.html</guid>
-      <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Hazard controls introduce their own failure modes. Error traps — systemic conditions that make mistakes more likely.</description>
     </item>
     <item>
       <title>An AI Root Cause Is a Hypothesis, Never a Finding</title>
@@ -48,13 +55,6 @@
       <guid isPermaLink="true">https://serhat.bio/insights/offline-sync-timestamp-integrity.html</guid>
       <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
       <description>A safety record</description>
-    </item>
-    <item>
-      <title>Redirecting...</title>
-      <link>https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</link>
-      <guid isPermaLink="true">https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
-      <description></description>
     </item>
     <item>
       <title>2026 EHS Tech Consensus: Interrogating the Vendor AI Data</title>
