@@ -1628,7 +1628,7 @@ table tbody tr:nth-child(even) {
 }
 .calc-btn {
     margin-left: 8px;
-    background: #3182ce;
+    background: var(--primary-blue);
     color: white;
     border: none;
     padding: 6px 12px;
@@ -1639,7 +1639,7 @@ table tbody tr:nth-child(even) {
     transition: background 0.2s;
     white-space: nowrap;
 }
-.calc-btn:hover { background: #2b6cb0; }
+.calc-btn:hover { background: #0047cc; }
 .field-list {
     list-style: none;
     padding: 0;

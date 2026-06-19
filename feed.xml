@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Serhat Demirkol | EHS Product &amp; Systems &amp; Data</title>
+    <link>https://serhat.bio/</link>
+    <description>Insights on EHS systems design, data architecture, and operational risk management.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jun 2026 05:57:06 +0000</lastBuildDate>
+    <atom:link href="https://serhat.bio/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Safety Form Usability: The Friction Budget Method</title>
+      <link>https://serhat.bio/insights/safety-form-usability-friction-budget.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/safety-form-usability-friction-budget.html</guid>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Why safety forms fail in the field and how to use a quantitative Friction Budget to design high-integrity safety applications that frontline workers won</description>
+    </item>
+    <item>
+      <title>Structuring Unstructured EHS Data with Targeted Extraction</title>
+      <link>https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Incident narratives, audit notes, near-miss reports — none of it is machine-readable. How targeted extraction frameworks turn unstructured text into data.</description>
+    </item>
+    <item>
+      <title>Getting Trapped While Controlling Hazards</title>
+      <link>https://serhat.bio/insights/getting-trapped-while-controlling-hazards.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/getting-trapped-while-controlling-hazards.html</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Hazard controls introduce their own failure modes. Error traps — systemic conditions that make mistakes more likely.</description>
+    </item>
+    <item>
+      <title>An AI Root Cause Is a Hypothesis, Never a Finding</title>
+      <link>https://serhat.bio/insights/ai-root-cause-analysis.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ai-root-cause-analysis.html</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+      <description>AI assigns a confident cause to every incident, even incomplete ones. The output inherits hindsight bias from training data, anchors your team to what it found, and has no author you can question.</description>
+    </item>
+    <item>
+      <title>Why Frontline Workers Fabricate Safety Data</title>
+      <link>https://serhat.bio/insights/why-frontline-workers-fabricate-safety-data.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/why-frontline-workers-fabricate-safety-data.html</guid>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Why frontline workers enter fabricated safety data into EHS apps and the five technical countermeasures that verify site presence and resolve reporting silos.</description>
+    </item>
+    <item>
+      <title>Your Safety Timestamps Are Testimony, Not Fact</title>
+      <link>https://serhat.bio/insights/offline-sync-timestamp-integrity.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/offline-sync-timestamp-integrity.html</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A safety record</description>
+    </item>
+    <item>
+      <title>Redirecting...</title>
+      <link>https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/how-machine-learning-can-improve-workplace-incident-classification.html</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <description></description>
+    </item>
+    <item>
+      <title>2026 EHS Tech Consensus: Interrogating the Vendor AI Data</title>
+      <link>https://serhat.bio/insights/the-2026-ehs-tech-consensus.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/the-2026-ehs-tech-consensus.html</guid>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
+      <description>97% claim AI adoption. 5% have it embedded. 85% still rely on manual tools. What the 2026 EHS vendor surveys reveal when you read past the headline.</description>
+    </item>
+    <item>
+      <title>The Digital Error Trap: Interface Risk and EHS Data Integrity</title>
+      <link>https://serhat.bio/insights/digital-error-traps-in-safety-apps.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/digital-error-traps-in-safety-apps.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Digital error traps corrupt the data safety leadership uses to set priorities. What they are, how they propagate through the record, and what to act on.</description>
+    </item>
+    <item>
+      <title>The EHS AI Readiness Checklist</title>
+      <link>https://serhat.bio/insights/ehs-ai-readiness-checklist.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-ai-readiness-checklist.html</guid>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Answer the following questions to receive your personalized AI Readiness score and a tailored action plan.</description>
+    </item>
+    <item>
+      <title>Validating Leading Indicators: Auditing EHS Data for Predictive Signal</title>
+      <link>https://serhat.bio/insights/validating-leading-indicators-with-predictive-analytics.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/validating-leading-indicators-with-predictive-analytics.html</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Most EHS programmes track leading indicators by convention, not validation. Applies lag-correlation analysis to a 36-month dataset.</description>
+    </item>
+    <item>
+      <title>The "Feature Trap" in EHS Software Selection</title>
+      <link>https://serhat.bio/insights/the-feature-trap-in-ehs-software-selection.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/the-feature-trap-in-ehs-software-selection.html</guid>
+      <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Choosing EHS software often feels like a checklist exercise. Procurement teams and safety leaders spend months documenting hundreds of required features.</description>
+    </item>
+    <item>
+      <title>The EHS AI Launchpad: Introducing Intelligence Incrementally</title>
+      <link>https://serhat.bio/insights/the-ehs-ai-launchpad.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/the-ehs-ai-launchpad.html</guid>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <description>Building intelligence one step at a time. Learn how to deploy your first high-value AI tool without getting stuck in pilot purgatory.</description>
+    </item>
+    <item>
+      <title>The EHS Data Refinery: Building AI-Ready Safety Data</title>
+      <link>https://serhat.bio/insights/ehs-data-refinery.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-data-refinery.html</guid>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
+      <description>Learn how to build an EHS Data Refinery to transform crude, unstructured data into AI-ready intelligence through governance, cleansing, and labeling strategies.</description>
+    </item>
+    <item>
+      <title>EHS AI Interoperability: Building the Foundation</title>
+      <link>https://serhat.bio/insights/ehs-ai-interoperability.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-ai-interoperability.html</guid>
+      <pubDate>Tue, 04 Nov 2025 00:00:00 +0000</pubDate>
+      <description>Close the AI Readiness Gap in EHS through interoperability. Learn how connecting EHS, HR, and Maintenance data unlocks powerful predictive safety analytics.</description>
+    </item>
+    <item>
+      <title>The AI Readiness Gap in EHS</title>
+      <link>https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html</guid>
+      <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
+      <description>Close the AI Readiness Gap in EHS. Learn why treating AI as a software feature fails and how a phased data refinery leads to successful deployment.</description>
+    </item>
+    <item>
+      <title>The Requirements Iceberg in EHS Software</title>
+      <link>https://serhat.bio/insights/requirements-iceberg.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/requirements-iceberg.html</guid>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <description>Every EHS software request that looks simple conceals an iceberg of complexity. Learn why a detailed blueprint is required for reliable system configuration.</description>
+    </item>
+    <item>
+      <title>Measuring Success: Real-World ROI of EHS Software</title>
+      <link>https://serhat.bio/insights/ehs-software-roi.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-software-roi.html</guid>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <description>EHS software ROI is often just post-rationalisation. Learn how to measure real-world impact by focusing on information efficiency and field reality.</description>
+    </item>
+    <item>
+      <title>EHS for Enterprises: Strategies for Global Success</title>
+      <link>https://serhat.bio/insights/ehs-for-enterprises.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-for-enterprises.html</guid>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <description>Learn how to implement EHS software in large enterprises, addressing scalability, ERP integration, and the balance between global standards and local relevancy.</description>
+    </item>
+    <item>
+      <title>Strategic EHS Software Implementation</title>
+      <link>https://serhat.bio/insights/ehs-software-strategic-implementation.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-software-strategic-implementation.html</guid>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <description>Deploy EHS software successfully with a strategic, phased approach. Learn about needs analysis, vendor selection, change management, and post-launch monitoring.</description>
+    </item>
+    <item>
+      <title>EHS Software: More Than a Technological Fix</title>
+      <link>https://serhat.bio/insights/ehs-software-more-than-a-technological-fix.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-software-more-than-a-technological-fix.html</guid>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <description>Why EHS software is more than a plug-and-play solution. The strategic approach needed for successful implementation and the common pitfalls to avoid.</description>
+    </item>
+    <item>
+      <title>Human Element in EHS Software Success</title>
+      <link>https://serhat.bio/insights/ehs-software-human-element.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-software-human-element.html</guid>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <description>Unlock EHS software success by focusing on the human element. Learn how culture, leadership, and user buy-in are critical for maximizing technology investments.</description>
+    </item>
+    <item>
+      <title>Diagnostic Analytics: Enhancing Workplace Safety</title>
+      <link>https://serhat.bio/insights/diagnostic-analytics-guide.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/diagnostic-analytics-guide.html</guid>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
+      <description>Accurate incident recording is only half the battle. Use diagnostic analytics to uncover systemic root causes and move from reactive to proactive safety.</description>
+    </item>
+    <item>
+      <title>ESAW Methodology Guide: Accident Recording</title>
+      <link>https://serhat.bio/insights/esaw-methodology-guide.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/esaw-methodology-guide.html</guid>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
+      <description>Accurate accident recording is the foundational architecture of an OHS system. Learn how the ESAW methodology transforms reporting into a diagnostic tool.</description>
+    </item>
+    <item>
+      <title>Why EHS Software is Infrastructure, Not a Technological Fix</title>
+      <link>https://serhat.bio/insights/ehs-software-is-infrastructure.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-software-is-infrastructure.html</guid>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
+      <description>EHS software fails as a compliance tool. It succeeds as data architecture for operational truth. Learn why infrastructure beats technological fixes for EHS.</description>
+    </item>
+    <item>
+      <title>Analysis and Planning for EHS Software Implementation</title>
+      <link>https://serhat.bio/insights/ehs-implementation-planning.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ehs-implementation-planning.html</guid>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
+      <description>Implementations are won or lost in the planning phase. Learn how to map operational reality and build a project plan that avoids common EHS deployment pitfalls.</description>
+    </item>
+    <item>
+      <title>How Machine Learning Can Improve Workplace Incident Classification</title>
+      <link>https://serhat.bio/insights/ml-incident-classification.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ml-incident-classification.html</guid>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
+      <description>How machine learning automates workplace incident classification — the benefits for EHS professionals and a practical tool in action.</description>
+    </item>
+  </channel>
+</rss>
