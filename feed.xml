@@ -5,7 +5,7 @@
     <link>https://serhat.bio/</link>
     <description>Insights on EHS systems design, data architecture, and operational risk management.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2026 07:17:08 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2026 15:41:19 +0000</lastBuildDate>
     <atom:link href="https://serhat.bio/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Trapped While Controlling Hazards</title>
@@ -34,6 +34,13 @@
       <guid isPermaLink="true">https://serhat.bio/insights/safety-form-usability-friction-budget.html</guid>
       <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
       <description>Why safety forms fail in the field and how to use a quantitative Friction Budget to design high-integrity safety applications that frontline workers won</description>
+    </item>
+    <item>
+      <title>AI Constructs Root Causes. It Cannot Identify Them.</title>
+      <link>https://serhat.bio/insights/ai-constructs-root-causes.html</link>
+      <guid isPermaLink="true">https://serhat.bio/insights/ai-constructs-root-causes.html</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+      <description>AI root cause analysis is a hypothesis, not a finding. Three structural limits explain why — and three tests to run on any vendor that claims otherwise.</description>
     </item>
     <item>
       <title>Why Frontline Workers Fabricate Safety Data</title>
