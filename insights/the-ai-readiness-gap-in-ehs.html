@@ -1,40 +1,39 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>The AI Readiness Gap in EHS | Serhat Demirkol</title>
-    <meta name="description"
-        content="Close the AI Readiness Gap in EHS. Learn why treating AI as a software feature fails and how a phased data refinery leads to successful deployment.">
-    <meta name="keywords" content="EHS, AI, Artificial Intelligence, Safety Technology, Data Refinery, Risk Prediction">
-    <link rel="canonical" href="https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html" />
-    <link rel="alternate" type="application/rss+xml" title="Serhat Demirkol | EHS Insights Feed" href="/feed.xml" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="The AI Readiness Gap in EHS | Serhat Demirkol">
-    <meta property="og:description"
-        content="Close the AI Readiness Gap in EHS. Learn why treating AI as a software feature fails and how a phased data refinery leads to successful deployment.">
-    <meta property="og:image" content="https://serhat.bio/images/ai-readiness-gap.webp">
-    <meta property="og:url" content="https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Serhat Demirkol">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The AI Readiness Gap in EHS | Serhat Demirkol">
-    <meta name="twitter:description"
-        content="Close the AI Readiness Gap in EHS. Learn why treating AI as a software feature fails and how a phased data refinery leads to successful deployment.">
-    <meta name="twitter:image" content="https://serhat.bio/images/ai-readiness-gap.webp">
-
-    <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="../images/favicon.png" rel="icon" type="image/png" />
+    <meta
+        content="Close the AI Readiness Gap in EHS. Learn why treating AI as a software feature fails and how a phased data refinery leads to successful deployment."
+        name="description" />
+    <meta content="EHS, AI, Artificial Intelligence, Safety Technology, Data Refinery, Risk Prediction"
+        name="keywords" />
+    <link href="https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html" rel="canonical" />
+    <link href="/feed.xml" rel="alternate" title="Serhat Demirkol | EHS Insights Feed" type="application/rss+xml" />
+    <meta content="The AI Readiness Gap in EHS | Serhat Demirkol" property="og:title" />
+    <meta
+        content="Close the AI Readiness Gap in EHS. Learn why treating AI as a software feature fails and how a phased data refinery leads to successful deployment."
+        property="og:description" />
+    <meta content="https://serhat.bio/images/ai-readiness-gap.webp" property="og:image" />
+    <meta content="https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html" property="og:url" />
+    <meta content="article" property="og:type" />
+    <meta content="Serhat Demirkol" property="og:site_name" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="The AI Readiness Gap in EHS | Serhat Demirkol" name="twitter:title" />
+    <meta
+        content="Close the AI Readiness Gap in EHS. Learn why treating AI as a software feature fails and how a phased data refinery leads to successful deployment."
+        name="twitter:description" />
+    <meta content="https://serhat.bio/images/ai-readiness-gap.webp" name="twitter:image" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../styles.css" rel="stylesheet" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -85,12 +84,72 @@
 </head>
 
 <body>
-
-    <div id="header-placeholder"></div>
-
-    <div class="page-wrapper article-wrapper">
-        <section class="content-area">
-            <h1 class="content-title">The AI Readiness Gap in EHS: From Hype to High-Value Asset</h1>
+    <!-- ===== Masthead ===== -->
+    <header class="site-header">
+        <div class="mast">
+            <a class="mast-brand" href="../index.html">
+                <span class="mast-name">Serhat Demirkol</span>
+                <span class="mast-sub">Product · Systems · Data</span>
+            </a>
+            <nav class="mast-nav">
+                <a class="mast-link-active" href="../insights.html">Writing</a>
+                <a class="mast-link" href="../books.html">Books</a>
+                <a class="mast-link" href="../tools.html">Tools</a>
+                <a class="mast-cta" href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ===== Reading progress ===== -->
+    <div class="readbar-track">
+        <div id="readbar"></div>
+    </div>
+    <article class="art-wrap">
+        <div class="art-header sec-pad">
+            <a class="art-back" href="../insights.html"><span class="art-back-arrow">←</span> All writing</a>
+            <div class="art-meta">
+                <span>Applied AI</span>
+                <span class="art-meta-dot"></span>
+                <span class="art-meta-muted">Oct 2025</span>
+                <span class="art-meta-dot"></span>
+                <span class="art-meta-muted">7 min read</span>
+            </div>
+            <h1 class="art-h1">The AI Readiness Gap: From Hype to High-Value Asset</h1>
+            <p class="art-lede">Close the AI Readiness Gap in EHS. Learn why treating AI as a software feature fails and
+                how a phased data refinery leads to successful deployment.</p>
+            <div class="art-byline">
+                <div class="art-byline-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg" /></div>
+                <div class="art-byline-info">
+                    <div class="art-byline-name">Serhat Demirkol</div>
+                    <div class="art-byline-role">EHS Product · Systems · Data</div>
+                </div>
+                <div class="share-wrap">
+                    <button class="share-btn" id="share-btn" type="button">Share <span
+                            class="share-chevron">▾</span></button>
+                    <div class="share-dd" id="share-dd">
+                        <button class="share-item" id="share-copy" type="button"><span class="share-icon">⎘</span> Copy
+                            link</button>
+                        <a class="share-item"
+                            href="mailto:?subject=The AI Readiness Gap in EHS | Serhat Demirkol&amp;body=Thought this was worth your time: https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html"><span
+                                class="share-icon">@</span> Email</a>
+                        <a class="share-item"
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html"
+                            rel="noopener" target="_blank"><span class="share-icon" style="font-weight:700">in</span>
+                            LinkedIn</a>
+                        <a class="share-item"
+                            href="https://wa.me/?text=The%20AI%20Readiness%20Gap%20in%20EHS%20%7C%20Serhat%20Demirkol%0Ahttps%3A%2F%2Fserhat.bio%2Finsights%2Fthe-ai-readiness-gap-in-ehs.html"
+                            rel="noopener" target="_blank"><span class="share-icon" style="font-weight:600">WA</span>
+                            WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="art-hero-wrap sec-pad">
+            <div class="art-hero-img">
+                <img alt="The AI Readiness Gap: From Hype to High-Value Asset" loading="lazy"
+                    src="../images/ai-readiness-gap.webp" />
+            </div>
+        </div>
+        <div class="prose art-prose sec-pad">
             <p>EHS software specifications now include a standard line item: "The system must use AI to provide
                 intelligent suggestions." It is often the most expensive requirement on the tender, and the one the
                 buyer is least prepared to implement.</p>
@@ -98,11 +157,6 @@
                 specific signals they expect AI to deliver. This gap between the high-level vision and operational
                 reality—the AI Readiness Gap—is created by three fundamental misconceptions about how AI is successfully
                 deployed in an enterprise EHS context.</p>
-
-            <img src="../images/ai-readiness-gap.webp"
-                alt="A diagram illustrating the AI Readiness Gap, showing the disconnect between high-level AI vision and operational reality in EHS."
-                class="insight-image" width="800" height="450">
-
             <h2>1. AI as a Feature</h2>
             <p>A client’s specification often includes standard software functions like user authentication and
                 reporting dashboards. Tucked into the same list is a requirement such as developing an AI that
@@ -118,8 +172,8 @@
                 statistical models. It might mean using Natural Language Processing (NLP)—software that reads and
                 "understands" human writing like a high-speed intern—to scan thousands of incident reports. It could
                 involve Computer Vision (CV), a system that "sees" through cameras like a digital safety observer to
-                spot hazards in real-time. These are full-scale R&D initiatives, not simple features on a checklist.</p>
-
+                spot hazards in real-time. These are full-scale R&amp;D initiatives, not simple features on a checklist.
+            </p>
             <h2>2. Collection Is Not Preparation</h2>
             <p>Most organizations understand that AI requires data. They proudly state that their new system will
                 build a comprehensive library of incidents that will "feed" their AI. This instinct is correct, but
@@ -154,7 +208,6 @@
                 their
                 12th consecutive hour of a night shift. Without that integrated landscape, an AI will either fail
                 completely or, worse, identify spurious patterns and provide dangerously misleading guidance.</p>
-
             <h2>3. Building vs. Growing</h2>
             <p>The most fundamental misconception often lies in the procurement process itself. Organizations issue
                 a specification document, the standard for acquiring software with a fixed scope and delivery date.
@@ -172,7 +225,6 @@
                 irreplaceable. This
                 iterative, collaborative process is incompatible with a fixed-project mindset. The goal should be a
                 long-term partnership focused on collaboratively improving the system's intelligence.</p>
-
             <h2>The Path Forward: A Phased Blueprint for Success</h2>
             <p>The conversation must shift from "buying an AI" to "building an AI-ready foundation." This
                 is achieved through a practical, phased implementation that manages expectations and de-risks the
@@ -200,7 +252,6 @@
                 the start of an evolutionary process where we monitor, gather feedback, and iterate. This
                 Human-in-the-Loop process, where EHS experts actively train and refine the system, is what "grows"
                 the AI from a simple tool into a genuine strategic asset.</p>
-
             <h2>The Strategic Value of Honesty</h2>
             <p>The AI Readiness Gap is not just a technical problem; it is a strategic challenge that, if ignored,
                 leads to failed projects and wasted resources. By building the foundation first, we create the
@@ -217,45 +268,69 @@
                 <p>This checklist provides a step-by-step guide to assess your organization's EHS AI readiness.
                     Identify your strengths, uncover areas for improvement, and build a clear roadmap for success.
                 </p>
-                <a href="ehs-ai-readiness-checklist.html" class="cta-button">Take the Readiness Assessment</a>
+                <a class="cta-button" href="ehs-ai-readiness-checklist.html">Take the Readiness Assessment</a>
             </section>
-
-
             <!-- Related Reading -->
-            <div class="related-reading">
-                <h3>Related Reading</h3>
-                <ul>
-                    <li><a href="ehs-ai-interoperability.html">Interoperability: The Foundation of EHS AI (Part 2)</a>
-                    </li>
-                    <li><a href="ehs-data-refinery.html">The EHS Data Refinery: From Crude Data to AI-Ready Intelligence
-                            (Part
-                            3)</a></li>
-                    <li><a href="the-ehs-ai-launchpad.html">The EHS AI Launchpad: Introducing Intelligence Incrementally
-                            (Part
-                            4)</a></li>
-                </ul>
-            </div>
-
             <div id="social-share-container"></div>
-        </section>
-    </div>
-
-
-    <div id="footer-placeholder"></div>
-
+        </div>
+        <!-- Author bio -->
+        <div class="author-bio sec-pad">
+            <div class="author-bio-card">
+                <div class="author-bio-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg" /></div>
+                <div class="author-bio-body">
+                    <div class="author-bio-name">Serhat Demirkol</div>
+                    <p>EHS product strategist working at the seam of field operations, information systems, and applied
+                        data. Builds the tools, then writes about why most of them fail.</p>
+                    <a class="author-bio-link" href="../index.html#contact">Work with me →</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- ===== Related ===== -->
+    <section class="rel-section sec-pad">
+        <div class="rel-header">
+            <span class="rel-label">Keep reading</span>
+            <span class="rel-rule"></span>
+        </div>
+        <div class="rel-grid">
+            <a class="rel-card" href="https://serhat.bio/insights/ehs-ai-interoperability.html">
+                <div class="rel-card-img"><img alt="" loading="lazy"
+                        src="../images/interoperability-as-the-foundation.webp" /></div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Nov 2025</div>
+                    <h3 class="rel-card-title">EHS AI Interoperability: Building the Data Foundation</h3>
+                </div>
+            </a>
+            <a class="rel-card" href="https://serhat.bio/insights/ehs-data-refinery.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/the-ehs-data-refinery.webp" /></div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Nov 2025</div>
+                    <h3 class="rel-card-title">The EHS Data Refinery: Building AI-Ready Safety Data</h3>
+                </div>
+            </a>
+            <a class="rel-card" href="https://serhat.bio/insights/the-ehs-ai-launchpad.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/ehs-ai-launchpad.webp" /></div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Dec 2025</div>
+                    <h3 class="rel-card-title">The EHS AI Launchpad: Escaping Pilot Purgatory</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-wordmark">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+            <nav class="site-footer-nav">
+                <a href="../insights.html">Writing</a>
+                <a href="../books.html">Books</a>
+                <a href="../tools.html">Tools</a>
+                <a href="https://github.com/srhtdmrkl">GitHub</a>
+            </nav>
+            <div class="site-footer-copy">© 2026</div>
+        </div>
+    </footer>
     <script src="../script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const articleTitle = document.querySelector('.content-title').textContent;
-            const articleUrl = window.location.href;
-            const articleSummary = document.querySelector('meta[name="description"]').getAttribute('content');
-            const socialShareContainer = document.getElementById('social-share-container');
-            if (socialShareContainer) {
-                socialShareContainer.innerHTML = generateSocialShareButtons(articleTitle, articleUrl, articleSummary);
-            }
-            trackEvent('view_insight', { article_title: articleTitle });
-        });
-    </script>
 </body>
 
 </html>

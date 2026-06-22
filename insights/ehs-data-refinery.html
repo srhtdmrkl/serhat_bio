@@ -1,39 +1,53 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>The EHS Data Refinery: Building AI-Ready Safety Data | Serhat Demirkol</title>
-    <meta name="description"
-        content="Learn how to build an EHS Data Refinery to transform crude, unstructured data into AI-ready intelligence through governance, cleansing, and labeling strategies.">
-    <meta name="keywords" content="EHS AI, Data Refinery, Safety Data, Predictive Safety, EHS Taxonomy, Data Labeling">
-    <link rel="canonical" href="https://serhat.bio/insights/ehs-data-refinery.html" />
-    <link rel="alternate" type="application/rss+xml" title="Serhat Demirkol | EHS Insights Feed" href="/feed.xml" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="The EHS Data Refinery: Building AI-Ready Safety Data | Serhat Demirkol">
-    <meta property="og:description"
-        content="Learn how to build an EHS Data Refinery to transform crude, unstructured data into AI-ready intelligence through governance, cleansing, and labeling strategies.">
-    <meta property="og:image" content="https://serhat.bio/images/the-ehs-data-refinery.webp">
-    <meta property="og:url" content="https://serhat.bio/insights/ehs-data-refinery.html">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Serhat Demirkol">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The EHS Data Refinery: Building AI-Ready Safety Data | Serhat Demirkol">
-    <meta name="twitter:description"
-        content="Learn how to build an EHS Data Refinery to transform crude, unstructured data into AI-ready intelligence through governance, cleansing, and labeling strategies.">
-    <meta name="twitter:image" content="https://serhat.bio/images/the-ehs-data-refinery.webp">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="../images/favicon.png" rel="icon" type="image/png" />
+    <meta
+        content="Learn how to build an EHS Data Refinery to transform crude, unstructured data into AI-ready intelligence through governance, cleansing, and labeling strategies."
+        name="description" />
+    <meta content="EHS AI, Data Refinery, Safety Data, Predictive Safety, EHS Taxonomy, Data Labeling"
+        name="keywords" />
+    <link href="https://serhat.bio/insights/ehs-data-refinery.html" rel="canonical" />
+    <link href="/feed.xml" rel="alternate" title="Serhat Demirkol | EHS Insights Feed" type="application/rss+xml" />
+    <meta content="The EHS Data Refinery: Building AI-Ready Safety Data | Serhat Demirkol" property="og:title" />
+    <meta
+        content="Learn how to build an EHS Data Refinery to transform crude, unstructured data into AI-ready intelligence through governance, cleansing, and labeling strategies."
+        property="og:description" />
+    <meta content="https://serhat.bio/images/the-ehs-data-refinery.webp" property="og:image" />
+    <meta content="https://serhat.bio/insights/ehs-data-refinery.html" property="og:url" />
+    <meta content="article" property="og:type" />
+    <meta content="Serhat Demirkol" property="og:site_name" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="The EHS Data Refinery: Building AI-Ready Safety Data | Serhat Demirkol" name="twitter:title" />
+    <meta
+        content="Learn how to build an EHS Data Refinery to transform crude, unstructured data into AI-ready intelligence through governance, cleansing, and labeling strategies."
+        name="twitter:description" />
+    <meta content="https://serhat.bio/images/the-ehs-data-refinery.webp" name="twitter:image" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../styles.css" rel="stylesheet" />
+    <style>
+        .example-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .example-box h4 {
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -76,30 +90,75 @@
       "datePublished": "2025-11-20"
     }
     </script>
-    <style>
-        .example-box {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-        }
-
-        .example-box h4 {
-            margin-top: 0;
-            color: var(--primary-blue);
-        }
-    </style>
 </head>
 
 <body>
-
-    <div id="header-placeholder"></div>
-
-    <div class="page-wrapper article-wrapper">
-        <section class="content-area">
-            <h1 class="content-title">The EHS Data Refinery: From Crude Data to AI-Ready Intelligence</h1>
-            <p class="insight-date">November 20, 2025</p>
+    <!-- ===== Masthead ===== -->
+    <header class="site-header">
+        <div class="mast">
+            <a class="mast-brand" href="../index.html">
+                <span class="mast-name">Serhat Demirkol</span>
+                <span class="mast-sub">Product · Systems · Data</span>
+            </a>
+            <nav class="mast-nav">
+                <a class="mast-link-active" href="../insights.html">Writing</a>
+                <a class="mast-link" href="../books.html">Books</a>
+                <a class="mast-link" href="../tools.html">Tools</a>
+                <a class="mast-cta" href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ===== Reading progress ===== -->
+    <div class="readbar-track">
+        <div id="readbar"></div>
+    </div>
+    <article class="art-wrap">
+        <div class="art-header sec-pad">
+            <a class="art-back" href="../insights.html"><span class="art-back-arrow">←</span> All writing</a>
+            <div class="art-meta">
+                <span>Data Architecture</span>
+                <span class="art-meta-dot"></span>
+                <span class="art-meta-muted">Nov 2025</span>
+                <span class="art-meta-dot"></span>
+                <span class="art-meta-muted">14 min read</span>
+            </div>
+            <h1 class="art-h1">The EHS Data Refinery: Building AI-Ready Safety Data</h1>
+            <p class="art-lede">Learn how to build an EHS Data Refinery to transform crude, unstructured data into
+                AI-ready intelligence through governance, cleansing, and labeling strategies.</p>
+            <div class="art-byline">
+                <div class="art-byline-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg" /></div>
+                <div class="art-byline-info">
+                    <div class="art-byline-name">Serhat Demirkol</div>
+                    <div class="art-byline-role">EHS Product · Systems · Data</div>
+                </div>
+                <div class="share-wrap">
+                    <button class="share-btn" id="share-btn" type="button">Share <span
+                            class="share-chevron">▾</span></button>
+                    <div class="share-dd" id="share-dd">
+                        <button class="share-item" id="share-copy" type="button"><span class="share-icon">⎘</span> Copy
+                            link</button>
+                        <a class="share-item"
+                            href="mailto:?subject=The EHS Data Refinery: Building AI-Ready Safety Data | Serhat Demirkol&amp;body=Thought this was worth your time: https://serhat.bio/insights/ehs-data-refinery.html"><span
+                                class="share-icon">@</span> Email</a>
+                        <a class="share-item"
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://serhat.bio/insights/ehs-data-refinery.html"
+                            rel="noopener" target="_blank"><span class="share-icon" style="font-weight:700">in</span>
+                            LinkedIn</a>
+                        <a class="share-item"
+                            href="https://wa.me/?text=The%20EHS%20Data%20Refinery%3A%20Building%20AI-Ready%20Safety%20Data%20%7C%20Serhat%20Demirkol%0Ahttps%3A%2F%2Fserhat.bio%2Finsights%2Fehs-data-refinery.html"
+                            rel="noopener" target="_blank"><span class="share-icon" style="font-weight:600">WA</span>
+                            WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="art-hero-wrap sec-pad">
+            <div class="art-hero-img">
+                <img alt="The EHS Data Refinery: Building AI-Ready Safety Data" loading="lazy"
+                    src="../images/the-ehs-data-refinery.webp" />
+            </div>
+        </div>
+        <div class="prose art-prose sec-pad">
             <p>The concept of raw EHS data as "crude oil" highlights a critical reality: it is a substance with
                 immense potential, but one that is messy, unstructured, and unusable in its natural state. An AI
                 cannot learn from data filled with inconsistencies, subjective opinions, and undefined terms.</p>
@@ -113,9 +172,6 @@
                 industrial process — The Refinery — is the critical EHS function for transforming raw data into a
                 standardized, usable asset. This refinery process consists of three core components: governance,
                 cleansing, and labeling.</p>
-            <img src="../images/the-ehs-data-refinery.webp" alt="The EHS Data Refinery" class="insight-image"
-                width="800" height="450">
-
             <h2>1. Data Governance: Digital 5S for Your Database</h2>
             <p>Data governance is a term that causes many leaders to tune out, imagining endless meetings and
                 binders of rules.</p>
@@ -142,7 +198,6 @@
                 together. A frontline manager opens the incident form and sees one dropdown containing event types
                 (Injury, Near Miss), severity levels (LTI, MTC, First Aid), and vague root cause categories
                 (Personnel Factors) all jumbled together. This creates confusion and forces flawed decisions.</p>
-
             <h4>The Failure of the Legacy Form:</h4>
             <p>
                 Here's what happens when you mix these categories: the rare, high-consequence events you actually
@@ -163,14 +218,12 @@
                     and notes (unstructured data)</strong> where people mix <em>what happened</em> (the mechanical
                 event) with <em>why it happened</em> (the systemic cause). The AI gets noise instead of structure.
             </p>
-
             <h4>The Solution: Implementing a Structured EHS Taxonomy</h4>
             <p>
                 The fix isn't just a prettier form—it's using a structured <strong>Classification System
                     (Taxonomy)</strong> based on proven frameworks like ESAW (European), OIICS (North American), or
                 TOOCS (Australian). These frameworks force clarity and objectivity into your data.
             </p>
-
             <ol>
                 <li><strong>Clean Event Separation:</strong> Start by forcing a simple choice: Is this an
                     Injury/Illness or a Near Miss? Once they choose, the form immediately routes them to the
@@ -191,7 +244,6 @@
                     isn't lost; it's just moved to where
                     it belongs, in a proper investigation workflow rather than a single text box.</li>
             </ol>
-
             <p>This structured workflow isn't just better for AI — it's faster and easier for
                 the people filling out the forms. It's a guided process where nobody's guessing anymore. When you
                 build good data governance into your form design, people actually use it. And this separation
@@ -199,27 +251,20 @@
                     analytics</strong> — the difference between simply recording incidents and actually understanding
                 their
                 root causes.</p>
-
             <h2>2. Data Cleansing: Engineering Your "Data Equity"</h2>
-
             <p>Governance (Section 1) ensures your future data is clean. But that only stops the bleeding. It does
                 nothing about the massive "Data Debt" (years of poorly structured historical data) sitting in your
                 database right now.</p>
-
             <p>This is where Data Cleansing comes in. This isn't just about tidying up; it's about engineering
                 equity from your existing data.</p>
-
             <p>Your historical data is a strategic asset, but right now it's frozen in a state of disrepair.
                 Data cleansing is how you standardize, repair, and curate that data at scale so you can actually
                 use it to train AI models. You can't build a reliable model on a broken foundation.</p>
-
             <h3>Strategy 1: Standardization (Events, Assets, and Locations)</h3>
-
             <p>This is your most critical cleansing strategy because it answers two fundamental questions your AI
                 needs to know: <em>what is happening</em> and <em>where is it happening</em>. Without this, your
                 data is just a pile of isolated reports, useless for pattern recognition, and your predictive models
                 will fail.</p>
-
             <h4>Part A: Standardizing Events (The "What")</h4>
             <p><strong>The Problem:</strong> Your database contains "slip," "slipped on wet floor," "fall due to
                 water," and "water hazard." An AI sees these as four different things. Ask it "How many slip/trip
@@ -228,8 +273,7 @@
                 the messy terms (e.g., "slipped on wet floor"). Column B has the clean, standardized term from your
                 taxonomy (e.g., "Slip/Trip - Wet Surface"). Hand this to your IT team. They write a find-and-replace
                 script, and what would've been a six-month manual cleanup becomes a ten-minute automated job.</p>
-
-            <h4>Part B: Standardizing Assets & Locations (The "Where")</h4>
+            <h4>Part B: Standardizing Assets &amp; Locations (The "Where")</h4>
             <p><strong>The Problem:</strong> One report says "Line 3," another says "L3-Conveyor," a third says
                 "Conveyor, Line 3." The AI sees three different places and can't connect the dots. This is the
                 biggest barrier to predictive modeling.</p>
@@ -239,9 +283,7 @@
                 (Maintenance) or the Location Hierarchy from your operations system. Use that as your
                 standardization dictionary.
             </p>
-
             <p>Example Mapping File:</p>
-
             <table>
                 <thead>
                     <tr>
@@ -268,7 +310,6 @@
                     </tr>
                 </tbody>
             </table>
-
             <p>Once all variations map to the same ID (like `L3-CONVEYOR`), the AI can finally see the complete
                 history of that asset across all your data:</p>
             <ol>
@@ -276,16 +317,13 @@
                 <li>Near Miss: Object fell from `L3-CONVEYOR`</li>
                 <li>Incident: Hand Laceration on `L3-CONVEYOR`</li>
             </ol>
-
             <p>Now you've given the AI the context it needs to find patterns. And because both EHS and Maintenance
                 records are standardized to `L3-CONVEYOR`, you can ask high-value questions like: <em>"How many of
                     our "Guarding" observations on this asset were followed by an "Overdue PM" work order from the
                     CMMS?"</em> This is how you transform Safety Risk data into Asset Reliability
                 intelligence—proving that EHS data is a leading indicator for maintenance failure and operational risk.
             </p>
-
             <h3>Strategy 2: Contextual Repair (Handling Missing Data)</h3>
-
             <p>After standardization, your next challenge is missing data. A single blank field (like a missing
                 "Department" or "Location") can make an entire report useless for analysis, creating holes that
                 break your models.</p>
@@ -296,14 +334,12 @@
                 you already built. It's a simple query: the system asks the HR bridge "Who is Employee #7781?" and
                 fills in the blanks automatically. This isn't just filling blanks. It's automated data repair that
                 rescues thousands of records from the junk pile.</p>
-
             <h3>Strategy 3: Choosing the Right Data (Feature Selection)</h3>
             <p>This is the most critical, non-negotiable step in the entire refinery process. While the first two
                 strategies are about improving data, this one is about protecting your models from bad data.</p>
             <p>In data science, this is called <strong>Choosing the Right Data (Feature Selection)</strong>. The
                 concept is simple: deliberately exclude biased or low-value fields from your analytical
                 datasets.</p>
-
             <ul>
                 <li><strong>The Problem:</strong> Most legacy EHS systems have a mandatory "Root Cause" field with
                     blame-oriented options like "Personnel Factors," "Management System Issues," or "Physical
@@ -332,7 +368,6 @@
                     in your taxonomy. Retire the "Other" bucket entirely.
                 </li>
             </ul>
-
             <h2>3. The "Data Labeling" Process: Codifying Organizational Expertise</h2>
             <p>With your data governed (Section 1) and your historical records cleansed (Section 2), your
                 foundation is solid. Now comes the final step: teaching your AI what to look for.</p>
@@ -343,18 +378,15 @@
             <p>This is the process where your EHS experts manually review a sample of <strong>narratives and notes
                     (unstructured data)</strong> — like observation notes or inspection descriptions—and tag them with
                 the standardized labels from your classification system.</p>
-
             <p>The goal isn't just to predict accidents — it's to prescribe solutions. An AI that only predicts risk
                 is
                 just a fancy reporting tool. But an AI that learns which corrective actions actually work (and which
                 ones fail) becomes a strategic asset. Data labeling is how you make that leap from prediction to
                 prescription.
             </p>
-
             <p>Don't focus only on incident reports. Your most valuable unstructured data is probably buried in
                 safety observations, inspections, and risk assessments — your leading indicator data. This typically
                 exists in two fields:</p>
-
             <ul>
                 <li><strong>The Hazard Description:</strong> What was seen? (e.g., "Guard was off on Line 3
                     conveyor.")</li>
@@ -362,19 +394,15 @@
                     and replace guard," or "Work order submitted to fabricate new guard.")</li>
             </ul>
             <p>You need to train the AI to understand both fields and learn the relationship between them.</p>
-
             <p>Think of your labeled dataset as a textbook. You're creating a "gold standard" set of examples that
                 shows the AI what to recognize. For instance: "When you see text like 'guard is missing,' classify
                 that as 'Unsafe Condition: Guarding.' And when you see an action like 'install a hard-guard,'
                 classify that as 'Engineering Control.'"</p>
-
-
             <h3>The Three Steps of the Labeling Process</h3>
             <p>This labeling sprint is the first time your experts and your AI work together. This is the
                 practical process of "Expert Supervision" — where you ensure the machine learns from your best
                 practitioners, not just your largest datasets. You're not just tagging rows in a spreadsheet; you're
                 codifying your organization's expertise into a format the machine can learn from.</p>
-
             <h4>1. Define the Scope and Language</h4>
             <p><strong>Goal:</strong> Establish the boundary for the sprint.</p>
             <p><strong>Action:</strong> Assemble a team of 3–5 experts. Your first task is to define a <strong>Dual
@@ -383,7 +411,6 @@
                 and a separate one for the actions taken (e.g., "Engineering Control").</p>
             <p>Quality matters more than quantity here. Pull a random sample of 500 to 1,000 historical reports.
                 This dataset will serve as the "textbook" your AI uses to learn.</p>
-
             <h4>2. Execute the Consensus Sprint</h4>
             <p><strong>Goal:</strong> Generate "gold standard" labels for the sample set.</p>
             <p><strong>Action:</strong> Have each expert independently label every report in the sample with both a
@@ -395,31 +422,23 @@
                 debates force your organization to define consistent classification rules. The AI learns from the
                 consensus patterns that emerge.
             </p>
-
             <h4>3. Finalize the Strategic Asset</h4>
-
             <p><strong>Goal:</strong> Create the deliverable for your technical team.</p>
-
             <p><strong>Action:</strong> Once consensus is reached, create a three-column spreadsheet: (1) the
                 original observation text, (2) the agreed-upon Hazard Category label, and (3) the Action Category
                 label. This simple file becomes the "textbook" for your <strong>AI that reads text</strong> (the
                 model that will eventually scan thousands of reports for you automatically).
             </p>
-
             <h3>The Payoff</h3>
-
             <p>You've now trained an AI to do something valuable: read future observations and classify both the
                 hazards and the actions. But here's the thing. Every EHS professional already knows that engineering
                 controls are better than administrative controls. You don't need AI to tell you that.</p>
-
             <p>That's the insight you're after. The real value comes from pattern recognition at scale. The AI can
                 prove which actions are failing by finding the non-obvious correlations. For example: "The data
                 shows that 'Guarding' hazards on the main line spike specifically on Tuesdays — the same day the
                 Preventive Maintenance schedule pulls the lead technician away for audit prep."</p>
-
             <p>The AI isn't reciting theory. It's providing a data-driven business case for investing in more
                 effective engineering solutions by proving exactly when and why the cheaper options are failing.</p>
-
             <h2>The Refinery Is a Permanent EHS Function, Not a Project</h2>
             <p>Building your EHS Data Refinery is the most intensive part of becoming AI-ready, but it's also the
                 most valuable. This work — governance, cleansing, and labeling — is not a one-time cleanup; it is the
@@ -431,37 +450,68 @@
             <p>Don't wait for AI software to arrive before starting this process. You can begin today with Excel and
                 a team of SMEs. The organizations building their refinery now will be the ones predicting injuries next
                 year.</p>
-
-
-            <div class="related-reading">
-                <h3>Related Reading</h3>
-                <ul>
-                    <li><a href="ml-incident-classification.html">How Machine Learning Can Improve Workplace Incident Classification</a></li>
-                    <li><a href="the-ai-readiness-gap-in-ehs.html">The AI Readiness Gap in EHS (Part 1)</a></li>
-                    <li><a href="ehs-ai-interoperability.html">Interoperability: The Foundation of EHS AI (Part 2)</a></li>
-                </ul>
-            </div>
             <div id="social-share-container"></div>
-
-
-        </section>
-    </div>
-
-    <div id="footer-placeholder"></div>
-
+            </p>
+        </div>
+        <!-- Author bio -->
+        <div class="author-bio sec-pad">
+            <div class="author-bio-card">
+                <div class="author-bio-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg" /></div>
+                <div class="author-bio-body">
+                    <div class="author-bio-name">Serhat Demirkol</div>
+                    <p>EHS product strategist working at the seam of field operations, information systems, and applied
+                        data. Builds the tools, then writes about why most of them fail.</p>
+                    <a class="author-bio-link" href="../index.html#contact">Work with me →</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- ===== Related ===== -->
+    <section class="rel-section sec-pad">
+        <div class="rel-header">
+            <span class="rel-label">Keep reading</span>
+            <span class="rel-rule"></span>
+        </div>
+        <div class="rel-grid">
+            <a class="rel-card" href="https://serhat.bio/insights/ml-incident-classification.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/ml-incident-classification.webp" />
+                </div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">May 2025</div>
+                    <h3 class="rel-card-title">How Machine Learning Can Improve Incident Classification</h3>
+                </div>
+            </a>
+            <a class="rel-card" href="https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/ai-readiness-gap.webp" /></div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Oct 2025</div>
+                    <h3 class="rel-card-title">The AI Readiness Gap: From Hype to High-Value Asset</h3>
+                </div>
+            </a>
+            <a class="rel-card" href="https://serhat.bio/insights/ehs-ai-interoperability.html">
+                <div class="rel-card-img"><img alt="" loading="lazy"
+                        src="../images/interoperability-as-the-foundation.webp" /></div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Nov 2025</div>
+                    <h3 class="rel-card-title">EHS AI Interoperability: Building the Data Foundation</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-wordmark">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+            <nav class="site-footer-nav">
+                <a href="../insights.html">Writing</a>
+                <a href="../books.html">Books</a>
+                <a href="../tools.html">Tools</a>
+                <a href="https://github.com/srhtdmrkl">GitHub</a>
+            </nav>
+            <div class="site-footer-copy">© 2026</div>
+        </div>
+    </footer>
     <script src="../script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const articleTitle = document.querySelector('.content-title').textContent;
-            const articleUrl = window.location.href;
-            const articleSummary = document.querySelector('meta[name="description"]').getAttribute('content');
-            const socialShareContainer = document.getElementById('social-share-container');
-            if (socialShareContainer) {
-                socialShareContainer.innerHTML = generateSocialShareButtons(articleTitle, articleUrl, articleSummary);
-            }
-            trackEvent('view_insight', { article_title: articleTitle });
-        });
-    </script>
 </body>
 
 </html>

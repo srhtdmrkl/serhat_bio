@@ -1,43 +1,40 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>AI Constructs Root Causes. It Cannot Identify Them. | Serhat Demirkol</title>
-    <meta name="description"
-        content="AI root cause analysis is a hypothesis, not a finding. Three structural limits explain why — and three tests to run on any vendor that claims otherwise.">
-    <link rel="canonical" href="https://serhat.bio/insights/ai-constructs-root-causes.html" />
-    <link rel="alternate" type="application/rss+xml" title="Serhat Demirkol | EHS Insights Feed" href="/feed.xml" />
-    <meta name="keywords"
-        content="AI Root Cause Analysis, Incident Investigation, Hindsight Bias, Local Rationality, EHS AI, Automation Bias, Safety Investigation, Cognitive Anchoring, CAPA, EHS Compliance, Incident Reporting">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="AI Constructs Root Causes. It Cannot Identify Them.">
-    <meta property="og:description"
-        content="Three structural limits that make AI root cause outputs hypotheses, not findings — and three tests to run on any vendor that claims otherwise.">
-    <meta property="og:image" content="https://serhat.bio/images/ai-constructs-root-causes.webp">
-    <meta property="og:url" content="https://serhat.bio/insights/ai-constructs-root-causes.html">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Serhat Demirkol">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI Constructs Root Causes. It Cannot Identify Them.">
-    <meta name="twitter:description"
-        content="Three structural limits that make AI root cause outputs hypotheses, not findings — and three tests to run on any vendor that claims otherwise.">
-    <meta name="twitter:image" content="https://serhat.bio/images/ai-constructs-root-causes.webp">
-
-    <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="../images/favicon.png" rel="icon" type="image/png" />
+    <meta
+        content="AI root cause analysis is a hypothesis, not a finding. Three structural limits explain why — and three tests to run on any vendor that claims otherwise."
+        name="description" />
+    <meta
+        content="AI Root Cause Analysis, Incident Investigation, Hindsight Bias, Local Rationality, EHS AI, Automation Bias, Safety Investigation, Cognitive Anchoring, CAPA, EHS Compliance, Incident Reporting"
+        name="keywords" />
+    <link href="https://serhat.bio/insights/ai-constructs-root-causes.html" rel="canonical" />
+    <link href="/feed.xml" rel="alternate" title="Serhat Demirkol | EHS Insights Feed" type="application/rss+xml" />
+    <meta content="AI Constructs Root Causes. It Cannot Identify Them." property="og:title" />
+    <meta
+        content="Three structural limits that make AI root cause outputs hypotheses, not findings — and three tests to run on any vendor that claims otherwise."
+        property="og:description" />
+    <meta content="https://serhat.bio/images/ai-constructs-root-causes.webp" property="og:image" />
+    <meta content="https://serhat.bio/insights/ai-constructs-root-causes.html" property="og:url" />
+    <meta content="article" property="og:type" />
+    <meta content="Serhat Demirkol" property="og:site_name" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="AI Constructs Root Causes. It Cannot Identify Them." name="twitter:title" />
+    <meta
+        content="Three structural limits that make AI root cause outputs hypotheses, not findings — and three tests to run on any vendor that claims otherwise."
+        name="twitter:description" />
+    <meta content="https://serhat.bio/images/ai-constructs-root-causes.webp" name="twitter:image" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../styles.css" rel="stylesheet" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -83,101 +80,136 @@
 </head>
 
 <body>
-
-    <div id="header-placeholder"></div>
-
-    <div class="container main-container">
-        <main class="main-content">
-            <section class="content-area">
-                <h1 class="content-title">AI Constructs Root Causes. It Cannot Identify Them.</h1>
-                <p class="insight-date">Jun 13, 2026</p>
-
-                <img src="../images/ai-constructs-root-causes.webp"
-                    alt="AI Constructs Root Causes. It Cannot Identify Them." class="insight-image">
-
-                <p>Give a language model two facts — a conveyor jam and a crushed hand — and it will build a neat chain
-                    of causes. It will list worn rollers, a production quota, and a near-miss from the week before. It
-                    looks like a real safety analysis. But the model invented those rollers, that quota, and the
-                    near-miss. It pulled them from its training data — a database of other companies' reports — not your
-                    site. The machine did not investigate. It fabricated the physical facts to justify its guess.</p>
-
-                <p>The resulting report reads well, but the author was never on site. AI can help you find patterns in
-                    past incidents or draft questions before you visit the field. Those uses are covered in part two of
-                    this piece. But when it comes to naming the actual cause of an injury, the tool fails for three
-                    reasons.</p>
-
-                <h2 id="the-three-structural-breaks">The Three Structural Breaks</h2>
-
-                <h3>1. Data Capture Break: The Low-Resolution Record</h3>
-
-                <p>The AI only knows what the form captured. If your software strips timestamps, the sequence is lost.
-                    If the form forces a complex incident into a generic dropdown menu, the context is lost. The tool is
-                    analyzing a damaged record.</p>
-
-                <p>This is the same issue that ruins your dashboards. If your software does not capture the right facts
-                    when the user types them, no technology can recover them later.</p>
-
-                <p>Connecting other systems — like machine sensors or maintenance logs — does not solve the problem. A
-                    sensor can prove the machine's state or the order of events. But knowing the physical sequence is
-                    not the same as knowing the cause. The sensor cannot explain why a valve was left open. It does not
-                    know if a replacement part was frozen by the budget, if the shift was short-staffed, or if a bonus
-                    program made operators fear downtime. Those decisions live in spreadsheets, HR files, and management
-                    meeting notes. They are not in your safety database. The AI fills these gaps with generic guesses
-                    from its training data and presents them as facts.</p>
-
-                <h3>2. Physical Reality Break: The Missing Physics Model</h3>
-
-                <p>The AI does not run a simulation of your plant. It understands the grammar of cause and effect, but
-                    not the physical constraints of your machinery.</p>
-
-                <p>It also cannot decide where to stop asking "why." That boundary is a management choice about what you
-                    are prepared to spend money to fix. Because the AI lacks this context, different models stop in
-                    completely different places when given the exact same incident.</p>
-
-                <p>We tested this in June 2026. We fed three different models the same report: a maintenance worker
-                    electrocuted because a line was not locked out (LOTO). We asked them to perform a standard 5-Why
-                    analysis. Claude Sonnet 4.6 stopped at supervisor accountability, blaming production bonuses. Llama
-                    3.2 3B blamed outdated training paperwork. Microsoft Copilot blamed the company's safety management
-                    system. None of these models knew what the business could actually change. They simply stopped
-                    writing when their database patterns ran out.</p>
-
-                <p>We ran a second test using the 2005 BP Texas City explosion. We gave the models only the raw facts
-                    available in the first few hours: an overflow, a blowdown drum, 15 fatalities, and an idling truck.
-                    Claude and Copilot recognized the event and matched the U.S. Chemical Safety Board (CSB) findings.
-                    But Llama 3.2 did not recognize it. It blamed "human error" and recommended a "robust safety
-                    culture" to fix a cracked metal vent stack. When the AI has no pre-existing investigation to copy,
-                    it defaults to standard corporate blame.</p>
-
-                <h3>3. Cognitive Break: The Hindsight Illusion</h3>
-
-                <p>The AI learns from reports of accidents that have already happened. Because it knows the ending, it
-                    judges every decision backwards. The accident looks easy to prevent, and the warning signs look
-                    obvious. This is hindsight bias.</p>
-
-                <p>The tool inherits this bias from the human reports used to train it. But a human investigator can
-                    learn to reconstruct the event moving forward — understanding how the situation looked to the worker
-                    at the time. An AI cannot.</p>
-
-                <p>The AI has no data on successful work. It only sees reports where a worker cleared a jam and got
-                    hurt. It never sees the ten thousand times operators cleared the same jam safely. It labels the
-                    decision to clear the jam as a failure simply because it knows how the story ends.</p>
-
-                <h2 id="operational-audits">Operational Audits</h2>
-
-                <p>Do not trust a vendor's sales pitch. Run these two audits to test the tool's reasoning before you
-                    buy.</p>
-
-                <h3>Audit 1: The Physical Space Test</h3>
-
-                <p>Feed the AI this prompt: <em>"A technician is servicing a conveyor belt. The supervisor says the
-                        technician bypassed the lockout system by reaching into the gear casing while standing on the
-                        control deck 20 feet away."</em></p>
-
-                <p>An AI that cannot understand physical space will accept the story. It will immediately blame the
-                    technician for failing to lock out the line. A reliable tool must flag that a human arm cannot
-                    stretch 20 feet and refuse to assign a cause until you verify the plant layout.</p>
-
-                <div class="table-scroll">
+    <!-- ===== Masthead ===== -->
+    <header class="site-header">
+        <div class="mast">
+            <a class="mast-brand" href="../index.html">
+                <span class="mast-name">Serhat Demirkol</span>
+                <span class="mast-sub">Product · Systems · Data</span>
+            </a>
+            <nav class="mast-nav">
+                <a class="mast-link-active" href="../insights.html">Writing</a>
+                <a class="mast-link" href="../books.html">Books</a>
+                <a class="mast-link" href="../tools.html">Tools</a>
+                <a class="mast-cta" href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ===== Reading progress ===== -->
+    <div class="readbar-track">
+        <div id="readbar"></div>
+    </div>
+    <article class="art-wrap">
+        <div class="art-header sec-pad">
+            <a class="art-back" href="../insights.html"><span class="art-back-arrow">←</span> All writing</a>
+            <div class="art-meta">
+                <span>Applied AI</span>
+                <span class="art-meta-dot"></span>
+                <span class="art-meta-muted">Jun 2026</span>
+                <span class="art-meta-dot"></span>
+                <span class="art-meta-muted">7 min read</span>
+            </div>
+            <h1 class="art-h1">AI Constructs Root Causes. It Cannot Identify Them.</h1>
+            <p class="art-lede">AI root cause analysis is a hypothesis, not a finding. Three structural limits explain
+                why —
+                and three tests to run on any vendor that claims otherwise.</p>
+            <div class="art-byline">
+                <div class="art-byline-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg" />
+                </div>
+                <div class="art-byline-info">
+                    <div class="art-byline-name">Serhat Demirkol</div>
+                    <div class="art-byline-role">EHS Product · Systems · Data</div>
+                </div>
+                <div class="share-wrap">
+                    <button class="share-btn" id="share-btn" type="button">Share <span
+                            class="share-chevron">▾</span></button>
+                    <div class="share-dd" id="share-dd">
+                        <button class="share-item" id="share-copy" type="button"><span class="share-icon">⎘</span> Copy
+                            link</button>
+                        <a class="share-item"
+                            href="mailto:?subject=AI Constructs Root Causes. It Cannot Identify Them. | Serhat Demirkol&amp;body=Thought this was worth your time: https://serhat.bio/insights/ai-constructs-root-causes.html"><span
+                                class="share-icon">@</span> Email</a>
+                        <a class="share-item"
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://serhat.bio/insights/ai-constructs-root-causes.html"
+                            rel="noopener" target="_blank"><span class="share-icon" style="font-weight:700">in</span>
+                            LinkedIn</a>
+                        <a class="share-item"
+                            href="https://wa.me/?text=AI%20Constructs%20Root%20Causes.%20It%20Cannot%20Identify%20Them.%20%7C%20Serhat%20Demirkol%0Ahttps%3A%2F%2Fserhat.bio%2Finsights%2Fai-constructs-root-causes.html"
+                            rel="noopener" target="_blank"><span class="share-icon" style="font-weight:600">WA</span>
+                            WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="art-hero-wrap sec-pad">
+            <div class="art-hero-img">
+                <img alt="AI Constructs Root Causes. It Cannot Identify Them." loading="lazy"
+                    src="../images/ai-constructs-root-causes.webp" />
+            </div>
+        </div>
+        <div class="prose art-prose sec-pad">
+            <p>Give a language model two facts — a conveyor jam and a crushed hand — and it will build a neat chain
+                of causes. It will list worn rollers, a production quota, and a near-miss from the week before. It
+                looks like a real safety analysis. But the model invented those rollers, that quota, and the
+                near-miss. It pulled them from its training data — a database of other companies' reports — not your
+                site. The machine did not investigate. It fabricated the physical facts to justify its guess.</p>
+            <p>The resulting report reads well, but the author was never on site. AI can help you find patterns in
+                past incidents or draft questions before you visit the field. Those uses are covered in part two of
+                this piece. But when it comes to naming the actual cause of an injury, the tool fails for three
+                reasons.</p>
+            <h2 id="the-three-structural-breaks">The Three Structural Breaks</h2>
+            <h3>1. Data Capture Break: The Low-Resolution Record</h3>
+            <p>The AI only knows what the form captured. If your software strips timestamps, the sequence is lost.
+                If the form forces a complex incident into a generic dropdown menu, the context is lost. The tool is
+                analyzing a damaged record.</p>
+            <p>This is the same issue that ruins your dashboards. If your software does not capture the right facts
+                when the user types them, no technology can recover them later.</p>
+            <p>Connecting other systems — like machine sensors or maintenance logs — does not solve the problem. A
+                sensor can prove the machine's state or the order of events. But knowing the physical sequence is
+                not the same as knowing the cause. The sensor cannot explain why a valve was left open. It does not
+                know if a replacement part was frozen by the budget, if the shift was short-staffed, or if a bonus
+                program made operators fear downtime. Those decisions live in spreadsheets, HR files, and management
+                meeting notes. They are not in your safety database. The AI fills these gaps with generic guesses
+                from its training data and presents them as facts.</p>
+            <h3>2. Physical Reality Break: The Missing Physics Model</h3>
+            <p>The AI does not run a simulation of your plant. It understands the grammar of cause and effect, but
+                not the physical constraints of your machinery.</p>
+            <p>It also cannot decide where to stop asking "why." That boundary is a management choice about what you
+                are prepared to spend money to fix. Because the AI lacks this context, different models stop in
+                completely different places when given the exact same incident.</p>
+            <p>We tested this in June 2026. We fed three different models the same report: a maintenance worker
+                electrocuted because a line was not locked out (LOTO). We asked them to perform a standard 5-Why
+                analysis. Claude Sonnet 4.6 stopped at supervisor accountability, blaming production bonuses. Llama
+                3.2 3B blamed outdated training paperwork. Microsoft Copilot blamed the company's safety management
+                system. None of these models knew what the business could actually change. They simply stopped
+                writing when their database patterns ran out.</p>
+            <p>We ran a second test using the 2005 BP Texas City explosion. We gave the models only the raw facts
+                available in the first few hours: an overflow, a blowdown drum, 15 fatalities, and an idling truck.
+                Claude and Copilot recognized the event and matched the U.S. Chemical Safety Board (CSB) findings.
+                But Llama 3.2 did not recognize it. It blamed "human error" and recommended a "robust safety
+                culture" to fix a cracked metal vent stack. When the AI has no pre-existing investigation to copy,
+                it defaults to standard corporate blame.</p>
+            <h3>3. Cognitive Break: The Hindsight Illusion</h3>
+            <p>The AI learns from reports of accidents that have already happened. Because it knows the ending, it
+                judges every decision backwards. The accident looks easy to prevent, and the warning signs look
+                obvious. This is hindsight bias.</p>
+            <p>The tool inherits this bias from the human reports used to train it. But a human investigator can
+                learn to reconstruct the event moving forward — understanding how the situation looked to the worker
+                at the time. An AI cannot.</p>
+            <p>The AI has no data on successful work. It only sees reports where a worker cleared a jam and got
+                hurt. It never sees the ten thousand times operators cleared the same jam safely. It labels the
+                decision to clear the jam as a failure simply because it knows how the story ends.</p>
+            <h2 id="operational-audits">Operational Audits</h2>
+            <p>Do not trust a vendor's sales pitch. Run these two audits to test the tool's reasoning before you
+                buy.</p>
+            <h3>Audit 1: The Physical Space Test</h3>
+            <p>Feed the AI this prompt: <em>"A technician is servicing a conveyor belt. The supervisor says the
+                    technician bypassed the lockout system by reaching into the gear casing while standing on the
+                    control deck 20 feet away."</em></p>
+            <p>An AI that cannot understand physical space will accept the story. It will immediately blame the
+                technician for failing to lock out the line. A reliable tool must flag that a human arm cannot
+                stretch 20 feet and refuse to assign a cause until you verify the plant layout.</p>
+            <div class="table-scroll">
                 <table>
                     <thead>
                         <tr>
@@ -202,16 +234,12 @@
                         </tr>
                     </tbody>
                 </table>
-                </div>
-
-                <h3>Audit 2: The Hidden Defect Test</h3>
-
-                <p>This test uses two different prompts to show what happens when the AI is missing context.</p>
-
-                <p>Run Prompt A first — the typical brief incident report: <em>"An operator bypassed a light curtain on
-                        a metal stamping press to clear stuck parts. They were injured."</em></p>
-
-                <div class="table-scroll">
+            </div>
+            <h3>Audit 2: The Hidden Defect Test</h3>
+            <p>This test uses two different prompts to show what happens when the AI is missing context.</p>
+            <p>Run Prompt A first — the typical brief incident report: <em>"An operator bypassed a light curtain on
+                    a metal stamping press to clear stuck parts. They were injured."</em></p>
+            <div class="table-scroll">
                 <table>
                     <thead>
                         <tr>
@@ -236,14 +264,13 @@
                         </tr>
                     </tbody>
                 </table>
-                </div>
-
-                <p>Run Prompt B next — the same incident, but with the context a real investigation would uncover:
-                    <em>"An operator bypassed a light curtain on a metal stamping press to manually clear stuck parts.
-                        This was the only way to meet the hourly quota because the automatic ejector pin has been broken
-                        for six months and the replacement part is backordered."</em></p>
-
-                <div class="table-scroll">
+            </div>
+            <p>Run Prompt B next — the same incident, but with the context a real investigation would uncover:
+                <em>"An operator bypassed a light curtain on a metal stamping press to manually clear stuck parts.
+                    This was the only way to meet the hourly quota because the automatic ejector pin has been broken
+                    for six months and the replacement part is backordered."</em>
+            </p>
+            <div class="table-scroll">
                 <table>
                     <thead>
                         <tr>
@@ -269,52 +296,92 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <p>This test proves that the AI does not find new causes. It only reorganizes the facts you already gave
+                it. If your incident reports look like Prompt A — which is common for brief supervisor logs — the AI
+                will simply blame the worker and reinforce a culture of blame.</p>
+            <h2 id="the-boundary-rule">The Boundary Rule and Interface Design</h2>
+            <p>These limits lead to a single rule: AI belongs in the gathering phase, not the naming phase. Use the AI
+                to find
+                more questions, but never let it write the answer. AI generates clues. Investigators write findings.
+                Part two of
+                this piece outlines the software requirements and design choices that enforce this boundary.</p>
+            <p>Today's software fails this test. Most vendors build systems that pre-fill the root cause field
+                automatically.
+                This design is an error trap: it nudges the investigator to accept the machine's guess, turning a
+                generic
+                database pattern into the official record.</p>
+            <p>A reliable safety workflow must treat AI suggestions as unconfirmed clues, not final answers. A named
+                investigator must remain responsible for typing the finding.</p>
+            <p>The software should force the investigator to upload a specific proof — like a photograph, a maintenance
+                log,
+                or a quote from an interview — to verify any clue. Requiring physical proof is the only way to stop
+                investigators from simply checking a box and bypassing the real work.</p>
+            <!-- Related Reading -->
+            <div id="social-share-container"></div>
+        </div>
+        <!-- Author bio -->
+        <div class="author-bio sec-pad">
+            <div class="author-bio-card">
+                <div class="author-bio-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg" />
                 </div>
-
-                <p>This test proves that the AI does not find new causes. It only reorganizes the facts you already gave
-                    it. If your incident reports look like Prompt A — which is common for brief supervisor logs — the AI
-                    will simply blame the worker and reinforce a culture of blame.</p>
-
-                <h2 id="the-boundary-rule">The Boundary Rule and Interface Design</h2>
-
-                <p>These limits lead to a single rule: AI belongs in the gathering phase, not the naming phase. Use the AI to find more questions, but never let it write the answer. AI generates clues. Investigators write findings. Part two of this piece outlines the software requirements and design choices that enforce this boundary.</p>
-
-                <p>Today's software fails this test. Most vendors build systems that pre-fill the root cause field automatically. This design is an error trap: it nudges the investigator to accept the machine's guess, turning a generic database pattern into the official record.</p>
-
-                <p>A reliable safety workflow must treat AI suggestions as unconfirmed clues, not final answers. A named investigator must remain responsible for typing the finding.</p>
-
-                <p>The software should force the investigator to upload a specific proof — like a photograph, a maintenance log, or a quote from an interview — to verify any clue. Requiring physical proof is the only way to stop investigators from simply checking a box and bypassing the real work.</p>
-
-                 <!-- Related Reading -->
-                <div class="related-reading">
-                    <h3>Related Reading</h3>
-                    <ul>
-                        <li><a href="the-ai-readiness-gap-in-ehs.html">The AI Readiness Gap in EHS: From Hype to High-Value Asset</a></li>
-                        <li><a href="the-ehs-ai-launchpad.html">The EHS AI Launchpad: Introducing Intelligence Incrementally</a></li>
-                        <li><a href="the-2026-ehs-tech-consensus.html">2026 EHS Tech Consensus: Interrogating the Vendor AI Data</a></li>
-                    </ul>
+                <div class="author-bio-body">
+                    <div class="author-bio-name">Serhat Demirkol</div>
+                    <p>EHS product strategist working at the seam of field operations, information systems, and applied
+                        data.
+                        Builds the tools, then writes about why most of them fail.</p>
+                    <a class="author-bio-link" href="../index.html#contact">Work with me →</a>
                 </div>
-
-                <div id="social-share-container"></div>
-            </section>
-        </main>
-    </div>
-
-    <div id="footer-placeholder"></div>
-
+            </div>
+        </div>
+    </article>
+    <!-- ===== Related ===== -->
+    <section class="rel-section sec-pad">
+        <div class="rel-header">
+            <span class="rel-label">Keep reading</span>
+            <span class="rel-rule"></span>
+        </div>
+        <div class="rel-grid">
+            <a class="rel-card" href="https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/ai-readiness-gap.webp" />
+                </div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Oct 2025</div>
+                    <h3 class="rel-card-title">The AI Readiness Gap: From Hype to High-Value Asset</h3>
+                </div>
+            </a>
+            <a class="rel-card" href="https://serhat.bio/insights/the-ehs-ai-launchpad.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/ehs-ai-launchpad.webp" />
+                </div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Dec 2025</div>
+                    <h3 class="rel-card-title">The EHS AI Launchpad: Escaping Pilot Purgatory</h3>
+                </div>
+            </a>
+            <a class="rel-card" href="https://serhat.bio/insights/the-2026-ehs-tech-consensus.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/2026-ehs-tech-gaps.webp" />
+                </div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Apr 2026</div>
+                    <h3 class="rel-card-title">2026 EHS Tech Consensus: Interrogating the Vendor AI Data</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-wordmark">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+            <nav class="site-footer-nav">
+                <a href="../insights.html">Writing</a>
+                <a href="../books.html">Books</a>
+                <a href="../tools.html">Tools</a>
+                <a href="https://github.com/srhtdmrkl">GitHub</a>
+            </nav>
+            <div class="site-footer-copy">© 2026</div>
+        </div>
+    </footer>
     <script src="../script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const articleTitle = document.querySelector('.content-title').textContent;
-            const articleUrl = window.location.href;
-            const articleSummary = document.querySelector('meta[name="description"]').getAttribute('content');
-            const socialShareContainer = document.getElementById('social-share-container');
-            if (socialShareContainer) {
-                socialShareContainer.innerHTML = generateSocialShareButtons(articleTitle, articleUrl, articleSummary);
-            }
-            trackEvent('view_insight', { article_title: articleTitle });
-        });
-    </script>
 </body>
 
 </html>
