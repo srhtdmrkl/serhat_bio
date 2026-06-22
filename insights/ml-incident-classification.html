@@ -1,47 +1,30 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Machine Learning Can Improve Workplace Incident Classification | Serhat Demirkol</title>
-    <meta name="description"
-        content="How machine learning automates workplace incident classification — the benefits for EHS professionals and a practical tool in action.">
-    <meta name="keywords" content="EHS, machine learning, incident classification, workplace safety, predictive analytics">
-    <link rel="canonical"
-    <link rel="alternate" type="application/rss+xml" title="Serhat Demirkol | EHS Insights Feed" href="/feed.xml" />
-        href="https://serhat.bio/insights/ml-incident-classification.html" />
-
-    <!-- Open Graph -->
-    <meta property="og:title"
-        content="How Machine Learning Can Improve Workplace Incident Classification | Serhat Demirkol">
-    <meta property="og:description"
-        content="How machine learning automates workplace incident classification — the benefits for EHS professionals and a practical tool in action.">
-    <meta property="og:image"
-        content="https://serhat.bio/images/ml-incident-classification.webp">
-    <meta property="og:url"
-        content="https://serhat.bio/insights/ml-incident-classification.html">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Serhat Demirkol">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title"
-        content="How Machine Learning Can Improve Workplace Incident Classification | Serhat Demirkol">
-    <meta name="twitter:description"
-        content="How machine learning automates workplace incident classification — the benefits for EHS professionals and a practical tool in action.">
-    <meta name="twitter:image"
-        content="https://serhat.bio/images/ml-incident-classification.webp">
-
-    <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>How Machine Learning Can Improve Workplace Incident Classification | Serhat Demirkol</title>
+<link href="../images/favicon.png" rel="icon" type="image/png"/>
+<meta content="How machine learning automates workplace incident classification — the benefits for EHS professionals and a practical tool in action." name="description"/>
+<meta content="EHS, machine learning, incident classification, workplace safety, predictive analytics" name="keywords"/>
+<link href="https://serhat.bio/insights/ml-incident-classification.html" rel="canonical"/>
+<link href="/feed.xml" rel="alternate" title="Serhat Demirkol | EHS Insights Feed" type="application/rss+xml"/>
+<meta content="How Machine Learning Can Improve Workplace Incident Classification | Serhat Demirkol" property="og:title"/>
+<meta content="How machine learning automates workplace incident classification — the benefits for EHS professionals and a practical tool in action." property="og:description"/>
+<meta content="https://serhat.bio/images/ml-incident-classification.webp" property="og:image"/>
+<meta content="https://serhat.bio/insights/ml-incident-classification.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="Serhat Demirkol" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="How Machine Learning Can Improve Workplace Incident Classification | Serhat Demirkol" name="twitter:title"/>
+<meta content="How machine learning automates workplace incident classification — the benefits for EHS professionals and a practical tool in action." name="twitter:description"/>
+<meta content="https://serhat.bio/images/ml-incident-classification.webp" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../design-schema/styles.css" rel="stylesheet"/>
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -62,7 +45,7 @@
       }]
     }
     </script>
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -88,138 +71,188 @@
     }
     </script>
 </head>
-
 <body>
-
-    <div id="header-placeholder"></div>
-
-    <div class="page-wrapper article-wrapper">
-        <section class="content-area">
-            <h1 class="content-title">How Machine Learning Can Improve Workplace Incident Classification</h1>
-            <p class="insight-date">May 29, 2025</p>
-            <p>In my previous articles, I discussed the <a href="esaw-methodology-guide.html">ESAW
+<!-- ===== Masthead ===== -->
+<header class="site-header">
+<div class="mast">
+<a class="mast-brand" href="../index.html">
+<span class="mast-name">Serhat Demirkol</span>
+<span class="mast-sub">EHS · Systems · Data</span>
+</a>
+<nav class="mast-nav">
+<a class="mast-link-active" href="../insights.html">Writing</a>
+<a class="mast-link" href="../books.html">Books</a>
+<a class="mast-link" href="../tools.html">Tools</a>
+<a class="mast-cta" href="../index.html#contact">Contact</a>
+</nav>
+</div>
+</header>
+<!-- ===== Reading progress ===== -->
+<div class="readbar-track">
+<div id="readbar"></div>
+</div>
+<article class="art-wrap">
+<div class="art-header sec-pad">
+<a class="art-back" href="../insights.html"><span class="art-back-arrow">←</span> All writing</a>
+<div class="art-meta">
+<span>Applied AI</span>
+<span class="art-meta-dot"></span>
+<span class="art-meta-muted">May 2025</span>
+<span class="art-meta-dot"></span>
+<span class="art-meta-muted">6 min read</span>
+</div>
+<h1 class="art-h1">How Machine Learning Can Improve Incident Classification</h1>
+<p class="art-lede">How machine learning automates workplace incident classification — the benefits for EHS professionals and a practical tool in action.</p>
+<div class="art-byline">
+<div class="art-byline-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg"/></div>
+<div class="art-byline-info">
+<div class="art-byline-name">Serhat Demirkol</div>
+<div class="art-byline-role">EHS Product · Systems · Data</div>
+</div>
+<div class="share-wrap">
+<button class="share-btn" id="share-btn" type="button">Share <span class="share-chevron">▾</span></button>
+<div class="share-dd" id="share-dd">
+<button class="share-item" id="share-copy" type="button"><span class="share-icon">⎘</span> Copy link</button>
+<a class="share-item" href="mailto:?subject=How Machine Learning Can Improve Workplace Incident Classification | Serhat Demirkol&amp;body=Thought this was worth your time: https://serhat.bio/insights/ml-incident-classification.html"><span class="share-icon">@</span> Email</a>
+<a class="share-item" href="https://www.linkedin.com/sharing/share-offsite/?url=https://serhat.bio/insights/ml-incident-classification.html" rel="noopener" target="_blank"><span class="share-icon" style="font-weight:700">in</span> LinkedIn</a>
+<a class="share-item" href="https://twitter.com/intent/tweet?text=How%20Machine%20Learning%20Can%20Improve%20Workplace%20Incident%20Classification%20|%20Serhat%20Demirkol&amp;url=https://serhat.bio/insights/ml-incident-classification.html" rel="noopener" target="_blank"><span class="share-icon" style="font-weight:600">𝕏</span> Post on X</a>
+</div>
+</div>
+</div>
+</div>
+<div class="art-hero-wrap sec-pad">
+<div class="art-hero-img">
+<img alt="How Machine Learning Can Improve Incident Classification" loading="lazy" src="../images/ml-incident-classification.webp"/>
+</div>
+</div>
+<div class="prose art-prose sec-pad">
+<p>In my previous articles, I discussed the <a href="esaw-methodology-guide.html">ESAW
                     methodology</a> - a standardized system for classifying
-                workplace safety incidents - and explored the role of <a
-                    href="diagnostic-analytics-guide.html">diagnostic analytics</a>
+                workplace safety incidents - and explored the role of <a href="diagnostic-analytics-guide.html">diagnostic analytics</a>
                 in enhancing workplace
                 safety. Accurate incident classification is the cornerstone of effective analysis and prevention
                 strategies. Machine learning offers great potential to streamline and improve this critical task.
             </p>
-            <img src="../images/ml-incident-classification.webp"
-                alt="Machine Learning Incident Classification Triage System"
-                class="insight-image" width="800" height="450">
-
-            <h2>Why Pattern Recognition Beats Keyword Matching</h2>
-            <p>Most EHS software already includes basic automation—keyword-based "auto-tagging" or decision trees that categorize an incident based on specific words like "fall" or "chemical." However, these systems are brittle. They fail when the narrative is nuanced or when a worker uses non-standard terminology.</p>
-
-            <p>Machine learning (ML) stops looking for specific "trigger words" and starts looking at patterns. Instead of following a strict rulebook, the system makes a calculated guess based on how thousands of similar incidents were handled in the past. This offers several structural advantages:</p>
-            <ul>
-                <li><strong>Contextual Pattern Recognition:</strong> Humans often miss the "hidden" signal in a narrative. For example, a report might be manually tagged as a "Slip/Trip," but an ML model can identify that the description of the uneven surface and the specific tool being carried matches a pattern of "Equipment Design Flaw" seen across other high-risk sites.</li>
-                <li><strong>Consistent Logic:</strong> While a human manager’s classification can change based on their experience or the time of day, an ML model applies the same logic to every record. This makes errors systematic and, therefore, easier to audit and correct.</li>
-                <li><strong>Scalable Triage:</strong> Automating the routine cases allows you to shift from manual data entry to data governance—focusing your expertise on the complex, high-potential incidents that the model flags as ambiguous.</li>
-            </ul>
-
-            <p>The success of this approach depends on the training data and the choice of the machine learning algorithm. When done correctly, machine learning is a powerful tool for improving both the accuracy and the speed of incident classification.</p>
-
-            <h2>The Architecture of an Incident Classifier</h2>
-            <p>Developing a classification model is a multi-stage process. While custom models were previously the only option, the industry is now shifting toward **Large Language Models (LLMs)**. These are systems—like the ones behind ChatGPT—that have been trained on vast amounts of text to understand human language contextually. The classic workflow remains essential for understanding how the system learns:</p>
-
-            <ul>
-                <li><strong>Data Governance:</strong> The output is only as good as the field narrative. Cleaning data isn't just about fixing typos; it's about ensuring the training set reflects the operational reality of the site, not just the sanitized version of the report.</li>
-                <li><strong>Feature Extraction:</strong> This is the process of identifying which parts of a report—timestamps, location, or specific phrases—carry the most predictive weight. It is the digital equivalent of an investigator deciding which clues matter most.</li>
-                <li><strong>Model Selection:</strong> Choosing between a specialized classifier or a general-purpose LLM depends on your data privacy requirements and the complexity of your classification framework (e.g., OSHA vs. ESAW).</li>
-                <li><strong>Continuous Validation:</strong> A model is never "finished." It requires ongoing auditing by EHS experts to ensure it hasn't drifted as site operations or reporting cultures change.</li>
-            </ul>
-
-            <h2>Introducing the Incident Classification Tool</h2>
-            <p>To demonstrate the practical application of this process, I've developed an incident classification
+<h2>Why Pattern Recognition Beats Keyword Matching</h2>
+<p>Most EHS software already includes basic automation—keyword-based "auto-tagging" or decision trees that categorize an incident based on specific words like "fall" or "chemical." However, these systems are brittle. They fail when the narrative is nuanced or when a worker uses non-standard terminology.</p>
+<p>Machine learning (ML) stops looking for specific "trigger words" and starts looking at patterns. Instead of following a strict rulebook, the system makes a calculated guess based on how thousands of similar incidents were handled in the past. This offers several structural advantages:</p>
+<ul>
+<li><strong>Contextual Pattern Recognition:</strong> Humans often miss the "hidden" signal in a narrative. For example, a report might be manually tagged as a "Slip/Trip," but an ML model can identify that the description of the uneven surface and the specific tool being carried matches a pattern of "Equipment Design Flaw" seen across other high-risk sites.</li>
+<li><strong>Consistent Logic:</strong> While a human manager’s classification can change based on their experience or the time of day, an ML model applies the same logic to every record. This makes errors systematic and, therefore, easier to audit and correct.</li>
+<li><strong>Scalable Triage:</strong> Automating the routine cases allows you to shift from manual data entry to data governance—focusing your expertise on the complex, high-potential incidents that the model flags as ambiguous.</li>
+</ul>
+<p>The success of this approach depends on the training data and the choice of the machine learning algorithm. When done correctly, machine learning is a powerful tool for improving both the accuracy and the speed of incident classification.</p>
+<h2>The Architecture of an Incident Classifier</h2>
+<p>Developing a classification model is a multi-stage process. While custom models were previously the only option, the industry is now shifting toward **Large Language Models (LLMs)**. These are systems—like the ones behind ChatGPT—that have been trained on vast amounts of text to understand human language contextually. The classic workflow remains essential for understanding how the system learns:</p>
+<ul>
+<li><strong>Data Governance:</strong> The output is only as good as the field narrative. Cleaning data isn't just about fixing typos; it's about ensuring the training set reflects the operational reality of the site, not just the sanitized version of the report.</li>
+<li><strong>Feature Extraction:</strong> This is the process of identifying which parts of a report—timestamps, location, or specific phrases—carry the most predictive weight. It is the digital equivalent of an investigator deciding which clues matter most.</li>
+<li><strong>Model Selection:</strong> Choosing between a specialized classifier or a general-purpose LLM depends on your data privacy requirements and the complexity of your classification framework (e.g., OSHA vs. ESAW).</li>
+<li><strong>Continuous Validation:</strong> A model is never "finished." It requires ongoing auditing by EHS experts to ensure it hasn't drifted as site operations or reporting cultures change.</li>
+</ul>
+<h2>Introducing the Incident Classification Tool</h2>
+<p>To demonstrate the practical application of this process, I've developed an incident classification
                 tool that utilizes machine learning to automate and improve incident classification, which can be
-                accessed at <a href="https://incident-classification-tool.streamlit.app"
-                    target="_blank">https://incident-classification-tool.streamlit.app</a>
-            </p>
-
-            <p>This tool was trained using a publicly available dataset of OSHA accident and injury data from Kaggle
-                (<a href="https://www.kaggle.com/datasets/ruqaiyaship/osha-accident-and-injury-data-1517/data"
-                    target="_blank">https://www.kaggle.com/datasets/ruqaiyaship/osha-accident-and-injury-data-1517/data</a>).
+                accessed at <a href="https://incident-classification-tool.streamlit.app" target="_blank">https://incident-classification-tool.streamlit.app</a>
+</p>
+<p>This tool was trained using a publicly available dataset of OSHA accident and injury data from Kaggle
+                (<a href="https://www.kaggle.com/datasets/ruqaiyaship/osha-accident-and-injury-data-1517/data" target="_blank">https://www.kaggle.com/datasets/ruqaiyaship/osha-accident-and-injury-data-1517/data</a>).
                 This dataset contains detailed information about workplace incidents, including the nature of the
                 injury, the part of the body affected, the event type, and the environmental factors involved.</p>
-
-            <h2>How the Tool Works</h2>
-            <p>The tool simplifies incident classification into a few key steps:</p>
-
-            <ul>
-                <li>Data Input: Users input a textual description of the incident.</li>
-                <li>Preprocessing: The tool prepares the text for analysis, removing irrelevant information and
+<h2>How the Tool Works</h2>
+<p>The tool simplifies incident classification into a few key steps:</p>
+<ul>
+<li>Data Input: Users input a textual description of the incident.</li>
+<li>Preprocessing: The tool prepares the text for analysis, removing irrelevant information and
                     extracting key features.</li>
-                <li>Classification: A trained machine learning model analyzes the processed text and predicts the
+<li>Classification: A trained machine learning model analyzes the processed text and predicts the
                     appropriate incident category.</li>
-            </ul>
-
-            <h2>Example Scenario</h2>
-            <p>To illustrate how this works in practice, imagine an incident report describes an employee's hand
+</ul>
+<h2>Example Scenario</h2>
+<p>To illustrate how this works in practice, imagine an incident report describes an employee's hand
                 being
                 caught in a hydraulic press. The tool would analyze this description, considering factors like the
                 environmental factor (pinch point), the nature of the injury (laceration), the body part affected
                 (hand), and the event type (caught in or between). Based on this analysis, it would classify the
                 incident according to the chosen classification system.</p>
-
-            <h2>The Triage Strategy: Dealing with Accuracy</h2>
-            <p>It is a mistake to view machine learning as a binary success or failure. The effectiveness of a model depends on its **Confidence Score**. This is a percentage that tells you how sure the model is about its own classification—the digital equivalent of a "check engine" light. While a model might achieve 90% accuracy on high-volume categories like "Trips and Falls," it may drop to 40% for rare, complex events.</p>
-
-            <p>In a mature EHS data architecture, this 40% isn't a failure—it's a **triage signal**. Instead of a human reading 1,000 reports to find the 5 critical ones, the ML model handles the 600 routine cases with high confidence and flags the remaining 400 for expert review. This ensures your limited time is spent precisely where the data is most ambiguous.</p>
-
-            <p>This highlights the inherent challenge: ML does not fix "Garbage In, Garbage Out." If a field worker
+<h2>The Triage Strategy: Dealing with Accuracy</h2>
+<p>It is a mistake to view machine learning as a binary success or failure. The effectiveness of a model depends on its **Confidence Score**. This is a percentage that tells you how sure the model is about its own classification—the digital equivalent of a "check engine" light. While a model might achieve 90% accuracy on high-volume categories like "Trips and Falls," it may drop to 40% for rare, complex events.</p>
+<p>In a mature EHS data architecture, this 40% isn't a failure—it's a **triage signal**. Instead of a human reading 1,000 reports to find the 5 critical ones, the ML model handles the 600 routine cases with high confidence and flags the remaining 400 for expert review. This ensures your limited time is spent precisely where the data is most ambiguous.</p>
+<p>This highlights the inherent challenge: ML does not fix "Garbage In, Garbage Out." If a field worker
                 cannot complete a detailed narrative while wearing cut-resistant gloves in the rain, the model will have
                 no signal to process. The focus must remain on the quality of the field-level reporting system that
                 feeds the model.</p>
-
-            <h2>From Data Entry to Data Governance</h2>
-            <p>By shifting to an ML-driven triage system, safety professionals move up the value chain. This transition
+<h2>From Data Entry to Data Governance</h2>
+<p>By shifting to an ML-driven triage system, safety professionals move up the value chain. This transition
                 offers three structural benefits:</p>
-
-            <ul>
-                <li><strong>Targeted Oversight:</strong> Automation handles the high-volume "noise," allowing you to
+<ul>
+<li><strong>Targeted Oversight:</strong> Automation handles the high-volume "noise," allowing you to
                     focus on the high-potential "signals" that often get buried in the backlog.</li>
-                <li><strong>Auditable Decisions:</strong> Because the model is consistent, you can audit the *logic* of
+<li><strong>Auditable Decisions:</strong> Because the model is consistent, you can audit the *logic* of
                     the classification across 10,000 records simultaneously, rather than checking individual rows.</li>
-                <li><strong>Proactive Risk Signal:</strong> Consistent classification is the prerequisite for predictive
+<li><strong>Proactive Risk Signal:</strong> Consistent classification is the prerequisite for predictive
                     analytics. You cannot predict the next incident if your historical data is categorized differently
                     by three different managers.</li>
-            </ul>
-
-            <h2>Conclusion</h2>
-            <p>By prioritizing data standardization and using machine learning to filter the noise, we can create safer and healthier workplaces. This technology doesn't replace the safety professional; it moves you from the filing cabinet to the decision table.</p>
-
-            <!-- Related Reading -->
-            <div class="related-reading">
-                <h3>Related Reading</h3>
-                <ul>
-                    <li><a href="esaw-methodology-guide.html">ESAW Methodology Guide: Standardizing Accident Recording</a></li>
-                    <li><a href="diagnostic-analytics-guide.html">Diagnostic Analytics: Moving from "What" to "Why" in Safety Data</a></li>
-                    <li><a href="structuring-unstructured-ehs-data-with-langextract.html">Structuring Unstructured EHS Data with Targeted Extraction</a></li>
-                </ul>
-            </div>
-            <div id="social-share-container"></div>
-
-
-        </section>
-    </div>
-
-    <div id="footer-placeholder"></div>
-
-    <script src="../script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const articleTitle = document.querySelector('.content-title').textContent;
-            const articleUrl = window.location.href;
-            const articleSummary = document.querySelector('meta[name="description"]').getAttribute('content');
-            const socialShareContainer = document.getElementById('social-share-container');
-            if (socialShareContainer) {
-                socialShareContainer.innerHTML = generateSocialShareButtons(articleTitle, articleUrl, articleSummary);
-            }
-            trackEvent('view_insight', { article_title: articleTitle });
-        });
-    </script>
-</body>
-
+</ul>
+<h2>Conclusion</h2>
+<p>By prioritizing data standardization and using machine learning to filter the noise, we can create safer and healthier workplaces. This technology doesn't replace the safety professional; it moves you from the filing cabinet to the decision table.</p>
+<!-- Related Reading -->
+<div id="social-share-container"></div>
+</div>
+<!-- Author bio -->
+<div class="author-bio sec-pad">
+<div class="author-bio-card">
+<div class="author-bio-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg"/></div>
+<div class="author-bio-body">
+<div class="author-bio-name">Serhat Demirkol</div>
+<p>EHS product strategist working at the seam of field operations, information systems, and applied data. Builds the tools, then writes about why most of them fail.</p>
+<a class="author-bio-link" href="../index.html#contact">Work with me →</a>
+</div>
+</div>
+</div>
+</article>
+<!-- ===== Related ===== -->
+<section class="rel-section sec-pad">
+<div class="rel-header">
+<span class="rel-label">Keep reading</span>
+<span class="rel-rule"></span>
+</div>
+<div class="rel-grid">
+<a class="rel-card" href="https://serhat.bio/insights/esaw-methodology-guide.html">
+<div class="rel-card-img"><img alt="" loading="lazy" src="../images/esaw-methodology.webp"/></div>
+<div class="rel-card-body">
+<div class="rel-card-date">May 2025</div>
+<h3 class="rel-card-title">A Concise Guide to ESAW Methodology</h3>
+</div>
+</a>
+<a class="rel-card" href="https://serhat.bio/insights/diagnostic-analytics-guide.html">
+<div class="rel-card-img"><img alt="" loading="lazy" src="../images/leveraging-diagnostic-analysis.webp"/></div>
+<div class="rel-card-body">
+<div class="rel-card-date">May 2025</div>
+<h3 class="rel-card-title">Diagnostic Analytics: Enhancing Workplace Safety</h3>
+</div>
+</a>
+<a class="rel-card" href="https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html">
+<div class="rel-card-img"><img alt="" loading="lazy" src="../images/structuring-unstructured-ehs-data-with-langextract.webp"/></div>
+<div class="rel-card-body">
+<div class="rel-card-date">Feb 2026</div>
+<h3 class="rel-card-title">Structuring Unstructured EHS Data with Targeted Extraction</h3>
+</div>
+</a>
+</div>
+</section>
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div class="site-footer-wordmark">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+<nav class="site-footer-nav">
+<a href="../insights.html">Writing</a>
+<a href="../books.html">Books</a>
+<a href="../tools.html">Tools</a>
+<a href="https://github.com/srhtdmrkl">GitHub</a>
+</nav>
+<div class="site-footer-copy">© 2026</div>
+</div>
+</footer>
+<script src="../script.js"></script></body>
 </html>

@@ -1,157 +1,216 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Applications, extensions, and models built by Serhat Demirkol bridging EHS operations and data science.">
-    <title>Tools | Serhat Demirkol</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="canonical" href="https://serhat.bio/tools.html">
-    <link rel="alternate" type="application/rss+xml" title="Serhat Demirkol | EHS Insights Feed" href="/feed.xml" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Tools | Serhat Demirkol">
-    <meta property="og:description"
-        content="Applications, extensions, and models built by Serhat Demirkol bridging EHS operations and data science.">
-    <meta property="og:image" content="https://serhat.bio/images/profile-picture.jpg">
-    <meta property="og:url" content="https://serhat.bio/tools.html">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tools | Serhat Demirkol">
-    <meta name="twitter:description"
-        content="Applications, extensions, and models built by Serhat Demirkol bridging EHS operations and data science.">
-    <meta name="twitter:image" content="https://serhat.bio/images/profile-picture.jpg">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://serhat.bio"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Tools"
-      }]
-    }
-    </script>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Tools | Serhat Demirkol</title>
+  <link href="images/favicon.png" rel="icon" type="image/png" />
+  <meta
+    content="Applications, extensions, and models built by Serhat Demirkol bridging EHS operations and data science."
+    name="description" />
+  <link href="https://serhat.bio/tools.html" rel="canonical" />
+  <link href="/feed.xml" rel="alternate" title="Serhat Demirkol | EHS Insights Feed" type="application/rss+xml" />
+  <meta content="Tools | Serhat Demirkol" property="og:title" />
+  <meta
+    content="Applications, extensions, and models built by Serhat Demirkol bridging EHS operations and data science."
+    property="og:description" />
+  <meta content="https://serhat.bio/images/profile-picture.jpg" property="og:image" />
+  <meta content="https://serhat.bio/tools.html" property="og:url" />
+  <meta content="website" property="og:type" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="Tools | Serhat Demirkol" name="twitter:title" />
+  <meta
+    content="Applications, extensions, and models built by Serhat Demirkol bridging EHS operations and data science."
+    name="twitter:description" />
+  <meta content="https://serhat.bio/images/profile-picture.jpg" name="twitter:image" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link href="design-schema/styles.css" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://serhat.bio" },
+      { "@type": "ListItem", "position": 2, "name": "Tools" }
+    ]
+  }
+  </script>
 </head>
 
 <body>
-
-    <div id="header-placeholder"></div>
-
-    <div class="page-wrapper">
-        <div class="books-page-header">
-            <h1 class="lede-name">Tools</h1>
-            <p class="lede-sub">Applied models, technical frameworks, and field-deployable tools.</p>
-        </div>
-
-        <hr class="section-rule" style="margin: 2rem 0 2.5rem;">
-
-        <section class="book-archive">
-
-            <div class="book-row">
-                <div class="book-info" style="width: 100%;">
-                    <h2 class="book-title-clean">Metric Screener</h2>
-                    <p class="book-desc">A client-side validation engine that tests EHS performance metrics for predictive validity. By running lag correlation analysis on monthly metric uploads, it algorithmically separates true leading indicators (those providing operational signal before an event) from compliance metrics that merely count what already went wrong.</p>
-                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                        <a href="/tools/metric-screener.html" class="book-link"
-                            onclick="trackEvent('click_tool_link', {tool_title: 'Metric Screener Run'})">Run Screener &rarr;</a>
-                        <a href="/insights/validating-leading-indicators-with-predictive-analytics.html" class="book-link"
-                            onclick="trackEvent('click_tool_link', {tool_title: 'Metric Screener Methodology'})">Read Methodology &rarr;</a>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <div class="book-info" style="width: 100%;">
-                    <h2 class="book-title-clean">EHS LangExtract Prototypes (Python)</h2>
-                    <p class="book-desc">A suite of targeted extraction frameworks designed to eliminate administrative friction in safety workflows. By using schema-constrained LLM parsing, these prototypes automate the conversion of chaotic EHS text—incident narratives, SDS data, and regulatory clauses—into audit-ready JSON payloads. It provides the technical blueprint for moving from manual data entry to automated data refineries.</p>
-                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                        <a href="https://github.com/srhtdmrkl/ehs-langextract-prototypes" class="book-link" target="_blank"
-                            onclick="trackEvent('click_tool_link', {tool_title: 'LangExtract Prototypes GitHub'})">GitHub Repository &rarr;</a>
-                        <a href="/insights/structuring-unstructured-ehs-data-with-langextract.html" class="book-link"
-                            onclick="trackEvent('click_tool_link', {tool_title: 'LangExtract Prototypes Article'})">Read Full Framework &rarr;</a>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <div class="book-info" style="width: 100%;">
-                    <h2 class="book-title-clean">SWA Behavioral Dynamics Simulator</h2>
-                    <p class="book-desc">An interactive behavioral economics engine modeling Stop Work Authority decision-making. Rejecting the assumption of the 'rational worker,' the model applies Prospect Theory and Hyperbolic Discounting to mathematically calculate why field crews avoid utilizing SWA. It maps safety culture as a quantifiable algorithm rather than a lagging observation.</p>
-                    <a href="https://srhtdmrkl.github.io/swa-simulation-dashboard/" class="book-link" target="_blank"
-                        onclick="trackEvent('click_tool_link', {tool_title: 'SWA Simulation'})">Run Simulator &rarr;</a>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <div class="book-info" style="width: 100%;">
-                    <h2 class="book-title-clean">Safety Identity Analysis (NLP Model)</h2>
-                    <p class="book-desc">A Natural Language Processing (NLP) pipeline decoding the professional identity of the safety industry. Ingesting unstructured practitioner responses, the model uses SBERT sentence embeddings, K-Means clustering, and UMAP to map semantic archetypes. It algorithmically quantifies the gap between compliance metrics (ISO 45001) and operational resilience (Safety-II) using verb classification models.</p>
-                    <a href="https://safety-identity.streamlit.app" class="book-link" target="_blank"
-                        onclick="trackEvent('click_tool_link', {tool_title: 'Safety Identity Analysis'})">View Analysis &rarr;</a>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <div class="book-info" style="width: 100%;">
-                    <h2 class="book-title-clean">Regulens for OSHA (Chrome Extension)</h2>
-                    <p class="book-desc">A production Chrome extension that modifies the osha.gov DOM to eliminate information friction. It automatically detects and embeds official OSHA Letters of Interpretation directly adjacent to the target standard, and maps regulatory cross-references (e.g., 29 CFR 1910.134) in real-time. It tightens the feedback loop between monolithic compliance text and operational queries.</p>
-                    <a href="#" class="book-link"
-                        onclick="trackEvent('click_tool_link', {tool_title: 'Regulens'})">Chrome Store &rarr;</a>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <div class="book-info" style="width: 100%;">
-                    <h2 class="book-title-clean">OSHA Incident Classification Model (Streamlit)</h2>
-                    <p class="book-desc">A machine learning pipeline evaluating Logistic Regression, XGBoost, and BERT models to automatically classify unstructured workplace injury narratives. Trained on a decade of OSHA Severe Injury Reports (2015–2025), the application parses extreme events (amputations, hospitalizations) against the OIICS v2.01 standard (Nature, Part, Source, Event). It demonstrates how to pull quantitative signal from free-text field data.</p>
-                    <a href="#" class="book-link"
-                        onclick="trackEvent('click_tool_link', {tool_title: 'Incident Classification'})">View Application &rarr;</a>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <div class="book-info" style="width: 100%;">
-                    <h2 class="book-title-clean">Dropped Object Assessment (iOS App)</h2>
-                    <p class="book-desc">A native iOS engine for field engineers calculating dropped object risk (DROPS). The model computes potential impact energy (Joules) via mass and drop height, mapping the physical output to structural risk classifications. It bypasses spreadsheet-based field notes by generating standardized assessment data and compliance-ready PDF reports directly on-site.</p>
-                    <a href="https://apps.apple.com/ru/app/dropped-object-assessment/id6745404907?l=en-GB" class="book-link" target="_blank"
-                        onclick="trackEvent('click_tool_link', {tool_title: 'Dropped Object Assessment App'})">App Store &rarr;</a>
-                </div>
-            </div>
-
-        </section>
+  <!-- ===== Masthead ===== -->
+  <header class="site-header">
+    <div class="mast">
+      <a class="mast-brand" href="index.html">
+        <span class="mast-name">Serhat Demirkol</span>
+        <span class="mast-sub">EHS · Systems · Data</span>
+      </a>
+      <nav class="mast-nav">
+        <a class="mast-link" href="insights.html">Writing</a>
+        <a class="mast-link" href="books.html">Books</a>
+        <a class="mast-link-active" href="tools.html">Tools</a>
+        <a class="mast-cta" href="index.html#contact">Contact</a>
+      </nav>
     </div>
-
-    <div id="footer-placeholder"></div>
-
-    <script src="script.js"></script>
+  </header>
+  <section class="page-hd sec-pad">
+    <div class="page-eyebrow">Tools</div>
+    <h1 class="hero-h1">Builds</h1>
+    <p class="page-intro">Applied models, technical frameworks, and runnable tools demonstrating EHS data architecture.
+    </p>
+    <div class="page-count">07 IN THE REGISTRY</div>
+  </section>
+  <section class="tool-list sec-pad">
+    <div class="tool-entry">
+      <div class="tool-num">01
+      </div>
+      <div class="tool-body">
+        <div class="tool-title-row">
+          <h2>Metric Screener</h2>
+          <span class="tool-badge">Client-side
+            app</span>
+        </div>
+        <p>Validates the predictive power of EHS metrics. Runs lag-correlation on monthly incident and activity uploads
+          to isolate active leading indicators from historical compliance metrics.</p>
+        <div class="tool-actions">
+          <a class="tool-cta-primary" href="tools/metric-screener.html">Run
+            Screener →</a>
+          <a class="tool-cta-secondary"
+            href="insights/validating-leading-indicators-with-predictive-analytics.html">Methodology
+            →</a>
+        </div>
+      </div>
+    </div>
+    <div class="tool-entry">
+      <div class="tool-num">02
+      </div>
+      <div class="tool-body">
+        <div class="tool-title-row">
+          <h2>EHS LangExtract Prototypes</h2>
+          <span class="tool-badge">Python
+            · LLM</span>
+        </div>
+        <p>Extracts structured data from unstructured EHS text. Uses schema-constrained LLM parsing to convert incident
+          narratives, SDS sheets, and regulatory clauses into JSON payloads.</p>
+        <div class="tool-actions">
+          <a class="tool-cta-primary" href="https://github.com/srhtdmrkl/ehs-langextract-prototypes">GitHub
+            Repository →</a>
+          <a class="tool-cta-secondary" href="insights/structuring-unstructured-ehs-data-with-langextract.html">Full
+            Framework →</a>
+        </div>
+      </div>
+    </div>
+    <div class="tool-entry">
+      <div class="tool-num">03
+      </div>
+      <div class="tool-body">
+        <div class="tool-title-row">
+          <h2>SWA Behavioral Dynamics Simulator
+          </h2>
+          <span class="tool-badge">Simulation</span>
+        </div>
+        <p>Models Stop Work Authority (SWA) decisions. Applies Prospect Theory and Hyperbolic Discounting to calculate
+          risk-avoidance behaviors and simulate crew response rates under varying operational pressures.</p>
+        <div class="tool-actions">
+          <a class="tool-cta-primary" href="https://srhtdmrkl.github.io/swa-simulation-dashboard/">Run
+            Simulator →</a>
+        </div>
+      </div>
+    </div>
+    <div class="tool-entry">
+      <div class="tool-num">04
+      </div>
+      <div class="tool-body">
+        <div class="tool-title-row">
+          <h2>Safety Identity Analysis</h2>
+          <span class="tool-badge">NLP
+            Model</span>
+        </div>
+        <p>Analyzes industry practitioner sentiment. Clusters unstructured survey responses using SBERT embeddings,
+          K-Means, and UMAP to map semantic archetypes and compare ISO 45001 compliance alignment against Safety-II
+          resilience concepts.</p>
+        <div class="tool-actions">
+          <a class="tool-cta-primary" href="https://safety-identity.streamlit.app">View
+            Analysis →</a>
+        </div>
+      </div>
+    </div>
+    <div class="tool-entry">
+      <div class="tool-num">05
+      </div>
+      <div class="tool-body">
+        <div class="tool-title-row">
+          <h2>Regulens for OSHA</h2>
+          <span class="tool-badge">Browser
+            Extension</span>
+        </div>
+        <p>Chrome extension that modifies the osha.gov DOM. Detects regulations, embeds official Letters of
+          Interpretation directly adjacent to target clauses, and resolves regulatory cross-references inline.</p>
+        <div class="tool-actions">
+          <a class="tool-cta-primary"
+            href="https://chromewebstore.google.com/detail/regulens-for-osha/jgmibhdciebdndglpjkcpmmplnioacdd">Chrome
+            Store →</a>
+          <a class="tool-cta-primary" href="https://addons.mozilla.org/en-US/firefox/addon/regulens-for-osha/">Firefox
+            Add-ons →</a>
+        </div>
+      </div>
+    </div>
+    <div class="tool-entry">
+      <div class="tool-num">06
+      </div>
+      <div class="tool-body">
+        <div class="tool-title-row">
+          <h2>OSHA Incident Classification
+            Model</h2>
+          <span class="tool-badge">Streamlit
+            · ML</span>
+        </div>
+        <p>Classifies unstructured injury narratives. Compares Logistic Regression, XGBoost, and BERT models trained on
+          OSHA Severe Injury Reports (2015–2025) to map descriptions to the OIICS v2.01 standard.</p>
+        <div class="tool-actions">
+          <a class="tool-cta-primary" href="#">View
+            Application →</a>
+        </div>
+      </div>
+    </div>
+    <div class="tool-entry">
+      <div class="tool-num">07
+      </div>
+      <div class="tool-body">
+        <div class="tool-title-row">
+          <h2>Dropped Object Assessment</h2>
+          <span class="tool-badge">iOS
+            App</span>
+        </div>
+        <p>Native iOS app calculating dropped-object risk (DROPS). Computes impact energy (Joules) from mass and drop
+          height, maps outputs to risk levels, and generates on-site PDF assessment reports.</p>
+        <div class="tool-actions">
+          <a class="tool-cta-primary"
+            href="https://apps.apple.com/ru/app/dropped-object-assessment/id6745404907?l=en-GB">App
+            Store →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-wordmark">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+      <nav class="site-footer-nav">
+        <a href="insights.html">Writing</a>
+        <a href="books.html">Books</a>
+        <a href="tools.html">Tools</a>
+        <a href="https://github.com/srhtdmrkl">GitHub</a>
+      </nav>
+      <div class="site-footer-copy">© 2026</div>
+    </div>
+  </footer>
 </body>
 
 </html>

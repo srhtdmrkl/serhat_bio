@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EHS Leading Indicator Screener — Validate Your Safety Metrics | Serhat Demirkol</title>
-    <meta name="description"
-        content="Upload monthly EHS metric data and find out which metrics genuinely predict safety outcomes using lag correlation analysis. Free, client-side, no signup required.">
-    <meta name="keywords"
-        content="EHS leading indicator validation, safety metric correlation, lag correlation analysis, predictive safety metrics, occupational health analytics, EHS data tool">
-    <link rel="canonical" href="https://serhat.bio/tools/metric-screener.html" />
-    <!-- Open Graph -->
-    <meta property="og:title" content="EHS Leading Indicator Screener — Validate Your Safety Metrics">
-    <meta property="og:description"
-        content="Upload monthly EHS metric data and find out which metrics genuinely predict safety outcomes using lag correlation analysis. Free, client-side, no signup required.">
-    <meta property="og:url" content="https://serhat.bio/tools/metric-screener.html">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Serhat Demirkol">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="EHS Leading Indicator Screener — Validate Your Safety Metrics">
-    <meta name="twitter:description"
-        content="Upload monthly EHS metric data and find out which metrics genuinely predict safety outcomes using lag correlation analysis. Free, client-side, no signup required.">
-    <!-- Schema -->
-    <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EHS Leading Indicator Screener — Validate Your Safety Metrics | Serhat Demirkol</title>
+<meta content="Upload monthly EHS metric data and find out which metrics genuinely predict safety outcomes using lag correlation analysis. Free, client-side, no signup required." name="description"/>
+<meta content="EHS leading indicator validation, safety metric correlation, lag correlation analysis, predictive safety metrics, occupational health analytics, EHS data tool" name="keywords"/>
+<link href="https://serhat.bio/tools/metric-screener.html" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="EHS Leading Indicator Screener — Validate Your Safety Metrics" property="og:title"/>
+<meta content="Upload monthly EHS metric data and find out which metrics genuinely predict safety outcomes using lag correlation analysis. Free, client-side, no signup required." property="og:description"/>
+<meta content="https://serhat.bio/tools/metric-screener.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="Serhat Demirkol" property="og:site_name"/>
+<!-- Twitter Card -->
+<meta content="summary" name="twitter:card"/>
+<meta content="EHS Leading Indicator Screener — Validate Your Safety Metrics" name="twitter:title"/>
+<meta content="Upload monthly EHS metric data and find out which metrics genuinely predict safety outcomes using lag correlation analysis. Free, client-side, no signup required." name="twitter:description"/>
+<!-- Schema -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
@@ -36,14 +32,13 @@
       "author": { "@type": "Person", "name": "Serhat Demirkol", "url": "https://serhat.bio" }
     }
     </script>
-    <link rel="icon" type="image/png" href="../images/favicon.png">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <style>
+<link href="../images/favicon.png" rel="icon" type="image/png"/>
+<link href="../design-schema/styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<style>
         /* ── Hero ── */
         .hero {
             background: linear-gradient(135deg, #1F4E79 0%, #2980b9 100%);
@@ -810,52 +805,59 @@
         }
     </style>
 </head>
-
 <body>
-
-    <div id="header-placeholder"></div>
-
-    <div class="hero">
-        <h1><i class="fa-solid fa-magnifying-glass-chart" style="margin-right:10px;"></i>Safety Metrics Screener
+<!-- ===== Masthead ===== -->
+<header class="site-header">
+<div class="mast">
+<a class="mast-brand" href="../index.html">
+<span class="mast-name">Serhat Demirkol</span>
+<span class="mast-sub">EHS · Systems · Data</span>
+</a>
+<nav class="mast-nav">
+<a class="mast-link" href="../insights.html">Writing</a>
+<a class="mast-link" href="../books.html">Books</a>
+<a class="mast-link-active" href="../tools.html">Tools</a>
+<a class="mast-cta" href="../index.html#contact">Contact</a>
+</nav>
+</div>
+</header>
+<div class="hero">
+<h1><i class="fa-solid fa-magnifying-glass-chart" style="margin-right:10px;"></i>Safety Metrics Screener
         </h1>
-        <p>Upload your monthly EHS metric data to see which metrics genuinely predict safety outcomes — and which are
+<p>Upload your monthly EHS metric data to see which metrics genuinely predict safety outcomes — and which are
             noise. No server. No signup. Your data never leaves your browser.</p>
-        <div class="badge-row">
-            <span class="badge"><i class="fa-solid fa-file-csv" style="margin-right:5px;"></i>CSV input</span>
-            <span class="badge"><i class="fa-solid fa-clock-rotate-left" style="margin-right:5px;"></i>Configurable lag
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-file-csv" style="margin-right:5px;"></i>CSV input</span>
+<span class="badge"><i class="fa-solid fa-clock-rotate-left" style="margin-right:5px;"></i>Configurable lag
                 window</span>
-            <span class="badge"><i class="fa-solid fa-ranking-star" style="margin-right:5px;"></i>Leading / Forewarning
+<span class="badge"><i class="fa-solid fa-ranking-star" style="margin-right:5px;"></i>Leading / Forewarning
                 / Concurrent /
                 Weak</span>
-        </div>
-        <p style="margin-top:18px; font-size:0.82em; opacity:0.75;">New to leading indicator validation? <a
-                href="../insights/validating-leading-indicators-with-predictive-analytics.html"
-                style="color:#fff; text-decoration:underline; font-weight:500;">Read the companion article &rarr;</a>
-        </p>
-    </div>
-
-    <div class="container main-container">
-        <main class="main-content">
-            <section class="content-area">
-
-                <!-- How it works -->
-                <details class="how-card">
-                    <summary>
-                        <i class="fa-solid fa-gears"></i> How it works
+</div>
+<p style="margin-top:18px; font-size:0.82em; opacity:0.75;">New to leading indicator validation? <a href="../insights/validating-leading-indicators-with-predictive-analytics.html" style="color:#fff; text-decoration:underline; font-weight:500;">Read the companion article →</a>
+</p>
+</div>
+<div class="container main-container">
+<main class="main-content">
+<section class="content-area">
+<!-- How it works -->
+<details class="how-card">
+<summary>
+<i class="fa-solid fa-gears"></i> How it works
                         <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                    </summary>
-                    <div class="how-steps">
-                        <div class="how-step">
-                            <div class="step-num">Step 1 &mdash; Lag correlation</div>
-                            <p>For each metric, correlation (Pearson or Spearman) is computed between the metric at
+</summary>
+<div class="how-steps">
+<div class="how-step">
+<div class="step-num">Step 1 — Lag correlation</div>
+<p>For each metric, correlation (Pearson or Spearman) is computed between the metric at
                                 month
                                 <em>t</em> and the outcome at month <em>t + lag</em>, for lags 0 through your chosen
                                 maximum.
                             </p>
-                        </div>
-                        <div class="how-step">
-                            <div class="step-num">Step 2 &mdash; Classification</div>
-                            <p>A metric is <strong>Leading</strong> if its peak correlation is at lag &ge;1, at least
+</div>
+<div class="how-step">
+<div class="step-num">Step 2 — Classification</div>
+<p>A metric is <strong>Leading</strong> if its peak correlation is at lag ≥1, at least
                                 0.08 stronger than lag 0, and negative (higher activity predicts fewer incidents).
                                 <strong>Forewarning</strong> if the same temporal conditions apply but the correlation
                                 is positive — the metric rises before incidents rise, signalling risk accumulation
@@ -864,348 +866,308 @@
                                 0.08.
                                 <strong>Weak</strong> if |r| &lt; 0.30 at every lag.
                             </p>
-                            <p style="margin-top:6px; font-size:0.92em; color:#666;">The 0.30 floor follows standard
+<p style="margin-top:6px; font-size:0.92em; color:#666;">The 0.30 floor follows standard
                                 weak-correlation conventions. The gain threshold (default 0.08) prevents a trivially
                                 stronger lag-1 from overriding a dominant lag-0 signal. For datasets under 24 months,
                                 consider raising it to 0.10–0.12 to reduce false positives.</p>
-                        </div>
-                        <div class="how-step">
-                            <div class="step-num">Step 3 &mdash; Ranking</div>
-                            <p>Results are sorted: Leading first, then Forewarning, then Concurrent, then Weak. Within
+</div>
+<div class="how-step">
+<div class="step-num">Step 3 — Ranking</div>
+<p>Results are sorted: Leading first, then Forewarning, then Concurrent, then Weak. Within
                                 each group, sorted
                                 by absolute correlation strength descending.</p>
-                        </div>
-                        <div class="how-step">
-                            <div class="step-num">Step 4 &mdash; Review</div>
-                            <p>Check Concurrent metrics against domain knowledge — that is: does this metric exist to
+</div>
+<div class="how-step">
+<div class="step-num">Step 4 — Review</div>
+<p>Check Concurrent metrics against domain knowledge — that is: does this metric exist to
                                 <em>prevent</em> incidents, or did it appear <em>because</em> incidents happened?
                                 Metrics
                                 that react after incidents (e.g. investigation closure rates) will appear Concurrent but
                                 are actually lagging.
                             </p>
-                        </div>
-                    </div>
-                </details>
-
-                <!-- Upload card -->
-                <div class="card">
-                    <div class="card-title"><i class="fa-solid fa-upload"></i> Upload your dataset</div>
-                    <div class="card-sub">One row per month, one column per metric. Name your first column
+</div>
+</div>
+</details>
+<!-- Upload card -->
+<div class="card">
+<div class="card-title"><i class="fa-solid fa-upload"></i> Upload your dataset</div>
+<div class="card-sub">One row per month, one column per metric. Name your first column
                         <strong>Month</strong> — values can be any consistent date format (e.g. "Jan 2024", "2024-01").
                         Minimum 12 months recommended.
                     </div>
-
-                    <div class="drop-zone" id="dropZone">
-                        <input type="file" id="fileInput" accept=".csv" aria-label="Upload CSV file">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
-                        <p><strong>Drag &amp; drop your CSV here</strong> or click to browse</p>
-                        <small>Accepts .csv files &middot; UTF-8 encoding</small>
-                    </div>
-                    <div style="margin-top:8px; font-size:0.82em; color:#999; text-align:center;">
-                        No file yet? <a id="sampleDataLink" href="#"
-                            style="color:#2980b9; text-decoration:underline;">Load sample EHS dataset</a>
-                        <span
-                            title="Sample data uses synthetic metrics with engineered correlations. Real-world results will be lower and more varied."
-                            style="cursor:help; color:#bbb; margin-left:4px;"><i
-                                class="fa-solid fa-circle-question"></i></span>
-                    </div>
-                    <div class="filename-display" id="filenameDisplay">
-                        <i class="fa-solid fa-circle-check"></i><span id="filenameText"></span>
-                        <span id="fileStats" style="color:#888; font-weight:400; margin-left:8px;"></span>
-                    </div>
-
-                    <div class="format-note">
-                        <strong><i class="fa-solid fa-circle-info" style="margin-right:5px;"></i>How to prepare your
+<div class="drop-zone" id="dropZone">
+<input accept=".csv" aria-label="Upload CSV file" id="fileInput" type="file"/>
+<i class="fa-solid fa-cloud-arrow-up"></i>
+<p><strong>Drag &amp; drop your CSV here</strong> or click to browse</p>
+<small>Accepts .csv files · UTF-8 encoding</small>
+</div>
+<div style="margin-top:8px; font-size:0.82em; color:#999; text-align:center;">
+                        No file yet? <a href="#" id="sampleDataLink" style="color:#2980b9; text-decoration:underline;">Load sample EHS dataset</a>
+<span style="cursor:help; color:#bbb; margin-left:4px;" title="Sample data uses synthetic metrics with engineered correlations. Real-world results will be lower and more varied."><i class="fa-solid fa-circle-question"></i></span>
+</div>
+<div class="filename-display" id="filenameDisplay">
+<i class="fa-solid fa-circle-check"></i><span id="filenameText"></span>
+<span id="fileStats" style="color:#888; font-weight:400; margin-left:8px;"></span>
+</div>
+<div class="format-note">
+<strong><i class="fa-solid fa-circle-info" style="margin-right:5px;"></i>How to prepare your
                             CSV</strong>
-                        <table style="width:100%; border-collapse:collapse; margin:10px 0 8px; font-size:0.97em;">
-                            <thead>
-                                <tr style="background:#daeaf7;">
-                                    <th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">Month</th>
-                                    <th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">Safety Walk
+<table style="width:100%; border-collapse:collapse; margin:10px 0 8px; font-size:0.97em;">
+<thead>
+<tr style="background:#daeaf7;">
+<th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">Month</th>
+<th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">Safety Walk
                                         Frequency</th>
-                                    <th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">PPE
+<th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">PPE
                                         Compliance Rate (%)</th>
-                                    <th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">Recordable
+<th style="padding:5px 10px; text-align:left; border:1px solid #bcd4ea;">Recordable
                                         Incidents</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr style="background:#fff;">
-                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">Jan 2024</td>
-                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">10</td>
-                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">94.2</td>
-                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">3</td>
-                                </tr>
-                                <tr style="background:#f7fbff;">
-                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">Feb 2024</td>
-                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">8</td>
-                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">91.5</td>
-                                    <td style="padding:4px 10px; border:1px solid #bcd4ea;">5</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <ul style="margin:6px 0 0; padding-left:18px; line-height:1.8;">
-                            <li><strong>Column 1 — Month:</strong> one row per month, in any consistent format (e.g.
+</tr>
+</thead>
+<tbody>
+<tr style="background:#fff;">
+<td style="padding:4px 10px; border:1px solid #bcd4ea;">Jan 2024</td>
+<td style="padding:4px 10px; border:1px solid #bcd4ea;">10</td>
+<td style="padding:4px 10px; border:1px solid #bcd4ea;">94.2</td>
+<td style="padding:4px 10px; border:1px solid #bcd4ea;">3</td>
+</tr>
+<tr style="background:#f7fbff;">
+<td style="padding:4px 10px; border:1px solid #bcd4ea;">Feb 2024</td>
+<td style="padding:4px 10px; border:1px solid #bcd4ea;">8</td>
+<td style="padding:4px 10px; border:1px solid #bcd4ea;">91.5</td>
+<td style="padding:4px 10px; border:1px solid #bcd4ea;">5</td>
+</tr>
+</tbody>
+</table>
+<ul style="margin:6px 0 0; padding-left:18px; line-height:1.8;">
+<li><strong>Column 1 — Month:</strong> one row per month, in any consistent format (e.g.
                                 "Jan 2024", "2024-01"). At least 12 months recommended.</li>
-                            <li><strong>Metric columns:</strong> any numeric safety activity metrics you track — counts,
+<li><strong>Metric columns:</strong> any numeric safety activity metrics you track — counts,
                                 rates, percentages, scores. All in a single file. <em>Tip: exclude reactive metrics that
                                     exist because of incidents (e.g. investigation closure rates, first aid counts) —
                                     these will classify as Concurrent by definition.</em></li>
-                            <li><strong>Outcome column(s):</strong> the injury or incident metric you want to predict —
+<li><strong>Outcome column(s):</strong> the injury or incident metric you want to predict —
                                 e.g. <code>Recordable Incidents</code>, <code>LTIR</code>. Include it as a regular
                                 column; you'll select it below.</li>
-                        </ul>
-                        <div style="margin-top:8px;">Not sure about the format? <a href="#" id="sampleDataLink2"
-                                style="color:#1F4E79; font-weight:600;">Load the sample dataset</a> to see a real
+</ul>
+<div style="margin-top:8px;">Not sure about the format? <a href="#" id="sampleDataLink2" style="color:#1F4E79; font-weight:600;">Load the sample dataset</a> to see a real
                             example.</div>
-                    </div>
-
-                    <div class="config-row">
-                        <div class="config-group">
-                            <label>Outcome metric(s) <span class="select-hint">Hold Ctrl/Cmd to select
+</div>
+<div class="config-row">
+<div class="config-group">
+<label>Outcome metric(s) <span class="select-hint">Hold Ctrl/Cmd to select
                                     multiple</span><span class="select-hint-mobile">Tap each outcome to toggle
                                     selection</span></label>
-                            <select id="outcomeSelect" multiple>
-                                <option disabled>— upload a CSV first —</option>
-                            </select>
-                            <p class="method-hint"><i class="fa-solid fa-lightbulb"></i>Run against your primary
+<select id="outcomeSelect" multiple="">
+<option disabled="">— upload a CSV first —</option>
+</select>
+<p class="method-hint"><i class="fa-solid fa-lightbulb"></i>Run against your primary
                                 incident metric first. Lag distances may differ across outcomes.</p>
-                        </div>
-                        <div class="config-group" style="max-width:130px;">
-                            <label>Max lag (months)</label>
-                            <input type="number" id="maxLag" value="3" min="1" max="6">
-                            <p class="method-hint" id="lagHint">Lags 1–3 are standard. Treat lag 4–6 as exploratory.</p>
-                        </div>
-                        <div class="config-group" style="max-width:150px;">
-                            <label>Min lag gain <i class="fa-solid fa-circle-question"
-                                    style="font-size:0.9em; opacity:0.6; cursor:help;"
-                                    title="Minimum advantage the best future lag must have over lag 0 to classify as Leading. Default 0.08. For datasets under 24 months, consider 0.10–0.12."></i></label>
-                            <input type="number" id="gainThreshInput" value="0.08" min="0.05" max="0.20" step="0.01">
-                            <p class="method-hint" id="gainHint"><i class="fa-solid fa-lightbulb"></i> For &lt;24 months
+</div>
+<div class="config-group" style="max-width:130px;">
+<label>Max lag (months)</label>
+<input id="maxLag" max="6" min="1" type="number" value="3"/>
+<p class="method-hint" id="lagHint">Lags 1–3 are standard. Treat lag 4–6 as exploratory.</p>
+</div>
+<div class="config-group" style="max-width:150px;">
+<label>Min lag gain <i class="fa-solid fa-circle-question" style="font-size:0.9em; opacity:0.6; cursor:help;" title="Minimum advantage the best future lag must have over lag 0 to classify as Leading. Default 0.08. For datasets under 24 months, consider 0.10–0.12."></i></label>
+<input id="gainThreshInput" max="0.20" min="0.05" step="0.01" type="number" value="0.08"/>
+<p class="method-hint" id="gainHint"><i class="fa-solid fa-lightbulb"></i> For &lt;24 months
                                 of data, consider 0.10–0.12.</p>
-                        </div>
-                        <div class="config-group">
-                            <label>Analysis method <i class="fa-solid fa-circle-question"
-                                    style="font-size:0.9em; opacity:0.6; cursor:help;"
-                                    title="Pearson: Linear relationship (better for continuous data)&#13;Spearman: Rank-based (more robust for outliers and sparse incident counts)"></i></label>
-                            <select id="corrMethod">
-                                <option value="spearman">Spearman (Ranked)</option>
-                                <option value="pearson">Pearson (Linear)</option>
-                            </select>
-                            <p class="method-hint"><i class="fa-solid fa-lightbulb"></i>Use <strong>Spearman</strong> if
+</div>
+<div class="config-group">
+<label>Analysis method <i class="fa-solid fa-circle-question" style="font-size:0.9em; opacity:0.6; cursor:help;" title="Pearson: Linear relationship (better for continuous data)
+Spearman: Rank-based (more robust for outliers and sparse incident counts)"></i></label>
+<select id="corrMethod">
+<option value="spearman">Spearman (Ranked)</option>
+<option value="pearson">Pearson (Linear)</option>
+</select>
+<p class="method-hint"><i class="fa-solid fa-lightbulb"></i>Use <strong>Spearman</strong> if
                                 your incident column averages &lt;1 per month or contains significant outliers.</p>
-                        </div>
-                        <div>
-                            <button class="run-btn" id="runBtn" disabled>
-                                <i class="fa-solid fa-play"></i> Run screener
+</div>
+<div>
+<button class="run-btn" disabled="" id="runBtn">
+<i class="fa-solid fa-play"></i> Run screener
                             </button>
-                        </div>
-                    </div>
-
-                    <div class="status-bar" id="statusBar">
-                        <div class="spinner" id="spinner"></div>
-                        <span id="statusMsg">Processing&hellip;</span>
-                    </div>
-                </div>
-
-                <!-- Results -->
-                <div id="results-section">
-                    <div class="results-header">
-                        <h2><i class="fa-solid fa-table-list" style="margin-right:8px;"></i>Screening Results</h2>
-                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                            <button class="export-btn" id="exportCsvBtn">
-                                <i class="fa-solid fa-download"></i> Export CSV
+</div>
+</div>
+<div class="status-bar" id="statusBar">
+<div class="spinner" id="spinner"></div>
+<span id="statusMsg">Processing…</span>
+</div>
+</div>
+<!-- Results -->
+<div id="results-section">
+<div class="results-header">
+<h2><i class="fa-solid fa-table-list" style="margin-right:8px;"></i>Screening Results</h2>
+<div style="display:flex; gap:10px; flex-wrap:wrap;">
+<button class="export-btn" id="exportCsvBtn">
+<i class="fa-solid fa-download"></i> Export CSV
                             </button>
-                        </div>
-                    </div>
-
-                    <div class="summary-pills" id="summaryPills"></div>
-
-                    <div class="filter-tabs" id="filterTabs">
-                        <button class="tab-btn active" data-filter="all">All</button>
-                        <button class="tab-btn" data-filter="Leading">Leading</button>
-                        <button class="tab-btn" data-filter="Forewarning">Forewarning</button>
-                        <button class="tab-btn" data-filter="Concurrent">Concurrent</button>
-                        <button class="tab-btn" data-filter="Weak">Weak</button>
-                    </div>
-
-                    <div class="table-wrap">
-                        <table class="results-table" id="resultsTable">
-                            <thead id="resultsHead"></thead>
-                            <tbody id="resultsBody"></tbody>
-                        </table>
-                    </div>
-
-                    <div class="legend">
-                        <div class="legend-item">
-                            <div class="legend-dot" style="background:#e2efda;border:1px solid #a8d5a2;"></div>
-                            <strong>Leading</strong> &mdash; peaks at lag &ge;1. Moves <em>before</em> outcomes.
+</div>
+</div>
+<div class="summary-pills" id="summaryPills"></div>
+<div class="filter-tabs" id="filterTabs">
+<button class="tab-btn active" data-filter="all">All</button>
+<button class="tab-btn" data-filter="Leading">Leading</button>
+<button class="tab-btn" data-filter="Forewarning">Forewarning</button>
+<button class="tab-btn" data-filter="Concurrent">Concurrent</button>
+<button class="tab-btn" data-filter="Weak">Weak</button>
+</div>
+<div class="table-wrap">
+<table class="results-table" id="resultsTable">
+<thead id="resultsHead"></thead>
+<tbody id="resultsBody"></tbody>
+</table>
+</div>
+<div class="legend">
+<div class="legend-item">
+<div class="legend-dot" style="background:#e2efda;border:1px solid #a8d5a2;"></div>
+<strong>Leading</strong> — peaks at lag ≥1. Moves <em>before</em> outcomes.
                             Actionable predictor.
                         </div>
-                        <div class="legend-item">
-                            <div class="legend-dot" style="background:#fde8cc;border:1px solid #f6c89a;"></div>
-                            <strong>Forewarning</strong> &mdash; peaks at lag &ge;1, positive r. Rises <em>before</em>
+<div class="legend-item">
+<div class="legend-dot" style="background:#fde8cc;border:1px solid #f6c89a;"></div>
+<strong>Forewarning</strong> — peaks at lag ≥1, positive r. Rises <em>before</em>
                             incidents rise. Early warning of risk accumulation — not a control measure.
                         </div>
-                        <div class="legend-item">
-                            <div class="legend-dot" style="background:#fff2cc;border:1px solid #ffe082;"></div>
-                            <strong>Concurrent</strong> &mdash; peaks at lag 0. Moves <em>with</em> outcomes. Review
+<div class="legend-item">
+<div class="legend-dot" style="background:#fff2cc;border:1px solid #ffe082;"></div>
+<strong>Concurrent</strong> — peaks at lag 0. Moves <em>with</em> outcomes. Review
                             with domain knowledge.
                         </div>
-                        <div class="legend-item">
-                            <div class="legend-dot" style="background:#ebebeb;border:1px solid #ccc;"></div>
-                            <strong>Weak</strong> &mdash; |r| &lt; 0.30 at all lags. No predictive signal detected.
-                            <span
-                                title="Weak doesn't always mean the metric is irrelevant. It may mean your data collection is masking the signal — inconsistent recording, under-reporting, or too short a dataset."
-                                style="cursor:help; color:#aaa; margin-left:2px;"><i class="fa-solid fa-circle-question"
-                                    style="font-size:0.9em;"></i></span> <a
-                                href="../insights/validating-leading-indicators-with-predictive-analytics.html#fix-or-retire"
-                                style="color:#2980b9; font-size:0.9em; white-space:nowrap;">Learn more &rarr;</a>
-                        </div>
-                    </div>
-                    <div style="font-size:0.77em; color:#777; margin-top:8px;">
-                        <i class="fa-solid fa-circle-info" style="margin-right:4px; color:#aaa;"></i><strong
-                            style="color:#555;">Negative r</strong> = more Metric activity, fewer incidents &mdash; the
+<div class="legend-item">
+<div class="legend-dot" style="background:#ebebeb;border:1px solid #ccc;"></div>
+<strong>Weak</strong> — |r| &lt; 0.30 at all lags. No predictive signal detected.
+                            <span style="cursor:help; color:#aaa; margin-left:2px;" title="Weak doesn't always mean the metric is irrelevant. It may mean your data collection is masking the signal — inconsistent recording, under-reporting, or too short a dataset."><i class="fa-solid fa-circle-question" style="font-size:0.9em;"></i></span> <a href="../insights/validating-leading-indicators-with-predictive-analytics.html#fix-or-retire" style="color:#2980b9; font-size:0.9em; white-space:nowrap;">Learn more →</a>
+</div>
+</div>
+<div style="font-size:0.77em; color:#777; margin-top:8px;">
+<i class="fa-solid fa-circle-info" style="margin-right:4px; color:#aaa;"></i><strong style="color:#555;">Negative r</strong> = more Metric activity, fewer incidents — the
                         desired direction for most safety metrics. Positive r warrants domain review.
                     </div>
-
-                    <div class="caveats">
-                        <div class="caveat-item">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                            <span><strong>Concurrent may include true lagging indicators.</strong> A metric that
+<div class="caveats">
+<div class="caveat-item">
+<i class="fa-solid fa-triangle-exclamation"></i>
+<span><strong>Concurrent may include true lagging indicators.</strong> A metric that
                                 logically
                                 precedes incidents but peaks at lag 0 may reflect reporting delays, not simultaneity.
                                 Check the series against domain knowledge before treating it as a coincident
                                 metric.</span>
-                        </div>
-                        <div class="caveat-item">
-                            <i class="fa-solid fa-circle-info"></i>
-                            <span><strong>Short datasets increase false positives.</strong> Requires &ge;12 paired
+</div>
+<div class="caveat-item">
+<i class="fa-solid fa-circle-info"></i>
+<span><strong>Short datasets increase false positives.</strong> Requires ≥12 paired
                                 observations per lag. With &lt;36 months of data, random noise can push |r| above 0.30
-                                by chance &mdash; treat borderline results (0.30&ndash;0.45) as provisional until
+                                by chance — treat borderline results (0.30–0.45) as provisional until
                                 confirmed on additional data.</span>
-                        </div>
-                        <div class="caveat-item">
-                            <i class="fa-solid fa-building"></i>
-                            <span><strong>Multi-site organisations: run per site, not on aggregated data.</strong>
+</div>
+<div class="caveat-item">
+<i class="fa-solid fa-building"></i>
+<span><strong>Multi-site organisations: run per site, not on aggregated data.</strong>
                                 Pooling data across sites with different risk profiles, headcounts, or incident rates
                                 will suppress or distort lag signals. Each site dataset should be screened
                                 independently.</span>
-                        </div>
-                    </div>
-
-                    <div class="next-steps">
-                        <h4><i class="fa-solid fa-arrow-right-long"></i> What to do with your results</h4>
-                        <ul>
-                            <li><strong>Leading Metrics:</strong> These are your actionable predictors. Prioritise them
+</div>
+</div>
+<div class="next-steps">
+<h4><i class="fa-solid fa-arrow-right-long"></i> What to do with your results</h4>
+<ul>
+<li><strong>Leading Metrics:</strong> These are your actionable predictors. Prioritise them
                                 on
                                 your safety dashboard and set intervention thresholds. Consider building a composite
                                 Safety Performance Index (SPI) by weighting each one by its correlation strength.</li>
-                            <li><strong>Forewarning Metrics:</strong> These metrics rise before incidents rise — they
+<li><strong>Forewarning Metrics:</strong> These metrics rise before incidents rise — they
                                 signal risk accumulation, not prevention. Do not treat them as controls. Use them as
                                 early warnings: a sustained rise gives you the lag window to reduce exposure before the
                                 system fails.</li>
-                            <li><strong>Concurrent Metrics:</strong> Do not discard them yet. Apply domain knowledge: if
+<li><strong>Concurrent Metrics:</strong> Do not discard them yet. Apply domain knowledge: if
                                 a
                                 metric logically <em>precedes</em> incidents (e.g. inspection completion rates), the
                                 lag-0
                                 peak may reflect data collection timing rather than true simultaneity. Re-examine the
                                 series or extend your dataset.</li>
-                            <li><strong>Weak Metrics:</strong> No statistical signal at any lag. Either the metric is
+<li><strong>Weak Metrics:</strong> No statistical signal at any lag. Either the metric is
                                 genuinely uninformative for your context, it is measured too inconsistently to carry a
                                 signal, or your dataset is too short to detect one. Retire it from your predictive set —
                                 not necessarily from your programme.</li>
-                        </ul>
-                        <p class="insight-link"><i class="fa-solid fa-book-open" style="margin-right:5px;"></i>For the
+</ul>
+<p class="insight-link"><i class="fa-solid fa-book-open" style="margin-right:5px;"></i>For the
                             full methodology — validation framework, SPI construction, and strategic implications — read
-                            the companion article: <a
-                                href="../insights/validating-leading-indicators-with-predictive-analytics.html">Validating
+                            the companion article: <a href="../insights/validating-leading-indicators-with-predictive-analytics.html">Validating
                                 Leading Indicators with Predictive Analytics</a>.</p>
-                    </div>
-
-                    <!-- Combined Metric Analyzer -->
-                    <div id="mv-analyzer" class="card"
-                        style="display:none; margin-top:32px; border: 2px solid #1F4E79;">
-                        <div class="card-title"><i class="fa-solid fa-layer-group"></i> Combined Metric Analyzer
+</div>
+<!-- Combined Metric Analyzer -->
+<div class="card" id="mv-analyzer" style="display:none; margin-top:32px; border: 2px solid #1F4E79;">
+<div class="card-title"><i class="fa-solid fa-layer-group"></i> Combined Metric Analyzer
                         </div>
-                        <div class="card-sub">Select a target outcome and combine any mix of metrics including activity,
+<div class="card-sub">Select a target outcome and combine any mix of metrics including activity,
                             exposure, and risk markers. The model shows which combination has the strongest statistical
                             link to your past incident data — and which single metric is carrying most of that weight.
                         </div>
-
-                        <div
-                            style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:20px; background:#f8fafc; padding:15px; border-radius:8px; border:1px solid #e2e8f0;">
-                            <div style="flex:1; min-width:200px;">
-                                <label
-                                    style="font-size:0.82em; font-weight:700; color:#1F4E79; display:block; margin-bottom:8px; text-transform:uppercase;">1.
+<div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:20px; background:#f8fafc; padding:15px; border-radius:8px; border:1px solid #e2e8f0;">
+<div style="flex:1; min-width:200px;">
+<label style="font-size:0.82em; font-weight:700; color:#1F4E79; display:block; margin-bottom:8px; text-transform:uppercase;">1.
                                     Select Model Target Outcome:</label>
-                                <select id="mv-outcome-selector"
-                                    style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1; font-family:inherit; font-size:0.9em;"></select>
-                            </div>
-                            <div style="flex:2; min-width:300px;">
-                                <label
-                                    style="font-size:0.82em; font-weight:700; color:#1F4E79; display:block; margin-bottom:8px; text-transform:uppercase;">2.
+<select id="mv-outcome-selector" style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1; font-family:inherit; font-size:0.9em;"></select>
+</div>
+<div style="flex:2; min-width:300px;">
+<label style="font-size:0.82em; font-weight:700; color:#1F4E79; display:block; margin-bottom:8px; text-transform:uppercase;">2.
                                     Stack Metrics to Combine:</label>
-                                <div id="mv-predictor-list" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
-                                <div style="margin-top:8px; font-size:0.72em; color:#94a3b8;">Only metrics classified as
+<div id="mv-predictor-list" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+<div style="margin-top:8px; font-size:0.72em; color:#94a3b8;">Only metrics classified as
                                     <strong>Leading</strong> or <strong>Forewarning</strong> by the screener above are
                                     eligible to combine. Weak and Concurrent signals are excluded.
                                 </div>
-                            </div>
-                        </div>
-
-                        <div id="mv-results"
-                            style="display:none; padding:20px; background:#f4f7fa; border-radius:8px; border-left:4px solid #1F4E79;">
-                            <div style="display:flex; align-items:center; gap:30px; flex-wrap:wrap;">
-                                <div style="text-align:center; min-width:140px;">
-                                    <div id="mv-r2-val"
-                                        style="font-size:1.8rem; font-weight:800; color:#1F4E79; line-height:1;">0.00
+</div>
+</div>
+<div id="mv-results" style="display:none; padding:20px; background:#f4f7fa; border-radius:8px; border-left:4px solid #1F4E79;">
+<div style="display:flex; align-items:center; gap:30px; flex-wrap:wrap;">
+<div style="text-align:center; min-width:140px;">
+<div id="mv-r2-val" style="font-size:1.8rem; font-weight:800; color:#1F4E79; line-height:1;">0.00
                                     </div>
-                                    <div id="mv-risk-badge"
-                                        style="display:inline-block; margin-top:8px; padding:4px 12px; border-radius:12px; font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; background:#e2e8f0; color:#475569;">
+<div id="mv-risk-badge" style="display:inline-block; margin-top:8px; padding:4px 12px; border-radius:12px; font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; background:#e2e8f0; color:#475569;">
                                         Calculating...</div>
-                                    <div
-                                        style="font-size:0.7em; font-weight:600; text-transform:uppercase; color:#666; margin-top:8px; letter-spacing:0.5px;">
+<div style="font-size:0.7em; font-weight:600; text-transform:uppercase; color:#666; margin-top:8px; letter-spacing:0.5px;">
                                         Site Risk Level</div>
-                                </div>
-                                <div style="flex:1; min-width:250px;">
-                                    <h5 style="margin:0 0 8px; font-size:0.9rem; color:#1F4E79;">What this tells you
+</div>
+<div style="flex:1; min-width:250px;">
+<h5 style="margin:0 0 8px; font-size:0.9rem; color:#1F4E79;">What this tells you
                                     </h5>
-                                    <p id="mv-insight" style="margin:0; font-size:0.85em; color:#444; line-height:1.6;">
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Risk Drivers Chart -->
-                            <div id="mv-drivers"
-                                style="margin-top:20px; padding-top:20px; border-top:1px solid #e2e8f0;">
-                                <h6
-                                    style="margin:0 0 10px; font-size:0.75em; color:#1F4E79; text-transform:uppercase; letter-spacing:0.5px;">
+<p id="mv-insight" style="margin:0; font-size:0.85em; color:#444; line-height:1.6;">
+</p>
+</div>
+</div>
+<!-- Risk Drivers Chart -->
+<div id="mv-drivers" style="margin-top:20px; padding-top:20px; border-top:1px solid #e2e8f0;">
+<h6 style="margin:0 0 10px; font-size:0.75em; color:#1F4E79; text-transform:uppercase; letter-spacing:0.5px;">
                                     Relative weight of each metric in this model</h6>
-                                <div id="mv-drivers-list" style="display:flex; flex-direction:column; gap:8px;"></div>
-                            </div>
-
-                            <div
-                                style="margin-top:20px; padding-top:15px; border-top:1px solid #e2e8f0; display:flex; gap:10px; font-size:0.65em; color:#94a3b8; text-transform:uppercase; font-weight:700;">
-                                <div><span style="color:#22c55e;">●</span> Low (< 0.2)</div>
-                                        <div><span style="color:#eab308;">●</span> Moderate (0.2 - 0.5)</div>
-                                        <div><span style="color:#ef4444;">●</span> High (0.5 - 0.75)</div>
-                                        <div><span style="color:#7f1d1d;">●</span> Critical (> 0.75)</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </section>
-        </main>
-    </div>
-
-    <div id="footer-placeholder"></div>
-
-    <script src="../script.js"></script>
-    <script>
+<div id="mv-drivers-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+</div>
+<div style="margin-top:20px; padding-top:15px; border-top:1px solid #e2e8f0; display:flex; gap:10px; font-size:0.65em; color:#94a3b8; text-transform:uppercase; font-weight:700;">
+<div><span style="color:#22c55e;">●</span> Low (&lt; 0.2)</div>
+<div><span style="color:#eab308;">●</span> Moderate (0.2 - 0.5)</div>
+<div><span style="color:#ef4444;">●</span> High (0.5 - 0.75)</div>
+<div><span style="color:#7f1d1d;">●</span> Critical (&gt; 0.75)</div>
+</div>
+</div>
+</div>
+</div>
+</section></main></div>
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div class="site-footer-wordmark">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+<nav class="site-footer-nav">
+<a href="../insights.html">Writing</a>
+<a href="../books.html">Books</a>
+<a href="../tools.html">Tools</a>
+<a href="https://github.com/srhtdmrkl">GitHub</a>
+</nav>
+<div class="site-footer-copy">© 2026</div>
+</div>
+</footer>
+<script>
         // ─────────────────────────────────────────────────
         // CSV parser (handles quoted fields and auto-detects delimiter)
         // ─────────────────────────────────────────────────
@@ -1828,5 +1790,4 @@
         };
     </script>
 </body>
-
 </html>

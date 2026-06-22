@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</helmet>
+<div data-screen-label="Writing — catalog" style="background:#F4F5F6;color:#0D1B2A;font-family:'Newsreader',Georgia,serif;min-height:100vh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;">
+
+  <header style="border-bottom:1px solid #C8D4DC;position:sticky;top:0;z-index:20;background:rgba(244,245,246,0.92);backdrop-filter:saturate(120%) blur(8px);">
+    <div class="mast" style="max-width:1140px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="Home.dc.html" style="display:flex;flex-direction:column;line-height:1;flex:0 0 auto;margin-right:24px;">
+        <span style="font-size:21px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;">Serhat Demirkol</span>
+        <span class="mast-sub" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#7A8E9C;margin-top:6px;white-space:nowrap;">EHS · Systems · Data</span>
+      </a>
+      <nav class="mast-nav" style="display:flex;align-items:center;gap:34px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;">
+        <a href="Writing.dc.html" style="color:#0D1B2A;border-bottom:2px solid #E05000;padding-bottom:2px;">Writing</a>
+        <a href="Books.dc.html" style="color:#546070;padding-bottom:2px;" style-hover="color:#0D1B2A;">Books</a>
+        <a href="Tools.dc.html" style="color:#546070;padding-bottom:2px;" style-hover="color:#0D1B2A;">Tools</a>
+        <a href="Home.dc.html#contact" style="color:#E05000;border:1px solid #F4B090;border-radius:2px;padding:8px 14px;" style-hover="background:#E05000;color:#F6F3EC;border-color:#E05000;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page head -->
+  <section class="sec-pad" style="max-width:1140px;margin:0 auto;padding:72px 32px 40px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#E05000;margin-bottom:22px;">Writing</div>
+    <h1 class="hero-h1" style="font-size:52px;font-weight:500;letter-spacing:-0.02em;margin:0 0 18px;">Briefings</h1>
+    <p style="font-size:21px;line-height:1.55;color:#2A3D50;max-width:50ch;margin:0 0 14px;">On EHS data architecture, SafetyTech product strategy, and applied analytics. Written from the implementation seat — not the analyst's chair.</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#7A8E9C;">24 PIECES · 2025–2026</div>
+  </section>
+
+  <!-- Featured -->
+  <section class="sec-pad" style="max-width:1140px;margin:0 auto;padding:0 32px 24px;">
+    <a href="Article.dc.html" style="display:flex;gap:40px;border:1px solid #C8D4DC;border-radius:3px;overflow:hidden;background:#FFFFFF;flex-wrap:wrap;" style-hover="border-color:#E05000;">
+      <div style="flex:1 1 420px;min-width:280px;background:#D5DDE5 repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(0,0,0,0.025) 7px,rgba(0,0,0,0.025) 14px);min-height:300px;">
+        <img src="https://serhat.bio/images/safety-form-usability-friction-budget.webp" alt="Safety Form Usability" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <div style="flex:1 1 360px;min-width:280px;padding:44px 44px 44px 4px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#E05000;margin-bottom:18px;">Latest · Jun 2026</div>
+        <h2 style="font-size:34px;font-weight:500;letter-spacing:-0.015em;line-height:1.12;margin:0 0 16px;">Safety Form Usability: The Friction Budget Method</h2>
+        <p style="font-size:18px;line-height:1.55;color:#546070;margin:0 0 22px;">Every required field beyond what workers can complete honestly turns your safety database into compliance fiction. The Friction Budget quantifies the effort a form demands — and the point at which workers stop reading and start typing anything to submit.</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E05000;">Read →</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- Index list -->
+  <section class="sec-pad" style="max-width:1140px;margin:0 auto;padding:36px 32px 96px;">
+    <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#7A8E9C;">The index</span>
+      <span style="flex:1;height:1px;background:#DDD4C2;"></span>
+    </div>
+
+    <a href="https://serhat.bio/insights/why-frontline-workers-fabricate-safety-data.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Jun 2026</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Why Frontline Workers Fabricate Safety Data</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Why workers enter fabricated data into EHS apps, and the five technical countermeasures that verify site presence and resolve reporting silos.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/why-frontline-workers-fabricate-safety-data.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/offline-sync-timestamp-integrity.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Jun 2026</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Your Safety Timestamps Are Testimony, Not Fact</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">A record's timestamp is testimony, not proof. Offline sync lets device clocks lie — and the dual-timestamp design that makes records hold up in an investigation.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/offline-sync-timestamp-integrity.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/the-2026-ehs-tech-consensus.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Apr 2026</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">2026 EHS Tech Consensus: Interrogating the Vendor AI Data</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">97% claim AI adoption. 5% have it embedded. 85% still rely on manual tools. What the 2026 EHS vendor surveys reveal when you read past the headline.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/2026-ehs-tech-gaps.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/digital-error-traps-in-safety-apps.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Apr 2026</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">The Digital Error Trap: How Interface Risk Becomes Systemic Failure</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Digital error traps don't stay in individual records. They corrupt the data leadership uses to set priorities. What they are and what to do about them.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/digital-error-traps-in-safety-apps.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/validating-leading-indicators-with-predictive-analytics.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Apr 2026</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Validating Leading Indicators: Auditing EHS Data for Predictive Signal</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Most programmes track leading indicators by convention, not validation. Lag-correlation analysis on a 36-month dataset classifies each metric as Leading, Forewarning, Concurrent, or Weak.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/validating-leading-indicators.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/structuring-unstructured-ehs-data-with-langextract.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Feb 2026</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Structuring Unstructured EHS Data with Targeted Extraction</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Incident narratives, audit notes, near-miss reports — none of it is machine-readable by default. Turning unstructured text into schema-constrained, queryable data.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/structuring-unstructured-ehs-data-with-langextract.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/the-feature-trap-in-ehs-software-selection.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Jan 2026</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">The Feature Trap in EHS Software Selection</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Procurement optimises for feature count. Frontline workers abandon systems that don't fit how they work. Why feature-led selection reliably buys the wrong platform.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/feature-trap-ehs.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/the-ehs-ai-launchpad.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Dec 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">The EHS AI Launchpad: Escaping Pilot Purgatory</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Most EHS AI projects stall after the proof of concept. A framework for moving from a high-value use case to a production system.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/ehs-ai-launchpad.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ehs-data-refinery.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Nov 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">The EHS Data Refinery: Building AI-Ready Safety Data</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Raw EHS data is messy and context-blind. The governance, cleansing, and labeling decisions that turn crude reports into predictive assets.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/the-ehs-data-refinery.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ehs-ai-interoperability.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Nov 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">EHS AI Interoperability: Building the Data Foundation</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Predictive safety needs signals from EHS, HR, and Maintenance together. Why siloed data architecture is the actual blocker — not the algorithm.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/interoperability-as-the-foundation.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Oct 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">The AI Readiness Gap: From Hype to High-Value Asset</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Misconceptions about AI deployment in enterprise EHS — and why closing the gap between vision and reality requires a data-first starting point.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/ai-readiness-gap.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/requirements-iceberg.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Sep 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">The Requirements Iceberg</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Every EHS software request that looks simple conceals architectural decisions nobody documented. Why the visible part of requirements is never the expensive part.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/requirements-iceberg.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ehs-for-enterprises.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Jun 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">EHS for Enterprises: Strategies for Global Success</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Multi-site deployments fail when the architecture is built for one site and scaled by replication. Designing scalability, ERP integration, and governance in from the start.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/ehs-for-enterprises.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ehs-software-roi.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Jun 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Measuring Success: Real-World ROI of EHS Software</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">ROI calculations are mostly post-rationalisation. What to actually measure, when, and why common quantification mistakes make programmes look like failures.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/ehs-software-roi.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ehs-software-strategic-implementation.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Jun 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Strategic Implementation: A Phased Approach to Deployment</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Phased is not the same as slow. Sequencing needs analysis, vendor selection, change management, and monitoring so each phase creates conditions for the next.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/strategic-implementation.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ehs-software-human-element.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Jun 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Human Element: Culture and Leadership in Software Success</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Adoption fails when the human system isn't designed alongside the technical one. How culture and leadership determine whether a platform gets used or worked around.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/ehs-software-human-element.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ehs-software-more-than-a-technological-fix.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">Jun 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">EHS Software: More Than a Technological Fix</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Buying software is not a strategy. The decisions that matter happen before procurement — and the ones that kill implementations happen the day after go-live.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/ehs-software-more-than-a-technological-fix.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/getting-trapped-while-controlling-hazards.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">May 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Getting Trapped While Controlling Hazards</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Hazard controls introduce their own failure modes. Error traps — systemic conditions that make mistakes more likely — are often built into the control itself.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/getting-trapped-while-controling-risks.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ml-incident-classification.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">May 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">How Machine Learning Can Improve Incident Classification</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Manual classification is inconsistent and slow. ML models as a triage system to standardise classification at scale — shifting focus to data governance.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/ml-incident-classification.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/diagnostic-analytics-guide.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">May 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Diagnostic Analytics: Enhancing Workplace Safety</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Recording incidents is not analysis. Identifying patterns, correlations, and root causes across incident data requires a different data model than most systems are built with.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/leveraging-diagnostic-analysis.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/esaw-methodology-guide.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">May 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">A Concise Guide to ESAW Methodology</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">Accurate accident recording is the foundational architecture of a safety system. How ESAW transforms reporting into a diagnostic tool — and where its granularity becomes a field trap.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/esaw-methodology.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ehs-implementation-planning.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">May 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Analysis and Planning for EHS Software Implementation</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">The analysis and planning phase is where most implementations win or lose. Needs assessment, objective-setting, and stakeholder alignment done before vendor selection — not after.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/analysis-and-planning-for-ehs-software.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+    <a href="https://serhat.bio/insights/ehs-software-is-infrastructure.html" style="display:flex;gap:32px;padding:30px 0;border-top:1px solid #D0DAE2;border-bottom:1px solid #D0DAE2;align-items:flex-start;flex-wrap:wrap;" style-hover="opacity:0.74;">
+      <div style="flex:0 0 84px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A8E9C;padding-top:5px;">May 2025</div>
+      <div style="flex:1 1 460px;min-width:260px;">
+        <h3 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;margin:0 0 8px;">Why EHS Software is Infrastructure, Not a Technological Fix</h3>
+        <p style="font-size:16px;line-height:1.5;color:#546070;margin:0;max-width:62ch;">It fails as a compliance tool. It succeeds as data architecture for operational truth. Why infrastructure beats technological fixes.</p>
+      </div>
+      <div style="flex:0 0 132px;height:84px;background:#D5DDE5;border-radius:2px;overflow:hidden;"><img src="https://serhat.bio/images/ehs-software-more-than-just-a-technological-fix.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </a>
+
+  </section>
+
+  <footer style="background:#060E18;color:#6A7A88;">
+    <div style="max-width:1140px;margin:0 auto;padding:40px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.08em;">
+      <div style="color:#9AAEBE;">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+      <div style="display:flex;gap:26px;">
+        <a href="Writing.dc.html" style-hover="color:#E0EAF4;">Writing</a>
+        <a href="Books.dc.html" style-hover="color:#E0EAF4;">Books</a>
+        <a href="Tools.dc.html" style-hover="color:#E0EAF4;">Tools</a>
+        <a href="https://github.com/srhtdmrkl" style-hover="color:#E0EAF4;">GitHub</a>
+      </div>
+      <div>© 2026</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,144 +1,172 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Explore a collection of books by Serhat Demirkol on EHS software implementation and Brazilian regulatory standards.">
-    <title>Books | Serhat Demirkol</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="canonical" href="https://serhat.bio/books.html">
-    <link rel="alternate" type="application/rss+xml" title="Serhat Demirkol | EHS Insights Feed" href="/feed.xml" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Books | Serhat Demirkol">
-    <meta property="og:description"
-        content="Explore a collection of books by Serhat Demirkol on EHS software implementation and Brazilian regulatory standards.">
-    <meta property="og:image" content="https://serhat.bio/images/profile-picture.jpg">
-    <meta property="og:url" content="https://serhat.bio/books.html">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Books | Serhat Demirkol">
-    <meta name="twitter:description"
-        content="Explore a collection of books by Serhat Demirkol on EHS software implementation and Brazilian regulatory standards.">
-    <meta name="twitter:image" content="https://serhat.bio/images/profile-picture.jpg">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://serhat.bio"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Books"
-      }]
-    }
-    </script>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Books | Serhat Demirkol</title>
+  <link href="images/favicon.png" rel="icon" type="image/png" />
+  <meta
+    content="Explore a collection of books by Serhat Demirkol on EHS software implementation and Brazilian regulatory standards."
+    name="description" />
+  <link href="https://serhat.bio/books.html" rel="canonical" />
+  <link href="/feed.xml" rel="alternate" title="Serhat Demirkol | EHS Insights Feed" type="application/rss+xml" />
+  <meta content="Books | Serhat Demirkol" property="og:title" />
+  <meta
+    content="Explore a collection of books by Serhat Demirkol on EHS software implementation and Brazilian regulatory standards."
+    property="og:description" />
+  <meta content="https://serhat.bio/images/profile-picture.jpg" property="og:image" />
+  <meta content="https://serhat.bio/books.html" property="og:url" />
+  <meta content="website" property="og:type" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="Books | Serhat Demirkol" name="twitter:title" />
+  <meta
+    content="Explore a collection of books by Serhat Demirkol on EHS software implementation and Brazilian regulatory standards."
+    name="twitter:description" />
+  <meta content="https://serhat.bio/images/profile-picture.jpg" name="twitter:image" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link href="design-schema/styles.css" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://serhat.bio" },
+      { "@type": "ListItem", "position": 2, "name": "Books" }
+    ]
+  }
+  </script>
 </head>
 
 <body>
-
-    <div id="header-placeholder"></div>
-
-    <div class="page-wrapper">
-        <div class="books-page-header">
-            <h1 class="lede-name">Books</h1>
-            <p class="lede-sub">Published work on EHS software implementation and Brazilian occupational safety standards.</p>
-        </div>
-
-        <hr class="section-rule" style="margin: 2rem 0 2.5rem;">
-
-        <section class="book-archive">
-
-            <div class="book-row">
-                <script type="application/ld+json">
-                {
-                    "@context": "https://schema.org",
-                    "@type": "Book",
-                    "name": "A Practical Guide to EHS Software Implementation",
-                    "author": { "@type": "Person", "name": "Serhat Demirkol" },
-                    "image": "/images/ehs_software_implementation.jpg",
-                    "url": "https://amzn.to/423668M"
-                }
-                </script>
-                <img src="images/ehs_software_implementation.jpg"
-                    alt="A Practical Guide to EHS Software Implementation" class="book-thumb">
-                <div class="book-info">
-                    <h2 class="book-title-clean">A Practical Guide to EHS Software Implementation</h2>
-                    <p class="book-desc">Most EHS software implementations fail not because the software is wrong, but because the data model was never designed. This book works through the decisions that determine whether a deployment sticks — selecting the right vendor, structuring the rollout, and measuring whether the system is actually changing behaviour on the ground.</p>
-                    <a href="https://amzn.to/423668M" class="book-link" target="_blank"
-                        onclick="trackEvent('click_book_link', {book_title: 'A Practical Guide to EHS Software Implementation', book_url: 'https://amzn.to/423668M'})">Amazon &rarr;</a>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <img src="images/nr13_cover.jpg"
-                    alt="NR13 Boilers, Pressure Vessels, Pipings, and Metallic Storage Tanks" class="book-thumb">
-                <div class="book-info">
-                    <h2 class="book-title-clean">NR13 — Boilers, Pressure Vessels, Pipings, and Metallic Storage Tanks</h2>
-                    <p class="book-desc">Annotated English-language guide to Brazilian regulatory standard NR-13. Updated to November 2022, with expert commentary explaining the structural integrity requirements for steam boilers, pressure vessels, piping, and metallic storage tanks — and where the standard is routinely misread in practice.</p>
-                    <a href="https://amzn.to/48s6AZY" class="book-link" target="_blank"
-                        onclick="trackEvent('click_book_link', {book_title: 'NR13', book_url: 'https://amzn.to/48s6AZY'})">Amazon &rarr;</a>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <img src="images/nr12_cover.jpg" alt="NR12 Machinery and Equipment Safety" class="book-thumb">
-                <div class="book-info">
-                    <h2 class="book-title-clean">NR12 — Machinery and Equipment Safety</h2>
-                    <p class="book-desc">NR-12 covers safety requirements across the full lifecycle of machinery — design through decommissioning. This March 2024 edition is annotated for practitioners who need to apply the standard to imported equipment and cross-reference it against the EU Machinery Directive and ANSI.</p>
-                    <a href="https://amzn.to/46rNjVR" class="book-link" target="_blank"
-                        onclick="trackEvent('click_book_link', {book_title: 'NR12', book_url: 'https://amzn.to/46rNjVR'})">Amazon &rarr;</a>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <img src="images/nr10_cover.jpg" alt="NR10 Safety in Electrical Installations and Services" class="book-thumb">
-                <div class="book-info">
-                    <h2 class="book-title-clean">NR10 — Safety in Electrical Installations and Services</h2>
-                    <p class="book-desc">Annotated guide to NR-10, Brazil's regulatory standard for electrical installations and services. Updated to July 2019, with commentary on control measures and preventive systems for workers interacting with energised equipment.</p>
-                    <a href="https://amzn.to/48pumWq" class="book-link" target="_blank"
-                        onclick="trackEvent('click_book_link', {book_title: 'NR10', book_url: 'https://amzn.to/48pumWq'})">Amazon &rarr;</a>
-                </div>
-            </div>
-
-            <hr class="book-rule">
-
-            <div class="book-row">
-                <img src="images/nr37_cover.jpg" alt="NR37 Health and Safety on Oil Platforms" class="book-thumb">
-                <div class="book-info">
-                    <h2 class="book-title-clean">NR37 — Health and Safety on Oil Platforms</h2>
-                    <p class="book-desc">Complete English translation and annotation of NR-37, governing health, safety, and living conditions on oil platforms in Brazilian jurisdictional waters. Covers occupational health, emergency preparedness, and accommodation requirements for both national and foreign-flagged platforms.</p>
-                    <a href="https://amzn.to/3Kyx1mI" class="book-link" target="_blank"
-                        onclick="trackEvent('click_book_link', {book_title: 'NR37', book_url: 'https://amzn.to/3Kyx1mI'})">Amazon &rarr;</a>
-                </div>
-            </div>
-
-        </section>
+  <!-- ===== Masthead ===== -->
+  <header class="site-header">
+    <div class="mast">
+      <a class="mast-brand" href="index.html">
+        <span class="mast-name">Serhat Demirkol</span>
+        <span class="mast-sub">EHS · Systems · Data</span>
+      </a>
+      <nav class="mast-nav">
+        <a class="mast-link" href="insights.html">Writing</a>
+        <a class="mast-link-active" href="books.html">Books</a>
+        <a class="mast-link" href="tools.html">Tools</a>
+        <a class="mast-cta" href="index.html#contact">Contact</a>
+      </nav>
     </div>
-
-    <div id="footer-placeholder"></div>
-
-    <script src="script.js"></script>
+  </header>
+  <section class="page-hd sec-pad">
+    <div class="page-eyebrow">
+      Books</div>
+    <h1 class="hero-h1">In print</h1>
+    <p class="page-intro">Published work on EHS software implementation and the Brazilian NR regulatory standards.</p>
+    <div class="page-count">05 TITLES ·
+      ENGLISH</div>
+  </section>
+  <section class="book-list sec-pad">
+    <div class="book-entry">
+      <div class="book-cover">
+        <img alt="A Practical Guide to EHS Software Implementation"
+          src="https://serhat.bio/images/ehs_software_implementation.jpg" />
+      </div>
+      <div class="book-body">
+        <div class="book-tag">
+          Practitioner Guide</div>
+        <h2>A Practical
+          Guide to EHS Software Implementation</h2>
+        <p>Most implementations
+          fail not because the software is wrong, but because the data model was never designed. This book works through
+          the decisions that determine whether a deployment sticks — selecting the right vendor, structuring the
+          rollout, and measuring whether the system actually changes behaviour on the ground.</p>
+        <a class="book-cta" href="https://amzn.to/423668M">Amazon
+          →</a>
+      </div>
+    </div>
+    <div class="book-entry">
+      <div class="book-cover">
+        <img alt="NR13" src="https://serhat.bio/images/nr13_cover.jpg" />
+      </div>
+      <div class="book-body">
+        <div class="book-tag">
+          NR-13 · Annotated · Nov 2022</div>
+        <h2>NR-13 —
+          Boilers, Pressure Vessels, Piping &amp; Storage Tanks</h2>
+        <p>Annotated
+          English-language guide to Brazilian regulatory standard NR-13, with expert commentary on the
+          structural-integrity requirements for steam boilers, pressure vessels, piping, and metallic storage tanks —
+          and where the standard is routinely misread in practice.</p>
+        <a class="book-cta" href="https://amzn.to/48s6AZY">Amazon
+          →</a>
+      </div>
+    </div>
+    <div class="book-entry">
+      <div class="book-cover">
+        <img alt="NR12" src="https://serhat.bio/images/nr12_cover.jpg" />
+      </div>
+      <div class="book-body">
+        <div class="book-tag">
+          NR-12 · Mar 2024</div>
+        <h2>NR-12 —
+          Machinery and Equipment Safety</h2>
+        <p>NR-12 covers safety
+          across the full lifecycle of machinery — design through decommissioning. This edition is annotated for
+          practitioners applying the standard to imported equipment and cross-referencing it against the EU Machinery
+          Directive and ANSI.</p>
+        <a class="book-cta" href="https://amzn.to/46rNjVR">Amazon
+          →</a>
+      </div>
+    </div>
+    <div class="book-entry">
+      <div class="book-cover">
+        <img alt="NR10" src="https://serhat.bio/images/nr10_cover.jpg" />
+      </div>
+      <div class="book-body">
+        <div class="book-tag">
+          NR-10 · Annotated · Jul 2019</div>
+        <h2>NR-10 —
+          Safety in Electrical Installations and Services</h2>
+        <p>Annotated guide to
+          NR-10, Brazil's regulatory standard for electrical installations and services, with commentary on control
+          measures and preventive systems for workers interacting with energised equipment.</p>
+        <a class="book-cta" href="https://amzn.to/48pumWq">Amazon
+          →</a>
+      </div>
+    </div>
+    <div class="book-entry">
+      <div class="book-cover">
+        <img alt="NR37" src="https://serhat.bio/images/nr37_cover.jpg" />
+      </div>
+      <div class="book-body">
+        <div class="book-tag">
+          NR-37 · Apr 2025</div>
+        <h2>NR-37 —
+          Health and Safety on Oil Platforms</h2>
+        <p>Complete English
+          translation and annotation of NR-37, governing health, safety, and living conditions on oil platforms in
+          Brazilian jurisdictional waters — occupational health, emergency preparedness, and accommodation for national
+          and foreign-flagged platforms.</p>
+        <a class="book-cta" href="https://amzn.to/3Kyx1mI">Amazon
+          →</a>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-wordmark">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+      <nav class="site-footer-nav">
+        <a href="insights.html">Writing</a>
+        <a href="books.html">Books</a>
+        <a href="tools.html">Tools</a>
+        <a href="https://github.com/srhtdmrkl">GitHub</a>
+      </nav>
+      <div class="site-footer-copy">© 2026</div>
+    </div>
+  </footer>
 </body>
 
 </html>

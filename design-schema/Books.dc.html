@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</helmet>
+<div data-screen-label="Books — catalog" style="background:#F4F5F6;color:#0D1B2A;font-family:'Newsreader',Georgia,serif;min-height:100vh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;">
+
+  <header style="border-bottom:1px solid #C8D4DC;position:sticky;top:0;z-index:20;background:rgba(244,245,246,0.92);backdrop-filter:saturate(120%) blur(8px);">
+    <div class="mast" style="max-width:1140px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="Home.dc.html" style="display:flex;flex-direction:column;line-height:1;flex:0 0 auto;margin-right:24px;">
+        <span style="font-size:21px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;">Serhat Demirkol</span>
+        <span class="mast-sub" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#7A8E9C;margin-top:6px;white-space:nowrap;">EHS · Systems · Data</span>
+      </a>
+      <nav class="mast-nav" style="display:flex;align-items:center;gap:34px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;">
+        <a href="Writing.dc.html" style="color:#546070;padding-bottom:2px;" style-hover="color:#0D1B2A;">Writing</a>
+        <a href="Books.dc.html" style="color:#0D1B2A;border-bottom:2px solid #E05000;padding-bottom:2px;">Books</a>
+        <a href="Tools.dc.html" style="color:#546070;padding-bottom:2px;" style-hover="color:#0D1B2A;">Tools</a>
+        <a href="Home.dc.html#contact" style="color:#E05000;border:1px solid #F4B090;border-radius:2px;padding:8px 14px;" style-hover="background:#E05000;color:#F6F3EC;border-color:#E05000;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="sec-pad" style="max-width:1140px;margin:0 auto;padding:72px 32px 48px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#E05000;margin-bottom:22px;">Books</div>
+    <h1 class="hero-h1" style="font-size:52px;font-weight:500;letter-spacing:-0.02em;margin:0 0 18px;">In print</h1>
+    <p style="font-size:21px;line-height:1.55;color:#2A3D50;max-width:52ch;margin:0 0 14px;">Published work on EHS software implementation and the Brazilian NR regulatory standards — annotated for practitioners who have to apply them, not just cite them.</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#7A8E9C;">05 TITLES · ENGLISH</div>
+  </section>
+
+  <section class="sec-pad" style="max-width:1140px;margin:0 auto;padding:0 32px 96px;">
+
+    <!-- Book 1 -->
+    <div style="display:flex;gap:44px;padding:44px 0;border-top:1px solid #D0DAE2;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex:0 0 168px;background:#D5DDE5 repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(0,0,0,0.025) 7px,rgba(0,0,0,0.025) 14px);border-radius:2px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,0.12);"><img src="https://serhat.bio/images/ehs_software_implementation.jpg" alt="A Practical Guide to EHS Software Implementation" style="width:100%;display:block;" /></div>
+      <div style="flex:1 1 440px;min-width:280px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7A8E9C;margin-bottom:14px;">Practitioner Guide</div>
+        <h2 style="font-size:30px;font-weight:500;letter-spacing:-0.015em;line-height:1.14;margin:0 0 16px;">A Practical Guide to EHS Software Implementation</h2>
+        <p style="font-size:18px;line-height:1.58;color:#546070;margin:0 0 24px;max-width:58ch;">Most implementations fail not because the software is wrong, but because the data model was never designed. This book works through the decisions that determine whether a deployment sticks — selecting the right vendor, structuring the rollout, and measuring whether the system actually changes behaviour on the ground.</p>
+        <a href="https://amzn.to/423668M" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#0D1B2A;border:1px solid #B8C8D4;border-radius:2px;padding:11px 20px;display:inline-flex;align-items:center;gap:8px;" style-hover="border-color:#E05000;color:#E05000;">Amazon →</a>
+      </div>
+    </div>
+
+    <!-- Book 2 -->
+    <div style="display:flex;gap:44px;padding:44px 0;border-top:1px solid #D0DAE2;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex:0 0 168px;background:#D5DDE5 repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(0,0,0,0.025) 7px,rgba(0,0,0,0.025) 14px);border-radius:2px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,0.12);"><img src="https://serhat.bio/images/nr13_cover.jpg" alt="NR13" style="width:100%;display:block;" /></div>
+      <div style="flex:1 1 440px;min-width:280px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7A8E9C;margin-bottom:14px;">NR-13 · Annotated · Nov 2022</div>
+        <h2 style="font-size:30px;font-weight:500;letter-spacing:-0.015em;line-height:1.14;margin:0 0 16px;">NR-13 — Boilers, Pressure Vessels, Piping & Storage Tanks</h2>
+        <p style="font-size:18px;line-height:1.58;color:#546070;margin:0 0 24px;max-width:58ch;">Annotated English-language guide to Brazilian regulatory standard NR-13, with expert commentary on the structural-integrity requirements for steam boilers, pressure vessels, piping, and metallic storage tanks — and where the standard is routinely misread in practice.</p>
+        <a href="https://amzn.to/48s6AZY" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#0D1B2A;border:1px solid #B8C8D4;border-radius:2px;padding:11px 20px;display:inline-flex;align-items:center;gap:8px;" style-hover="border-color:#E05000;color:#E05000;">Amazon →</a>
+      </div>
+    </div>
+
+    <!-- Book 3 -->
+    <div style="display:flex;gap:44px;padding:44px 0;border-top:1px solid #D0DAE2;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex:0 0 168px;background:#D5DDE5 repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(0,0,0,0.025) 7px,rgba(0,0,0,0.025) 14px);border-radius:2px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,0.12);"><img src="https://serhat.bio/images/nr12_cover.jpg" alt="NR12" style="width:100%;display:block;" /></div>
+      <div style="flex:1 1 440px;min-width:280px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7A8E9C;margin-bottom:14px;">NR-12 · Annotated · Mar 2024</div>
+        <h2 style="font-size:30px;font-weight:500;letter-spacing:-0.015em;line-height:1.14;margin:0 0 16px;">NR-12 — Machinery and Equipment Safety</h2>
+        <p style="font-size:18px;line-height:1.58;color:#546070;margin:0 0 24px;max-width:58ch;">NR-12 covers safety across the full lifecycle of machinery — design through decommissioning. This edition is annotated for practitioners applying the standard to imported equipment and cross-referencing it against the EU Machinery Directive and ANSI.</p>
+        <a href="https://amzn.to/46rNjVR" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#0D1B2A;border:1px solid #B8C8D4;border-radius:2px;padding:11px 20px;display:inline-flex;align-items:center;gap:8px;" style-hover="border-color:#E05000;color:#E05000;">Amazon →</a>
+      </div>
+    </div>
+
+    <!-- Book 4 -->
+    <div style="display:flex;gap:44px;padding:44px 0;border-top:1px solid #D0DAE2;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex:0 0 168px;background:#D5DDE5 repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(0,0,0,0.025) 7px,rgba(0,0,0,0.025) 14px);border-radius:2px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,0.12);"><img src="https://serhat.bio/images/nr10_cover.jpg" alt="NR10" style="width:100%;display:block;" /></div>
+      <div style="flex:1 1 440px;min-width:280px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7A8E9C;margin-bottom:14px;">NR-10 · Annotated · Jul 2019</div>
+        <h2 style="font-size:30px;font-weight:500;letter-spacing:-0.015em;line-height:1.14;margin:0 0 16px;">NR-10 — Safety in Electrical Installations and Services</h2>
+        <p style="font-size:18px;line-height:1.58;color:#546070;margin:0 0 24px;max-width:58ch;">Annotated guide to NR-10, Brazil's regulatory standard for electrical installations and services, with commentary on control measures and preventive systems for workers interacting with energised equipment.</p>
+        <a href="https://amzn.to/48pumWq" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#0D1B2A;border:1px solid #B8C8D4;border-radius:2px;padding:11px 20px;display:inline-flex;align-items:center;gap:8px;" style-hover="border-color:#E05000;color:#E05000;">Amazon →</a>
+      </div>
+    </div>
+
+    <!-- Book 5 -->
+    <div style="display:flex;gap:44px;padding:44px 0;border-top:1px solid #D0DAE2;border-bottom:1px solid #D0DAE2;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex:0 0 168px;background:#D5DDE5 repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(0,0,0,0.025) 7px,rgba(0,0,0,0.025) 14px);border-radius:2px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,0.12);"><img src="https://serhat.bio/images/nr37_cover.jpg" alt="NR37" style="width:100%;display:block;" /></div>
+      <div style="flex:1 1 440px;min-width:280px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7A8E9C;margin-bottom:14px;">NR-37 · Full translation</div>
+        <h2 style="font-size:30px;font-weight:500;letter-spacing:-0.015em;line-height:1.14;margin:0 0 16px;">NR-37 — Health and Safety on Oil Platforms</h2>
+        <p style="font-size:18px;line-height:1.58;color:#546070;margin:0 0 24px;max-width:58ch;">Complete English translation and annotation of NR-37, governing health, safety, and living conditions on oil platforms in Brazilian jurisdictional waters — occupational health, emergency preparedness, and accommodation for national and foreign-flagged platforms.</p>
+        <a href="https://amzn.to/3Kyx1mI" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#0D1B2A;border:1px solid #B8C8D4;border-radius:2px;padding:11px 20px;display:inline-flex;align-items:center;gap:8px;" style-hover="border-color:#E05000;color:#E05000;">Amazon →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer style="background:#060E18;color:#6A7A88;">
+    <div style="max-width:1140px;margin:0 auto;padding:40px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.08em;">
+      <div style="color:#9AAEBE;">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+      <div style="display:flex;gap:26px;">
+        <a href="Writing.dc.html" style-hover="color:#E0EAF4;">Writing</a>
+        <a href="Books.dc.html" style-hover="color:#E0EAF4;">Books</a>
+        <a href="Tools.dc.html" style-hover="color:#E0EAF4;">Tools</a>
+        <a href="https://github.com/srhtdmrkl" style-hover="color:#E0EAF4;">GitHub</a>
+      </div>
+      <div>© 2026</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

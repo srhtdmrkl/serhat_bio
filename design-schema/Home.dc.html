@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</helmet>
+<div data-screen-label="Home — redesign" style="background:#F4F5F6;color:#0D1B2A;font-family:'Newsreader',Georgia,serif;min-height:100vh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;">
+
+  <!-- ===== Masthead ===== -->
+  <header style="border-bottom:1px solid #C8D4DC;position:sticky;top:0;z-index:20;background:rgba(244,245,246,0.92);backdrop-filter:saturate(120%) blur(8px);">
+    <div class="mast" style="max-width:1140px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="Home.dc.html" style="display:flex;flex-direction:column;line-height:1;flex:0 0 auto;margin-right:24px;">
+        <span style="font-size:21px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;">Serhat Demirkol</span>
+        <span class="mast-sub" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#7A8E9C;margin-top:6px;white-space:nowrap;">EHS · Systems · Data</span>
+      </a>
+      <nav class="mast-nav" style="display:flex;align-items:center;gap:34px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;">
+        <a href="Writing.dc.html" style="color:#546070;padding-bottom:2px;" style-hover="color:#0D1B2A;">Writing</a>
+        <a href="Books.dc.html" style="color:#546070;padding-bottom:2px;" style-hover="color:#0D1B2A;">Books</a>
+        <a href="Tools.dc.html" style="color:#546070;padding-bottom:2px;" style-hover="color:#0D1B2A;">Tools</a>
+        <a href="#contact" style="color:#E05000;border:1px solid #F4B090;border-radius:2px;padding:8px 14px;" style-hover="background:#E05000;color:#F6F3EC;border-color:#E05000;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="sec-pad" style="max-width:1140px;margin:0 auto;padding:84px 32px 64px;">
+    <div style="display:flex;gap:64px;align-items:flex-start;flex-wrap:wrap;">
+      <div style="flex:1 1 560px;min-width:300px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#E05000;margin-bottom:26px;">EHS Product Strategist · Systems · Applied Data</div>
+        <h1 class="hero-h1" style="font-size:58px;line-height:1.04;font-weight:500;letter-spacing:-0.02em;margin:0 0 28px;max-width:13ch;">When an EHS programme fails, the problem is usually <span style="font-style:italic;color:#E05000;">architectural.</span></h1>
+        <p style="font-size:21px;line-height:1.55;color:#2A3D50;max-width:46ch;margin:0 0 36px;">I diagnose it, rebuild the infrastructure, and spec the products that make it work — bridging field operations, information systems, and data science. I've shipped EHS software from that seat, not just advised on it from outside.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="Writing.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;background:#0D1B2A;color:#F6F3EC;padding:14px 22px;border-radius:2px;display:inline-flex;align-items:center;gap:8px;" style-hover="background:#E05000;">Read the writing <span style="font-family:Georgia,serif;">→</span></a>
+          <a href="Tools.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;color:#0D1B2A;border:1px solid #B8C8D4;padding:14px 22px;border-radius:2px;display:inline-flex;align-items:center;gap:8px;" style-hover="border-color:#0D1B2A;">Test the tools <span style="font-family:Georgia,serif;">→</span></a>
+        </div>
+      </div>
+
+      <sc-if value="{{ showHeadshot }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:0 0 auto;width:268px;">
+        <div style="border:1px solid #C8D4DC;background:#E8ECEF;border-radius:3px;padding:10px;">
+          <div style="aspect-ratio:1/1;background:#D5DDE5 repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(0,0,0,0.025) 7px,rgba(0,0,0,0.025) 14px);overflow:hidden;border-radius:2px;">
+            <img src="https://serhat.bio/images/profile-picture.jpg" alt="Serhat Demirkol" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.08em;color:#6A7E8C;line-height:1.7;margin-top:12px;padding:0 2px 2px;">
+            <div style="color:#0D1B2A;font-weight:500;letter-spacing:0.04em;">SERHAT DEMIRKOL</div>
+            NEBOSH-qualified · ISO 45001 IMS<br>NR-standards author
+          </div>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- ===== Proof band ===== -->
+  <sc-if value="{{ showProofBand }}" hint-placeholder-val="{{ true }}">
+  <section style="border-top:1px solid #C8D4DC;border-bottom:1px solid #C8D4DC;background:#E8ECEF;">
+    <div class="proof-flex" style="max-width:1140px;margin:0 auto;padding:48px 32px;display:flex;gap:56px;align-items:baseline;flex-wrap:wrap;">
+      <h2 style="flex:0 0 auto;font-size:30px;font-weight:500;letter-spacing:-0.01em;margin:0;max-width:9ch;">Built, not just advised.</h2>
+      <p style="flex:1 1 440px;font-size:18px;line-height:1.6;color:#2A3D50;margin:0;">A native iOS risk engine on the App Store. A production Chrome extension reshaping <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;">osha.gov</span>. Incident classifiers trained on a decade of OSHA injury data. Five published standards guides. The frameworks below come from systems that shipped — not whiteboard theory.</p>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- ===== Manifesto ===== -->
+  <section class="sec-pad" style="max-width:1140px;margin:0 auto;padding:88px 32px 24px;">
+    <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#E05000;">On the field</span>
+      <span style="flex:1;height:1px;background:#DDD4C2;"></span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;color:#7A8E9C;">06 positions</span>
+    </div>
+
+    <div style="margin-top:18px;">
+      <!-- item -->
+      <div style="display:flex;gap:40px;padding:38px 0;border-top:1px solid #D0DAE2;flex-wrap:wrap;">
+        <div style="flex:0 0 64px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E05000;padding-top:10px;">01</div>
+        <div style="flex:1 1 600px;min-width:280px;">
+          <p style="font-size:30px;line-height:1.22;font-weight:500;letter-spacing:-0.01em;margin:0 0 12px;max-width:24ch;">EHS software fails because it's specced by people who've never investigated a fatality.</p>
+          <p style="font-size:18px;line-height:1.55;color:#546070;margin:0;max-width:52ch;">The data model reflects what's easy to capture, not what a root-cause analysis actually needs.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:40px;padding:38px 0;border-top:1px solid #D0DAE2;flex-wrap:wrap;">
+        <div style="flex:0 0 64px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E05000;padding-top:10px;">02</div>
+        <div style="flex:1 1 600px;min-width:280px;">
+          <p style="font-size:30px;line-height:1.22;font-weight:500;letter-spacing:-0.01em;margin:0 0 12px;max-width:24ch;">Most EHS KPIs measure what already went wrong.</p>
+          <p style="font-size:18px;line-height:1.55;color:#546070;margin:0;max-width:52ch;">The data architecture required for leading indicators is something most organisations have never designed — and most wouldn't know how to spec.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:40px;padding:38px 0;border-top:1px solid #D0DAE2;flex-wrap:wrap;">
+        <div style="flex:0 0 64px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E05000;padding-top:10px;">03</div>
+        <div style="flex:1 1 600px;min-width:280px;">
+          <p style="font-size:30px;line-height:1.22;font-weight:500;letter-spacing:-0.01em;margin:0 0 12px;max-width:24ch;">The best integrated management system becomes invisible.</p>
+          <p style="font-size:18px;line-height:1.55;color:#546070;margin:0;max-width:52ch;">That's an information-design problem, not a training one. Compliance should be a byproduct of how people naturally work, not an enforcement layer.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:40px;padding:38px 0;border-top:1px solid #D0DAE2;flex-wrap:wrap;">
+        <div style="flex:0 0 64px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E05000;padding-top:10px;">04</div>
+        <div style="flex:1 1 600px;min-width:280px;">
+          <p style="font-size:30px;line-height:1.22;font-weight:500;letter-spacing:-0.01em;margin:0 0 12px;max-width:24ch;">Regulatory change isn't a risk to manage. It's a roadmap signal.</p>
+          <p style="font-size:18px;line-height:1.55;color:#546070;margin:0;max-width:52ch;">It tells you where operational gaps will be priced in — before the inspection arrives.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:40px;padding:38px 0;border-top:1px solid #D0DAE2;flex-wrap:wrap;">
+        <div style="flex:0 0 64px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E05000;padding-top:10px;">05</div>
+        <div style="flex:1 1 600px;min-width:280px;">
+          <p style="font-size:30px;line-height:1.22;font-weight:500;letter-spacing:-0.01em;margin:0 0 12px;max-width:24ch;">"Digital transformation" fails when the tool is bought before the data model is designed.</p>
+          <p style="font-size:18px;line-height:1.55;color:#546070;margin:0;max-width:52ch;">Most EHS implementations are bought first. The order is the whole problem.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:40px;padding:38px 0;border-top:1px solid #D0DAE2;border-bottom:1px solid #D0DAE2;flex-wrap:wrap;">
+        <div style="flex:0 0 64px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E05000;padding-top:10px;">06</div>
+        <div style="flex:1 1 600px;min-width:280px;">
+          <p style="font-size:30px;line-height:1.22;font-weight:500;letter-spacing:-0.01em;margin:0 0 12px;max-width:24ch;">Safety culture is an output, not an input. You can't train your way to it.</p>
+          <p style="font-size:18px;line-height:1.55;color:#546070;margin:0;max-width:52ch;">It emerges from systems that make the right behaviour easier than the wrong one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Channels ===== -->
+  <section class="sec-pad" style="max-width:1140px;margin:0 auto;padding:84px 32px 96px;">
+    <h2 style="font-size:34px;font-weight:500;letter-spacing:-0.015em;margin:0 0 8px;max-width:20ch;">Read the frameworks, see the specifications, or test the models.</h2>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#7A8E9C;margin:0 0 44px;">Three ways in</p>
+    <div class="chan-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <a href="Writing.dc.html" style="display:flex;flex-direction:column;border:1px solid #C8D4DC;border-radius:3px;padding:30px 28px;background:#FFFFFF;min-height:230px;" style-hover="border-color:#E05000;background:#E8ECEF;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7A8E9C;">01 / Writing</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#E05000;">24</span>
+        </div>
+        <h3 style="font-size:26px;font-weight:500;margin:auto 0 12px;letter-spacing:-0.01em;">Briefings</h3>
+        <p style="font-size:15.5px;line-height:1.5;color:#546070;margin:0 0 16px;">Frameworks on EHS data architecture, product strategy, and applied analytics.</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E05000;">Read →</span>
+      </a>
+      <a href="Books.dc.html" style="display:flex;flex-direction:column;border:1px solid #C8D4DC;border-radius:3px;padding:30px 28px;background:#FFFFFF;min-height:230px;" style-hover="border-color:#E05000;background:#E8ECEF;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7A8E9C;">02 / Books</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#E05000;">05</span>
+        </div>
+        <h3 style="font-size:26px;font-weight:500;margin:auto 0 12px;letter-spacing:-0.01em;">In print</h3>
+        <p style="font-size:15.5px;line-height:1.5;color:#546070;margin:0 0 16px;">Published guides to EHS software implementation and Brazilian NR standards.</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E05000;">Browse →</span>
+      </a>
+      <a href="Tools.dc.html" style="display:flex;flex-direction:column;border:1px solid #C8D4DC;border-radius:3px;padding:30px 28px;background:#FFFFFF;min-height:230px;" style-hover="border-color:#E05000;background:#E8ECEF;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7A8E9C;">03 / Tools</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#E05000;">07</span>
+        </div>
+        <h3 style="font-size:26px;font-weight:500;margin:auto 0 12px;letter-spacing:-0.01em;">Shipped</h3>
+        <p style="font-size:15.5px;line-height:1.5;color:#546070;margin:0 0 16px;">Working models, extensions, and field apps you can run right now.</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E05000;">Open →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Contact (dark band) ===== -->
+  <section id="contact" style="background:#0D1B2A;color:#E0EAF4;">
+    <div class="sec-pad" style="max-width:1140px;margin:0 auto;padding:88px 32px;display:flex;gap:72px;flex-wrap:wrap;">
+      <div style="flex:1 1 380px;min-width:280px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#F06A20;margin-bottom:22px;">Get in touch</div>
+        <h2 style="font-size:40px;font-weight:500;letter-spacing:-0.02em;line-height:1.08;margin:0 0 22px;max-width:14ch;">Have a challenge in the gap?</h2>
+        <p style="font-size:18px;line-height:1.6;color:#9AAEBE;margin:0 0 28px;max-width:42ch;">The work starts where field operations, systems, and data stop talking to each other. If something's stalled there, describe it.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:2.1;color:#6A7A88;letter-spacing:0.04em;">
+          <div style="color:#E0EAF4;margin-bottom:6px;">BEST FOR</div>
+          Stalled implementations<br>
+          Data-architecture reviews<br>
+          Product specs & roadmap signal
+        </div>
+      </div>
+      <form style="flex:1 1 380px;min-width:280px;display:flex;flex-direction:column;gap:24px;" onSubmit="{{ noop }}">
+        <label style="display:flex;flex-direction:column;gap:9px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6A7A88;">Name</span>
+          <input type="text" placeholder="Your name" style="background:transparent;border:none;border-bottom:1px solid #1A3248;color:#E0EAF4;padding:8px 0;outline:none;font-size:18px;" />
+        </label>
+        <label style="display:flex;flex-direction:column;gap:9px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6A7A88;">Email</span>
+          <input type="email" placeholder="you@company.com" style="background:transparent;border:none;border-bottom:1px solid #1A3248;color:#E0EAF4;padding:8px 0;outline:none;font-size:18px;" />
+        </label>
+        <label style="display:flex;flex-direction:column;gap:9px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6A7A88;">What's stalled?</span>
+          <textarea rows="3" placeholder="The data exists but no one can act on it…" style="background:transparent;border:none;border-bottom:1px solid #1A3248;color:#E0EAF4;padding:8px 0;outline:none;font-size:18px;resize:none;"></textarea>
+        </label>
+        <button type="button" style="align-self:flex-start;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;background:#E05000;color:#F6F3EC;border:none;padding:14px 26px;border-radius:2px;cursor:pointer;" style-hover="background:#F06A20;">Send message →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer style="background:#060E18;color:#6A7A88;">
+    <div style="max-width:1140px;margin:0 auto;padding:40px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.08em;">
+      <div style="color:#9AAEBE;">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+      <div style="display:flex;gap:26px;">
+        <a href="Writing.dc.html" style-hover="color:#E0EAF4;">Writing</a>
+        <a href="Books.dc.html" style-hover="color:#E0EAF4;">Books</a>
+        <a href="Tools.dc.html" style-hover="color:#E0EAF4;">Tools</a>
+        <a href="https://github.com/srhtdmrkl" style-hover="color:#E0EAF4;">GitHub</a>
+      </div>
+      <div>© 2026</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900},&quot;showHeadshot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showProofBand&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showHeadshot: this.props.showHeadshot ?? true,
+      showProofBand: this.props.showProofBand ?? true,
+      noop: (e) => { e.preventDefault(); }
+    };
+  }
+}
+</script>
+</body>
+</html>

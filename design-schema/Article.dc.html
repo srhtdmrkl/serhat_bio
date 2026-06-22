@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</helmet>
+<div data-screen-label="Article — detail" style="background:#F4F5F6;color:#0D1B2A;font-family:'Newsreader',Georgia,serif;min-height:100vh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;">
+
+  <!-- ===== Masthead ===== -->
+  <header style="border-bottom:1px solid #C8D4DC;position:sticky;top:0;z-index:20;background:rgba(244,245,246,0.92);backdrop-filter:saturate(120%) blur(8px);">
+    <div class="mast" style="max-width:1140px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="Home.dc.html" style="display:flex;flex-direction:column;line-height:1;flex:0 0 auto;margin-right:24px;">
+        <span style="font-size:21px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;">Serhat Demirkol</span>
+        <span class="mast-sub" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#7A8E9C;margin-top:6px;white-space:nowrap;">EHS · Systems · Data</span>
+      </a>
+      <nav class="mast-nav" style="display:flex;align-items:center;gap:34px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;">
+        <a href="Writing.dc.html" style="color:#0D1B2A;border-bottom:2px solid #E05000;padding-bottom:2px;">Writing</a>
+        <a href="Books.dc.html" style="color:#546070;padding-bottom:2px;" style-hover="color:#0D1B2A;">Books</a>
+        <a href="Tools.dc.html" style="color:#546070;padding-bottom:2px;" style-hover="color:#0D1B2A;">Tools</a>
+        <a href="Home.dc.html#contact" style="color:#E05000;border:1px solid #F4B090;border-radius:2px;padding:8px 14px;" style-hover="background:#E05000;color:#F6F3EC;border-color:#E05000;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Reading progress (visual only) ===== -->
+  <div style="position:sticky;top:72px;z-index:15;height:2px;background:transparent;">
+    <div id="readbar" style="height:2px;width:0%;background:#E05000;transition:width 0.1s linear;"></div>
+  </div>
+
+  <!-- ===== Article header ===== -->
+  <article style="max-width:1140px;margin:0 auto;">
+    <div class="sec-pad" style="max-width:720px;margin:0 auto;padding:64px 32px 0;">
+      <a href="Writing.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#7A8E9C;display:inline-flex;align-items:center;gap:8px;margin-bottom:34px;" style-hover="color:#E05000;"><span style="font-family:Georgia,serif;">←</span> All writing</a>
+
+      <div style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:#E05000;margin-bottom:24px;flex-wrap:wrap;">
+        <span>Product Strategy</span>
+        <span style="width:4px;height:4px;border-radius:50%;background:#C9BFAC;"></span>
+        <span style="color:#7A8E9C;">Jun 2026</span>
+        <span style="width:4px;height:4px;border-radius:50%;background:#C9BFAC;"></span>
+        <span style="color:#7A8E9C;">9 min read</span>
+      </div>
+
+      <h1 class="art-h1" style="font-size:50px;line-height:1.08;font-weight:500;letter-spacing:-0.02em;margin:0 0 24px;">Safety Form Usability: The Friction Budget Method</h1>
+      <p style="font-size:23px;line-height:1.5;color:#3D4E5C;font-style:italic;margin:0 0 36px;">Every required field beyond what a worker can complete honestly turns your safety database into compliance fiction. The Friction Budget puts a number on it.</p>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:22px 0;border-top:1px solid #D0DAE2;border-bottom:1px solid #D0DAE2;">
+        <div style="width:42px;height:42px;border-radius:50%;overflow:hidden;background:#D5DDE5;flex:0 0 auto;"><img src="https://serhat.bio/images/profile-picture.jpg" alt="Serhat Demirkol" style="width:100%;height:100%;object-fit:cover;" /></div>
+        <div style="line-height:1.3;">
+          <div style="font-size:16px;font-weight:600;">Serhat Demirkol</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;color:#7A8E9C;">EHS Product · Systems · Data</div>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:10px;">
+          <div id="sharewrap" style="position:relative;">
+            <button type="button" onClick="{{ toggleShare }}" style="cursor:pointer;background:{{ shareBtnBg }};font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:{{ shareBtnColor }};border:1px solid {{ shareBtnBorder }};border-radius:2px;padding:7px 12px;display:inline-flex;align-items:center;gap:7px;">Share <span style="font-family:Georgia,serif;font-size:9px;">▾</span></button>
+            <sc-if value="{{ shareOpen }}" hint-placeholder-val="">
+            <div style="position:absolute;right:0;top:calc(100% + 8px);z-index:50;width:212px;background:#FFFFFF;border:1px solid #C8D4DC;border-radius:4px;box-shadow:0 12px 34px rgba(13,27,42,0.16);padding:6px;">
+              <button type="button" onClick="{{ copyLink }}" style="cursor:pointer;width:100%;text-align:left;background:transparent;border:none;border-radius:2px;padding:9px 11px;display:flex;align-items:center;gap:11px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#0D1B2A;" style-hover="background:#E8ECEF;">
+                <span style="width:20px;flex:0 0 auto;color:#7A8E9C;">⎘</span> Copy link
+              </button>
+              <a href="{{ emailHref }}" style="width:100%;text-align:left;border-radius:2px;padding:9px 11px;display:flex;align-items:center;gap:11px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#0D1B2A;" style-hover="background:#E8ECEF;">
+                <span style="width:20px;flex:0 0 auto;color:#7A8E9C;font-family:Georgia,serif;">@</span> Email
+              </a>
+              <a href="{{ liHref }}" target="_blank" rel="noopener" style="width:100%;text-align:left;border-radius:2px;padding:9px 11px;display:flex;align-items:center;gap:11px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#0D1B2A;" style-hover="background:#E8ECEF;">
+                <span style="width:20px;flex:0 0 auto;color:#7A8E9C;font-weight:700;">in</span> LinkedIn
+              </a>
+              <a href="{{ xHref }}" target="_blank" rel="noopener" style="width:100%;text-align:left;border-radius:2px;padding:9px 11px;display:flex;align-items:center;gap:11px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#0D1B2A;" style-hover="background:#E8ECEF;">
+                <span style="width:20px;flex:0 0 auto;color:#7A8E9C;font-weight:600;">𝕏</span> Post on X
+              </a>
+              <a href="{{ waHref }}" target="_blank" rel="noopener" style="width:100%;text-align:left;border-radius:2px;padding:9px 11px;display:flex;align-items:center;gap:11px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#0D1B2A;" style-hover="background:#E8ECEF;">
+                <span style="width:20px;flex:0 0 auto;color:#7A8E9C;">✆</span> WhatsApp
+              </a>
+            </div>
+            </sc-if>
+          </div>
+          <button type="button" onClick="{{ toggleSave }}" style="cursor:pointer;background:{{ saveBg }};font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:{{ saveColor }};border:1px solid {{ saveBorder }};border-radius:2px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;">{{ saveLabel }}</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero image -->
+    <div class="sec-pad" style="max-width:960px;margin:40px auto 0;padding:0 32px;">
+      <div style="background:#D5DDE5;border-radius:3px;overflow:hidden;aspect-ratio:16/8;">
+        <img src="https://serhat.bio/images/safety-form-usability-friction-budget.webp" alt="Safety form usability" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;color:#7A8E9C;margin-top:12px;padding-left:2px;">FIG 1 — Every field is a tax on the truth of the record.</div>
+    </div>
+
+    <!-- Body -->
+    <div class="prose sec-pad" style="max-width:720px;margin:48px auto 0;padding:0 32px;">
+      <p style="font-size:23px !important;line-height:1.55 !important;color:#0D1B2A !important;">Ask any frontline crew what happens at the end of a shift when the app demands fourteen fields to log a near-miss, and you will hear the same answer in every language: they put in whatever makes the screen go away. The data is clean. The data is complete. The data is fiction.</p>
+
+      <p>This is not a training problem, and it is not a discipline problem. It is an interface economics problem. Every required field, every mandatory dropdown, every "please describe in detail" box spends something — the worker's time, attention, and willingness to tell you the truth. Spend more than they have, and they don't stop submitting. They stop being honest.</p>
+
+      <p>I call the amount they have to spend the <strong>friction budget</strong>. It is the total cognitive and temporal cost a worker will absorb before the marginal field stops producing real information and starts producing plausible noise. The budget is small, it is measurable, and almost every EHS form on the market blows through it by design.</p>
+
+      <!-- Section marker -->
+      <div style="display:flex;align-items:baseline;gap:16px;margin:44px 0 28px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#E05000;">01</span>
+        <h2 style="font-size:30px;font-weight:500;letter-spacing:-0.015em;margin:0;">What a field actually costs</h2>
+      </div>
+
+      <p>A form field looks free. It is a line in a schema, a column in a table, a checkbox in a requirements doc that someone ticked because it seemed useful to have. But the cost of a field is not paid by the person who specced it. It is paid, in full, by the person standing in the rain at 6pm holding a phone with cold hands.</p>
+
+      <p>Break the cost into three parts. There is the <span style="font-style:italic;">read cost</span> — the effort to parse what the field is asking. There is the <span style="font-style:italic;">recall cost</span> — the effort to retrieve or reconstruct the answer. And there is the <span style="font-style:italic;">decision cost</span> — the effort to choose between options that often overlap or don't fit the situation at all. The third is the silent killer: a dropdown of twenty injury types where none of them is quite right doesn't collect data, it manufactures it.</p>
+
+      <!-- Pull quote -->
+      <blockquote class="pullquote" style="margin:40px 0;padding:4px 0 4px 28px;border-left:3px solid #E05000;font-size:29px;line-height:1.32;font-weight:500;letter-spacing:-0.01em;color:#0D1B2A;">
+        Workers don't abandon forms that are long. They abandon forms that are dishonest about how long they are.
+      </blockquote>
+
+      <p>This is why progress bars matter more than field count, and why a form that shows its whole shape up front outperforms one that reveals fields conditionally. Hidden length is a betrayal of the budget — the worker commits, then discovers the cost was higher than quoted, and recalibrates by lowering the quality of every remaining answer.</p>
+
+      <!-- Section marker -->
+      <div style="display:flex;align-items:baseline;gap:16px;margin:44px 0 28px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#E05000;">02</span>
+        <h2 style="font-size:30px;font-weight:500;letter-spacing:-0.015em;margin:0;">Budgeting the form</h2>
+      </div>
+
+      <p>The method is deliberately crude, because crude is what gets used. Assign each field a friction score, sum the form, and compare it against the budget for the context in which the form is filled out. A desk-based incident review has a large budget. A one-handed entry on a scaffold has almost none.</p>
+
+      <!-- Technical callout -->
+      <div style="background:#E8ECEF;border:1px solid #C8D4DC;border-radius:3px;padding:28px 30px;margin:32px 0;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#E05000;margin-bottom:18px;">The friction score</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:14.5px;line-height:2.0;color:#0D1B2A;">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px dashed #C0CCD8;padding-bottom:6px;"><span>Pre-filled / sensor-captured</span><span style="color:#1B8A5B;font-weight:600;">0</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px dashed #C0CCD8;padding-bottom:6px;"><span>Single tap (yes/no, scan)</span><span style="font-weight:600;">1</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px dashed #C0CCD8;padding-bottom:6px;"><span>Bounded choice (≤5 options)</span><span style="font-weight:600;">2</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px dashed #C0CCD8;padding-bottom:6px;"><span>Open choice (long list / search)</span><span style="font-weight:600;">4</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>Free text requiring judgement</span><span style="color:#E05000;font-weight:600;">6</span></div>
+        </div>
+        <div style="font-size:16px;line-height:1.55;color:#546070;margin-top:18px;font-style:italic;">Field budget for one-handed mobile entry: ~8. Most incident forms score north of 30.</div>
+      </div>
+
+      <p>The numbers are not the point — the ordering is. The moment you score a form this way, the conversation in the room changes. It stops being "what would we like to know" and becomes "what can we afford to ask." Those are different forms, and only one of them gets filled out truthfully.</p>
+
+      <p>Spend the budget where it earns signal. A sensor that captures location and timestamp for free buys back the budget you need for the one free-text field that actually matters: <span style="font-style:italic;">what happened, in your words.</span> That field is worth six on its own. Protect it by making everything around it cost nothing.</p>
+
+      <!-- End mark -->
+      <div style="display:flex;align-items:center;gap:16px;margin:48px 0 8px;">
+        <span style="width:9px;height:9px;background:#E05000;display:inline-block;"></span>
+        <span style="flex:1;height:1px;background:#E4DCCB;"></span>
+      </div>
+    </div>
+
+    <!-- Author bio -->
+    <div class="sec-pad" style="max-width:720px;margin:40px auto 0;padding:0 32px;">
+      <div style="display:flex;gap:22px;padding:30px;border:1px solid #C8D4DC;border-radius:3px;background:#FFFFFF;flex-wrap:wrap;align-items:flex-start;">
+        <div style="width:64px;height:64px;border-radius:50%;overflow:hidden;background:#D5DDE5;flex:0 0 auto;"><img src="https://serhat.bio/images/profile-picture.jpg" alt="Serhat Demirkol" style="width:100%;height:100%;object-fit:cover;" /></div>
+        <div style="flex:1 1 320px;min-width:240px;">
+          <div style="font-size:19px;font-weight:600;margin-bottom:6px;">Serhat Demirkol</div>
+          <p style="font-size:16.5px;line-height:1.55;color:#546070;margin:0 0 14px;">EHS product strategist working at the seam of field operations, information systems, and applied data. Builds the tools, then writes about why most of them fail.</p>
+          <a href="Home.dc.html#contact" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;color:#E05000;" style-hover="border-bottom:1px solid #E05000;">Work with me →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== Related ===== -->
+  <section class="sec-pad" style="max-width:1140px;margin:0 auto;padding:80px 32px 96px;">
+    <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:32px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#7A8E9C;">Keep reading</span>
+      <span style="flex:1;height:1px;background:#DDD4C2;"></span>
+    </div>
+    <div class="rel-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <a href="https://serhat.bio/insights/why-frontline-workers-fabricate-safety-data.html" style="display:flex;flex-direction:column;border:1px solid #C8D4DC;border-radius:3px;overflow:hidden;background:#FFFFFF;" style-hover="border-color:#E05000;">
+        <div style="aspect-ratio:16/9;background:#D5DDE5;overflow:hidden;"><img src="https://serhat.bio/images/why-frontline-workers-fabricate-safety-data.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+        <div style="padding:22px 22px 26px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#7A8E9C;margin-bottom:12px;">Jun 2026</div>
+          <h3 style="font-size:20px;font-weight:500;letter-spacing:-0.01em;line-height:1.2;margin:0;">Why Frontline Workers Fabricate Safety Data</h3>
+        </div>
+      </a>
+      <a href="https://serhat.bio/insights/digital-error-traps-in-safety-apps.html" style="display:flex;flex-direction:column;border:1px solid #C8D4DC;border-radius:3px;overflow:hidden;background:#FFFFFF;" style-hover="border-color:#E05000;">
+        <div style="aspect-ratio:16/9;background:#D5DDE5;overflow:hidden;"><img src="https://serhat.bio/images/digital-error-traps-in-safety-apps.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+        <div style="padding:22px 22px 26px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#7A8E9C;margin-bottom:12px;">Apr 2026</div>
+          <h3 style="font-size:20px;font-weight:500;letter-spacing:-0.01em;line-height:1.2;margin:0;">The Digital Error Trap: How Interface Risk Becomes Systemic Failure</h3>
+        </div>
+      </a>
+      <a href="https://serhat.bio/insights/the-feature-trap-in-ehs-software-selection.html" style="display:flex;flex-direction:column;border:1px solid #C8D4DC;border-radius:3px;overflow:hidden;background:#FFFFFF;" style-hover="border-color:#E05000;">
+        <div style="aspect-ratio:16/9;background:#D5DDE5;overflow:hidden;"><img src="https://serhat.bio/images/feature-trap-ehs.webp" alt="" style="width:100%;height:100%;object-fit:cover;" /></div>
+        <div style="padding:22px 22px 26px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#7A8E9C;margin-bottom:12px;">Jan 2026</div>
+          <h3 style="font-size:20px;font-weight:500;letter-spacing:-0.01em;line-height:1.2;margin:0;">The Feature Trap in EHS Software Selection</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Toast ===== -->
+  <sc-if value="{{ toast }}" hint-placeholder-val="">
+  <div style="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:60;background:#0D1B2A;color:#F6F3EC;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;padding:13px 20px;border-radius:3px;box-shadow:0 8px 30px rgba(0,0,0,0.28);display:flex;align-items:center;gap:10px;">
+    <span style="width:7px;height:7px;background:#F06A20;border-radius:50%;"></span>{{ toast }}
+  </div>
+  </sc-if>
+
+  <!-- ===== Footer ===== -->
+  <footer style="background:#060E18;color:#6A7A88;">
+    <div class="sec-pad" style="max-width:1140px;margin:0 auto;padding:40px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.08em;">
+      <div style="color:#9AAEBE;">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+      <div style="display:flex;gap:26px;">
+        <a href="Writing.dc.html" style-hover="color:#E0EAF4;">Writing</a>
+        <a href="Books.dc.html" style-hover="color:#E0EAF4;">Books</a>
+        <a href="Tools.dc.html" style-hover="color:#E0EAF4;">Tools</a>
+        <a href="https://github.com/srhtdmrkl" style-hover="color:#E0EAF4;">GitHub</a>
+      </div>
+      <div>© 2026</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { saved: false, toast: '', shareOpen: false };
+  articleId = 'safety-form-usability-friction-budget';
+
+  flash(msg) {
+    this.setState({ toast: msg });
+    clearTimeout(this._toastT);
+    this._toastT = setTimeout(() => this.setState({ toast: '' }), 2200);
+  }
+
+  readSaved() {
+    try { return new Set(JSON.parse(localStorage.getItem('serhat_saved') || '[]')); }
+    catch (e) { return new Set(); }
+  }
+
+  componentDidMount() {
+    try { this.setState({ saved: this.readSaved().has(this.articleId) }); } catch (e) {}
+    this._onScroll = () => {
+      const bar = document.getElementById('readbar');
+      if (!bar) return;
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? Math.min(100, (h.scrollTop / max) * 100) : 0;
+      bar.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    this._onDocClick = (e) => {
+      if (!this.state.shareOpen) return;
+      const wrap = document.getElementById('sharewrap');
+      if (wrap && !wrap.contains(e.target)) this.setState({ shareOpen: false });
+    };
+    document.addEventListener('mousedown', this._onDocClick);
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._onDocClick) document.removeEventListener('mousedown', this._onDocClick);
+    clearTimeout(this._toastT);
+  }
+
+  toggleShare = () => { this.setState(s => ({ shareOpen: !s.shareOpen })); };
+
+  copyLink = async () => {
+    try { await navigator.clipboard.writeText(window.location.href); this.flash('Link copied to clipboard'); }
+    catch (e) { this.flash('Could not copy link'); }
+    this.setState({ shareOpen: false });
+  };
+
+  toggleSave = () => {
+    const next = !this.state.saved;
+    this.setState({ saved: next });
+    try {
+      const set = this.readSaved();
+      if (next) set.add(this.articleId); else set.delete(this.articleId);
+      localStorage.setItem('serhat_saved', JSON.stringify([...set]));
+    } catch (e) {}
+    this.flash(next ? 'Saved to your reading list' : 'Removed from list');
+  };
+
+  renderVals() {
+    const saved = this.state.saved;
+    const open = this.state.shareOpen;
+    const url = (typeof window !== 'undefined') ? window.location.href : '';
+    const u = encodeURIComponent(url);
+    const title = 'Safety Form Usability: The Friction Budget Method — Serhat Demirkol';
+    const t = encodeURIComponent(title);
+    return {
+      toggleShare: this.toggleShare,
+      copyLink: this.copyLink,
+      toggleSave: this.toggleSave,
+      saved,
+      shareOpen: open,
+      toast: this.state.toast,
+      emailHref: `mailto:?subject=${t}&body=${encodeURIComponent('Thought this was worth your time:\n\n' + url)}`,
+      liHref: `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
+      xHref: `https://twitter.com/intent/tweet?text=${t}&url=${u}`,
+      waHref: `https://wa.me/?text=${t}%20${u}`,
+      saveLabel: saved ? 'Saved ✓' : 'Save',
+      saveColor: saved ? '#E05000' : '#6E665A',
+      saveBorder: saved ? '#E05000' : '#D6CCB8',
+      saveBg: saved ? '#FDE8DC' : 'transparent',
+      shareBtnColor: open ? '#1B1916' : '#6E665A',
+      shareBtnBorder: open ? '#1B1916' : '#D6CCB8',
+      shareBtnBg: open ? '#EFEAdE' : 'transparent'
+    };
+  }
+}
+</script>
+</body>
+</html>
