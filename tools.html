@@ -65,7 +65,7 @@
         <p class="page-intro">Applied models, technical frameworks, and runnable tools demonstrating EHS data
             architecture.
         </p>
-        <div class="page-count"><span data-count-sel=".tool-entry">07</span> IN THE REGISTRY</div>
+        <div class="page-count"><span data-count-sel=".tool-entry">08</span> IN THE REGISTRY</div>
     </section>
     <section class="tool-list sec-pad">
         <div class="tool-entry">
@@ -94,6 +94,23 @@
             </div>
             <div class="tool-body">
                 <div class="tool-title-row">
+                    <h2>Interface Risk Diagnostic</h2>
+                    <span class="tool-badge">Client-side app</span>
+                </div>
+                <p>Identifies which interface failure mechanisms are active in your EHS platform. 21 observable signals
+                    across 7 mechanisms.</p>
+                <div class="tool-actions">
+                    <a class="tool-cta-primary" href="tools/interface-risk-diagnostic.html">Run Diagnostic →</a>
+                    <a class="tool-cta-secondary" href="insights/digital-error-traps-in-safety-apps.html">Evidence base
+                        →</a>
+                </div>
+            </div>
+        </div>
+        <div class="tool-entry">
+            <div class="tool-num">03
+            </div>
+            <div class="tool-body">
+                <div class="tool-title-row">
                     <h2>EHS LangExtract Prototypes</h2>
                     <span class="tool-badge">Python
                         · LLM</span>
@@ -111,7 +128,7 @@
             </div>
         </div>
         <div class="tool-entry">
-            <div class="tool-num">03
+            <div class="tool-num">04
             </div>
             <div class="tool-body">
                 <div class="tool-title-row">
@@ -129,7 +146,7 @@
             </div>
         </div>
         <div class="tool-entry">
-            <div class="tool-num">04
+            <div class="tool-num">05
             </div>
             <div class="tool-body">
                 <div class="tool-title-row">
@@ -149,7 +166,7 @@
             </div>
         </div>
         <div class="tool-entry">
-            <div class="tool-num">05
+            <div class="tool-num">06
             </div>
             <div class="tool-body">
                 <div class="tool-title-row">
@@ -171,7 +188,7 @@
             </div>
         </div>
         <div class="tool-entry">
-            <div class="tool-num">06
+            <div class="tool-num">07
             </div>
             <div class="tool-body">
                 <div class="tool-title-row">
@@ -190,7 +207,7 @@
             </div>
         </div>
         <div class="tool-entry">
-            <div class="tool-num">07
+            <div class="tool-num">08
             </div>
             <div class="tool-body">
                 <div class="tool-title-row">
@@ -217,12 +234,12 @@
             <div class="site-footer-copy">© 2026</div>
         </div>
     </footer>
-  <script>
-    document.querySelectorAll('[data-count-sel]').forEach(function (el) {
-      const n = document.querySelectorAll(el.dataset.countSel).length;
-      if (n > 0) el.textContent = String(n).padStart(2, '0');
-    });
-  </script>
+    <script>
+        document.querySelectorAll('[data-count-sel]').forEach(function (el) {
+            const n = document.querySelectorAll(el.dataset.countSel).length;
+            if (n > 0) el.textContent = String(n).padStart(2, '0');
+        });
+    </script>
 </body>
 
 </html>
