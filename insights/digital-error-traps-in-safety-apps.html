@@ -86,6 +86,42 @@
       }]
     }
     </script>
+    <style>
+        :root {
+            --dark-text: #0D1B2A;
+            --secondary-text: #7A8E9C;
+            --primary-blue: #2563eb;
+        }
+
+        @keyframes ho-nudge {
+
+            0%,
+            65%,
+            100% {
+                transform: translateX(0);
+            }
+
+            70% {
+                transform: translateX(-16px);
+                opacity: 0.8;
+            }
+
+            78% {
+                transform: translateX(-8px);
+                opacity: 0.9;
+            }
+
+            85% {
+                transform: translateX(-13px);
+                opacity: 0.85;
+            }
+
+            92% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -189,58 +225,51 @@
                 misconfigured, it generates errors through seven primary mechanisms. Not every platform triggers all
                 seven — but each one is a specific thing to check in your own.
             </p>
-            <div class="mechanism-summary">
-                <div><span style="font-weight: 700; color: var(--dark-text);">Seven mechanisms — </span><span
-                        style="color: var(--secondary-text);">(1) Habit Override · (2) Feedback Holes · (3) Signal
-                        Fragmentation · (4) Smart Guess Error · (5) Alert Saturation · (6) Physical Decoupling · (7)
-                        Form Abandonment</span></div>
+            <div class="mech-grid">
+                <div class="mech-chip"><span class="mech-num">01</span>Habit Override</div>
+                <div class="mech-chip"><span class="mech-num">02</span>Feedback Holes</div>
+                <div class="mech-chip"><span class="mech-num">03</span>Signal Fragmentation</div>
+                <div class="mech-chip"><span class="mech-num">04</span>Smart Guess Error</div>
+                <div class="mech-chip"><span class="mech-num">05</span>Alert Saturation</div>
+                <div class="mech-chip"><span class="mech-num">06</span>Physical Decoupling</div>
+                <div class="mech-chip"><span class="mech-num">07</span>Form Abandonment</div>
             </div>
             <h3>Habit Override</h3>
             <p>The interface assigns the same swipe to routine and critical tasks alike. A fatigued worker swipes
                 left on a high-risk conveyor alarm — the same gesture used to dismiss a "Shift Ended" notification.
                 The interface made both tasks look identical.</p>
             <div class="demo-block">
-                <p class="demo-label">
-                    How Habit Override produces the error — swipe each card left</p>
-                <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 160px;">
-                        <div style="overflow: hidden; border-radius: 8px;">
-                            <div id="ho-card-a"
-                                style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem; cursor: grab; user-select: none; touch-action: pan-y; animation: ho-nudge-a 2.8s ease 0.7s infinite;">
-                                <div
-                                    style="font-weight: 600; color: var(--dark-text); font-size: 0.82rem; margin-bottom: 0.2rem;">
-                                    Shift Ended</div>
-                                <div style="color: var(--secondary-text); font-size: 0.75rem; margin-bottom: 0.6rem;">
-                                    Your shift has been logged.</div>
-                                <div style="font-size: 0.72rem; color: #94a3b8;">← swipe to dismiss</div>
+                <p class="demo-label">How Habit Override produces the error — swipe each card left</p>
+                <div class="demo-pair">
+                    <div class="demo-col">
+                        <div class="demo-clip">
+                            <div id="ho-card-a" class="demo-card demo-card--swipe"
+                                style="animation: ho-nudge 2.8s ease 0.7s infinite;">
+                                <div class="demo-card-title">Shift Ended</div>
+                                <div class="demo-card-body">Your shift has been logged.</div>
+                                <div class="demo-card-hint">← swipe to dismiss</div>
                             </div>
                         </div>
-                        <div id="ho-result-a"
-                            style="display: none; margin-top: 0.5rem; font-size: 0.75rem; color: var(--secondary-text);">
-                            ✓ Dismissed. Correct action.</div>
+                        <div id="ho-result-a" class="demo-inline-result">✓ Dismissed. Correct action.</div>
                     </div>
-                    <div style="flex: 1; min-width: 160px;">
-                        <div style="overflow: hidden; border-radius: 8px;">
-                            <div id="ho-card-b"
-                                style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem; cursor: grab; user-select: none; touch-action: pan-y; animation: ho-nudge-b 2.8s ease 1.45s infinite;">
-                                <div
-                                    style="font-weight: 600; color: var(--dark-text); font-size: 0.82rem; margin-bottom: 0.2rem;">
-                                    Conveyor Alarm</div>
-                                <div style="color: var(--secondary-text); font-size: 0.75rem; margin-bottom: 0.6rem;">
-                                    High-risk zone — review required.</div>
-                                <div style="font-size: 0.72rem; color: #94a3b8;">← swipe to dismiss</div>
+                    <div class="demo-col">
+                        <div class="demo-clip">
+                            <div id="ho-card-b" class="demo-card demo-card--swipe"
+                                style="animation: ho-nudge 2.8s ease 1.45s infinite;">
+                                <div class="demo-card-title">Conveyor Alarm</div>
+                                <div class="demo-card-body">High-risk zone — review required.</div>
+                                <div class="demo-card-hint">← swipe to dismiss</div>
                             </div>
                         </div>
-                        <div id="ho-result-b"
-                            style="display: none; margin-top: 0.5rem; font-size: 0.75rem; color: #991b1b; font-weight: 500;">
-                            Hazard unaddressed. The gesture felt identical.</div>
+                        <div id="ho-result-b" class="demo-inline-result demo-inline-result--err">Hazard unaddressed. The
+                            gesture felt identical.</div>
                     </div>
                 </div>
-                <div id="ho-reset" style="display: none; margin-top: 0.4rem;"><button onclick="resetHO()"
-                        style="background: none; border: none; color: #94a3b8; font-size: 0.72rem; cursor: pointer; text-decoration: underline; padding: 0;">Reset</button>
+                <div id="ho-reset" class="demo-reset-bar">
+                    <button class="demo-reset-btn" onclick="resetHO()">Reset</button>
                 </div>
-                <div class="demo-note">
-                    The interface assigned the same gesture to both. The worker's muscle memory did the rest.</div>
+                <div class="demo-note">The interface assigned the same gesture to both. The worker's muscle memory did
+                    the rest.</div>
             </div>
             <h3>Feedback Holes</h3>
             <p>When the system does not confirm an action, workers panic-click. A worker taps "Submit" five times
@@ -253,61 +282,40 @@
                 same failure at a different scale: the crew had no way to confirm which station held steering
                 control or whether their inputs were taking effect. The overcorrections were catastrophic.</p>
             <div class="demo-block">
-                <p class="demo-label">
-                    How Feedback Holes produce the error — tap Submit on each</p>
-                <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                <p class="demo-label">How Feedback Holes produce the error — tap Submit on each</p>
+                <div class="demo-pair">
                     <!-- Good interface -->
-                    <div style="flex: 1; min-width: 160px;">
-                        <div
-                            style="font-size: 0.72rem; font-weight: 600; color: #166534; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em;">
-                            With confirmation</div>
-                        <div
-                            style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.85rem;">
-                            <div
-                                style="font-size: 0.72rem; font-weight: 600; color: var(--dark-text); margin-bottom: 0.5rem;">
-                                Incident Report</div>
-                            <div
-                                style="font-size: 0.7rem; color: var(--secondary-text); background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 0.4rem 0.6rem; margin-bottom: 0.6rem;">
-                                Slip hazard — loading dock B</div>
+                    <div class="demo-col">
+                        <div class="demo-col-hd demo-col-hd--ok">With confirmation</div>
+                        <div class="demo-panel">
+                            <div class="demo-panel-hd">Incident Report</div>
+                            <div class="demo-field-mock">Slip hazard — loading dock B</div>
                             <div id="fh-good-btn-wrap">
-                                <button onclick="handleFHGood()"
-                                    style="background: #2563eb; color: white; border: none; border-radius: 4px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 600; cursor: pointer; width: 100%;">Submit</button>
+                                <button onclick="handleFHGood()" class="demo-btn demo-btn--primary">Submit</button>
                             </div>
-                            <div id="fh-good-confirm"
-                                style="display: none; margin-top: 0.5rem; font-size: 0.72rem; color: #166534; font-weight: 600;">
-                                ✓ Submitted — report received.</div>
+                            <div id="fh-good-confirm" class="demo-confirm-msg">✓ Submitted — report received.</div>
                         </div>
-                        <div id="fh-good-result"
-                            style="display: none; margin-top: 0.5rem; background: #f0fdf4; border: 1px solid #86efac; border-radius: 5px; padding: 0.5rem 0.65rem; font-size: 0.75rem; color: #166534;">
+                        <div id="fh-good-result" class="demo-result-box demo-result-box--ok">
                             <strong>1 incident logged.</strong> 1 actual event.
                         </div>
                     </div>
                     <!-- Bad interface -->
-                    <div style="flex: 1; min-width: 160px;">
-                        <div
-                            style="font-size: 0.72rem; font-weight: 600; color: #991b1b; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em;">
-                            No confirmation</div>
-                        <div
-                            style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.85rem;">
-                            <div
-                                style="font-size: 0.72rem; font-weight: 600; color: var(--dark-text); margin-bottom: 0.5rem;">
-                                Incident Report</div>
-                            <div
-                                style="font-size: 0.7rem; color: var(--secondary-text); background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 0.4rem 0.6rem; margin-bottom: 0.6rem;">
-                                Slip hazard — loading dock B</div>
+                    <div class="demo-col">
+                        <div class="demo-col-hd demo-col-hd--err">No confirmation</div>
+                        <div class="demo-panel">
+                            <div class="demo-panel-hd">Incident Report</div>
+                            <div class="demo-field-mock">Slip hazard — loading dock B</div>
                             <button id="fh-bad-btn" onclick="handleFHBad()"
-                                style="background: #2563eb; color: white; border: none; border-radius: 4px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 600; cursor: pointer; width: 100%;">Submit</button>
+                                class="demo-btn demo-btn--primary">Submit</button>
                         </div>
-                        <div id="fh-bad-result"
-                            style="display: none; margin-top: 0.5rem; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 5px; padding: 0.5rem 0.65rem; font-size: 0.75rem; color: #991b1b;">
-                        </div>
+                        <div id="fh-bad-result" class="demo-result-box demo-result-box--err"></div>
                     </div>
                 </div>
-                <div id="fh-reset-wrap" style="display: none; margin-top: 0.5rem;"><button onclick="resetFH()"
-                        style="background: none; border: none; color: #94a3b8; font-size: 0.72rem; cursor: pointer; text-decoration: underline; padding: 0;">Reset</button>
+                <div id="fh-reset-wrap" class="demo-reset-bar">
+                    <button class="demo-reset-btn" onclick="resetFH()">Reset</button>
                 </div>
-                <div class="demo-note">
-                    Same form. Same worker. The interface decided how many records were created.</div>
+                <div class="demo-note">Same form. Same worker. The interface decided how many records were created.
+                </div>
             </div>
             <h3>Signal Fragmentation</h3>
             <p>When form categories overlap, the same hazard type gets filed under different labels. Ten workers report
@@ -316,43 +324,29 @@
                 of one recurring failure. No pattern is visible. The data can no longer tell you what is about to
                 go wrong.</p>
             <div class="demo-block">
-                <p class="demo-label">
-                    How Signal Fragmentation hides a systemic failure</p>
-                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="text-align: center; min-width: 90px;">
-                            <div
-                                style="background: #fef2f2; border: 1px solid #fca5a5; border-radius: 6px; padding: 0.5rem 0.75rem; font-weight: 600; color: #991b1b; font-size: 0.82rem;">
-                                Recurring spills<br /><span style="font-weight: 400; font-size: 0.75rem;">10 reports,
-                                    one
-                                    quarter</span></div>
+                <p class="demo-label">How Signal Fragmentation hides a systemic failure</p>
+                <div class="demo-flow">
+                    <div class="demo-flow-row">
+                        <div class="demo-source">
+                            <div class="demo-source-card">Recurring spills<br /><span
+                                    style="font-weight: 400; font-size: 0.75rem;">10 reports, one quarter</span></div>
                         </div>
-                        <div style="color: #94a3b8; font-size: 1.2rem;">→</div>
-                        <div style="display: flex; flex-direction: column; gap: 0.35rem; flex: 1;">
-                            <div
-                                style="display: flex; justify-content: space-between; align-items: center; background: white; border: 1px solid #e2e8f0; border-radius: 4px; padding: 0.3rem 0.65rem;">
-                                <span>"Slip Hazard"</span><span
-                                    style="background: #f1f5f9; border-radius: 3px; padding: 0.1rem 0.4rem; font-weight: 600;">×3</span>
+                        <div class="demo-arrow">→</div>
+                        <div class="demo-splits">
+                            <div class="demo-split-row"><span>"Slip Hazard"</span><span class="demo-count">×3</span>
                             </div>
-                            <div
-                                style="display: flex; justify-content: space-between; align-items: center; background: white; border: 1px solid #e2e8f0; border-radius: 4px; padding: 0.3rem 0.65rem;">
-                                <span>"Housekeeping"</span><span
-                                    style="background: #f1f5f9; border-radius: 3px; padding: 0.1rem 0.4rem; font-weight: 600;">×4</span>
+                            <div class="demo-split-row"><span>"Housekeeping"</span><span class="demo-count">×4</span>
                             </div>
-                            <div
-                                style="display: flex; justify-content: space-between; align-items: center; background: white; border: 1px solid #e2e8f0; border-radius: 4px; padding: 0.3rem 0.65rem;">
-                                <span>"Fluid Leak"</span><span
-                                    style="background: #f1f5f9; border-radius: 3px; padding: 0.1rem 0.4rem; font-weight: 600;">×3</span>
+                            <div class="demo-split-row"><span>"Fluid Leak"</span><span class="demo-count">×3</span>
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="min-width: 90px;"></div>
-                        <div style="color: #94a3b8; font-size: 1.2rem;">→</div>
+                    <div class="demo-flow-row">
+                        <div class="demo-source"></div>
+                        <div class="demo-arrow">→</div>
                         <div style="flex: 1;">
-                            <div
-                                style="background: #fffbeb; border: 1px solid #fcd34d; border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.82rem; color: #92400e;">
-                                System sees: <span style="font-weight: 600;">3 small, unrelated problems</span></div>
+                            <div class="demo-conclusion-box">System sees: <span style="font-weight: 600;">3 small,
+                                    unrelated problems</span></div>
                         </div>
                     </div>
                 </div>
@@ -369,125 +363,83 @@
             <p>When a platform uses AI to suggest categories, it learns from the records already in the system. If
                 those records contain Smart Guess Errors, the AI repeats them.</p>
             <div class="demo-block">
-                <p class="demo-label">
-                    How Smart Guess Error produces the error — choose a path</p>
-                <div
-                    style="background: #fffbeb; border: 1px solid #fcd34d; border-radius: 6px; padding: 0.6rem 0.85rem; margin-bottom: 0.85rem; font-size: 0.78rem; color: #92400e;">
+                <p class="demo-label">How Smart Guess Error produces the error — choose a path</p>
+                <div class="demo-scenario">
                     <strong>You observe:</strong> oil spill on loading dock — slip hazard underfoot. You open the
                     incident form.
                 </div>
-                <div id="sge-form"
-                    style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.85rem; max-width: 320px;">
-                    <div style="font-size: 0.72rem; font-weight: 600; color: var(--dark-text); margin-bottom: 0.65rem;">
-                        Incident Report</div>
-                    <div style="font-size: 0.7rem; color: var(--secondary-text); margin-bottom: 0.35rem;">Hazard
-                        category</div>
-                    <div id="sge-prefill"
-                        style="display: flex; align-items: center; justify-content: space-between; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 0.35rem 0.65rem; margin-bottom: 0.65rem; font-size: 0.75rem;">
-                        <span style="color: #1e40af; font-weight: 600;">Housekeeping</span>
-                        <span
-                            style="font-size: 0.65rem; color: #3b82f6; background: #dbeafe; padding: 0.1rem 0.35rem; border-radius: 3px;">auto-filled</span>
+                <div id="sge-form" class="demo-form-card">
+                    <div class="demo-panel-hd" style="margin-bottom: 0.65rem;">Incident Report</div>
+                    <div class="demo-field-label">Hazard category</div>
+                    <div id="sge-prefill" class="demo-autofill">
+                        <span class="demo-autofill-val">Housekeeping</span>
+                        <span class="demo-autofill-tag">auto-filled</span>
                     </div>
                     <!-- Step 2: loading -->
-                    <div id="sge-loading"
-                        style="display: none; font-size: 0.72rem; color: #94a3b8; margin-bottom: 0.65rem; padding: 0.35rem 0;">
-                        Loading categories…</div>
+                    <div id="sge-loading" class="demo-loading">Loading categories…</div>
                     <!-- Step 3: dropdown -->
-                    <div id="sge-dropdown-wrap" style="display: none; margin-bottom: 0.65rem;">
-                        <div style="font-size: 0.7rem; color: var(--secondary-text); margin-bottom: 0.3rem;">Select
-                            correct category <span style="color: #94a3b8;">(scroll to find)</span></div>
-                        <div
-                            style="border: 1px solid #e2e8f0; border-radius: 4px; max-height: 100px; overflow-y: scroll; font-size: 0.72rem;">
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Administrative — Other</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Chemical Exposure</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Electrical Hazard</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Equipment Failure</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Housekeeping</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Manual Handling</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Near Miss — General</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Noise Exposure</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Ergonomic Risk</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--dark-text); font-weight: 600;">
-                                Slip / Trip / Fall</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; border-bottom: 1px solid #f1f5f9; color: var(--secondary-text);">
-                                Struck By Object</div>
-                            <div onclick="sgeSelect(this)"
-                                style="padding: 0.35rem 0.65rem; cursor: pointer; color: var(--secondary-text);">Working
-                                at Height</div>
+                    <div id="sge-dropdown-wrap" class="demo-dropdown-wrap">
+                        <div class="demo-dropdown-hint">Select correct category <span style="color: #94a3b8;">(scroll to
+                                find)</span></div>
+                        <div class="demo-dropdown">
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Administrative — Other</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Chemical Exposure</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Electrical Hazard</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Equipment Failure</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Housekeeping</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Manual Handling</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Near Miss — General</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Noise Exposure</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Ergonomic Risk</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item"
+                                style="color: #0D1B2A; font-weight: 600;">Slip / Trip / Fall</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Struck By Object</div>
+                            <div onclick="sgeSelect(this)" class="demo-dropdown-item">Working at Height</div>
                         </div>
                     </div>
                     <!-- Step 4: override confirmation -->
-                    <div id="sge-confirm-wrap"
-                        style="display: none; background: #fffbeb; border: 1px solid #fcd34d; border-radius: 6px; padding: 0.6rem 0.75rem; margin-bottom: 0.65rem; font-size: 0.72rem; color: #92400e;">
-                        <div style="margin-bottom: 0.5rem;">The suggested category is based on similar reports at your
-                            site. Override it?</div>
-                        <div style="display: flex; gap: 0.4rem;">
-                            <button onclick="sgeKeep()"
-                                style="flex: 1; background: #2563eb; color: white; border: none; border-radius: 4px; padding: 0.35rem 0.5rem; font-size: 0.72rem; font-weight: 600; cursor: pointer;">Keep
-                                Suggested</button>
-                            <button onclick="sgeOverride()"
-                                style="flex: 1; background: white; color: #92400e; border: 1px solid #fcd34d; border-radius: 4px; padding: 0.35rem 0.5rem; font-size: 0.72rem; cursor: pointer;">Override</button>
+                    <div id="sge-confirm-wrap" class="demo-warn-box">
+                        <div class="demo-warn-box-msg">The suggested category is based on similar reports at your site.
+                            Override it?</div>
+                        <div class="demo-btn-row">
+                            <button onclick="sgeKeep()" class="demo-btn demo-btn--primary"
+                                style="font-size: 0.72rem; padding: 0.35rem 0.5rem;">Keep Suggested</button>
+                            <button onclick="sgeOverride()" class="demo-btn demo-btn--secondary"
+                                style="color: #92400e; border-color: #fcd34d; font-size: 0.72rem; padding: 0.35rem 0.5rem;">Override</button>
                         </div>
                     </div>
                     <!-- Step 5: reason textarea -->
-                    <div id="sge-reason-wrap" style="display: none; margin-bottom: 0.65rem;">
-                        <div style="font-size: 0.7rem; color: var(--secondary-text); margin-bottom: 0.3rem;">Reason for
-                            overriding suggested category <span style="color: #ef4444;">*required</span></div>
+                    <div id="sge-reason-wrap" class="demo-reason-wrap">
+                        <div class="demo-reason-label">Reason for overriding suggested category <span
+                                style="color: #ef4444;">*required</span></div>
                         <textarea id="sge-reason-input" oninput="sgeCheckReason()"
                             placeholder="Describe why the suggested category is incorrect…"
-                            style="width: 100%; box-sizing: border-box; border: 1px solid #e2e8f0; border-radius: 4px; padding: 0.4rem 0.6rem; font-size: 0.72rem; font-family: inherit; resize: none; height: 56px; color: var(--dark-text);"></textarea>
-                        <button disabled="" id="sge-submit-final" onclick="sgeSubmitCorrected()"
-                            style="width: 100%; margin-top: 0.4rem; background: #e2e8f0; color: #94a3b8; border: none; border-radius: 4px; padding: 0.4rem 0.5rem; font-size: 0.75rem; font-weight: 600; cursor: not-allowed;">Submit</button>
+                            class="demo-textarea"></textarea>
+                        <button disabled id="sge-submit-final" onclick="sgeSubmitCorrected()" class="demo-btn"
+                            style="margin-top: 0.4rem; background: #e2e8f0; color: #94a3b8; cursor: not-allowed;">Submit</button>
                     </div>
                     <!-- Step 1: initial buttons -->
-                    <div id="sge-submit-wrap" style="display: flex; gap: 0.5rem;">
-                        <button onclick="sgeAccept()"
-                            style="flex: 1; background: #2563eb; color: white; border: none; border-radius: 4px; padding: 0.4rem 0.5rem; font-size: 0.75rem; font-weight: 600; cursor: pointer;">Accept</button>
-                        <button onclick="sgeCorrect()"
-                            style="flex: 1; background: white; color: #64748b; border: 1px solid #e2e8f0; border-radius: 4px; padding: 0.4rem 0.5rem; font-size: 0.75rem; cursor: pointer;">Correct
-                            it</button>
+                    <div id="sge-submit-wrap" class="demo-btn-row">
+                        <button onclick="sgeAccept()" class="demo-btn demo-btn--primary">Accept</button>
+                        <button onclick="sgeCorrect()" class="demo-btn demo-btn--secondary">Correct it</button>
                     </div>
                 </div>
-                <div id="sge-result-accept"
-                    style="display: none; margin-top: 0.75rem; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 6px; padding: 0.65rem 0.85rem; font-size: 0.78rem; color: #991b1b;">
+                <div id="sge-result-accept" class="demo-result-box demo-result-box--err demo-result-box--lg">
                     <strong>Logged as: Housekeeping.</strong> Actual hazard: Slip / Trip / Fall. 1 tap. Wrong record.
                 </div>
-                <div id="sge-result-keep"
-                    style="display: none; margin-top: 0.75rem; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 6px; padding: 0.65rem 0.85rem; font-size: 0.78rem; color: #991b1b;">
+                <div id="sge-result-keep" class="demo-result-box demo-result-box--err demo-result-box--lg">
                     <strong>Logged as: Housekeeping.</strong> The interface offered an exit and you took it. So does
                     every worker who gets this far.
                 </div>
-                <div id="sge-result-correct"
-                    style="display: none; margin-top: 0.75rem; background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 0.65rem 0.85rem; font-size: 0.78rem; color: #166534;">
+                <div id="sge-result-correct" class="demo-result-box demo-result-box--ok demo-result-box--lg">
                     <strong>Logged correctly as: Slip / Trip / Fall.</strong> 6 steps, a loading wait, a warning, and a
                     mandatory justification. Most workers filed it as Housekeeping.
                 </div>
-                <div id="sge-reset" style="display: none; margin-top: 0.4rem;"><button onclick="resetSGE()"
-                        style="background: none; border: none; color: #94a3b8; font-size: 0.72rem; cursor: pointer; text-decoration: underline; padding: 0;">Reset</button>
+                <div id="sge-reset" class="demo-reset-bar">
+                    <button onclick="resetSGE()" class="demo-reset-btn">Reset</button>
                 </div>
-                <div class="demo-note">
-                    The interface made one path take one step and the other take six. The worker made a rational choice.
-                </div>
+                <div class="demo-note">The interface made one path take one step and the other take six. The worker made
+                    a rational choice.</div>
             </div>
             <h3>Alert Saturation</h3>
             <p>When permit approvals, training alerts, and shift handover notifications all arrive looking identical,
@@ -502,32 +454,22 @@
                 system generated more than 3,700 alarms in 12 hours — as many as 281 in a single 10-minute
                 period — and operators could no longer distinguish critical from routine.</p>
             <div class="demo-block">
-                <p class="demo-label">
-                    How Alert Saturation removes the ability to distinguish critical from routine</p>
-                <div id="as-stream"
-                    style="display: flex; flex-direction: column; gap: 0.3rem; max-width: 420px; min-height: 2rem;">
+                <p class="demo-label">How Alert Saturation removes the ability to distinguish critical from routine</p>
+                <div id="as-stream" class="demo-stream"></div>
+                <div id="as-start-wrap" class="demo-start-wrap">
+                    <button onclick="asStart()" class="demo-btn demo-btn--primary"
+                        style="width: auto; padding: 0.4rem 1rem;">Start shift</button>
                 </div>
-                <div id="as-start-wrap" style="margin-top: 0.75rem;">
-                    <button onclick="asStart()"
-                        style="background: #2563eb; color: white; border: none; border-radius: 4px; padding: 0.4rem 1rem; font-size: 0.75rem; font-weight: 600; cursor: pointer;">Start
-                        shift</button>
-                </div>
-                <div id="as-result" style="display: none; margin-top: 0.75rem;">
-                    <div
-                        style="font-size: 0.72rem; font-weight: 600; color: var(--secondary-text); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
-                        What you dismissed</div>
-                    <div id="as-result-list"
-                        style="display: flex; flex-direction: column; gap: 0.25rem; max-width: 420px;"></div>
-                    <div id="as-result-note"
-                        style="margin-top: 0.75rem; font-size: 0.78rem; color: #991b1b; font-weight: 500;"></div>
-                    <div style="margin-top: 0.4rem;">
-                        <button onclick="asReset()"
-                            style="background: none; border: none; color: #94a3b8; font-size: 0.72rem; cursor: pointer; text-decoration: underline; padding: 0;">Reset</button>
+                <div id="as-result" class="demo-result-section">
+                    <div class="demo-result-hd">What you dismissed</div>
+                    <div id="as-result-list" class="demo-result-list"></div>
+                    <div id="as-result-note" class="demo-result-note"></div>
+                    <div style="margin-top: 0.5rem;">
+                        <button onclick="asReset()" class="demo-reset-btn">Reset</button>
                     </div>
                 </div>
-                <div class="demo-note">
-                    The interface gave every notification identical visual weight. The worker's attention did the
-                    rest.</div>
+                <div class="demo-note">The interface gave every notification identical visual weight. The worker's
+                    attention did the rest.</div>
             </div>
             <h3>Physical Decoupling</h3>
             <p>When the interface allows a Lockout/Tagout verification or confined space atmospheric check to be logged
@@ -543,18 +485,12 @@
                 filed.
             </p>
             <div class="cta-diagnostic">
-                <i class="fa-solid fa-clipboard-check"
-                    style="font-size: 1.5rem; color: var(--primary-blue); flex-shrink: 0;"></i>
-                <div style="flex: 1; min-width: 200px;">
-                    <div style="font-weight: 700; color: var(--dark-text); margin-bottom: 3px; font-size: 0.92rem;">
-                        Interface Risk Diagnostic</div>
-                    <div style="font-size: 0.82rem; color: var(--secondary-text); line-height: 1.5;">21 observable
-                        signals across all 7 mechanisms. Work through the checklist against your platform — no data
-                        upload required.</div>
+                <div class="cta-diagnostic-body">
+                    <div class="cta-diagnostic-title">Interface Risk Diagnostic</div>
+                    <div class="cta-diagnostic-desc">21 observable signals across all 7 mechanisms. Work through the
+                        checklist against your platform — no data upload required.</div>
                 </div>
-                <a href="../tools/interface-risk-diagnostic.html"
-                    style="display: inline-flex; align-items: center; gap: 6px; background: var(--primary-blue); color: #fff; font-weight: 600; font-size: 0.82rem; padding: 9px 18px; border-radius: 6px; text-decoration: none; white-space: nowrap; flex-shrink: 0;">Run
-                    the diagnostic <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="../tools/interface-risk-diagnostic.html" class="cta-diagnostic-link">Run the diagnostic →</a>
             </div>
             <p>Digital EHS platforms produce more reports, faster, and with better site-wide visibility than paper.
                 They also introduce a failure mode that paper contained by accident — an error in one record stayed
@@ -685,19 +621,17 @@
                 This does not eliminate interface risk. It just changes where the interface is. The interface moves from
                 the screen to the question the system asks and whether the worker hears back that their report was
                 received.</p>
-            <div class="test-card" style="border-left: 4px solid var(--primary-blue);">
-                <h4>Voice Reporting: The Same Risks Apply</h4>
-                <p>When the interface is a model rather than a screen, the failure modes change in kind — but the
-                    governance question does not: does the system accurately capture what was observed, and does the
-                    person who made the report know it was received? If a voice-activated reporting tool requires a
-                    rigid category structure that doesn't match the way workers describe hazards, the same errors occur.
-                    Audit the voice tool the same way: check that the
-                    system doesn't miscategorize a report just because the worker couldn't find the right word. Your
-                    Gemba walk for voice tools tests two things: does the system understand a hazard described in local
-                    site slang? And does the worker know the report was received and sent to the right place — or are
-                    they submitting into silence? A voice tool with no confirmation creates exactly the same problem as
-                    a form with no confirmation that the report went through.</p>
-            </div>
+            <h4>Voice Reporting: The Same Risks Apply</h4>
+            <p>When the interface is a model rather than a screen, the failure modes change in kind — but the
+                governance question does not: does the system accurately capture what was observed, and does the
+                person who made the report know it was received? If a voice-activated reporting tool requires a
+                rigid category structure that doesn't match the way workers describe hazards, the same errors occur.
+                Audit the voice tool the same way: check that the
+                system doesn't miscategorize a report just because the worker couldn't find the right word. Your
+                Gemba walk for voice tools tests two things: does the system understand a hazard described in local
+                site slang? And does the worker know the report was received and sent to the right place — or are
+                they submitting into silence? A voice tool with no confirmation creates exactly the same problem as
+                a form with no confirmation that the report went through.</p>
             <h2>Conclusion</h2>
             <p>If a worker enters the wrong data, the interface is the first place to look — not the worker. If a
                 leader acts on corrupted data, it is a data integrity failure that started with the interface. The
@@ -768,6 +702,7 @@
         </div>
     </footer>
     <script src="../script.js"></script>
+    <script src="digital-error-traps.js"></script>
 </body>
 
 </html>

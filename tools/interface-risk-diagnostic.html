@@ -37,12 +37,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Poppins:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
     <style>
         :root {
-            --navy: #1a2e4a;
-            --blue: #1F4E79;
-            --blue-mid: #2980b9;
+            --navy: #0D1B2A;
+            --blue: #E05000;
+            --blue-mid: #E05000;
             --red: #dc2626;
             --red-light: #fef2f2;
             --amber: #b45309;
@@ -59,15 +58,19 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
             background: var(--bg);
-            color: #1e293b;
             margin: 0;
+        }
+
+        .hero,
+        .tool-wrapper {
+            font-family: 'Poppins', sans-serif;
+            color: #1e293b;
         }
 
         /* ── Hero ── */
         .hero {
-            background: linear-gradient(135deg, #0f1f35 0%, #1F4E79 60%, #2563eb 100%);
+            background: #0D1B2A;
             color: #fff;
             padding: 56px 32px 48px;
             text-align: center;
@@ -77,7 +80,7 @@
             display: inline-block;
             background: rgba(255, 255, 255, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 20px;
+            border-radius: 4px;
             padding: 4px 14px;
             font-size: 0.75rem;
             font-weight: 600;
@@ -114,7 +117,7 @@
         .hero-badge {
             background: rgba(255, 255, 255, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 20px;
+            border-radius: 4px;
             padding: 5px 14px;
             font-size: 0.78rem;
             font-weight: 500;
@@ -130,7 +133,7 @@
         /* ── Intro card ── */
         .intro-card {
             background: #fff;
-            border-radius: 10px;
+            border-radius: 4px;
             border: 1px solid var(--border);
             padding: 24px 28px;
             margin-bottom: 28px;
@@ -147,7 +150,7 @@
         .score-bar {
             background: #fff;
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: 4px;
             padding: 18px 24px;
             margin-bottom: 28px;
             display: flex;
@@ -213,7 +216,7 @@
             font-size: 0.78rem;
             font-weight: 600;
             padding: 4px 12px;
-            border-radius: 20px;
+            border-radius: 4px;
             white-space: nowrap;
         }
 
@@ -240,7 +243,7 @@
         .print-btn {
             background: none;
             border: 1.5px solid var(--border);
-            border-radius: 7px;
+            border-radius: 4px;
             padding: 8px 16px;
             font-family: 'Poppins', sans-serif;
             font-size: 0.8rem;
@@ -262,7 +265,7 @@
         .mechanism-card {
             background: #fff;
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: 4px;
             margin-bottom: 16px;
             overflow: hidden;
             transition: box-shadow 0.2s;
@@ -328,7 +331,7 @@
             font-size: 0.75rem;
             font-weight: 600;
             padding: 3px 10px;
-            border-radius: 12px;
+            border-radius: 4px;
             background: var(--bg);
             color: var(--slate);
             border: 1px solid var(--border);
@@ -392,7 +395,7 @@
             align-items: flex-start;
             gap: 12px;
             padding: 10px 12px;
-            border-radius: 7px;
+            border-radius: 4px;
             margin-bottom: 6px;
             border: 1.5px solid transparent;
             cursor: pointer;
@@ -434,7 +437,7 @@
         .results-section {
             background: #fff;
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: 4px;
             padding: 24px 28px;
             margin-top: 28px;
         }
@@ -491,7 +494,7 @@
             font-size: 0.73rem;
             font-weight: 600;
             padding: 2px 9px;
-            border-radius: 10px;
+            border-radius: 4px;
             min-width: 74px;
             text-align: center;
         }
@@ -515,9 +518,9 @@
         .next-steps {
             margin-top: 20px;
             padding: 18px 20px;
-            background: #f0f7ff;
-            border: 1px solid #bcd4ea;
-            border-radius: 8px;
+            background: #FEF7F3;
+            border: 1px solid #F4B090;
+            border-radius: 4px;
             font-size: 0.83rem;
             color: #334155;
             line-height: 1.65;
@@ -556,7 +559,7 @@
             }
 
             .hero {
-                background: #1F4E79 !important;
+                background: #0D1B2A !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -625,10 +628,10 @@
         <p>21 observable signals across 7 failure mechanisms. Work through the checklist against your current EHS
             platform. No data upload required.</p>
         <div class="hero-badges">
-            <span class="hero-badge"><i class="fa-solid fa-check-double"></i> 21 signals</span>
-            <span class="hero-badge"><i class="fa-solid fa-layer-group"></i> 7 mechanisms</span>
-            <span class="hero-badge"><i class="fa-solid fa-lock"></i> No data shared</span>
-            <span class="hero-badge"><i class="fa-solid fa-print"></i> Print-ready</span>
+            <span class="hero-badge">21 signals</span>
+            <span class="hero-badge">7 mechanisms</span>
+            <span class="hero-badge">No data shared</span>
+            <span class="hero-badge">Print-ready</span>
         </div>
     </div>
     <div class="tool-wrapper">
@@ -638,7 +641,7 @@
             normal day-to-day use. A mechanism with two or more signals checked is active in your platform and should be
             treated as an unregistered hazard. The evidence and field examples behind each mechanism are in: <a
                 href="../insights/digital-error-traps-in-safety-apps.html"
-                style="color: var(--blue); font-weight: 600;">The Digital Error Trap</a>.
+                style="color: #E05000; font-weight: 600;">The Digital Error Trap</a>.
         </div>
         <!-- Score bar -->
         <div class="score-bar" id="scoreBar">
@@ -654,7 +657,7 @@
             </div>
             <div class="score-verdict verdict-low" id="scoreVerdict">Clear</div>
             <button class="print-btn" onclick="window.print()">
-                <i class="fa-solid fa-print"></i> Print
+                Print
             </button>
         </div>
         <!-- Mechanism 1 -->
@@ -666,7 +669,7 @@
                     <div class="mech-subtitle">Muscle memory replaces risk assessment</div>
                 </div>
                 <div class="mech-status" id="status-mech-1">0 / 3</div>
-                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+                <span class="mech-chevron">▾</span>
             </div>
             <div class="mechanism-body">
                 <div class="mech-description">
@@ -702,7 +705,7 @@
                     <div class="mech-subtitle">No confirmation = duplicate or lost records</div>
                 </div>
                 <div class="mech-status" id="status-mech-2">0 / 3</div>
-                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+                <span class="mech-chevron">▾</span>
             </div>
             <div class="mechanism-body">
                 <div class="mech-description">
@@ -738,7 +741,7 @@
                     <div class="mech-subtitle">Category structure splits the same hazard</div>
                 </div>
                 <div class="mech-status" id="status-mech-3">0 / 3</div>
-                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+                <span class="mech-chevron">▾</span>
             </div>
             <div class="mechanism-body">
                 <div class="mech-description">
@@ -774,7 +777,7 @@
                     <div class="mech-subtitle">The interface made the wrong choice first</div>
                 </div>
                 <div class="mech-status" id="status-mech-4">0 / 3</div>
-                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+                <span class="mech-chevron">▾</span>
             </div>
             <div class="mechanism-body">
                 <div class="mech-description">
@@ -811,7 +814,7 @@
                     <div class="mech-subtitle">Volume eliminates the ability to distinguish critical from routine</div>
                 </div>
                 <div class="mech-status" id="status-mech-5">0 / 3</div>
-                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+                <span class="mech-chevron">▾</span>
             </div>
             <div class="mechanism-body">
                 <div class="mech-description">
@@ -849,7 +852,7 @@
                     <div class="mech-subtitle">The record and the physical act separate</div>
                 </div>
                 <div class="mech-status" id="status-mech-6">0 / 3</div>
-                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+                <span class="mech-chevron">▾</span>
             </div>
             <div class="mechanism-body">
                 <div class="mech-description">
@@ -886,7 +889,7 @@
                     <div class="mech-subtitle">The form is not completed — no record exists</div>
                 </div>
                 <div class="mech-status" id="status-mech-7">0 / 3</div>
-                <i class="fa-solid fa-chevron-down mech-chevron"></i>
+                <span class="mech-chevron">▾</span>
             </div>
             <div class="mechanism-body">
                 <div class="mech-description">
@@ -916,7 +919,7 @@
         </div>
         <!-- Results summary -->
         <div class="results-section">
-            <div class="results-title"><i class="fa-solid fa-chart-bar"></i> Mechanism Summary</div>
+            <div class="results-title">Mechanism Summary</div>
             <div id="resultRows">
                 <!-- Populated by JS -->
             </div>
@@ -925,7 +928,7 @@
                 Work through the checklist. Come back to this section when you have completed at least one mechanism.
             </div>
             <a class="article-link" href="../insights/digital-error-traps-in-safety-apps.html">
-                <i class="fa-solid fa-arrow-left"></i> The Digital Error Trap — full article and evidence base
+                ← The Digital Error Trap — full article and evidence base
             </a>
         </div>
     </div>

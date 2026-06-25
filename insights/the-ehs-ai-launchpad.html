@@ -34,6 +34,16 @@
         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
         rel="stylesheet" />
     <link href="../styles.css" rel="stylesheet" />
+    <style>
+        .calc-range { width: 100%; accent-color: #E05000; margin: 3px 0 0; display: block; }
+        .calc-slider-group { margin-bottom: 0.6rem; }
+        .calc-slider-label { display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: #0D1B2A; }
+        .calc-slider-val { font-family: 'IBM Plex Mono', monospace; font-weight: 600; color: #E05000; font-size: 0.75rem; }
+        .calc-driver-item { margin-bottom: 0.4rem; }
+        .calc-driver-label { display: flex; justify-content: space-between; font-size: 0.72rem; color: #0D1B2A; margin-bottom: 3px; }
+        .calc-driver-bg { height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }
+        .calc-driver-fill { height: 100%; background: #E05000; border-radius: 3px; transition: width 0.2s; }
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -178,14 +188,13 @@
                 Clear rules (a person crossing a yellow line) that CV handles easily.</p>
             <p>Or classification tasks: "We want to use NLP (Text-reading AI) to auto-classify 'Life-Saving Rule'
                 violations in near-miss reports."</p>
-            <div class="technical-callout">
-                <p><strong>Interactive Tool:</strong> To demonstrate this exact capability, I developed a public
+            <div class="art-notice">
+                <strong>Interactive Tool:</strong> To demonstrate this exact capability, I developed a public
                     <a href="https://incident-classification-tool.streamlit.app"
                         target="_blank">Incident
                         Classification Tool</a>. It
                     was trained on 10 years of OSHA severe injury reports. You can test it to see how machine learning
                     models take a messy narrative and assign it a structured OIICS code.
-                </p>
             </div>
             <h3>The Data Science Lens: Why These Work</h3>
             <p>From a statistical perspective, these aren't random choices. Computer Vision is unique because it
@@ -322,136 +331,89 @@
                 Conveyor 3. If you clear that PM, the risk score drops by half."</p>
             <p>That is practical intelligence. It builds trust because the logic is visible, auditable, and
                 undeniably linked to operational reality.</p>
-            <div class="technical-callout">
-                <h4>Interactive Glass Box Calculator</h4>
-                <!-- Preset Scenarios -->
-                <div class="scenario-presets">
-                    <div class="presets-label">Quick Scenarios</div>
-                    <button class="preset-btn" data-scenario="perfect">
-                        <div class="preset-btn-title">✅ Perfect Operations</div>
-                        <div class="preset-btn-desc">All metrics green, ideal state</div>
-                    </button>
-                    <button class="preset-btn" data-scenario="crunch">
-                        <div class="preset-btn-title">⚡ Production Push</div>
-                        <div class="preset-btn-desc">High OT + PM Backlog</div>
-                    </button>
-                    <button class="preset-btn" data-scenario="maintenance">
-                        <div class="preset-btn-title">🔧 Maintenance Crisis</div>
-                        <div class="preset-btn-desc">Critical PM backlog</div>
-                    </button>
-                    <button class="preset-btn" data-scenario="training">
-                        <div class="preset-btn-title">📚 Training Gap</div>
-                        <div class="preset-btn-desc">Untrained workforce</div>
-                    </button>
-                    <button class="preset-btn" data-scenario="crisis">
-                        <div class="preset-btn-title">🚨 Multi-Factor Failure</div>
-                        <div class="preset-btn-desc">All systems critical</div>
-                    </button>
+            <div class="demo-block">
+                <div class="demo-label">Interactive Glass Box Calculator</div>
+
+                <!-- Preset scenarios -->
+                <p class="demo-result-hd">Quick Scenarios</p>
+                <div class="demo-btn-row" style="flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+                    <button class="demo-btn demo-btn--secondary" data-scenario="perfect">✅ Perfect</button>
+                    <button class="demo-btn demo-btn--secondary" data-scenario="crunch">⚡ Production Push</button>
+                    <button class="demo-btn demo-btn--secondary" data-scenario="maintenance">🔧 Maintenance Crisis</button>
+                    <button class="demo-btn demo-btn--secondary" data-scenario="training">📚 Training Gap</button>
+                    <button class="demo-btn demo-btn--secondary" data-scenario="crisis">🚨 Multi-Factor Failure</button>
                 </div>
-                <div class="calculator-section">
-                    <p><strong>Step 1: Train Your Model (Set Weights)</strong></p>
-                    <p class="small-text">Decide what matters most to your organization.</p>
-                    <div class="weight-settings">
-                        <div class="input-group">
-                            <label>Fatigue Weight <span id="w-ot-val">30%</span></label>
-                            <input id="w-ot-slider" max="100" min="0" type="range" value="30" />
-                        </div>
-                        <div class="input-group">
-                            <label>Reliability Weight <span id="w-pm-val">50%</span></label>
-                            <input id="w-pm-slider" max="100" min="0" type="range" value="50" />
-                        </div>
-                        <div class="input-group">
-                            <label>Training Weight <span id="w-train-val">20%</span></label>
-                            <input id="w-train-slider" max="100" min="0" type="range" value="20" />
-                        </div>
+
+                <!-- Step 1: Weights -->
+                <div class="demo-panel" style="margin-bottom: 0.75rem;">
+                    <div class="demo-panel-hd">Step 1: Set Weights</div>
+                    <p class="demo-card-hint" style="margin: 0 0 0.6rem;">Decide what matters most to your organisation.</p>
+                    <div class="calc-slider-group">
+                        <label class="calc-slider-label">Fatigue <span id="w-ot-val" class="calc-slider-val">30%</span></label>
+                        <input class="calc-range" id="w-ot-slider" max="100" min="0" type="range" value="30" />
+                    </div>
+                    <div class="calc-slider-group">
+                        <label class="calc-slider-label">Reliability <span id="w-pm-val" class="calc-slider-val">50%</span></label>
+                        <input class="calc-range" id="w-pm-slider" max="100" min="0" type="range" value="50" />
+                    </div>
+                    <div class="calc-slider-group" style="margin-bottom: 0;">
+                        <label class="calc-slider-label">Training <span id="w-train-val" class="calc-slider-val">20%</span></label>
+                        <input class="calc-range" id="w-train-slider" max="100" min="0" type="range" value="20" />
                     </div>
                 </div>
-                <div class="calculator-section calculator-divider">
-                    <p><strong>Step 2: Input Data (0-10 Scale)</strong></p>
-                    <p class="small-text">Enter the current status of your operations.</p>
-                    <div class="calculator-inputs">
-                        <div class="input-group">
-                            <label>Overtime Score <span id="ot-val">2</span></label>
-                            <input id="ot-slider" max="10" min="0" type="range" value="2" />
-                            <small>0 = No OT, 10 = High OT (&gt;20%)</small>
-                        </div>
-                        <div class="input-group">
-                            <label>Overdue PMs Score <span id="pm-val">3</span></label>
-                            <input id="pm-slider" max="10" min="0" type="range" value="3" />
-                            <small>0 = All Clear, 10 = Critical Backlog</small>
-                        </div>
-                        <div class="input-group">
-                            <label>Training Gaps Score <span id="train-val">2</span></label>
-                            <input id="train-slider" max="10" min="0" type="range" value="2" />
-                            <small>0 = 100% Trained, 10 = Critical Gaps</small>
-                        </div>
+
+                <!-- Step 2: Data -->
+                <div class="demo-panel" style="margin-bottom: 1rem;">
+                    <div class="demo-panel-hd">Step 2: Input Data (0–10)</div>
+                    <p class="demo-card-hint" style="margin: 0 0 0.6rem;">Enter the current status of your operations.</p>
+                    <div class="calc-slider-group">
+                        <label class="calc-slider-label">Overtime <span id="ot-val" class="calc-slider-val">2</span> <span class="demo-card-hint">(0 = none, 10 = &gt;20% OT)</span></label>
+                        <input class="calc-range" id="ot-slider" max="10" min="0" type="range" value="2" />
+                    </div>
+                    <div class="calc-slider-group">
+                        <label class="calc-slider-label">Overdue PMs <span id="pm-val" class="calc-slider-val">3</span> <span class="demo-card-hint">(0 = all clear, 10 = critical backlog)</span></label>
+                        <input class="calc-range" id="pm-slider" max="10" min="0" type="range" value="3" />
+                    </div>
+                    <div class="calc-slider-group" style="margin-bottom: 0;">
+                        <label class="calc-slider-label">Training Gaps <span id="train-val" class="calc-slider-val">2</span> <span class="demo-card-hint">(0 = fully trained, 10 = critical gaps)</span></label>
+                        <input class="calc-range" id="train-slider" max="10" min="0" type="range" value="2" />
                     </div>
                 </div>
-                <h3>The Difference in Action</h3>
-                <p>See how the same risk score looks in two different systems:</p>
-                <div class="dashboard-comparison">
-                    <!-- Black Box Card -->
-                    <div class="dashboard-card black-box-card">
-                        <div class="card-header">
-                            <span class="system-name">Legacy System</span>
-                            <span class="status-dot red"></span>
-                        </div>
-                        <div class="card-body">
-                            <div class="alert-box risk-low" id="bb-status-box">
-                                <span class="alert-icon">⚠️</span>
-                                <div class="alert-content">
-                                    <strong>System Alert</strong>
-                                    <div class="risk-metric">Score: <span id="bb-score">0.0</span></div>
-                                </div>
+
+                <!-- Output comparison -->
+                <p class="demo-result-hd" style="margin-top: 0;">Output Comparison</p>
+                <div class="demo-pair">
+                    <div class="demo-col">
+                        <div class="demo-card">
+                            <div class="demo-card-title" style="margin-bottom: 0.6rem;">Legacy System</div>
+                            <div class="demo-conclusion-box" id="bb-status-box" style="margin-bottom: 0.6rem;">
+                                ⚠️ <strong>System Alert</strong> — Score: <span id="bb-score">2.6</span>
                             </div>
-                            <div class="action-required">
-                                <span class="action-label">Recommended Action</span>
-                                <p class="action-text">STOP WORK IMMEDIATELY</p>
-                            </div>
+                            <div class="demo-result-hd" style="margin-bottom: 0.2rem;">Recommended Action</div>
+                            <div class="demo-card-body" id="bb-action">Monitor protocols.</div>
                         </div>
                     </div>
-                    <!-- Glass Box Card -->
-                    <div class="dashboard-card glass-box-card">
-                        <div class="card-header">
-                            <span class="system-name">Glass Box System</span>
-                            <span class="status-dot green"></span>
-                        </div>
-                        <div class="card-body">
-                            <div class="alert-box risk-diagnostic-low" id="gb-status-box">
-                                <span class="alert-icon">📊</span>
-                                <div class="alert-content">
-                                    <strong>Risk Diagnostic</strong>
-                                    <div class="risk-metric">Score: <span id="gb-score">0.0</span></div>
-                                </div>
+                    <div class="demo-col">
+                        <div class="demo-card">
+                            <div class="demo-card-title" style="margin-bottom: 0.6rem;">Glass Box System</div>
+                            <div class="demo-conclusion-box" id="gb-status-box" style="margin-bottom: 0.6rem;">
+                                📊 <strong>Risk Diagnostic</strong> — Score: <span id="gb-score">2.6</span>
                             </div>
-                            <div class="drivers-list">
-                                <span class="action-label">Risk Drivers</span>
-                                <div class="driver-item driver-ot">
-                                    <div class="driver-label"><span>Fatigue (Overtime)</span><span
-                                            id="gb-driver-ot">0%</span></div>
-                                    <div class="driver-bar-bg">
-                                        <div class="driver-bar-fill" id="bar-fill-ot" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="driver-item driver-pm">
-                                    <div class="driver-label"><span>Reliability (PMs)</span><span
-                                            id="gb-driver-pm">0%</span></div>
-                                    <div class="driver-bar-bg">
-                                        <div class="driver-bar-fill" id="bar-fill-pm" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="driver-item driver-train">
-                                    <div class="driver-label"><span>Training Gaps</span><span
-                                            id="gb-driver-train">0%</span></div>
-                                    <div class="driver-bar-bg">
-                                        <div class="driver-bar-fill" id="bar-fill-train" style="width: 0%"></div>
-                                    </div>
-                                </div>
+                            <div class="demo-result-hd" style="margin-bottom: 0.4rem;">Risk Drivers</div>
+                            <div class="calc-driver-item">
+                                <div class="calc-driver-label"><span>Fatigue (OT)</span><span id="gb-driver-ot">22%</span></div>
+                                <div class="calc-driver-bg"><div class="calc-driver-fill" id="bar-fill-ot" style="width: 22%"></div></div>
                             </div>
-                            <div class="action-required">
-                                <span class="action-label">Prescriptive Action</span>
-                                <p class="action-text" id="gb-action-text">Monitor all indicators.</p>
+                            <div class="calc-driver-item">
+                                <div class="calc-driver-label"><span>Reliability (PMs)</span><span id="gb-driver-pm">57%</span></div>
+                                <div class="calc-driver-bg"><div class="calc-driver-fill" id="bar-fill-pm" style="width: 57%"></div></div>
                             </div>
+                            <div class="calc-driver-item">
+                                <div class="calc-driver-label"><span>Training Gaps</span><span id="gb-driver-train">15%</span></div>
+                                <div class="calc-driver-bg"><div class="calc-driver-fill" id="bar-fill-train" style="width: 15%"></div></div>
+                            </div>
+                            <div class="demo-result-hd" style="margin-top: 0.6rem; margin-bottom: 0.2rem;">Prescriptive Action</div>
+                            <div class="demo-card-body" id="gb-action-text">Monitor all indicators.</div>
                         </div>
                     </div>
                 </div>
@@ -593,6 +555,98 @@
         </div>
     </footer>
     <script src="../script.js"></script>
+    <script>
+    (function () {
+        var SCENARIOS = {
+            perfect:     { ot: 0, pm: 0,  train: 0, wot: 30, wpm: 50, wtrain: 20 },
+            crunch:      { ot: 8, pm: 7,  train: 2, wot: 30, wpm: 50, wtrain: 20 },
+            maintenance: { ot: 2, pm: 9,  train: 1, wot: 30, wpm: 50, wtrain: 20 },
+            training:    { ot: 1, pm: 2,  train: 9, wot: 30, wpm: 50, wtrain: 20 },
+            crisis:      { ot: 9, pm: 9,  train: 9, wot: 30, wpm: 50, wtrain: 20 }
+        };
+        var ACTIONS = [
+            { max: 3,  bb: 'Monitor protocols.',        gb: 'Monitor all indicators.' },
+            { max: 5,  bb: 'Review safety protocols.',  gb: 'Reduce scheduled overtime. Check PM backlog.' },
+            { max: 7,  bb: 'ALERT: Elevated risk.',     gb: 'Schedule PM maintenance. Limit overtime to 10%.' },
+            { max: 10, bb: 'STOP WORK IMMEDIATELY',     gb: 'Stop high-risk tasks. Mandatory re-training. Escalate PMs.' }
+        ];
+        var STATUS_COLORS = {
+            low:  { bg: '#f0fdf4', border: '#86efac', color: '#166534' },
+            mid:  { bg: '#fffbeb', border: '#fcd34d', color: '#92400e' },
+            high: { bg: '#fef2f2', border: '#fca5a5', color: '#991b1b' }
+        };
+
+        function g(id) { return document.getElementById(id); }
+
+        function recalc() {
+            var ot    = +g('ot-slider').value,  pm    = +g('pm-slider').value,  train = +g('train-slider').value;
+            var wot   = +g('w-ot-slider').value, wpm   = +g('w-pm-slider').value, wtrain = +g('w-train-slider').value;
+            var wTotal = wot + wpm + wtrain || 1;
+            var nwot = wot / wTotal, nwpm = wpm / wTotal, nwtrain = wtrain / wTotal;
+            var score = ot * nwot + pm * nwpm + train * nwtrain;
+
+            // Value displays
+            g('ot-val').textContent    = ot;
+            g('pm-val').textContent    = pm;
+            g('train-val').textContent = train;
+            g('w-ot-val').textContent    = wot + '%';
+            g('w-pm-val').textContent    = wpm + '%';
+            g('w-train-val').textContent = wtrain + '%';
+
+            // Scores
+            var s = score.toFixed(1);
+            g('bb-score').textContent = s;
+            g('gb-score').textContent = s;
+
+            // Driver contribution percentages
+            var c0 = ot * nwot, c1 = pm * nwpm, c2 = train * nwtrain;
+            var ct = c0 + c1 + c2 || 1;
+            var p0 = Math.round(c0 / ct * 100), p1 = Math.round(c1 / ct * 100), p2 = Math.round(c2 / ct * 100);
+            g('gb-driver-ot').textContent    = p0 + '%';
+            g('gb-driver-pm').textContent    = p1 + '%';
+            g('gb-driver-train').textContent = p2 + '%';
+            g('bar-fill-ot').style.width    = p0 + '%';
+            g('bar-fill-pm').style.width    = p1 + '%';
+            g('bar-fill-train').style.width = p2 + '%';
+
+            // Action text
+            var action = ACTIONS[ACTIONS.length - 1];
+            for (var i = 0; i < ACTIONS.length; i++) {
+                if (score <= ACTIONS[i].max) { action = ACTIONS[i]; break; }
+            }
+            g('bb-action').textContent      = action.bb;
+            g('gb-action-text').textContent = action.gb;
+
+            // Status box colour
+            var c = score <= 3 ? STATUS_COLORS.low : score <= 6 ? STATUS_COLORS.mid : STATUS_COLORS.high;
+            [g('bb-status-box'), g('gb-status-box')].forEach(function (el) {
+                el.style.background = c.bg;
+                el.style.border     = '1px solid ' + c.border;
+                el.style.color      = c.color;
+            });
+        }
+
+        ['ot-slider','pm-slider','train-slider','w-ot-slider','w-pm-slider','w-train-slider'].forEach(function (id) {
+            g(id).addEventListener('input', recalc);
+        });
+
+        document.querySelectorAll('[data-scenario]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var s = SCENARIOS[btn.dataset.scenario];
+                if (!s) return;
+                g('ot-slider').value    = s.ot;
+                g('pm-slider').value    = s.pm;
+                g('train-slider').value = s.train;
+                g('w-ot-slider').value    = s.wot;
+                g('w-pm-slider').value    = s.wpm;
+                g('w-train-slider').value = s.wtrain;
+                recalc();
+            });
+        });
+
+        recalc();
+    })();
+    </script>
 </body>
 
 </html>

@@ -35,6 +35,190 @@
         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
         rel="stylesheet" />
     <link href="../styles.css" rel="stylesheet" />
+    <style>
+        .calculator-card {
+            background: #EEF2F5;
+            border: 1px solid #C8D4DC;
+            border-radius: 4px;
+            padding: 24px;
+            margin: 28px 0;
+        }
+        .calculator-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #0D1B2A;
+            margin-bottom: 6px;
+        }
+        .calc-intro {
+            font-size: 0.9rem;
+            color: #7A8E9C;
+            margin-bottom: 20px;
+        }
+        .calc-main {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .calc-inputs {
+            flex: 1;
+            min-width: 240px;
+        }
+        .calc-inputs > label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #7A8E9C;
+            margin-bottom: 8px;
+        }
+        .calc-input-row {
+            display: flex;
+            gap: 8px;
+            align-items: stretch;
+        }
+        .calc-input-row select {
+            flex: 1;
+            min-width: 0;
+            padding: 9px 12px;
+            border: 1px solid #C8D4DC;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.88em;
+            color: #0D1B2A;
+            background: #fff;
+        }
+        @media (max-width: 520px) {
+            .calc-input-row { flex-direction: column; }
+            .calc-btn { width: 100%; }
+        }
+        .calc-btn {
+            padding: 9px 16px;
+            background: #E05000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.88em;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .calc-btn:hover { background: #C84400; }
+        .calculator-card .field-list {
+            list-style: none;
+            margin: 12px 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .calculator-card .field-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            margin: 0;
+            background: #fff;
+            border: 1px solid #C8D4DC;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #0D1B2A;
+        }
+        .calculator-card .field-list li::before,
+        .calculator-card .field-list li::marker {
+            content: none;
+            display: none;
+        }
+        .field-name {
+            flex: 1;
+            min-width: 0;
+        }
+        .field-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+        .field-pts {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8em;
+            color: #7A8E9C;
+            white-space: nowrap;
+        }
+        .remove-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #7A8E9C;
+            font-size: 1.2em;
+            line-height: 1;
+            padding: 0 2px;
+        }
+        .remove-btn:hover { color: #dc2626; }
+        .calc-results {
+            min-width: 180px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .score-display {
+            background: #fff;
+            border: 1px solid #C8D4DC;
+            border-radius: 4px;
+            padding: 20px;
+            text-align: center;
+        }
+        .score-label {
+            display: block;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #7A8E9C;
+            margin-bottom: 6px;
+        }
+        .score-value {
+            display: block;
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'IBM Plex Mono', monospace;
+            color: #0D1B2A;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+        .score-status {
+            border-radius: 4px;
+            padding: 14px 16px;
+            border: 1px solid;
+        }
+        .score-status h4 {
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin: 0 0 4px;
+        }
+        .score-status p {
+            font-size: 0.82em;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .status-pass { background: #f0fdf4; border-color: #bbf7d0; color: #166534; }
+        .status-warn { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+        .status-fail { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+
+        .diagram-container {
+            background: #0D1B2A;
+            border-radius: 4px;
+            padding: 24px 16px;
+            margin: 28px 0;
+            overflow-x: auto;
+        }
+        .diagram-container svg {
+            display: block;
+            margin: 0 auto;
+            min-width: 480px;
+        }
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -226,8 +410,7 @@
                                 <option value="short_text">Short Typing (e.g., typing an Asset ID) - 5 Points</option>
                                 <option value="long_text">Long Typing (e.g., describing an issue) - 10 Points</option>
                             </select>
-                            <button class="calc-btn" id="add-field-btn"><i class="fa-solid fa-plus"></i> Add
-                                Field</button>
+                            <button class="calc-btn" id="add-field-btn">+ Add Field</button>
                         </div>
                         <ul class="field-list" id="field-list">
                             <!-- Dynamically populated fields -->
@@ -264,7 +447,7 @@
                 because of the hazards of the task. The diagram below shows how this flow works for a hot work permit.
             </p>
             <div class="diagram-container">
-                <svg fill="none" height="280" style="max-width:100%;height:auto;" viewbox="0 0 600 280" width="600"
+                <svg fill="none" height="280" viewbox="0 0 600 280" width="600"
                     xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <marker id="arrow" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6"
@@ -480,6 +663,74 @@
         </div>
     </footer>
     <script src="../script.js"></script>
+    <script>
+        (function () {
+            var FIELDS = {
+                tap:        { label: 'Simple Tap (Yes/No / checkbox)',          pts: 1 },
+                sensor:     { label: 'Sensor Scan (badge or QR code)',           pts: 1 },
+                dropdown:   { label: 'Dropdown Menu (search and select)',        pts: 3 },
+                photo:      { label: 'Taking a Photo',                           pts: 4 },
+                short_text: { label: 'Short Typing (e.g. Asset ID)',             pts: 5 },
+                long_text:  { label: 'Long Typing (e.g. hazard description)',    pts: 10 }
+            };
+
+            var STATUS = [
+                { max: 15,       cls: 'status-pass', scoreColor: '#166534',
+                  title: 'Pass: Optimized',
+                  desc:  'Friction is low. The form is suitable for frontline inspections, even in harsh site conditions.' },
+                { max: 39,       cls: 'status-warn', scoreColor: '#92400e',
+                  title: 'Warning: Risk of Bypass',
+                  desc:  'Above 15 points, workers under pressure will start typing random characters or skipping fields entirely. Review required fields and apply progressive disclosure.' },
+                { max: Infinity, cls: 'status-fail', scoreColor: '#991b1b',
+                  title: 'Fail: Unusable in the Field',
+                  desc:  'At 40+ points, completing the form competes directly with doing the physical work. The app will be bypassed. Redesign is required before this form ships.' }
+            ];
+
+            var addBtn   = document.getElementById('add-field-btn');
+            var selector = document.getElementById('field-selector');
+            var list     = document.getElementById('field-list');
+            var scoreEl  = document.getElementById('score-value');
+            var statusEl = document.getElementById('score-status');
+            var titleEl  = document.getElementById('status-title');
+            var descEl   = document.getElementById('status-desc');
+
+            var fields = [];
+
+            function render() {
+                var total = fields.reduce(function (s, f) { return s + f.pts; }, 0);
+                scoreEl.textContent = total;
+
+                list.innerHTML = '';
+                fields.forEach(function (f, i) {
+                    var li = document.createElement('li');
+                    li.innerHTML =
+                        '<span class="field-name">' + f.label + '</span>' +
+                        '<span class="field-right">' +
+                            '<span class="field-pts">+' + f.pts + ' pt' + (f.pts !== 1 ? 's' : '') + '</span>' +
+                            '<button class="remove-btn" aria-label="Remove field" data-idx="' + i + '">×</button>' +
+                        '</span>';
+                    list.appendChild(li);
+                });
+
+                var s = STATUS.find(function (s) { return total <= s.max; });
+                statusEl.className = 'score-status ' + s.cls;
+                titleEl.textContent = s.title;
+                descEl.textContent  = s.desc;
+                scoreEl.style.color = s.scoreColor;
+            }
+
+            addBtn.addEventListener('click', function () {
+                var type = selector.value;
+                var f = FIELDS[type];
+                if (f) { fields.push({ label: f.label, pts: f.pts }); render(); }
+            });
+
+            list.addEventListener('click', function (e) {
+                var btn = e.target.closest('[data-idx]');
+                if (btn) { fields.splice(parseInt(btn.dataset.idx, 10), 1); render(); }
+            });
+        })();
+    </script>
 </body>
 
 </html>

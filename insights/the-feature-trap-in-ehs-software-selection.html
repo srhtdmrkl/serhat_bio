@@ -33,6 +33,99 @@
         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
         rel="stylesheet" />
     <link href="../styles.css" rel="stylesheet" />
+    <link href="interactive-demo.css" rel="stylesheet" />
+    <style>
+        .toc-container {
+            background: #EEF2F5;
+            border: 1px solid #C8D4DC;
+            border-radius: 4px;
+            padding: 18px 20px;
+            margin: 28px 0;
+        }
+
+        .toc-container h3 {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #7A8E9C;
+            margin: 0 0 10px;
+        }
+
+        .toc-container ul {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .toc-container ul li::before {
+            display: none;
+        }
+
+        .toc-container ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc-container ul li a {
+            font-size: 0.88em;
+            color: #0D1B2A;
+            border-bottom: none;
+            text-decoration: underline;
+            text-decoration-color: #C8D4DC;
+        }
+
+        .toc-container ul li a:hover {
+            color: #E05000;
+        }
+
+        .technical-callout {
+            background: #FEF7F3;
+            border-left: 3px solid #E05000;
+            border-radius: 0 4px 4px 0;
+            padding: 16px 20px;
+            margin: 28px 0;
+        }
+
+        .technical-callout h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #E05000;
+            margin: 0 0 6px;
+        }
+
+        .technical-callout p {
+            font-size: 0.88em;
+            color: #0D1B2A;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .insight-box {
+            background: #EEF2F5;
+            border: 1px solid #C8D4DC;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 28px 0;
+        }
+
+        .insight-box p {
+            font-size: 0.88em;
+            color: #0D1B2A;
+            margin: 0;
+            line-height: 1.65;
+        }
+
+        .demo-instruction {
+            text-align: center;
+            font-size: 0.82em !important;
+            color: #7A8E9C !important;
+            margin: 0 0 10px !important;
+        }
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -200,7 +293,7 @@
                     <li><a href="#value-realization">The Value Realization Problem</a></li>
                     <li><a href="#user-first-strategy">The "User-First" Strategy</a></li>
                     <li><a href="#strategic-payoff">The Strategic Payoff</a></li>
-                    <li><a href="#bottom-line">The Bottom Line</a></li>
+
                 </ul>
             </div>
             <h2 id="capability-vs-usability">Capability vs. Usability: Why It Matters</h2>
@@ -311,7 +404,7 @@
             <div class="demo-container">
                 <!-- Complex App (The Trap) -->
                 <div>
-                    <div class="demo-label complex-label">The Compliance Trap</div>
+                    <div class="demo-label complex-label">Compliance-First Design</div>
                     <p class="demo-instruction">👆 Click through the steps</p>
                     <div class="phone-mockup">
                         <div class="phone-status-bar">
@@ -369,8 +462,7 @@
                                 <div class="screen-header">New Record</div>
                                 <div class="screen-content">
                                     <div class="error-box" id="complex-error" style="display: none;">
-                                        <i class="fa-solid fa-triangle-exclamation"></i> Please complete all
-                                        required fields
+                                        ⚠ Please complete all required fields
                                     </div>
                                     <label class="label-mock">Record Type *</label>
                                     <select class="input-mock" id="complex-record-type"
@@ -402,18 +494,15 @@
                                 <div class="screen-content">
                                     <div id="complex-photo-error"
                                         style="display: none; background: #ffebee; color: #c62828; padding: 8px; border-radius: 4px; margin-bottom: 10px; font-size: 12px;">
-                                        <i class="fa-solid fa-triangle-exclamation"></i> Please attach a photo
+                                        ⚠ Please attach a photo
                                     </div>
                                     <div class="photo-placeholder" id="complex-photo-placeholder"
                                         onclick="complexTakePhoto()">
-                                        <i class="fa-solid fa-camera" style="font-size: 24px; margin-bottom: 8px;"></i>
                                         <span style="font-size: 13px;">Tap to add photo</span>
                                     </div>
                                     <div class="photo-preview" id="complex-photo-preview" style="display: none;">
                                         <img src="https://placehold.co/300x120/png?text=Photo+Attached" />
-                                        <div class="attached-badge">
-                                            <i class="fa-solid fa-check"></i> Attached
-                                        </div>
+                                        <div class="attached-badge">✓ Attached</div>
                                     </div>
                                     <label class="label-mock">Photo Description *</label>
                                     <input class="input-mock" id="complex-photo-desc" onchange="complexClearError(this)"
@@ -426,7 +515,7 @@
                             </div>
                             <!-- Step 6: Success -->
                             <div class="success-screen" id="complex-step-6" style="display: none;">
-                                <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                                <div class="success-icon">✓</div>
                                 <h3>Submitted</h3>
                                 <p>ID: #INC-2026-8842</p>
                                 <button class="btn-mock primary-action" onclick="resetComplex()">Start Over</button>
@@ -436,7 +525,7 @@
                 </div>
                 <!-- Simple App (User Reality) -->
                 <div>
-                    <div class="demo-label simple-label">The User-First Design</div>
+                    <div class="demo-label simple-label">User-First Design</div>
                     <p class="demo-instruction">👆 Click through the steps</p>
                     <div class="phone-mockup">
                         <div class="phone-status-bar">
@@ -449,8 +538,7 @@
                                 <div class="screen-header simple-app-header">SafeTeam</div>
                                 <div class="screen-content" style="display: flex; flex-direction: column;">
                                     <button class="simple-btn-large" onclick="simpleOpenReport()">
-                                        <i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i>
-                                        Hazard
+                                        ⚠ Hazard
                                     </button>
                                     <p style="text-align: center; color: #666; font-size: 14px;">Tap to report
                                         hazard</p>
@@ -463,12 +551,12 @@
                                     <!-- Auto-detected Info (Editable) -->
                                     <div class="location-box" id="simple-location-display"
                                         onclick="simpleEditLocation()">
-                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>⊙</span>
                                         <div style="flex: 1;">
                                             <strong>Location detected:</strong><br />
                                             <span id="simple-location-text">Warehouse A, Zone 4</span>
                                         </div>
-                                        <i class="fa-solid fa-pen" style="font-size: 12px; opacity: 0.6;"></i>
+                                        <span style="font-size: 12px; opacity: 0.6;">✎</span>
                                     </div>
                                     <!-- Location Edit Mode (Hidden initially) -->
                                     <div id="simple-location-edit" style="display: none; margin-bottom: 20px;">
@@ -488,22 +576,19 @@
                                             </select>
                                             <button onclick="simpleSaveLocation()"
                                                 style="background: #2e7d32; color: white; border: none; border-radius: 4px; padding: 0 12px; cursor: pointer;">
-                                                <i class="fa-solid fa-check"></i>
+                                                ✓
                                             </button>
                                         </div>
                                     </div>
                                     <!-- Photo Action -->
                                     <div class="photo-placeholder" id="simple-photo-placeholder"
                                         onclick="simpleTakePhoto()">
-                                        <i class="fa-solid fa-camera" style="font-size: 30px; margin-bottom: 10px;"></i>
                                         <span>Tap to take photo</span>
                                     </div>
                                     <!-- Photo Preview (Hidden initially) -->
                                     <div class="photo-preview" id="simple-photo-preview" style="display: none;">
                                         <img src="https://placehold.co/300x150/png?text=Photo+Snapped" />
-                                        <div class="attached-badge">
-                                            <i class="fa-solid fa-check"></i> Attached
-                                        </div>
+                                        <div class="attached-badge">✓ Attached</div>
                                     </div>
                                     <!-- Description Input -->
                                     <div style="margin-bottom: 20px;">
@@ -514,7 +599,7 @@
                                                 style="margin-bottom: 0;"></textarea>
                                             <div class="voice-input-btn"
                                                 onclick="document.getElementById('simple-desc').value='Spilled oil near loading dock.'">
-                                                <i class="fa-solid fa-microphone"></i>
+                                                🎙
                                             </div>
                                         </div>
                                     </div>
@@ -533,8 +618,7 @@
                             <!-- Done -->
                             <div id="simple-done"
                                 style="display: none; height: 100%; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                                <div style="font-size: 50px; color: #2e7d32; margin-bottom: 20px;"><i
-                                        class="fa-solid fa-check"></i></div>
+                                <div style="font-size: 50px; color: #2e7d32; margin-bottom: 20px;">✓</div>
                                 <h3>Report Sent!</h3>
                                 <button class="btn-mock" onclick="resetSimple()"
                                     style="width: 80%; margin: 20px auto;">Done</button>
@@ -663,12 +747,6 @@
                 tracked the change. What you <em>can</em> know is that a system with 70% active user rates
                 is capturing more signal than one with 15%. More signal means better pattern recognition.
                 Better patterns mean earlier intervention. The math isn't precise, but the direction is clear.</p>
-            <div class="technical-callout">
-                <h4><i class="fa-solid fa-coins"></i>  The CFO Pitch</h4>
-                <p>Usability isn't a soft benefit. It's the difference between capturing data and not. License cost
-                    is noise; adoption rate is signal. Track active user rates and hazard reporting volume before
-                    and after implementation. The ROI will show itself.</p>
-            </div>
             <p>But realizing this ROI depends entirely on how the software is deployed.</p>
             <div class="insight-box">
                 <p><strong>Selection Is Only Half the Battle:</strong> Choosing usable software is necessary but not
@@ -681,25 +759,6 @@
                         EHS Software Implementation</a> and <a
                         href="ehs-software-strategic-implementation.html">Strategic
                         Implementation: A Phased Approach</a>.</p>
-            </div>
-            <h2 id="bottom-line">The Bottom Line</h2>
-            <p>Ultimately, you are not buying a database; you are buying a change in behavior. If the product does
-                not solve the user's need for speed and simplicity, the user will "churn". They will stop reporting.
-                In safety, "churn" means silence, and silence is dangerous.</p>
-            <p>The real question isn't what the software can do—it's what your people will actually do with it.</p>
-            <div class="test-card">
-                <h4>📋 5 Questions to Ask Every Vendor</h4>
-                <ol style="margin-top: 15px;">
-                    <li><strong>How many taps to report a hazard?</strong> If more than three, ask why.</li>
-                    <li><strong>Can you build this dashboard widget live, right now?</strong> Watch for the "export
-                        to Excel" escape hatch.</li>
-                    <li><strong>Which fields are truly mandatory by regulation?</strong> Demand the specific
-                        citation—not vendor opinion.</li>
-                    <li><strong>Can I pilot this with frontline workers before signing?</strong> Zero-training, real
-                        conditions.</li>
-                    <li><strong>What's the average time-to-insight for a safety trend question?</strong> If it's
-                        more than a few minutes, measured in hours, not seconds, keep looking.</li>
-                </ol>
             </div>
             <!-- Related Reading -->
             <div id="social-share-container"></div>
@@ -761,6 +820,106 @@
         </div>
     </footer>
     <script src="../script.js"></script>
+    <script>
+        // ── Complex app ──
+        function complexNext(step) {
+            document.getElementById('complex-step-' + step).style.display = 'none';
+            document.getElementById('complex-step-' + (step + 1)).style.display = '';
+        }
+
+        function complexClearError(el) {
+            el.classList.remove('input-error');
+            document.getElementById('complex-error').style.display = 'none';
+        }
+
+        function complexValidateForm() {
+            var rt = document.getElementById('complex-record-type').value;
+            var loc = document.getElementById('complex-location').value;
+            var dept = document.getElementById('complex-department').value;
+            var err = document.getElementById('complex-error');
+            if (!rt || !loc || !dept) {
+                err.style.display = 'block';
+                if (!rt) document.getElementById('complex-record-type').classList.add('input-error');
+                if (!loc) document.getElementById('complex-location').classList.add('input-error');
+                if (!dept) document.getElementById('complex-department').classList.add('input-error');
+                return;
+            }
+            err.style.display = 'none';
+            complexNext(4);
+        }
+
+        function complexTakePhoto() {
+            document.getElementById('complex-photo-placeholder').style.display = 'none';
+            document.getElementById('complex-photo-preview').style.display = 'block';
+            document.getElementById('complex-photo-error').style.display = 'none';
+        }
+
+        function complexValidatePhoto() {
+            var shown = document.getElementById('complex-photo-preview').style.display !== 'none';
+            if (!shown) { document.getElementById('complex-photo-error').style.display = 'block'; return; }
+            complexNext(5);
+        }
+
+        function resetComplex() {
+            for (var i = 1; i <= 6; i++) {
+                var s = document.getElementById('complex-step-' + i);
+                if (s) s.style.display = i === 1 ? '' : 'none';
+            }
+            document.getElementById('complex-error').style.display = 'none';
+            document.getElementById('complex-photo-error').style.display = 'none';
+            document.getElementById('complex-photo-placeholder').style.display = '';
+            document.getElementById('complex-photo-preview').style.display = 'none';
+            ['complex-record-type', 'complex-location', 'complex-department', 'complex-photo-desc'].forEach(function (id) {
+                document.getElementById(id).value = '';
+            });
+        }
+
+        // ── Simple app ──
+        function simpleOpenReport() {
+            document.getElementById('simple-home').style.display = 'none';
+            document.getElementById('simple-report').style.display = 'block';
+        }
+
+        function simpleEditLocation() {
+            document.getElementById('simple-location-display').style.display = 'none';
+            document.getElementById('simple-location-edit').style.display = 'block';
+        }
+
+        function simpleSaveLocation() {
+            var sel = document.getElementById('simple-location-input');
+            document.getElementById('simple-location-text').textContent = sel.value;
+            document.getElementById('simple-location-edit').style.display = 'none';
+            document.getElementById('simple-location-display').style.display = '';
+        }
+
+        function simpleTakePhoto() {
+            document.getElementById('simple-photo-placeholder').style.display = 'none';
+            document.getElementById('simple-photo-preview').style.display = 'block';
+            document.getElementById('simple-submit-btn').disabled = false;
+        }
+
+        function simpleSubmit() {
+            document.getElementById('simple-report').style.display = 'none';
+            document.getElementById('simple-sending').style.display = 'flex';
+            setTimeout(function () {
+                document.getElementById('simple-sending').style.display = 'none';
+                document.getElementById('simple-done').style.display = 'flex';
+            }, 1200);
+        }
+
+        function resetSimple() {
+            ['simple-done', 'simple-sending', 'simple-report', 'simple-location-edit'].forEach(function (id) {
+                document.getElementById(id).style.display = 'none';
+            });
+            document.getElementById('simple-home').style.display = '';
+            document.getElementById('simple-location-display').style.display = '';
+            document.getElementById('simple-location-text').textContent = 'Warehouse A, Zone 4';
+            document.getElementById('simple-photo-placeholder').style.display = '';
+            document.getElementById('simple-photo-preview').style.display = 'none';
+            document.getElementById('simple-submit-btn').disabled = true;
+            document.getElementById('simple-desc').value = '';
+        }
+    </script>
 </body>
 
 </html>

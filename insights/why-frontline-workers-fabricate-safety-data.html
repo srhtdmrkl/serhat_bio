@@ -35,6 +35,88 @@
         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
         rel="stylesheet" />
     <link href="../styles.css" rel="stylesheet" />
+    <style>
+        .decision-box {
+            background: #EEF2F5;
+            border: 1px solid #C8D4DC;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 28px 0;
+        }
+        .decision-header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .decision-badge {
+            display: inline-block;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #7A8E9C;
+            background: #fff;
+            border: 1px solid #C8D4DC;
+            border-radius: 4px;
+            padding: 4px 10px;
+        }
+        .decision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .decision-card {
+            background: #fff;
+            border: 1px solid #C8D4DC;
+            border-radius: 4px;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+        }
+        .card-icon {
+            font-size: 1.6rem;
+            line-height: 1;
+            color: #7A8E9C;
+        }
+        .decision-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #0D1B2A;
+            margin: 0;
+        }
+        .decision-card .path-description {
+            font-size: 0.84em;
+            color: #7A8E9C;
+            line-height: 1.55;
+            margin: 0;
+            flex: 1;
+        }
+        .outcome-badge {
+            display: inline-block;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+        .outcome-negative {
+            background: #fff7ed;
+            color: #b45309;
+            border: 1px solid #fcd34d;
+        }
+        .outcome-warning {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        @media (max-width: 520px) {
+            .decision-grid { grid-template-columns: 1fr; }
+        }
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -170,14 +252,14 @@
                 </div>
                 <div class="decision-grid">
                     <div class="decision-card">
-                        <div class="card-icon"><i class="fa-solid fa-route"></i></div>
+                        <div class="card-icon">→</div>
                         <h4>Inspect &amp; Log Honestly</h4>
                         <p class="path-description">Walk the site honestly, then stay 15 minutes late to type
                             descriptions on a tablet.</p>
                         <div class="outcome-badge outcome-negative">Stay Late</div>
                     </div>
                     <div class="decision-card">
-                        <div class="card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <div class="card-icon">☑</div>
                         <h4>Prioritize Operations</h4>
                         <p class="path-description">Focus on the handover, then check the boxes from memory in your
                             truck to go home.</p>
