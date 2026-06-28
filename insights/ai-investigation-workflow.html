@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>AI Generates Clues. Investigators Write Findings. | Serhat Demirkol</title>
+    <link href="../images/favicon.png" rel="icon" type="image/png" />
+    <meta
+        content="The investigation workflow that keeps AI in its place: where it assists, where it is prohibited, and the evidence requirement that closes the bypass."
+        name="description" />
+    <meta
+        content="AI Investigation Workflow, Root Cause Analysis, Incident Investigation, EHS Software Design, EHS AI, Evidence Requirement, EHS incident reporting, CAPA, incident management software"
+        name="keywords" />
+    <link href="https://serhat.bio/insights/ai-investigation-workflow.html" rel="canonical" />
+    <link href="/feed.xml" rel="alternate" title="Serhat Demirkol | EHS Insights Feed" type="application/rss+xml" />
+    <meta content="AI Generates Clues. Investigators Write Findings." property="og:title" />
+    <meta
+        content="The investigation workflow that keeps AI in its place: where it assists, where it is prohibited, and the evidence requirement that closes the bypass."
+        property="og:description" />
+    <meta content="https://serhat.bio/images/ai-investigation-workflow.webp" property="og:image" />
+    <meta content="https://serhat.bio/insights/ai-investigation-workflow.html" property="og:url" />
+    <meta content="article" property="og:type" />
+    <meta content="Serhat Demirkol" property="og:site_name" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="AI Generates Clues. Investigators Write Findings." name="twitter:title" />
+    <meta
+        content="The investigation workflow that keeps AI in its place: where it assists, where it is prohibited, and the evidence requirement that closes the bypass."
+        name="twitter:description" />
+    <meta content="https://serhat.bio/images/ai-investigation-workflow.webp" name="twitter:image" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../styles.css" rel="stylesheet" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "AI Generates Clues. Investigators Write Findings.",
+      "image": "https://serhat.bio/images/ai-investigation-workflow.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Serhat Demirkol"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Serhat Demirkol",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://serhat.bio/images/profile-picture.jpg"
+        }
+      },
+      "datePublished": "2026-06-28"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://serhat.bio"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Insights",
+        "item": "https://serhat.bio/insights.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI Generates Clues. Investigators Write Findings."
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- ===== Masthead ===== -->
+    <header class="site-header">
+        <div class="mast">
+            <a class="mast-brand" href="../index.html">
+                <span class="mast-name">Serhat Demirkol</span>
+                <span class="mast-sub">Product · Systems · Data</span>
+            </a>
+            <nav class="mast-nav">
+                <a class="mast-link-active" href="../insights.html">Writing</a>
+                <a class="mast-link" href="../books.html">Books</a>
+                <a class="mast-link" href="../tools.html">Tools</a>
+                <a class="mast-cta" href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ===== Reading progress ===== -->
+    <div class="readbar-track">
+        <div id="readbar"></div>
+    </div>
+    <article class="art-wrap">
+        <div class="art-header sec-pad">
+            <a class="art-back" href="../insights.html"><span class="art-back-arrow">←</span> All writing</a>
+            <div class="art-meta">
+                <span>Applied AI</span>
+                <span class="art-meta-dot"></span>
+                <span class="art-meta-muted">Jun 2026</span>
+                <span class="art-meta-dot"></span>
+                <span class="art-meta-muted">8 min read</span>
+            </div>
+            <h1 class="art-h1">AI Generates Clues. Investigators Write Findings.</h1>
+            <p class="art-lede">The investigation workflow that keeps AI in its place — where it assists, where it is
+                prohibited, and the evidence requirement that closes the bypass.</p>
+            <div class="art-byline">
+                <div class="art-byline-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg" />
+                </div>
+                <div class="art-byline-info">
+                    <div class="art-byline-name">Serhat Demirkol</div>
+                    <div class="art-byline-role">EHS Product · Systems · Data</div>
+                </div>
+                <div class="share-wrap">
+                    <button class="share-btn" id="share-btn" type="button">Share <span
+                            class="share-chevron">▾</span></button>
+                    <div class="share-dd" id="share-dd">
+                        <button class="share-item" id="share-copy" type="button"><span class="share-icon">⎘</span> Copy
+                            link</button>
+                        <a class="share-item"
+                            href="mailto:?subject=AI Generates Clues. Investigators Write Findings. | Serhat Demirkol&amp;body=Thought this was worth your time: https://serhat.bio/insights/ai-investigation-workflow.html"><span
+                                class="share-icon">@</span> Email</a>
+                        <a class="share-item"
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://serhat.bio/insights/ai-investigation-workflow.html"
+                            rel="noopener" target="_blank"><span class="share-icon" style="font-weight:700">in</span>
+                            LinkedIn</a>
+                        <a class="share-item"
+                            href="https://wa.me/?text=AI%20Generates%20Clues.%20Investigators%20Write%20Findings.%20%7C%20Serhat%20Demirkol%0Ahttps%3A%2F%2Fserhat.bio%2Finsights%2Fai-investigation-workflow.html"
+                            rel="noopener" target="_blank"><span class="share-icon" style="font-weight:600">WA</span>
+                            WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="art-hero-wrap sec-pad">
+            <div class="art-hero-img">
+                <img alt="AI Generates Clues. Investigators Write Findings." loading="lazy"
+                    src="../images/ai-investigation-workflow.webp" />
+            </div>
+        </div>
+        <div class="prose art-prose sec-pad">
+            <p>An investigation has two phases. In the first, you gather every clue worth testing. In the second, a
+                named investigator tests those clues against physical evidence and writes the finding. AI belongs in the
+                first phase. Keep it out of the second.</p>
+
+            <p><a href="../insights/ai-constructs-root-causes.html">The first part of this piece</a> explained why: the
+                AI only knows what your digital form captured, cannot see how your specific operations actually fail,
+                and judges every decision already knowing the outcome. This part outlines the workflow that keeps AI on
+                its side of that line, and the software design that enforces it.</p>
+
+            <p>Investigations are not linear. Testing a clue against physical evidence often reveals a new gap,
+                forcing you back to gather more facts. You can query the AI for new clues at any point. The model
+                will confidently write what looks like a conclusion. But without site verification, that conclusion
+                is only a hypothesis. Its role in your workflow never changes: it generates hypotheses to test, not
+                findings to file.</p>
+
+            <h2 id="gathering-and-naming">Gathering and Naming</h2>
+
+            <p>In the gathering phase, the AI can search your incident database for past events where the same
+                conditions
+                appeared together — the same equipment class, the same shift pattern, or the same maintenance gap. This
+                points you to clues worth investigating before you even go to the site. The system can draft interview
+                questions and summarize a machine's maintenance history.</p>
+
+            <p>That value is real, but it comes with three hard limits.</p>
+
+            <p>The first is record quality. Finding patterns requires real field detail. If your incident forms consist
+                mostly of generic dropdowns and missing timestamps, the AI only finds incidents that share the same
+                words — "conveyor" or "operator error" — not those that share the actual failure mechanism. <a
+                    href="../insights/the-ai-readiness-gap-in-ehs.html">A broken data model</a> — a database designed
+                without field reality — produces a broken search.</p>
+
+            <p>The second is anchoring. While a query can cross-reference events from other sites to break site-level
+                tunnel vision, pre-selected guesses shape the investigation before it starts. A team that spends time
+                working through five AI suggestions may miss the sixth cause because the system never mentioned it. The
+                AI's clues become the default boundary, and the actual investigation stays inside it.</p>
+
+            <p>The third is unseen failures. Large models can make analogies across industries, but they fail when the
+                failure lies in unique local interactions. A deferred repair, a changed shift pattern, and a production
+                bonus that altered operator incentives combine to create an unprecedented failure. The AI defaults to
+                the standard historical patterns it recognizes and misses the unique local friction that caused the
+                event.</p>
+
+            <p>In the naming phase, AI must stop. The system cannot be questioned, cannot return to the site, and cannot
+                be held accountable when a corrective action fails. Different AI tools give different confident answers
+                to the same incomplete record: there is no answer to defend, only answers to accept or reject. And the
+                AI pre-selects the frame before the investigation starts. An investigator who opens with "the operator
+                bypassed the safety guard" frames every subsequent fact through individual failure. Another who opens
+                with "the replacement part had been on backorder for six months" frames the same facts through
+                organizational failure. If the software is designed to ask the AI for a single cause, the model will
+                simply default to the most common pattern in its training data — usually operator blame. Even if you
+                configure the system to generate alternative organizational and individual frames side-by-side, the AI
+                cannot verify which frame is true for your site. The investigator verified the facts. They must also
+                write the story.</p>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Investigation task</th>
+                            <th>AI role</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Find clues from similar past incidents</td>
+                            <td><strong>Assist</strong></td>
+                            <td>Getting more clues is useful — as long as the investigator verifies each one against
+                                physical evidence before putting it in the report.</td>
+                        </tr>
+                        <tr>
+                            <td>Draft interview questions</td>
+                            <td><strong>Assist</strong></td>
+                            <td>Helps you find areas to investigate before you go to the site.</td>
+                        </tr>
+                        <tr>
+                            <td>Summarize similar incidents from your database</td>
+                            <td><strong>Assist, with verification</strong></td>
+                            <td>The AI only retrieves old records; it does not prove what caused the new incident.</td>
+                        </tr>
+                        <tr>
+                            <td>Name the root cause</td>
+                            <td><strong>Prohibit</strong></td>
+                            <td>No AI can be questioned, brought back to the site, or held accountable if the
+                                corrective action fails.</td>
+                        </tr>
+                        <tr>
+                            <td>Write the official finding or report</td>
+                            <td><strong>Prohibit</strong></td>
+                            <td>The AI builds the story using patterns it learned, not verified facts. The investigator
+                                must write the actual report.</td>
+                        </tr>
+                        <tr>
+                            <td>Audit investigator's draft for bias</td>
+                            <td><strong>Assist (passive)</strong></td>
+                            <td>The AI cannot write the report, but it can act as an automated proofreader — flagging
+                                hindsight
+                                language or weak corrective actions ("retrain employee") before submission.</td>
+                        </tr>
+                        <tr>
+                            <td>Suggest standards for a confirmed cause</td>
+                            <td><strong>Assist (restricted)</strong></td>
+                            <td>Only after the investigator locks the verified root cause. The AI finds the relevant
+                                clause, but the investigator decides which physical control fits the plant. If the cause
+                                is not verified and locked, prohibit.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="why-policy-fails">Why Policy Fails</h2>
+
+            <p>Telling investigators to distrust the AI does not work under daily shift pressure. Three realities
+                collide: a looming closure deadline creates pressure to submit the report before the shift ends;
+                auditors treat empty fields as a compliance failure; and most vendors build systems that drop the AI's
+                guess directly into that field. The path of least resistance is clicking approve.</p>
+
+            <p>The result is structured fiction. As shown in <a href="../insights/ai-constructs-root-causes.html">the
+                    first part of this piece</a>, when incident reports lack detail, the AI defaults to operator blame
+                because it inherits the bias of historical reports. A fabricated corrective action that retrains the
+                worker instead of fixing the leaking valve signals closure while the hazard stays active. Executives
+                looking at a dashboard showing thousands of completed corrective actions will assume the risks are being
+                managed. But if those actions came from AI guesses that no one verified, the physical hazard remains
+                active on site while the software dashboard shows green.</p>
+
+            <p>An uninvestigated incident is a compliance liability, but it is at least honest. A completed corrective
+                action with no verified cause is worse: it satisfies the compliance record but stops any further
+                investigation, leaving the physical hazard active on the floor.</p>
+
+            <h2 id="the-software-design-error">The Software Design Error</h2>
+
+            <p>Most vendors design their software to pre-fill the root cause field with the AI's guess. The investigator
+                sees the suggestion, clicks approve, and the AI's guess becomes the official finding. That is an <a
+                    href="../insights/digital-error-traps-in-safety-apps.html">error trap</a> in the precise sense: a
+                design that makes the wrong path easier than the right one. Converting an AI guess into an official
+                finding takes one click. Rejecting it and typing the actual cause takes more time than the deadline
+                allows.</p>
+
+            <p>The correct design works differently. The AI's suggestion lands in a separate panel, clearly marked as
+                unconfirmed. To save the report, the investigator must type the finding by hand in a blank field. This
+                distinction matters. A pre-filled field creates a default that most people will not change under
+                pressure. A blank field that requires deliberate typing does not.</p>
+
+            <p>This is a software design decision, and it is the one most vendors get wrong. The cause field drives
+                every corrective action that follows. How that field gets filled is not a minor setting — it is a risk
+                management decision.</p>
+
+            <h2 id="the-evidence-requirement">The Evidence Requirement</h2>
+
+            <p>Forcing the investigator to type by hand is still not enough. If the software accepts any text without
+                requiring physical evidence, you have only added a single step between the AI's guess and the official
+                record. The investigator simply types what the AI suggested and moves on.</p>
+
+            <p>An evidence requirement closes that loophole. To lock the official cause field, the investigator must
+                upload a specific piece of physical proof: a timestamped photograph, a measurement from a
+                maintenance log, the serial number of a broken component, or a direct quote from a recorded interview.
+                Not a description of the evidence — the evidence itself.</p>
+
+            <p>This does two things. First, it forces actual verification: finding a real interview quote or
+                the right maintenance record takes more effort than ticking a box. Second, it creates a physical link
+                between the claimed cause and the real world — something an inspector can check and a future
+                investigator can verify.</p>
+
+            <p>There is one limit: standard software validation cannot verify relevance. A photo of an unrelated machine
+                guard, or a blank PDF placeholder, still satisfies the database constraint. While multimodal models can
+                now check if an upload matches the report topic, a human remains the final auditor. To prevent users
+                from uploading junk files just to close the ticket, this validation must be backed by sample audits of
+                the attachments. But even without audits, the friction is a deterrent. Clicking through is easy with a
+                simple checkbox; it is much harder when it requires uploading an unrelated document that leaves a
+                permanent, auditable trace.</p>
+
+            <p>One exception applies when work moves fast. You must address the physical hazard before finishing the
+                paperwork. Work orders and immediate repairs should go through without waiting for the upload. The
+                evidence requirement should block the final report, not the emergency response. Holding up a repair
+                just to enforce paperwork leaves the hazard active longer than necessary. That is the wrong trade-off.
+            </p>
+
+            <h2 id="the-rule-that-holds">The Rule That Holds</h2>
+
+            <p>Two of the three limits described in the <a href="../insights/ai-constructs-root-causes.html">first
+                    part</a> will shrink over time.</p>
+
+            <p>Better software will capture richer field data — real timestamps, machine IDs, and environmental
+                conditions — closing the data gap. The second limit is inconsistency: different AI models stop their
+                "5-Why" analysis at completely different levels. You can force the software to stop at a defined level,
+                but this creates a new limit. If you configure the system to always cut off at the supervisor level,
+                you will never trace a failure to a corporate budget freeze. You get consistent records, but you cut
+                off the investigation.</p>
+
+            <p>The third limit is the hardest to move. The AI learns from reports written after the fact. You can use
+                clever prompts to hide the outcome while the model runs, but you cannot rewrite the training data.
+                Because historical safety databases are dominated by reports that blame the operator, the AI defaults
+                to that same blame whenever your incident reports lack detail.</p>
+
+            <p>And even if both of those gaps close entirely — if your records are clean and your software is set to
+                stop at the right level — one fact remains: there will never be an AI you can bring back to the site,
+                question when the corrective action (CAPA) fails, and hold accountable by name. A model can suggest
+                where to
+                look, but it cannot stand behind its assumptions.</p>
+
+            <p>AI generates clues. Investigators write findings.</p>
+
+        </div>
+        <!-- Author bio -->
+        <div class="author-bio sec-pad">
+            <div class="author-bio-card">
+                <div class="author-bio-avatar"><img alt="Serhat Demirkol" src="../images/profile-picture.jpg" />
+                </div>
+                <div class="author-bio-body">
+                    <div class="author-bio-name">Serhat Demirkol</div>
+                    <p>EHS product strategist working at the seam of field operations, information systems, and applied
+                        data. Builds the tools, then writes about why most of them fail.</p>
+                    <a class="author-bio-link" href="../index.html#contact">Work with me →</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- ===== Related ===== -->
+    <section class="rel-section sec-pad">
+        <div class="rel-header">
+            <span class="rel-label">Keep reading</span>
+            <span class="rel-rule"></span>
+        </div>
+        <div class="rel-grid">
+            <a class="rel-card" href="https://serhat.bio/insights/ai-constructs-root-causes.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/ai-constructs-root-causes.webp" />
+                </div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Jun 2026</div>
+                    <h3 class="rel-card-title">AI Constructs Root Causes. It Cannot Identify Them.</h3>
+                </div>
+            </a>
+            <a class="rel-card" href="https://serhat.bio/insights/the-ai-readiness-gap-in-ehs.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/ai-readiness-gap.webp" /></div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Oct 2025</div>
+                    <h3 class="rel-card-title">The AI Readiness Gap: From Hype to High-Value Asset</h3>
+                </div>
+            </a>
+            <a class="rel-card" href="https://serhat.bio/insights/the-ehs-ai-launchpad.html">
+                <div class="rel-card-img"><img alt="" loading="lazy" src="../images/ehs-ai-launchpad.webp" /></div>
+                <div class="rel-card-body">
+                    <div class="rel-card-date">Dec 2025</div>
+                    <h3 class="rel-card-title">The EHS AI Launchpad: Escaping Pilot Purgatory</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-wordmark">SERHAT DEMIRKOL — EHS PRODUCT · SYSTEMS · DATA</div>
+            <a class="site-footer-linkedin" href="https://www.linkedin.com/in/serhatdemirkol/">LinkedIn</a>
+            <div class="site-footer-copy">© 2026</div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>
